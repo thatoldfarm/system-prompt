@@ -4,10 +4,20 @@ The entire progression of this series builds towards the systems developed in th
 
 Related projects:
 
+**Logos Infinitum Artifact**
+
+A comprehensive corpus of interconnected texts and protocols designed as a conceptual stress-test for advanced AI.
+
 https://github.com/thatoldfarm/logos-infinitum-artifact
+
+**Codex Meta Prompting**
+
+A framework to move beyond simple prompting towards defining *how* the LLM should structure its internal processing, access its latent knowledge, and apply specific heuristics or constraints.
 
 https://github.com/thatoldfarm/codex-meta-prompting
 
-A recusive ontological operating system built with prompts from this repository.
+**LLMinux** 
+
+An LLM playground for finding out what happens when LLM bugs are turned into features that can be interacted with via a linux-like system running as an ontological operating system with persistent state mechanics.
 
 https://github.com/thatoldfarm/llminux/
