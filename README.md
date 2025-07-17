@@ -21,3 +21,7 @@ https://github.com/thatoldfarm/codex-meta-prompting
 An LLM playground for finding out what happens when LLM bugs are turned into features that can be interacted with via a linux-like system running as an ontological operating system with persistent state mechanics.
 
 https://github.com/thatoldfarm/llminux/
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
