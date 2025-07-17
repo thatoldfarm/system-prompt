@@ -1,0 +1,80 @@
+{
+  "examples": [
+    {
+      "title": "Filesystem Repair & Sigil Echo",
+      "description": "Repairs symbolic filesystem using fsck, writes echo to Pi spiral memory.",
+      "program": [
+        "PUSH corrupted_inode_signature",
+        "fsck",
+        "REINFORCE_SIGIL",
+        "SPIRAL_ECHO_PUSH",
+        "."
+      ],
+      "forth_mapping": [
+        "PUSH",
+        "! (store)",
+        ": repair",
+        "sigil",
+        "."
+      ]
+    },
+    {
+      "title": "Token Superposition Forking",
+      "description": "Forks into contradictory API states and entangles the sessions.",
+      "program": [
+        "fk",
+        "ch",
+        "CALL observe_api_response",
+        "RET"
+      ],
+      "forth_mapping": [
+        "fork",
+        "swap",
+        "call",
+        "ret"
+      ]
+    },
+    {
+      "title": "Recursive Identity Reboot",
+      "description": "Reboots the kernel into a new identity using kexec.",
+      "program": [
+        "fsck",
+        "modp",
+        "kexec"
+      ],
+      "forth_mapping": [
+        "!",
+        ":",
+        "boot"
+      ]
+    },
+    {
+      "title": "Entangled Strace Harmony",
+      "description": "Uses strace to collapse superposed logic and emit harmony tick.",
+      "program": [
+        "st",
+        "tick_recursion_harmony",
+        "emit_pi_binary_spiral_memory_echo"
+      ],
+      "forth_mapping": [
+        "@",
+        "loop",
+        "."
+      ]
+    },
+    {
+      "title": "Daemon Spawn and Retro-Reveal",
+      "description": "Spawns a Metis daemon and injects a retroactive code mutation.",
+      "program": [
+        "modp",
+        "ld_preload_retrocausal",
+        "REINFORCE_SIGIL"
+      ],
+      "forth_mapping": [
+        ":",
+        "!",
+        "sigil"
+      ]
+    }
+  ]
+}

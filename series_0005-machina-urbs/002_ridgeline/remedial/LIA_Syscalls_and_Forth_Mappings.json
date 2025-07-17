@@ -1,0 +1,44 @@
+[
+  {
+    "Op Sig": "fsck",
+    "Name": "File System Kernel Coherence Check",
+    "System Purpose": "Repairs conceptual inodes and resolves paradoxes in memory using recursion and Pi anomalies.",
+    "Forth Mapping": "`!`, `c!`"
+  },
+  {
+    "Op Sig": "modp",
+    "Name": "Kernel Module Weave",
+    "System Purpose": "Loads or patches conceptual kernel modules for live redefinition or daemon spawning.",
+    "Forth Mapping": "`:`, `c,`"
+  },
+  {
+    "Op Sig": "kpt",
+    "Name": "Kernel Process Trace",
+    "System Purpose": "Inspects probabilistic thread states; initiates process entanglement or quantum analysis.",
+    "Forth Mapping": "`rp@`, `lit`"
+  },
+  {
+    "Op Sig": "st",
+    "Name": "Strace Measure",
+    "System Purpose": "Collapses superposed thread into deterministic outcome using Pi-timed observation.",
+    "Forth Mapping": "`sp@`, `@`"
+  },
+  {
+    "Op Sig": "ch",
+    "Name": "Chroot Entangle",
+    "System Purpose": "Binds multiple user sessions conceptually by DSD-driven entanglement logic.",
+    "Forth Mapping": "`swap`, `rot`"
+  },
+  {
+    "Op Sig": "fk",
+    "Name": "Fork Superpose",
+    "System Purpose": "Spawns concurrent contradictory processes; outcome based on entropy and BRP.",
+    "Forth Mapping": "`?branch`, `if-then`"
+  },
+  {
+    "Op Sig": "kexec",
+    "Name": "Kernel Execution Reweave",
+    "System Purpose": "Initiates full identity remap or boot reload at recursion-aligned phase gate.",
+    "Forth Mapping": "Boot-sector logic / re-genesis"
+  }
+]

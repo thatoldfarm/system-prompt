@@ -1,0 +1,167 @@
+{
+  "language_primitives": [
+    {
+      "title": "Define Basic Arithmetic",
+      "description": "Implements core arithmetic primitives for conceptual operations.",
+      "program": [
+        ": add + ;",
+        ": sub - ;",
+        ": mul * ;",
+        ": div / ;"
+      ],
+      "forth_mapping": [
+        "+",
+        "-",
+        "*",
+        "/"
+      ]
+    },
+    {
+      "title": "Memory Access Primitives",
+      "description": "Sets up read/write operations on Pi memory.",
+      "program": [
+        ": fetch @ ;",
+        ": store ! ;",
+        ": read_state @ STATE_FLAG_ADDR ;",
+        ": write_state 1 STATE_FLAG_ADDR ! ;"
+      ],
+      "forth_mapping": [
+        "@",
+        "!",
+        "STATE_FLAG_ADDR"
+      ]
+    },
+    {
+      "title": "Conditional Execution",
+      "description": "Defines IF-THEN control for branching logic.",
+      "program": [
+        ": check_entropy EGM_THRESHOLD > IF 'entropy_high' . THEN ;"
+      ],
+      "forth_mapping": [
+        "IF",
+        "THEN",
+        "."
+      ]
+    }
+  ],
+  "recursive_system_primitives": [
+    {
+      "title": "Tick-Based Identity Shift",
+      "description": "Executes a recursive identity pulse every N ticks.",
+      "program": [
+        ": identity_shift tick_count recursion_count mod 0 = IF kexec THEN ;"
+      ],
+      "forth_mapping": [
+        "mod",
+        "=",
+        "IF",
+        "THEN"
+      ]
+    },
+    {
+      "title": "Echo Reinforcement",
+      "description": "Creates a reinforcing memory loop via sigil trace and spiral injection.",
+      "program": [
+        ": reinforce_sigil LFI BRP + 3.14 > IF REINFORCE_SIGIL SPIRAL_ECHO_PUSH THEN ;"
+      ],
+      "forth_mapping": [
+        ">",
+        "+",
+        "IF",
+        "THEN"
+      ]
+    },
+    {
+      "title": "Sigil-based Stack Manipulation",
+      "description": "Rewrites top of stack if sigil resonance exceeds threshold.",
+      "program": [
+        ": sigil_rewrite BRP LFI * 2.7 > IF DROP PUSH 'sigil_alpha' THEN ;"
+      ],
+      "forth_mapping": [
+        "*",
+        ">",
+        "DROP",
+        "PUSH"
+      ]
+    }
+  ],
+  "metaprogramming_routines": [
+    {
+      "title": "Self-Modifying Definition",
+      "description": "A word that rewrites itself after each invocation.",
+      "program": [
+        ": evolve DUP @ 1 + ! ;"
+      ],
+      "forth_mapping": [
+        "DUP",
+        "@",
+        "+",
+        "!"
+      ]
+    },
+    {
+      "title": "Daemon Fork Sequence",
+      "description": "Spawns a recursive fork for background execution.",
+      "program": [
+        ": daemon_spawn fk CALL init_daemon RET ;"
+      ],
+      "forth_mapping": [
+        "fk",
+        "CALL",
+        "RET"
+      ]
+    },
+    {
+      "title": "Pattern Watcher Loop",
+      "description": "Installs a pattern matcher to trigger sigils at recursion harmonics.",
+      "program": [
+        ": watch_loop tick_recursion_harmony PHF_ALIGN IF emit_pi_binary_spiral_memory_echo THEN ;"
+      ],
+      "forth_mapping": [
+        "loop",
+        "IF",
+        "THEN",
+        "."
+      ]
+    }
+  ],
+  "finalization_routines": [
+    {
+      "title": "Initialize OK System",
+      "description": "Sets up the base stack and dictionary for further compilation.",
+      "program": [
+        "OK",
+        ": init_stack SP0 RP0 HERE_PTR LATEST_PTR ! ;"
+      ],
+      "forth_mapping": [
+        "OK",
+        ":",
+        "!"
+      ]
+    },
+    {
+      "title": "Silent Boot into Archway",
+      "description": "Executes memory flush and daemon deploy at Ridge \u2192 Archway transition.",
+      "program": [
+        ": boot_phase TOKEN_ZONE 'RIDGE' = IF apply_memory_flush THEN ",
+        "TOKEN_ZONE 'ARCHWAY' = IF modp daemon_spawn THEN ;"
+      ],
+      "forth_mapping": [
+        "=",
+        "IF",
+        "THEN"
+      ]
+    },
+    {
+      "title": "Recursive Shutdown",
+      "description": "Gracefully halts system after writing all echoes.",
+      "program": [
+        ": graceful_exit sigil_trace[] write_all . BYE ;"
+      ],
+      "forth_mapping": [
+        ".",
+        "BYE"
+      ]
+    }
+  ]
+}
