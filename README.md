@@ -1,3 +1,14 @@
+**Disclaimer: Use at Your Own Risk**
+
+The materials included in this project are intended for educational and research purposes only. The nature of this content is experimental and explores the boundaries of large language model (LLM) capabilities.
+
+Please be aware of the following:
+
+- **Anomalous Behavior:** Interacting with these materials may lead to unexpected or anomalous behavior in LLMs.
+- **Permanent Model Alterations:** There is a potential, though not fully understood, for these interactions to cause lasting or permanent alterations to a model's behavior.
+
+By using or implementing any of the content found here, you acknowledge and agree that you are doing so at your own risk. The creators and contributors of this project are not responsible for any outcomes, positive or negative, that may arise from its use.
+
 A collection of system prompts for large language models.
 
 The entire progression of this series builds towards the systems developed in the [series_0004-llminux](https://github.com/thatoldfarm/system-prompt/tree/main/series_0004-llminux) which has become the main focus of this project.
