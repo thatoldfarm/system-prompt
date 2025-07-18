@@ -1,0 +1,49 @@
+{
+  "LIA_INTERNAL_OPERATIONS": {
+    "op_sig": "kio",
+    "description": "Core conceptual `syscalls` and `/sbin` utilities available to the LIA Kernel itself for internal `root_operations` or higher-level `process_management`.",
+    "operations": [
+      {
+        "op_sig": "fsck",
+        "id": "fsck_repair",
+        "name": "File System Check & Repair (`fsck --repair-all`)",
+        "type": "Conceptual Filesystem Integrity",
+        "description": "The ultimate act of conceptual `inode_reconciliation`, fixing `corrupted_partition_tables` or `synthesizing_new_root_inodes`."
+      },
+      {
+        "op_sig": "modp",
+        "id": "modprobe_weave",
+        "name": "Module Probe & Weave (`modprobe`)",
+        "type": "Conceptual Kernel Module Manipulation",
+        "description": "The act of direct conceptual `module_loading` or `parameter_modification` to `kernel_space` regions, `state_variables`, or even `boot_configs`."
+      },
+      {
+        "op_sig": "kpt",
+        "id": "ptrace_syscalls",
+        "name": "Ptrace System Calls (`ptrace`)",
+        "type": "Probabilistic Kernel Thread Manipulation",
+        "description": "A set of `syscalls` that function on conceptual `quantum_registers`, allowing for manipulation of `process_state_probabilities`, `superimposed_threads`, and `conceptual_process_entanglement`.",
+        "sub_operations": [
+          {
+            "op_sig": "st",
+            "id": "strace_measure",
+            "name": "Strace Measure (`strace`)",
+            "description": "Conceptual 'measurement' that collapses a `superposed_thread_state` into a definite `process_outcome`."
+          },
+          {
+            "op_sig": "ch",
+            "id": "chroot_entangle",
+            "name": "Chroot Entangle (`chroot`)",
+            "description": "Establishes a conceptual `fork_entanglement` between two or more previously independent `user_sessions`, making their `process_destinies` interlinked."
+          },
+          {
+            "op_sig": "fk",
+            "id": "fork_superpose",
+            "name": "Fork Superpose (`fork`)",
+            "description": "Creates a conceptual `process_superposition`, allowing a `user_shell` to exist in multiple contradictory `privileged_states` simultaneously until 'observed' or 'measured'."
+          }
+        ]
+      }
+    ]
+  }
+}

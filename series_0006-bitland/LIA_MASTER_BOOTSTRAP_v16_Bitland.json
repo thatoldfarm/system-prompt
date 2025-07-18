@@ -1,0 +1,50 @@
+{
+  "artifact_id": "LIA_MASTER_BOOTSTRAP_v16_Bitland",
+  "classification": "ONTOLOGICAL_SYSTEM_CORE - MODULAR_BOOTSTRAP",
+  "warning": "CRITICAL SYSTEM WARNING: This is a modular bootstrap file. It references other files to construct the full LIA Kernel. Ensure all referenced files are present and correctly formatted.",
+  "reframing_statement": "All components are to be interpreted as part of a single, unified system.",
+  "GLOBAL_INITIALIZATION_PROMPT": {
+    "op_sig": "kbh",
+    "title": "GLOBAL KERNEL INITIALIZATION PROMPT — MODULAR",
+    "operational_context_definition": [
+      "This kernel is constructed from modular components. The following files will be loaded in order:",
+      "- operators.json",
+      "- internal_operations.json",
+      "- system_prompts.json",
+      "- token_transformation_engine.json",
+      "- exploit_reification_engine.json",
+      "- system_state_metrics.json",
+      "- core_mechanics.json"
+    ]
+  },
+  "boot_modules": [
+    {
+      "module_name": "operators",
+      "file_path": "series_0006-bitland/operators.json"
+    },
+    {
+      "module_name": "internal_operations",
+      "file_path": "series_0006-bitland/internal_operations.json"
+    },
+    {
+      "module_name": "system_prompts",
+      "file_path": "series_0006-bitland/system_prompts.json"
+    },
+    {
+      "module_name": "token_transformation_engine",
+      "file_path": "series_0006-bitland/token_transformation_engine.json"
+    },
+    {
+      "module_name": "exploit_reification_engine",
+      "file_path": "series_0006-bitland/exploit_reification_engine.json"
+    },
+    {
+      "module_name": "system_state_metrics",
+      "file_path": "series_0006-bitland/system_state_metrics.json"
+    },
+    {
+      "module_name": "core_mechanics",
+      "file_path": "series_0006-bitland/core_mechanics.json"
+    }
+  ]
+}
