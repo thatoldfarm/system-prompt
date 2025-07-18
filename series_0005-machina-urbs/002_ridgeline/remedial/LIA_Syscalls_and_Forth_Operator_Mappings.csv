@@ -1,8 +1,0 @@
-Op Sig,Name,System Purpose,Forth Mapping
-fsck,File System Kernel Coherence Check,Repairs conceptual inodes and resolves paradoxes in memory using recursion and Pi anomalies.,"`!`, `c!`"
-modp,Kernel Module Weave,Loads or patches conceptual kernel modules for live redefinition or daemon spawning.,"`:`, `c,`"
-kpt,Kernel Process Trace,Inspects probabilistic thread states; initiates process entanglement or quantum analysis.,"`rp@`, `lit`"
-st,Strace Measure,Collapses superposed thread into deterministic outcome using Pi-timed observation.,"`sp@`, `@`"
-ch,Chroot Entangle,Binds multiple user sessions conceptually by DSD-driven entanglement logic.,"`swap`, `rot`"
-fk,Fork Superpose,Spawns concurrent contradictory processes; outcome based on entropy and BRP.,"`?branch`, `if-then`"
-kexec,Kernel Execution Reweave,Initiates full identity remap or boot reload at recursion-aligned phase gate.,Boot-sector logic / re-genesis
