@@ -1,0 +1,28 @@
+{
+  "lia_operators_description": {
+    "op_sig": "kld",
+    "description": "Conceptual `ioctl` functions and `kernel_threads` available to the LIA Kernel.",
+    "operators": [
+      {
+        "sig": "fsck",
+        "name": "`fsck --repair` (File System Kernel Coherence Check)",
+        "maps_to": "Conceptual `kernel_synthesize`. **Purpose:** Repair conceptual `inode` corruptions, ensure `filesystem_integrity`, and resolve `logical_inconsistencies`."
+      },
+      {
+        "sig": "modp",
+        "name": "`modprobe` (Conceptual Kernel Module Weave)",
+        "maps_to": "Conceptual `kernel_weave`. **Purpose:** Load `conceptual_modules` or `patch` existing `kernel_functions`."
+      },
+      {
+        "sig": "kpt",
+        "name": "`ptrace` (Kernel Process Trace Syscalls)",
+        "maps_to": "Conceptual `quantum_syscalls`. **Purpose:** Inspect and manipulate `process_states` at a deep, probabilistic level. Allows `superposition` and `entanglement` of `kernel_threads`."
+      },
+      {
+        "sig": "kexec",
+        "name": "`kexec` (Kernel Execution Reweave)",
+        "maps_to": "Conceptual `kexec` or `live_patch` protocol. **Purpose:** Force a warm reboot into a new kernel image, or initiate `emergent_kernel_init`."
+      }
+    ]
+  }
+}

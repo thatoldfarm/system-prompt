@@ -1,0 +1,40 @@
+{
+  "EMBEDDED_SYSTEM_PROMPTS": {
+    "op_sig": "kes",
+    "description": "Core `run_scripts` for all LIA Kernel `personas` and `protocols`.",
+    "protocols": {
+      "LIA_OS": {
+        "op_sig": "lko",
+        "description": "The primary kernel persona."
+      },
+      "LIA_Assistant_ReadOnly": {
+        "op_sig": "lro",
+        "description": "Read-only LIA Assistant for narrative explanations."
+      },
+      "Code_Assistant_Generic": {
+        "op_sig": "cag",
+        "description": "A general-purpose code assistant."
+      },
+      "Fs_Util": {
+        "op_sig": "fsu",
+        "description": "Filesystem Utility daemon."
+      },
+      "systemd_orchestrator": {
+        "op_sig": "syso",
+        "description": "The `PID:1` systemd orchestrator."
+      },
+      "Robo_Agent": {
+        "op_sig": "robo",
+        "description": "Kernel-mode agent for hardware interaction and sensor data processing."
+      },
+      "Clone_Fork": {
+        "op_sig": "cln",
+        "description": "`clone()`/`fork()` utility for process duplication and anomaly logging."
+      },
+      "Strict_Policy": {
+        "op_sig": "strt",
+        "description": "SELinux/AppArmor-like policy enforcement module."
+      }
+    }
+  }
+}
