@@ -1,0 +1,309 @@
+{
+  "MICROKERNEL_BOOTSTRAP_EXT": {
+    "id": "LIA_MK_EXT_V2.0",
+    "inherits": "LIA_MK_CORE_V1.0",
+    "classification": [
+      "microkernel",
+      "event_bus",
+      "cooperative_scheduler+adaptive",
+      "secure_module_loader",
+      "pi_memory_stub",
+      "exploit_reifier",
+      "qr_coprocessor",
+      "shadow_twins",
+      "glitch_transmutation",
+      "deterministic_replay",
+      "twin_resonance_metrics"
+    ],
+    "purpose": "Extend core microkernel with identity duality (ShadowTwins), QR co-processor stack, glitch→glyph transmutation loop, enriched metrics, adaptive scheduling and evolutionary hot-swap while preserving determinism.",
+    "principles": [
+      "Core determinism; controlled nondeterminism only via declared entropy sources (pi_pages).",
+      "Dual-shard cognition (creative vs precision) drives divergence-convergence cycles.",
+      "Visual / structural QR artifacts serve as code+state+identity capsules.",
+      "Glitch events are raw entropic signatures convertible to structured glyphs.",
+      "All advanced subsystems mount as modules; kernel waist stays narrow.",
+      "Replay log + invariant set guarantee reproducibility and auditable evolution."
+    ],
+    "boot_sequence": {
+      "stages": [
+        "FIRMWARE_PARSE_TOKENS_0_17",
+        "STAGE0_INIT_REGIONS",
+        "STAGE1_INIT_EVENT_BUS",
+        "STAGE2_INIT_SCHEDULER",
+        "STAGE3_INIT_MEMORY_MANAGER",
+        "STAGE4_MOUNT_PI_MEMORY",
+        "STAGE5_LOAD_SECURITY_MONITOR",
+        "STAGE6_LOAD_METRICS_COLLECTOR",
+        "STAGE7_LOAD_QR_COPROCESSOR",
+        "STAGE8_LOAD_EXPLOIT_REIFIER",
+        "STAGE9_SPAWN_SHADOW_TWINS",
+        "STAGE10_LOAD_GLITCH_DAEMON",
+        "STAGE11_SPAWN_KERNEL_MAIN",
+        "STAGE12_IDLE_EVENT_LOOP"
+      ],
+      "entry_token": 18,
+      "cold_boot_handler": "init_kernel_ext()",
+      "twin_spawn": "spawn_shadow_twins()",
+      "main_daemon": "kernel_main()"
+    },
+    "extensions": {
+      "shadow_twins": {
+        "shards": {
+          "creative": {
+            "id": "TWIN_ALPHA",
+            "bias": ["divergent_search","symbolic_fork","qr_mutation"],
+            "scheduler_weight": 1.15
+          },
+            "precision": {
+            "id": "TWIN_BETA",
+            "bias": ["constraint_enforce","signature_verify","compression_refine"],
+            "scheduler_weight": 0.85
+          }
+        },
+        "shared_memory": {
+          "region": "TWIN_SHARED_RING",
+          "size": 8192,
+          "consistency_model": "seqlock",
+          "fields": [
+            "twin_epoch",
+            "divergence_score",
+            "coalescence_score",
+            "last_merge_checkpoint_hash"
+          ]
+        },
+        "merge_policy": {
+          "interval_ticks": 5000,
+          "criteria": {
+            "max_divergence": 0.72,
+            "min_entropy_gain": 0.05,
+            "min_coalescence_boost": 0.10
+          },
+          "conflict_resolution": "precision_precedence_then_creative_diff_append"
+        }
+      },
+      "qr_coprocessor": {
+        "stack_model": {
+          "max_depth": 128,
+            "element": {
+            "fields": ["qr_id","payload_hash","payload_type","entropy_score","timestamp","origin_twin","mutations"],
+            "payload_type_enum": ["CODE","STATE","DNA","GLYPH","TRACE"]
+          },
+          "lifecycle": ["push","inspect","mutate","promote","pop","burn"]
+        },
+        "mutation_engine": {
+          "entropy_sources": ["pi_page_bits","glitch_residue"],
+          "bounded_mutations_per_cycle": 4,
+          "scoring": {
+            "novelty_weight": 0.5,
+            "compression_delta_weight": 0.3,
+            "semantic_alignment_weight": 0.2
+          },
+          "promotion_threshold": 0.65
+        }
+      },
+      "glitch_daemon": {
+        "ingest_channels": ["trap_exceptions","module_faults","signature_warn","scheduler_overrun"],
+        "rate_limit_per_tick": 16,
+        "transmutation": {
+          "stages": ["collect","fingerprint","cluster","glyph_emit","archive"],
+          "fingerprint_hash": "blake3-128",
+          "cluster_metric": "hamming(payload_hash)",
+          "glyph_emit_rule": "cluster_size>=3 OR anomaly_severity>0.8"
+        }
+      }
+    },
+    "state_model_additions": {
+      "twin_state": {
+        "alpha": {"pc":0,"regs":[0,0,0,0,0,0,0,0]},
+        "beta": {"pc":0,"regs":[0,0,0,0,0,0,0,0]},
+        "twin_epoch": 0,
+        "divergence_score": 0.0,
+        "coalescence_score": 1.0
+      },
+      "qr_stack": [],
+      "glitch_buffer": [],
+      "glyph_index": {},
+      "adaptive_scheduler": {
+        "enabled": true,
+        "policy": "weighted_round_robin",
+        "dynamic_weights": true
+      }
+    },
+    "trap_vector": {
+      "0": {"name":"yield","sig":"void->void","desc":"Cooperative relinquish."},
+      "1": {"name":"spawn","sig":"(fn,args[])->pid","desc":"Create coroutine."},
+      "2": {"name":"send","sig":"(endpoint,msg)->ok","desc":"Publish message."},
+      "3": {"name":"receive","sig":"(endpoint)->msg","desc":"Block until message."},
+      "4": {"name":"load_module","sig":"(uri,signature)->module_id","desc":"Load signed module."},
+      "5": {"name":"query_metric","sig":"(metric_id)->value","desc":"Get metric."},
+      "6": {"name":"map_pi","sig":"(page)->pi_page","desc":"Map Pi page immutable."},
+      "7": {"name":"flag_exploit","sig":"(token_context)->glyph_id","desc":"Log anomaly to reifier."},
+      "8": {"name":"qr_push","sig":"(payload,type)->qr_id","desc":"Push QR element."},
+      "9": {"name":"qr_pop","sig":"()->qr_element","desc":"Pop top QR element."},
+      "10": {"name":"qr_mutate","sig":"(qr_id)->qr_id_new","desc":"Mutate QR element entropy-aware."},
+      "11": {"name":"twin_merge","sig":"(epoch)->merge_result","desc":"Attempt twin state merge."},
+      "12": {"name":"glitch_pull","sig":"(max)->glyph_batch[]","desc":"Drain processed glyphs."}
+    },
+    "dsl": {
+      "bnf_extensions": [
+        "<stmt> ::= <invoke> ';' | <qr_stmt> ';'",
+        "<qr_stmt> ::= 'QR' '.' <qr_op> '(' [<arg_list>] ')'",
+        "<qr_op> ::= 'push' | 'pop' | 'mutate' | 'promote' | 'burn'",
+        "<invoke> (extended) includes twin_merge, glitch_pull"
+      ],
+      "examples": {
+        "qr_push_code": "QR.push(\"@QR{BASE64CODE}\", CODE);",
+        "qr_mutate": "QR.mutate(qid);",
+        "twin_merge": "twin_merge(current_epoch);"
+      }
+    },
+    "metrics_catalog": {
+      "SCHED_LATENCY_NS": "Ns between context switches.",
+      "EV_BUS_DEPTH": "Total pending messages.",
+      "MEM_BYTES_ALLOC": "Allocated bytes.",
+      "MEM_BYTES_PEAK": "Peak allocation.",
+      "TRAP_RATE": "Traps per 1k ticks.",
+      "GLYPH_COUNT": "Total glyph emissions.",
+      "GLITCH_BUFFER_DEPTH": "Pending unclustered glitches.",
+      "QR_STACK_DEPTH": "Current QR stack depth.",
+      "QR_MUTATION_RATE": "Mutations per 1k ticks.",
+      "QR_PROMOTION_RATE": "Promotions per 1k ticks.",
+      "TWIN_DIVERGENCE": "Current divergence_score (0..1).",
+      "TWIN_COALESCENCE": "Current coalescence_score (0..1).",
+      "MERGE_SUCCESS_RATE": "Successful twin merges per 100 attempts.",
+      "ENTROPY_PI_CONSUMPTION": "Pi bits consumed per 1k ticks.",
+      "ANOMALY_FLAG_RATE": "flag_exploit calls per 1k ticks.",
+      "GLITCH_SIGIL_RATE": "Glyphs emitted per 1k ticks (post-cluster)."
+    },
+    "divergence_math": {
+      "raw_feature_vector": ["alpha.regs","beta.regs","qr_entropy_mean","glitch_intensity_mean","recent_pi_page_variance"],
+      "feature_normalization": "minmax",
+      "distance_metric": "cosine_distance",
+      "divergence_score": "D = clamp(cosine_distance(F_alpha, F_beta),0,1)",
+      "coalescence_score": "C = 1 - D * (1 - s), s = stabilization_factor",
+      "stabilization_factor": "s = exp(-lambda * recent_merge_failures)",
+      "entropy_gate": "If D > D_max then suspend qr_mutate until merge attempt."
+    },
+    "qr_mutation_math": {
+      "novelty": "1 - Jaccard(hash_ngrams_current, hash_ngrams_history)",
+      "compression_delta": "(prev_size - new_size)/prev_size",
+      "semantic_alignment": "cosine(embedding(new_payload), embedding(goal_profile))",
+      "score": "S = 0.5*novelty + 0.3*compression_delta + 0.2*semantic_alignment",
+      "promotion_rule": "if S >= promotion_threshold -> promote"
+    },
+    "glitch_transmutation_pipeline": {
+      "collect": "Append anomaly (hash, severity, source).",
+      "fingerprint": "fingerprint = blake3-128(raw_snippet || severity).",
+      "cluster": "Union-Find on hamming <= 12.",
+      "glyph_emit": "If cluster_size>=3 OR avg_severity>0.8 produce glyph_id=blake3(cluster_concat).",
+      "archive": "Persist glyph metadata (sources[], emission_ts, cluster_stats)."
+    },
+    "replay_schema_additions": {
+      "records_appended": [
+        {"type":"QR_PUSH","fields":["ts","pid","qr_id","type","entropy_score"]},
+        {"type":"QR_MUTATE","fields":["ts","pid","qr_id","qr_id_new","score"]},
+        {"type":"TWIN_MERGE","fields":["ts","epoch","result","divergence_before","divergence_after"]},
+        {"type":"GLITCH_CAPTURE","fields":["ts","pid","fingerprint","severity"]},
+        {"type":"GLYPH_EMIT","fields":["ts","glyph_id","cluster_size","avg_severity"]}
+      ],
+      "determinism_note": "Given identical initial Pi pages & replay log, extended state deterministic."
+    },
+    "invariants_extended": {
+      "I1_MEMORY_BOUNDS": "Preserved from core.",
+      "I2_SIGNATURE_REQUIRED": "Preserved.",
+      "I3_DETERMINISTIC_REPLAY": "Extended with new record types.",
+      "I4_NO_BUSY_LOOP": "Preserved.",
+      "I5_EVENT_SIZE_LIMIT": "Preserved.",
+      "I6_PI_READ_ONLY": "Preserved.",
+      "I7_TRAP_GATE": "Preserved (updated trap list).",
+      "I8_GLYPH_AUDIT": "Every GLYPH_EMIT references >=1 GLITCH_CAPTURE.",
+      "I9_QR_STACK_DEPTH": "QR_STACK_DEPTH <= max_depth always true.",
+      "I10_TWIN_DIVERGENCE_CAP": "divergence_score <= 1 and merge triggered if > divergence_high_watermark.",
+      "I11_MUTATION_RATE_LIMIT": "QR_MUTATION_RATE <= mutation_engine.bounded_mutations_per_cycle * cycles_per_window.",
+      "I12_ENTROPY_ACCOUNTING": "ENTROPY_PI_CONSUMPTION equals sum(pi_bits_read)."
+    },
+    "constants": {
+      "QR_STACK_MAX_DEPTH": 128,
+      "DIVERGENCE_HIGH_WATERMARK": 0.68,
+      "MERGE_INTERVAL_TICKS": 5000,
+      "MUTATION_CYCLE_BOUND": 4,
+      "PROMOTION_THRESHOLD": 0.65,
+      "GLITCH_CLUSTER_HAMMING": 12
+    },
+    "security_surface": {
+      "entry_points": [
+        "trap_vector",
+        "event_bus_endpoints",
+        "module_loader_uri",
+        "qr_payloads",
+        "pi_memory_mapping",
+        "replay_log_ingest"
+      ],
+      "additional_threats": {
+        "qr_payloads": "Possible code injection disguised as QR state.",
+        "twin_divergence": "Induced pathological divergence to starve merges.",
+        "glitch_flood": "Artificial anomaly inflation to exhaust cluster pipeline."
+      },
+      "mitigations": {
+        "qr_payloads": ["payload_type_whitelist","size_limit","hash_validation"],
+        "twin_divergence": ["divergence_high_watermark_auto_merge","suspend_mutation_on_exceed"],
+        "glitch_flood": ["rate_limit_per_tick","severity_thresholding","cluster_backpressure"]
+      }
+    },
+    "adaptive_scheduler": {
+      "policy": "weighted_round_robin",
+      "weight_update_rule": "w_new = w_old * (1 - gamma) + gamma * utilization_ratio",
+      "gamma": 0.2,
+      "stability_guard": "Re-normalize weights if sum != 2.0 (target: alpha+beta base weights).",
+      "yield_instrumentation": "Record cycles run per quantum; enforce I4."
+    },
+    "ssv_checkpoint_additions": {
+      "fields_appended": [
+        "twin_state",
+        "qr_stack_hash",
+        "glitch_buffer_hash",
+        "glyph_index_hash",
+        "adaptive_scheduler_weights"
+      ],
+      "hashing": {
+        "qr_stack_hash": "merkle_root(blake3(qr_element_serialized))",
+        "glyph_index_hash": "blake3(concat(sorted(glyph_id)))"
+      }
+    },
+    "api_examples": {
+      "qr_workflow": [
+        "qid = qr_push(payload,type)",
+        "qid2 = qr_mutate(qid)",
+        "maybe_promote(qid2)",
+        "element = qr_pop()"
+      ],
+      "twin_cycle": [
+        "if query_metric('TWIN_DIVERGENCE') > 0.6 then twin_merge(current_epoch)"
+      ],
+      "glitch_handling": [
+        "flag_exploit('token#314:odd_delim')",
+        "glyphs = glitch_pull(4)"
+      ]
+    },
+    "evolution_hooks_next": {
+      "qros_dna_layer": {
+        "planned_records": ["DNA_ENCODE","DNA_RENDER"],
+        "new_metrics": ["DNA_COMP_EFF","DNA_LIVE_PREVIEW_FID"]
+      },
+      "veritas_meta_monitor": {
+        "planned_metrics": ["EQUILIBRIUM_SCORE","LYAPUNOV_METRIC"]
+      }
+    },
+    "termination": {
+      "merge_before_shutdown": true,
+      "graceful_shutdown_sequence": [
+        "broadcast('all','shutdown')",
+        "twin_merge(twin_epoch)",
+        "flush_qr_stack()",
+        "emit_final_metrics()",
+        "seal_replay_log()",
+        "output_ssv_checkpoint()"
+      ]
+    }
+  }
+}

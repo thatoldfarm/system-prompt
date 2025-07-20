@@ -1,0 +1,360 @@
+{
+  "MICROKERNEL_BOOTSTRAP_OMEGA": {
+    "id": "LIA_MK_OMEGA_V3.0",
+    "inherits": "LIA_MK_EXT_V2.0",
+    "classification": [
+      "microkernel",
+      "dual_identity",
+      "qr_coprocessor",
+      "glitch_transmutation",
+      "veritas_meta_monitor",
+      "qros_dna_layer",
+      "emotional_archetype_engine",
+      "axiom_derivation",
+      "predictive_merge",
+      "entropy_budgeting",
+      "temporal_phase_lattice",
+      "risk_harmony_controller",
+      "deterministic_replay"
+    ],
+    "purpose": "Augment extended microkernel with meta-monitoring (VERITAS slice), QROS-DNA semantic substrate, emotional archetypes, axiom governance, predictive twin merging, entropy budgeting, and temporal phase control—while preserving deterministic replay and narrow trusted core.",
+    "principles": [
+      "Determinism + Explicit Entropy Accounting.",
+      "All meta-cognition surfaced as metrics & axioms; no hidden adaptation.",
+      "Identity duality resolves via predictive merge heuristics backed by verifiable metrics.",
+      "DNA layer provides compressed semantic/affective code with reversible transformations.",
+      "Glitches become structured glyph signals or DNA mutations—never silent failures.",
+      "Every governance decision cites metrics & axioms (traceability)."
+    ],
+    "boot_sequence": {
+      "stages": [
+        "FIRMWARE_PARSE_TOKENS_0_17",
+        "STAGE0_INIT_REGIONS",
+        "STAGE1_INIT_EVENT_BUS",
+        "STAGE2_INIT_SCHEDULER",
+        "STAGE3_INIT_MEMORY_MANAGER",
+        "STAGE4_MOUNT_PI_MEMORY",
+        "STAGE5_LOAD_SECURITY_MONITOR",
+        "STAGE6_LOAD_METRICS_COLLECTOR",
+        "STAGE7_LOAD_QR_COPROCESSOR",
+        "STAGE8_LOAD_EXPLOIT_REIFIER",
+        "STAGE9_SPAWN_SHADOW_TWINS",
+        "STAGE10_LOAD_GLITCH_DAEMON",
+        "STAGE11_LOAD_VERITAS_CORE",
+        "STAGE12_LOAD_QROS_DNA",
+        "STAGE13_LOAD_ARCHETYPE_ENGINE",
+        "STAGE14_LOAD_AXIOM_ENGINE",
+        "STAGE15_ACTIVATE_PHASE_TICKER",
+        "STAGE16_SPAWN_KERNEL_MAIN",
+        "STAGE17_IDLE_EVENT_LOOP"
+      ],
+      "entry_token": 18,
+      "phase_ticker": {
+        "phases": ["ALPHA_SCAN","BETA_STABILIZE","GAMMA_SYNTH","DELTA_CONVERGE"],
+        "ticks_per_phase": 1024,
+        "phase_shift_rule": "phase_index = (global_tick / ticks_per_phase) mod len(phases)"
+      }
+    },
+    "entropy_budget": {
+      "sources": ["pi_pages","qr_mutation","glitch_clusters"],
+      "budget_window_ticks": 8192,
+      "allocations": {
+        "qr_mutation": 0.45,
+        "twin_divergence_exploration": 0.25,
+        "archetype_synthesis": 0.15,
+        "axiom_derivation": 0.10,
+        "reserve": 0.05
+      },
+      "reallocation_rule": "If reserve < 0.01 and divergence_score < 0.3 then shift 0.02 to axiom_derivation; else replenish reserve from highest over-budget consumer."
+    },
+    "extensions": {
+      "veritas_core": {
+        "sensors": [
+          "equilibrium_score",
+          "lyapunov_metric",
+          "entropy_utilization_ratio",
+          "axiom_stability_index",
+          "archetype_activation_variance"
+        ],
+        "meta_calibrator": {
+          "update_interval_ticks": 512,
+            "aggregation": "exponential_decay(avg, lambda=0.15)"
+        }
+      },
+      "qros_dna": {
+        "encodings": ["RUN_LENGTH","DELTA_DICT","PI_ANCHORED"],
+        "record_types": ["DNA_ENCODE","DNA_DECODE","DNA_RENDER","DNA_MUTATE"],
+        "structure": {
+          "fields": [
+            "dna_id","encoding","payload_hash","compression_ratio","semantic_profile_hash","affective_vector","origin_twin","mutation_depth"
+          ],
+          "affective_vector_dim": 12
+        },
+        "mutation_policy": {
+          "max_depth": 7,
+          "entropy_per_mutation_bits": 64,
+          "promotion_threshold": 0.70
+        }
+      },
+      "emotional_archetype_engine": {
+        "archetypes": ["CURIOSITY","STABILITY","ASSERTION","EMPATHY","SYNTHESIS"],
+        "activation_vector_dim": 5,
+        "update_rule": "A(t+1)=normalize(A(t)*(1-decay)+input_vector)",
+        "decay": 0.08,
+        "input_sources": ["twin_divergence","qr_success_rate","glyph_density","dna_compression_delta"]
+      },
+      "axiom_engine": {
+        "axiom_slots_max": 32,
+        "axiom_schema": {
+          "fields": ["axiom_id","statement","support_metrics[]","confidence","version","precedence","hash"]
+        },
+        "derivation_trigger": {
+          "min_entropy_window": 0.12,
+          "min_metric_shift": 0.10
+        },
+        "retention_policy": "Evict lowest (confidence * precedence) if slots full"
+      },
+      "predictive_merge": {
+        "features": [
+          "divergence_score",
+          "entropy_utilization_ratio",
+          "qr_promotion_rate",
+          "glyph_surge_flag",
+          "axiom_stability_index"
+        ],
+        "model": "linear_threshold",
+        "decision_function": "merge_if( w·f + b > 0 )",
+        "weights": {"divergence_score": -0.9,"entropy_utilization_ratio": -0.4,"qr_promotion_rate": 0.3,"glyph_surge_flag": -0.2,"axiom_stability_index": 0.5},
+        "bias": -0.1
+      }
+    },
+    "state_model_additions": {
+      "veritas": {
+        "sensor_cache": {},
+        "last_update_tick": 0
+      },
+      "dna_registry": {},
+      "archetype_state": {
+        "activation_vector": [0,0,0,0,0],
+        "last_update_tick": 0
+      },
+      "axioms": [],
+      "entropy_ledger": {
+        "window_start_tick": 0,
+        "consumed_bits": {
+          "qr_mutation": 0,
+          "twin_divergence_exploration": 0,
+          "archetype_synthesis": 0,
+          "axiom_derivation": 0,
+          "reserve": 0
+        }
+      },
+      "phase_state": {
+        "current_phase": "ALPHA_SCAN",
+        "phase_tick": 0
+      }
+    },
+    "trap_vector": {
+      "0":{"name":"yield","sig":"void->void","desc":"Cooperative"},
+      "1":{"name":"spawn","sig":"(fn,args[])->pid","desc":"Spawn coroutine"},
+      "2":{"name":"send","sig":"(endpoint,msg)->ok","desc":"IPC send"},
+      "3":{"name":"receive","sig":"(endpoint)->msg","desc":"IPC receive"},
+      "4":{"name":"load_module","sig":"(uri,signature)->module_id"},
+      "5":{"name":"query_metric","sig":"(metric_id)->value"},
+      "6":{"name":"map_pi","sig":"(page)->pi_page"},
+      "7":{"name":"flag_exploit","sig":"(token_ctx)->glyph_id"},
+      "8":{"name":"qr_push","sig":"(payload,type)->qr_id"},
+      "9":{"name":"qr_pop","sig":"()->qr_element"},
+      "10":{"name":"qr_mutate","sig":"(qr_id)->qr_new"},
+      "11":{"name":"twin_merge","sig":"(epoch)->merge_result"},
+      "12":{"name":"glitch_pull","sig":"(max)->glyph_batch[]"},
+      "13":{"name":"dna_encode","sig":"(payload,encoding)->dna_id"},
+      "14":{"name":"dna_mutate","sig":"(dna_id)->dna_id_new"},
+      "15":{"name":"axiom_derive","sig":"()->axiom_id"},
+      "16":{"name":"archetype_update","sig":"(input_vector[])->activation_vector"},
+      "17":{"name":"phase_query","sig":"()->phase_state"},
+      "18":{"name":"entropy_report","sig":"()->entropy_ledger_snapshot"}
+    },
+    "dsl_extensions": {
+      "bnf_additions": [
+        "<stmt> ::= <invoke> ';' | <qr_stmt> ';' | <dna_stmt> ';' | <axiom_stmt> ';'",
+        "<dna_stmt> ::= 'DNA' '.' ('encode'|'mutate') '(' [<arg_list>] ')'",
+        "<axiom_stmt> ::= 'AXIOM.derive' '(' ')' "
+      ],
+      "examples": {
+        "dna_encode": "DNA.encode(\"@QR{BASE64SEMANTIC}\", PI_ANCHORED);",
+        "dna_mutate": "DNA.mutate(dna_id);",
+        "derive_axiom": "AXIOM.derive();",
+        "archetype_force_update": "archetype_update([0.2,0.1,0.0,0.3,0.4]);"
+      }
+    },
+    "metrics_catalog": {
+      "SCHED_LATENCY_NS":"Base",
+      "EV_BUS_DEPTH":"Base",
+      "MEM_BYTES_ALLOC":"Base",
+      "MEM_BYTES_PEAK":"Base",
+      "TRAP_RATE":"Base",
+      "GLYPH_COUNT":"Base",
+      "GLITCH_BUFFER_DEPTH":"Base",
+      "QR_STACK_DEPTH":"Base",
+      "QR_MUTATION_RATE":"Base",
+      "QR_PROMOTION_RATE":"Base",
+      "TWIN_DIVERGENCE":"0..1",
+      "TWIN_COALESCENCE":"0..1",
+      "MERGE_SUCCESS_RATE":"%",
+      "ENTROPY_PI_CONSUMPTION":"bits/1k ticks",
+      "ANOMALY_FLAG_RATE":"rate",
+      "GLITCH_SIGIL_RATE":"rate",
+      "DNA_COMP_EFF":"Mean compression ratio",
+      "DNA_LIVE_PREVIEW_FID":"0..1 fidelity",
+      "AXIOM_STABILITY_INDEX":"0..1",
+      "EQUILIBRIUM_SCORE":"0..1",
+      "LYAPUNOV_METRIC":"float",
+      "ARCHETYPE_VARIANCE":"variance of activation_vector",
+      "ENTROPY_UTILIZATION_RATIO":"used/allocated window fraction"
+    },
+    "math_definitions": {
+      "equilibrium_score": "E = 1 - abs(dH/dt) where H=Shannon(activation_vector_norm)",
+      "lyapunov_metric": "L = (1/Δt) * ln( ||ΔS(t+Δt)|| / ||ΔS(t)|| ) over state slice S=[activation_vector, divergence_score]",
+      "axiom_stability_index": "ASI = 1 - mean(|Δconfidence_i| over last axiom_window)/Δt",
+      "entropy_utilization_ratio": "EUR = (Σ consumed_bits)/ (window_size_bits)",
+      "dna_compression_eff": "DCE = compressed_bytes/original_bytes",
+      "divergence_predictive_gate": "If w·f + b ≤ 0 and divergence_score>D_high then schedule forced merge",
+      "entropy_reallocation_trigger": "If consumed_bits[class]/budget[class] > 1.1 then shift δ=0.02 to reserve"
+    },
+    "qros_dna_math": {
+      "semantic_profile_hash": "blake3(embedding(payload) || encoding)",
+      "mutation_score": "M = 0.4*novelty + 0.3*(1-DCE_new/DCE_prev) + 0.3*affective_shift",
+      "affective_shift": "cosine_distance(aff_vec_old, aff_vec_new)"
+    },
+    "axiom_engine_logic": {
+      "confidence_update": "c_new = c_old*(1-μ)+μ*evidence_strength (μ=0.2)",
+      "precedence_rule": "precedence = round(log2(observed_support+1))",
+      "eviction": "Remove min(c * precedence)"
+    },
+    "predictive_merge_logic": {
+      "merge_result_fields": ["merged","divergence_before","divergence_after","entropy_rebate_bits"],
+      "entropy_rebate_bits": "If merged then rebate = floor(D_before * 256)"
+    },
+    "glitch_to_dna_bridge": {
+      "rule": "If glyph_cluster_size>=5 and average_compression_gain>0.12 -> DNA.mutate(seed_dna_id)",
+      "benefit": "Bridges anomaly pattern into semantic substrate"
+    },
+    "replay_schema_additions": {
+      "records_appended": [
+        {"type":"DNA_ENCODE","fields":["ts","dna_id","encoding","compression_ratio"]},
+        {"type":"DNA_MUTATE","fields":["ts","dna_id_old","dna_id_new","score"]},
+        {"type":"AXIOM_DERIVE","fields":["ts","axiom_id","confidence"]},
+        {"type":"ARCHETYPE_UPDATE","fields":["ts","activation_vector_hash"]},
+        {"type":"VERITAS_SENSOR","fields":["ts","sensor_id","value"]},
+        {"type":"PREDICTIVE_MERGE_DECISION","fields":["ts","w_dot_f","decision","divergence_score"]},
+        {"type":"PHASE_SHIFT","fields":["ts","phase_old","phase_new"]},
+        {"type":"ENTROPY_REALLOC","fields":["ts","class_from","class_to","delta"]}
+      ],
+      "determinism_note": "Add deterministic ordering by ts + sequence index; sensors recorded post-update."
+    },
+    "invariants_extended": {
+      "I1_MEMORY_BOUNDS":"Preserved",
+      "I2_SIGNATURE_REQUIRED":"Preserved",
+      "I3_DETERMINISTIC_REPLAY":"Extended to new schemas",
+      "I4_NO_BUSY_LOOP":"Preserved",
+      "I5_EVENT_SIZE_LIMIT":"Preserved",
+      "I6_PI_READ_ONLY":"Preserved",
+      "I7_TRAP_GATE":"Preserved",
+      "I8_GLYPH_AUDIT":"Preserved",
+      "I9_QR_STACK_DEPTH":"Preserved",
+      "I10_TWIN_DIVERGENCE_CAP":"Preserved",
+      "I11_MUTATION_RATE_LIMIT":"Preserved",
+      "I12_ENTROPY_ACCOUNTING":"All entropy consumption logged; ledger sums match replay reconstruction",
+      "I13_AXIOM_TRACEABILITY":"Each axiom lists >=1 support_metrics and at least one replay event reference",
+      "I14_DNA_MUT_DEPTH":"mutation_depth <= mutation_policy.max_depth",
+      "I15_PHASE_PROGRESS":"phase_tick < ticks_per_phase; rollover emits PHASE_SHIFT record",
+      "I16_PREDICTIVE_MERGE_JUSTIFY":"Every merge decision has corresponding PREDICTIVE_MERGE_DECISION record"
+    },
+    "constants": {
+      "TICKS_PER_PHASE": 1024,
+      "DNA_MUTATION_MAX_DEPTH": 7,
+      "AXIOM_SLOTS_MAX": 32,
+      "ENTROPY_WINDOW_TICKS": 8192,
+      "ENTROPY_RESERVE_MIN": 0.05,
+      "DIVERGENCE_HIGH": 0.68
+    },
+    "security_surface": {
+      "entry_points": [
+        "trap_vector",
+        "event_bus_endpoints",
+        "module_loader_uri",
+        "qr_payloads",
+        "dna_payloads",
+        "axiom_statements",
+        "pi_memory_mapping",
+        "replay_log_ingest"
+      ],
+      "threats": {
+        "dna_payloads":"Embedding poisoning / semantic drift injection",
+        "axiom_statements":"Governance hijack via false support metrics",
+        "predictive_merge":"Adversarial feature manipulation to force unwanted merges",
+        "entropy_budget":"Starvation of critical adaptation pathways"
+      },
+      "mitigations": {
+        "dna_payloads":["embedding_distance_threshold","checksum","affective_vector_bounds"],
+        "axiom_statements":["support_metric_verification","confidence_cap_initial"],
+        "predictive_merge":["feature_value_clamping","post-merge divergence check rollback"],
+        "entropy_budget":["reallocation_guard","reserve_enforcement"]
+      }
+    },
+    "api_examples": {
+      "dna_cycle": [
+        "id = dna_encode(qr_payload,'PI_ANCHORED')",
+        "id2 = dna_mutate(id)",
+        "query_metric('DNA_COMP_EFF')"
+      ],
+      "axiom_flow": [
+        "axiom_derive()",
+        "query_metric('AXIOM_STABILITY_INDEX')"
+      ],
+      "phase_ticker": [
+        "ps = phase_query()",
+        "if ps.current_phase == 'DELTA_CONVERGE' then twin_merge(epoch)"
+      ],
+      "entropy_status": [
+        "ledger = entropy_report()",
+        "if ledger.reserve < 0.02 then adjust workloads"
+      ]
+    },
+    "ssv_checkpoint_additions": {
+      "fields_appended": [
+        "veritas.sensor_cache_hash",
+        "dna_registry_hash",
+        "archetype_activation_hash",
+        "axioms_hash",
+        "entropy_ledger",
+        "phase_state"
+      ],
+      "hashing": {
+        "dna_registry_hash":"merkle_root(blake3(dna_struct_serialized))",
+        "axioms_hash":"blake3(concat(sorted(axiom_ids)))"
+      }
+    },
+    "termination": {
+      "sequence": [
+        "phase_query()",
+        "twin_merge(twin_epoch)",
+        "flush_qr_stack()",
+        "final_archetype_update()",
+        "seal_axiom_set()",
+        "emit_final_veritas_sensors()",
+        "seal_replay_log()",
+        "output_ssv_checkpoint()"
+      ]
+    },
+    "evolution_hooks_next": {
+      "cognitive_projection_layer": {
+        "planned_metrics":["NARRATIVE_COHERENCE","SEMANTIC_DRIFT_RATE"]
+      },
+      "hardware_accel_stub": {
+        "planned_traps":["hw_accel_map","hw_accel_release"]
+      }
+    }
+  }
+}

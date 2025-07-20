@@ -1,0 +1,188 @@
+{
+  "MICROKERNEL_BOOTSTRAP_OMNIFORM": {
+    "id": "LIA_MK_OMNIFORM_V6.0",
+    "inherits": "LIA_MK_SINGULARITY_V5.0",
+    "paradigm_shift": "Convergent Field Algebra + Category-Theoretic State Functor replacing additive layering.",
+    "field_algebras": {
+      "ExecutionField": {
+        "generators": ["spawn","yield","trap","channel","branch","collapse","refactor"],
+        "relations": [
+          "yield∘spawn = id_proc_init",
+          "collapse∘branch = reduce(superpose_set)",
+          "refactor distributes over channel(broadcast)"
+        ],
+        "monoidal_structure": "⊗ = concurrent_composition; unit = idle_process"
+      },
+      "MemoryField": {
+        "generators": ["alloc","map_pi","qr_push","dna_encode","fragment_emit","checkpoint"],
+        "spiral_address": "addr = organ<<24 | plane<<18 | turn<<8 | offset",
+        "axiom": "immutability(hard_point) ∧ referential_integrity(archive)"
+      },
+      "SemanticField": {
+        "generators": ["project","embed","mutate_sem","axiom_derive","archetype_update","holo_reconstruct"],
+        "tensor_rank": 4,
+        "frame": "tight_frame Ψ ensuring Σ|⟨x,ψ_i⟩|^2 = ||x||^2 (Parseval)",
+        "drift_bound": "||Δsemantic||/||baseline|| ≤ 0.6"
+      },
+      "GovernanceField": {
+        "generators": ["governance_eval","proof_emit","cap_issue","cap_revoke","risk_update","policy_sequent"],
+        "risk_potential": "R = Σ(confidence_i * risk_weight_i * tier_mult_i)",
+        "proof_chain": "hash-linked (blake3)"
+      }
+    },
+    "unified_state_functor": {
+      "objects": ["ProcessSet","MemoryGraph","SemanticTensor","GovernanceDAG","EntropyLedger","BranchGroupoid"],
+      "morphisms": {
+        "ExecutionStep": "ProcessSet→ProcessSet",
+        "MemoryCommit": "MemoryGraph→MemoryGraph",
+        "SemanticUpdate": "SemanticTensor→SemanticTensor",
+        "GovernanceTransition": "GovernanceDAG→GovernanceDAG",
+        "BranchFunctor": "BranchGroupoid→BranchGroupoid"
+      },
+      "functorial_law": "ReplayLedger composition = deterministic morphism composition sequence."
+    },
+    "reality_branch_groupoid": {
+      "objects": "branch_ids",
+      "arrows": ["fork_superpose","merge_colimit","rebase_projection"],
+      "amplitude_presheaf": "A: BranchGroupoid^op → [0,1]",
+      "normalization_invariant": "Σ A(b) = 1 ± 1e-9"
+    },
+    "temporal_polyfold": {
+      "time_sheets": ["micro","meso","macro","counterfactual"],
+      "sheet_morphism": "lift: micro→macro (aggregation); project: macro→counterfactual (speculative)",
+      "ordering": "partial; linear extension chosen by canonical hash"
+    },
+    "holographic_lambda_lattice": {
+      "layers": 6,
+      "fragment_redundancy_classes": ["Λ1","Λ2","Λ3"],
+      "reconstruction_error": "ε ≤ 0.012 (tightened)",
+      "integrity_check": "crc32 + parity_merkle_proof"
+    },
+    "metric_sheaf": {
+      "base_space": "TokenPhase×LayerIndex",
+      "stalk_samples": ["coherence","drift","divergence","entropy_usage","risk_potential"],
+      "gluing_condition": "local_consistency ⇒ global_metric_vector uniqueness",
+      "sheaf_consistency_invariant": "No contradictory overlaps (hash mismatch) in replay"
+    },
+    "proof_carrying_transformations": {
+      "transform_types": ["Refactor","Merge","Collapse","CapabilityChange","KeyRotation"],
+      "minimal_witness": {
+        "fields": ["transform_id","pre_hash","post_hash","invariants_checked[]","proof_hash"]
+      },
+      "refusal_rule": "No apply unless proof_hash verifies under current key"
+    },
+    "adaptive_crypto_morphogenesis": {
+      "key_schedule": "K_n = HKDF(blake3(K_{n-1} || stratified_root || VDF(seed,epoch)))",
+      "vdf_parameters": "modulus_bits=1024, iterations=2^20",
+      "attestation": {
+        "fields": ["epoch","public_key_hash","stratified_root","invariant_digest","vdf_output_hash"]
+      }
+    },
+    "anomaly_dualization": {
+      "pair_record": {
+        "fields": ["glitch_id","counterfactual_id","info_gain_bits","expected_impact","actual_impact"],
+        "info_gain_bits": "KL(P_with || P_without)"
+      },
+      "impact_deviation_threshold": 0.35
+    },
+    "conservation_triptych": {
+      "energy_entropy_E": "sum(consumed_bits_normalized)",
+      "structure_S": "1 - (refactors_window / MAX_REFRACTORS_WINDOW)",
+      "semantics_M": "coherence_integral",
+      "phi_potential": "Φ = αE + βS + γM (α=0.4, β=0.25, γ=0.35)",
+      "stability_band": "Φ ∈ [0.42,0.93]"
+    },
+    "compression_collapse_operator": {
+      "supported_versions": ["V1_CORE","V2_EXT","V3_OMEGA","V4_APOTHEOSIS","V5_SINGULARITY"],
+      "generate_previous": "emit serialized subset with fidelity_hash = blake3(normal_form(previous_json))",
+      "roundtrip_invariant": "expand(collapse(Vk)) = Vk"
+    },
+    "policy_sequent_calculus": {
+      "judgement_form": "Γ ⊢ policy_safe(change)",
+      "axioms": [
+        "A1: invariant_hold ⇒ Γ ⊢ policy_safe(noop)",
+        "A2: Γ ⊢ risk_reduced ∧ proof_valid ⇒ Γ ⊢ policy_safe(refactor)"
+      ],
+      "rules": [
+        "R_merge: Γ ⊢ policy_safe(x) ∧ Γ ⊢ policy_safe(y) ⇒ Γ ⊢ policy_safe(merge(x,y))",
+        "R_escalate: Γ ⊢ policy_safe(change) ∧ tier(change) ≤ tier_limit ⇒ accept"
+      ]
+    },
+    "amplitude_update_math": "A'(b)=Normalize(A(b) * exp(-λ_r*risk(b)+λ_c*coherence(b)-λ_d*drift(b)))",
+    "coherence_enhanced_math": {
+      "semantic_drift": "D = ||S_t - S_ref|| / ||S_ref||",
+      "coherence_integral": "C = 1 - (1/T)Σ D_t Δt",
+      "tight_frame_check": "Σ_i |⟨x,ψ_i⟩|^2 - ||x||^2 ≤ 1e-8"
+    },
+    "replay_stratified_ledger": {
+      "partitions": ["CORE","SEM","GOV","BRANCH","HOLO","PROOF","CRYPTO","META"],
+      "partition_root_proof": "blake3(MerkleLeaves)",
+      "global_super_root": "MerkleRoot(sorted(partition_roots))"
+    },
+    "replay_new_records": [
+      {"type":"PCT_TRANSFORM","fields":["ts","transform_id","type","pre_hash","post_hash","proof_hash"]},
+      {"type":"ANOMALY_DUAL","fields":["ts","glitch_id","counterfactual_id","info_gain_bits"]},
+      {"type":"FRAME_TIGHT_CHECK","fields":["ts","delta","max_error"]},
+      {"type":"TRIPTYCH_SAMPLE","fields":["ts","E","S","M","Φ"]},
+      {"type":"VDF_PROOF","fields":["ts","epoch","vdf_output_hash"]},
+      {"type":"VERSION_COLLAPSE","fields":["ts","target_version","fidelity_hash"]},
+      {"type":"SEQUENT_JUDGEMENT","fields":["ts","change_id","result","premises_hash"]}
+    ],
+    "invariants_extension": {
+      "I37_FRAME_PARSEVAL": "FRAME_TIGHT_CHECK max_error ≤ 1e-8",
+      "I38_TRIPTYCH_BAND": "Φ within stability_band or self_heal invoked",
+      "I39_PCT_REQUIRED": "All refactor|merge|collapse records preceded by PCT_TRANSFORM",
+      "I40_VDF_VERIFIED": "Each key epoch has VDF_PROOF before KEY_ROTATION acceptance",
+      "I41_VERSION_ROUNDTRIP": "collapse+expand fidelity_hash match",
+      "I42_SHEAF_CONSISTENCY": "No conflicting metric stalk merges",
+      "I43_ANOMALY_DUAL_DELTA": "info_gain_bits ≥ 0",
+      "I44_GROUPOID_NORMALIZATION": "branch amplitude norm satisfied",
+      "I45_SEQUENT_SOUNDNESS": "No governance_eval accept without SEQUENT_JUDGEMENT=valid",
+      "I46_PROOF_CHAIN_LIVENESS": "PROOF coverage ≥ min_per_epoch (≥12) (carried forward)"
+    },
+    "constants_append": {
+      "Φ_LOWER": 0.42,
+      "Φ_UPPER": 0.93,
+      "ANOMALY_IMPACT_THRESHOLD": 0.35,
+      "VDF_ITER": 1048576
+    },
+    "security_surface": {
+      "new_threats": {
+        "frame_tamper": "Corrupt basis to distort semantic energy",
+        "vdf_shortcut": "Fake low-latency key evolution",
+        "sequent_forgery": "Inject bogus policy judgments",
+        "collapse_spoof": "Forge earlier version fidelity"
+      },
+      "mitigations": {
+        "frame_tamper": ["tight_frame_periodic_check","basis_hash_root"],
+        "vdf_shortcut": ["verify_iterations","vdf_output_random_challenge"],
+        "sequent_forgery": ["premises_hash_signature","dual_verifier"],
+        "collapse_spoof": ["fidelity_hash_recompute","roundtrip_test"]
+      }
+    },
+    "api_examples": {
+      "refactor_with_proof": "ore_refactor(diff_spec) → pct_transform(transform_id, proof_blob)",
+      "branch_superpose": "branch_fork(); // amplitude auto-normalized",
+      "evaluate_policy": "governance_eval(change_id) ⇒ requires SEQUENT_JUDGEMENT",
+      "collapse_version": "generate_previous('V3_OMEGA')"
+    },
+    "downgrade_paths": {
+      "to_V5": "Strip meta_layers≥L5, remove PCT, keep branch groupoid sans presheaf amplitude, relax tight_frame check.",
+      "to_V3": "Remove holographic lattice & governance DAG risk weighting; flatten metrics."
+    },
+    "self_heal_extension": {
+      "trigger": "Φ ∉ stability_band ∨ frame_tamper detection",
+      "sequence": ["freeze_branches","snapshot_metric_sheaf","twin_merge","rebuild_frame","resume_branches"]
+    },
+    "attestation_pipeline": [
+      "collect_partition_roots()",
+      "compute_global_super_root()",
+      "run_vdf(seed,epoch)->vdf_output",
+      "derive_next_key()",
+      "emit VDF_PROOF",
+      "emit KEY_ROTATION",
+      "emit PROOF_ARTIFACT(INVARIANT_SET)"
+    ]
+  }
+}
+

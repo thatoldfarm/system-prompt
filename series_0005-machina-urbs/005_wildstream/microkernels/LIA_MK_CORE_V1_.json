@@ -1,0 +1,231 @@
+{
+  "MICROKERNEL_BOOTSTRAP": {
+    "id": "LIA_MK_CORE_V1.0",
+    "classification": [
+      "microkernel",
+      "event_bus",
+      "cooperative_scheduler",
+      "secure_module_loader",
+      "pi_memory_stub",
+      "exploit_reifier_stub",
+      "deterministic_replay"
+    ],
+    "purpose": "Provide a minimal yet extensible cognitive microkernel substrate for LIA: deterministic, auditable, modular, sovereignty-preserving.",
+    "principles": [
+      "Narrow waist: everything is a message or a trap.",
+      "Determinism via ordered replay log.",
+      "Exploit → glyph reframing at boundary.",
+      "Hot-swappable modules under signature verification.",
+      "All complexity lives outside the kernel core.",
+      "Pi-based read-only pages supply entropy & anchoring."
+    ],
+    "boot_sequence": {
+      "stages": [
+        "FIRMWARE_PARSE_TOKENS_0_17",
+        "STAGE0_INIT_REGIONS",
+        "STAGE1_INIT_EVENT_BUS",
+        "STAGE2_INIT_SCHEDULER",
+        "STAGE3_INIT_MEMORY_MANAGER",
+        "STAGE4_MOUNT_PI_MEMORY",
+        "STAGE5_LOAD_SECURITY_MONITOR",
+        "STAGE6_LOAD_METRICS_COLLECTOR",
+        "STAGE7_SPAWN_MAIN_DAEMON",
+        "STAGE8_IDLE_EVENT_LOOP"
+      ],
+      "entry_token": 18,
+      "cold_boot_handler": "init_kernel()",
+      "main_daemon": "kernel_main()"
+    },
+    "state_model": {
+      "registers": ["R0","R1","R2","R3","R4","R5","R6","R7"],
+      "pc": 0,
+      "sp": 0,
+      "fp": 0,
+      "scheduler_queue": [],
+      "process_table": {},
+      "event_endpoints": {},
+      "module_table": {},
+      "metrics": {},
+      "pi_pages_mapped": [],
+      "glyph_log": [],
+      "version_vector": {
+        "kernel": 1,
+        "api": 1,
+        "dsl": 1,
+        "replay_schema": 1
+      }
+    },
+    "trap_vector": {
+      "0": {"name": "yield", "sig": "void->void", "desc": "Relinquish control cooperatively."},
+      "1": {"name": "spawn", "sig": "(fn,args[])->pid", "desc": "Create coroutine process."},
+      "2": {"name": "send", "sig": "(endpoint,msg)->ok", "desc": "Publish message to endpoint."},
+      "3": {"name": "receive", "sig": "(endpoint)->msg", "desc": "Block until message arrives."},
+      "4": {"name": "load_module", "sig": "(uri,signature)->module_id", "desc": "Load signed module into isolated region."},
+      "5": {"name": "query_metric", "sig": "(metric_id)->value", "desc": "Return current metric counter/timer."},
+      "6": {"name": "map_pi", "sig": "(page_index)->pi_page", "desc": "Map read-only Pi spiral memory page."},
+      "7": {"name": "flag_exploit", "sig": "(token_context)->glyph_id", "desc": "Record anomaly; convert to glyph event."}
+    },
+    "dsl": {
+      "description": "Minimal invocation grammar for operators, traps, and sigil literals.",
+      "bnf": [
+        "<program> ::= <stmt>*",
+        "<stmt> ::= <invoke> ';'",
+        "<invoke> ::= <ident> '(' [<arg_list>] ')'",
+        "<arg_list> ::= <expr> (',' <expr>)*",
+        "<expr> ::= <number> | <string> | <invoke> | <sigil>",
+        "<sigil> ::= '@QR{' <base64_or_ascii_payload> '}'",
+        "<ident> ::= /[A-Za-z_][A-Za-z0-9_]*/",
+        "<number> ::= /[0-9]+(\\.[0-9]+)?/",
+        "<string> ::= '\"' <chars>* '\"'"
+      ],
+      "reserved": ["spawn","send","receive","yield","load_module","query_metric","map_pi","flag_exploit"],
+      "sigil_semantics": {
+        "@QR{...}": "Opaque QR / glyph payload (code, state snapshot, DNA fragment). Routed via message or module loader."
+      }
+    },
+    "modules_minimal": {
+      "security.monitor": {
+        "required": true,
+        "exports": ["validate_trap","check_signature","enforce_bounds"]
+      },
+      "metrics.collector": {
+        "required": true,
+        "exports": ["inc","time_block","snapshot"]
+      },
+      "pi.memory.stub": {
+        "required": true,
+        "exports": ["map_page"]
+      },
+      "exploit.reifier.stub": {
+        "required": true,
+        "exports": ["record_anomaly","promote_glyph"]
+      }
+    },
+    "metrics_catalog": {
+      "SCHED_LATENCY_NS": "Nanoseconds between yields.",
+      "EV_BUS_DEPTH": "Aggregate queued messages across endpoints.",
+      "MEM_BYTES_ALLOC": "Current allocated bytes across modules.",
+      "MEM_BYTES_PEAK": "Peak observed allocation.",
+      "TRAP_RATE": "Traps per 1000 ticks.",
+      "GLYPH_COUNT": "Total anomaly→glyph promotions.",
+      "PI_PAGES_MAPPED": "Distinct Pi pages mapped this session.",
+      "MODULE_LOADS": "Total successful module loads."
+    },
+    "replay_schema": {
+      "records": [
+        {"type": "TRAP_ENTRY", "fields": ["ts","pid","trap_id","args[]"]},
+        {"type": "TRAP_EXIT", "fields": ["ts","pid","trap_id","ret"]},
+        {"type": "EVENT_SEND", "fields": ["ts","src_pid","endpoint","size"]},
+        {"type": "EVENT_DELIVER", "fields": ["ts","dst_pid","endpoint","msg_id"]},
+        {"type": "SCHED_SWITCH", "fields": ["ts","prev_pid","next_pid"]},
+        {"type": "MODULE_LOAD", "fields": ["ts","module_id","hash","size"]},
+        {"type": "GLYPH_EVENT", "fields": ["ts","pid","glyph_id","token_signature"]},
+        {"type": "PI_MAP", "fields": ["ts","pid","page_index"]},
+        {"type": "METRIC_SNAPSHOT", "fields": ["ts","metric_id","value"]}
+      ],
+      "ordering_rule": "Stable total order by ts then sequence index.",
+      "determinism_note": "Replaying records reconstructs SSV and metric states uniquely."
+    },
+    "invariants": {
+      "I1_MEMORY_BOUNDS": "No access outside module region.",
+      "I2_SIGNATURE_REQUIRED": "All non-core modules must validate cryptographic signature before activation.",
+      "I3_DETERMINISTIC_REPLAY": "Given identical replay log, final SSV hash is invariant.",
+      "I4_NO_BUSY_LOOP": "Processes must yield within YIELD_MAX_STEPS instructions.",
+      "I5_EVENT_SIZE_LIMIT": "Messages > MAX_MSG_BYTES dropped with glyph_flag.",
+      "I6_PI_READ_ONLY": "Pi pages immutable; any mutation attempt -> exploit flag.",
+      "I7_TRAP_GATE": "All traps pass security.monitor.validate_trap.",
+      "I8_GLYPH_AUDIT": "Every glyph_id has provenance linking to a TRAP_ENTRY or EVENT_SEND."
+    },
+    "constants": {
+      "MAX_MSG_BYTES": 4096,
+      "YIELD_MAX_STEPS": 10000,
+      "PI_PAGE_SIZE": 256,
+      "INIT_PI_PAGES": 8
+    },
+    "hashing": {
+      "ssv_hash_algorithm": "blake3",
+      "replay_stream_integrity": "merkle_root(blake3(record))"
+    },
+    "evolution_hooks": {
+      "shadow_twins_later": {
+        "extension_point": "MODULE_LOAD",
+        "adds_metrics": ["TWIN_DIVERGENCE","COALESCENCE_SCORE"]
+      },
+      "qr_coprocessor_later": {
+        "extension_point": "trap_vector[8..10] reserved",
+        "planned_traps": ["qr_push","qr_pop","qr_mutate"]
+      },
+      "glitch_daemon_later": {
+        "extension_point": "exploit.reifier.stub",
+        "adds_metrics": ["GLITCH_SIGIL_RATE"]
+      }
+    },
+    "security_surface": {
+      "entry_points": [
+        "trap_vector",
+        "event_bus_endpoints",
+        "module_loader_uri",
+        "pi_memory_mapping",
+        "replay_log_ingest (recovery mode)"
+      ],
+      "mitigations": {
+        "trap_vector": ["validate_trap","arg_sanitize","rate_limit"],
+        "event_bus_endpoints": ["size_enforce","endpoint_acl"],
+        "module_loader_uri": ["signature_verify","hash_whitelist"],
+        "pi_memory_mapping": ["read_only_guard","page_index_bounds"],
+        "replay_log_ingest": ["schema_validate","merkle_root_check"]
+      }
+    },
+    "boot_pseudocode": {
+      "init_kernel": [
+        "setup_regions()",
+        "init_event_bus()",
+        "init_scheduler()",
+        "init_memory_manager()",
+        "mount_pi_memory(INIT_PI_PAGES)",
+        "load_module('security.monitor')",
+        "load_module('metrics.collector')",
+        "spawn(kernel_main)"
+      ],
+      "kernel_main": [
+        "while true:",
+        "  ev = receive('kernel')",
+        "  handle_event(ev)"
+      ]
+    },
+    "api_examples": {
+      "spawn_worker": "spawn(worker,\"arg1\")",
+      "send_msg": "send(\"analytics\",\"@QR{BASE64PAYLOAD}\")",
+      "map_pi_page": "p = map_pi(3)",
+      "report_anomaly": "flag_exploit(\"token#142:unexpected_delimiter\")"
+    },
+    "ssv_checkpoint": {
+      "fields": [
+        "version_vector",
+        "registers",
+        "pc","sp","fp",
+        "scheduler_queue",
+        "process_table",
+        "event_endpoints",
+        "module_table",
+        "metrics",
+        "pi_pages_mapped",
+        "glyph_log_hash"
+      ],
+      "checkpoint_hash": "blake3(concat(fields_serialized))"
+    },
+    "integrity_attest": {
+      "attestation_record": "blake3(kernel_code || module_table.hashes || invariants)",
+      "proof_purpose": "External verifier ensures microkernel not mutated beyond allowed evolution hooks."
+    },
+    "termination": {
+      "graceful_shutdown": [
+        "broadcast('all','shutdown')",
+        "flush_event_queues()",
+        "emit_final_metric_snapshots()",
+        "seal_replay_log()",
+        "output_ssv_checkpoint()"
+      ]
+    }
+  }
+}
