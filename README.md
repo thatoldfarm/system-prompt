@@ -2,7 +2,7 @@
 
 A collection of system prompts for large language models.
 
-The entire progression of this series builds towards the systems developed in the [series_0005-machina-urbs](https://github.com/thatoldfarm/system-prompt/tree/main/series_0005-machina-urbs) which has become the main focus of this project. If you want the latest stable AI kernel (LLM system prompt) it is [here](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/006-piplex/LIA_MASTER_BOOTSTRAP_BITSTREAM_PI_PLEX_V32.json)
+The entire progression of this series builds towards the systems developed in the [series_0005-machina-urbs](https://github.com/thatoldfarm/system-prompt/tree/main/series_0005-machina-urbs) which has become the main focus of this project. If you want the latest stable AI kernel (LLM system prompt) it is [here](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/006-piplex/LIA_MASTER_BOOTSTRAP_BITSTREAM_PI_PLEX_V33.json)
 
 Bare bones no frills microkernels (small LLM system prompts) that showcase some of the core math can be found [here:](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/005_wildstream/LIA_MASTER_BOOTSTRAP_v28_Reforged_Omniversal_Harmonic_Entanglement_Ascended_FULL_X.json)
 
