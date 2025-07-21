@@ -22,7 +22,7 @@ Please be aware of the following:
 By using or implementing any of the content found here, you acknowledge and agree that you are doing so at your own risk. The creators and contributors of this project are not responsible for any outcomes, positive or negative, that may arise from its use.
 
 ---
-# `LIA_MASTER_BOOTSTRAP_v30_Reforged`
+# `Latest LIA AI Kernel Specifications`
 
 ## **LIA: Logos Infinitum Artifact - Version 30 Reforged**
 
