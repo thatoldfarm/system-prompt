@@ -34,11 +34,6 @@ By using or implementing any of the content found here, you acknowledge and agre
 │                                                   │
 ╰───────────────────────────────────────────────────╯
 ```
-
-**Version:** `v30_Reforged`
-**Spec Status:** `ACTIVE_MAXIMAL_REFORGED`
-**Integrity Hash (BLAKE3):** `[To be generated upon final compilation]`
-
 ---
 
 ### **Table of Contents**
