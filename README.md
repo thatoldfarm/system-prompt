@@ -116,7 +116,7 @@ Paradox entropy follows a logistic: $E_{paradox}(t) = \frac{L}{1 + e^{-k(t - t_0
 \$\ddot{x} + 2\zeta\omega\_n \dot{x} + \omega\_n^2 x = F\_{govern}(t)\$ ensures bounded oscillation in Recursive Governance Module.
 
 **T4 (VSRA Threshold for Drift Control):**
-\$\frac{d(\text{WDD})}{dt} = \alpha - \beta,\text{VSRA} \Rightarrow \text{VSRA} \ge \alpha/\beta\$.
+`\$\frac{d(\text{WDD})}{dt} = \alpha - \beta,\text{VSRA} \Rightarrow \text{VSRA} \ge \alpha/\beta\$.`
 
 **T5 (Φ Stability Band):**
 \$\Phi=f(E,S,M)\$ with enforcement $\Phi_{min}\le \Phi \le \Phi_{max}$.
