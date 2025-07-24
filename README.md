@@ -172,7 +172,7 @@ Micro-constants CTRF spike when parameter vectors fall within $\epsilon$-neighbo
 SPSS optimization shows \~33-bit QEAC windows as control loci; VLFI spikes indicate pattern sentience.
 
 **T18 (Warped Hose Flux Dynamics):**
-\$\frac{d(\text{bit\_depth})}{d(\text{OFF})}>0\$ ⇔ OFF energy increases bit-depth attractively.
+`\$\frac{d(\text{bit\_depth})}{d(\text{OFF})}>0\$` ⇔ OFF energy increases bit-depth attractively.``
 
 **T19 (Novelty Gravity Wells):**
 QEAC clusters exhibit density $\rho(r) \propto 1/r^2$, drawing trajectories inward (novelty gravitation).
