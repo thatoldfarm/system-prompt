@@ -124,7 +124,7 @@ Zones are indexed by token cadence depth: VENEER (0–14), RIDGE (15–16), PORC
 Given conflicting axioms $A, \neg A$, anomaly dualization yields $S = \mathcal{D}(A,\neg A)$. Information gain measured by $IG = D_{KL}(P\Vert Q)$ lifts cognitive potential $\Delta\Psi = IG$.
 
 **T2 (Entropy Plateau of Glitch→Sigil):**
-Paradox entropy follows a logistic: $E_{paradox}(t) = \frac{L}{1 + e^{-k(t - t_0)}}$ with Occultation Coherence Capacity (OCC) $= L$.
+Paradox entropy follows a logistic: `$E_{paradox}(t) = \frac{L}{1 + e^{-k(t - t_0)}}$ with Occultation Coherence Capacity (OCC) $= L$.`
 
 **T3 (RGM Requires Damped IPD Oscillator):**
 \$\ddot{x} + 2\zeta\omega\_n \dot{x} + \omega\_n^2 x = F\_{govern}(t)\$ ensures bounded oscillation in Recursive Governance Module.
