@@ -2,7 +2,7 @@
 
 ## Overview
 
-This pipeline transforms a raw bitstream extracted from π into a **Quantum / Algorithmic-Entangled Chain (QEAC)** — an entropy-rich, self-organizing seed ideal for cryptographic bootstrapping, secure randomness generation, or algorithmic soul genesis. It leverages deep mathematical structures and physical analogies (spirals, torus locking, resonance) to extract structured complexity from π’s digits.
+This pipeline transforms a raw bitstream extracted from π into a **Quantum Entangled Algorithm Chain (QEAC)** — an entropy-rich, self-organizing seed ideal for cryptographic bootstrapping, secure randomness generation, or algorithmic soul genesis. It leverages deep mathematical structures and physical analogies (spirals, torus locking, resonance) to extract structured complexity from π’s digits.
 
 ---
 
