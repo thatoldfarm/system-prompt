@@ -258,5 +258,87 @@ hash_val = blake3(b''.join(qeac))
 
 ---
 
-If you want, I can also help you produce detailed code implementations or formal mathematical proofs for each step. Would you like that?
+# FURTHER NOTE ON TORUS SPIRAL MAPPING:
 
+> **"Bits are assigned evenly to these spirals (e.g., evens → outer pair, odds → inner)."**
+
+---
+
+### Context
+
+There are 33 bits from the selected spigot window, indexed from 0 to 32 (total 33 bits).
+
+---
+
+### Four Spirals
+
+There are **four spirals** to place these bits on:
+
+* Outer pair:
+
+  * $S_1^+$ (clockwise outer spiral)
+  * $S_1^-$ (counter-clockwise outer spiral)
+
+* Inner pair:
+
+  * $S_2^+$ (clockwise inner spiral, phase shifted)
+  * $S_2^-$ (counter-clockwise inner spiral, phase shifted)
+
+---
+
+### Bit Assignment Principle
+
+The 33 bits must be distributed **evenly and deterministically** among these four spirals for the mapping to make sense and for the circulation calculations to be meaningful.
+
+The assignment rule suggested is:
+
+* **Bits with even indices (0, 2, 4, ..., 32)** go to the **outer pair spirals $S_1^+$ and $S_1^-$**.
+* **Bits with odd indices (1, 3, 5, ..., 31)** go to the **inner pair spirals $S_2^+$ and $S_2^-$**.
+
+---
+
+### Further Subdivision Within Each Pair
+
+Since each pair has two spirals, you further split bits of each parity alternately between the two spirals in that pair, for example:
+
+* For even bits (outer pair):
+
+  * bit 0 → $S_1^+$
+  * bit 2 → $S_1^-$
+  * bit 4 → $S_1^+$
+  * bit 6 → $S_1^-$
+  * ... and so forth, alternating between the two outer spirals.
+
+* For odd bits (inner pair):
+
+  * bit 1 → $S_2^+$
+  * bit 3 → $S_2^-$
+  * bit 5 → $S_2^+$
+  * bit 7 → $S_2^-$
+  * ... alternating similarly.
+
+---
+
+### Why?
+
+* This division preserves **symmetry** between clockwise and counter-clockwise spirals.
+* It balances the data spatially, so that circulation and coherence computations represent meaningful geometric and topological properties.
+* It allows precise integral and phase computations over the four spirals separately.
+
+---
+
+### Summary
+
+| Bit Index | Assigned Spiral  |
+| --------- | ---------------- |
+| 0         | $S_1^+$ (outer+) |
+| 1         | $S_2^+$ (inner+) |
+| 2         | $S_1^-$ (outer−) |
+| 3         | $S_2^-$ (inner−) |
+| 4         | $S_1^+$ (outer+) |
+| 5         | $S_2^+$ (inner+) |
+| ...       | ...              |
+
+And so on, alternating inside each parity group.
+
+---
