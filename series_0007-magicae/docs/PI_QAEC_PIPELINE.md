@@ -343,6 +343,11 @@ And so on, alternating inside each parity group.
 
 ---
 
+# Diagram explaining how the 33 bits are assigned to the four spirals, illustrating the bit indexing, spiral grouping, and the alternating assignment within parity groups.
+
+---
+
+```
                           Bit-to-Spiral Assignment for 33 Bits
                           -----------------------------------
 
@@ -405,3 +410,39 @@ Bits Index (0-based):
 |                                               |
 | (Even bits alternate outer spirals; odd bits alternate inner spirals) |
 ───────────────────────────────────────────────
+```
+
+---
+
+### Explanation:
+
+* **Outer spirals $S_1^+, S_1^-$** get all bits with even indices (0, 2, 4, ...).
+
+  * Within the even group, bits are assigned alternately: even-even bits (0, 4, 8, ...) to $S_1^+$ and odd-even bits (2, 6, 10, ...) to $S_1^-$.
+* **Inner spirals $S_2^+, S_2^-$** get all bits with odd indices (1, 3, 5, ...).
+
+  * Similarly, within the odd group, bits alternate between $S_2^+$ and $S_2^-$.
+
+---
+
+### Optional: Pseudocode for Bit-to-Spiral Mapping
+
+```python
+def assign_bit_to_spiral(bit_index):
+    if bit_index % 2 == 0:  # even bit
+        # For even bits, alternate between S1+ and S1-
+        pair_index = (bit_index // 2) % 2
+        if pair_index == 0:
+            return "S1+ (outer +)"
+        else:
+            return "S1- (outer -)"
+    else:  # odd bit
+        # For odd bits, alternate between S2+ and S2-
+        pair_index = ((bit_index - 1) // 2) % 2
+        if pair_index == 0:
+            return "S2+ (inner +)"
+        else:
+            return "S2- (inner -)"
+```
+
+---
