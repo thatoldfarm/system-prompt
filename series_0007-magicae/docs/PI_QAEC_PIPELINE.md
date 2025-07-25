@@ -264,7 +264,7 @@ hash_val = blake3(b''.join(qeac))
 
 ---
 
-### Context
+### Context:
 
 There are 33 bits from the selected spigot window, indexed from 0 to 32 (total 33 bits).
 
