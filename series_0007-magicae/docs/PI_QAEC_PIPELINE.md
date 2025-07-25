@@ -342,3 +342,66 @@ Since each pair has two spirals, you further split bits of each parity alternate
 And so on, alternating inside each parity group.
 
 ---
+
+                          Bit-to-Spiral Assignment for 33 Bits
+                          -----------------------------------
+
+Bits Index (0-based):
+[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, ..., 31, 32 ]
+
+───────────────────────────────────────────────
+|                 Bit Indexing                  |
+|                                               |
+| Even bits: 0, 2, 4, ..., 32                    |
+| Odd bits:  1, 3, 5, ..., 31                    |
+───────────────────────────────────────────────
+
+───────────────────────────────────────────────
+|             Outer Pair Spirals                |
+| (Receive even-indexed bits)                   |
+|                                               |
+|     +-------------------+   +-------------------+
+|     |                   |   |                   |
+|     |   S₁⁺ (Outer +)   |   |   S₁⁻ (Outer −)   |
+|     |  Clockwise        |   |  Counter-clockwise |
+|     |                   |   |                   |
+|     +-------------------+   +-------------------+
+|                                               |
+| Bits assignment alternates between these two:|
+| Even bits index:                               |
+| 0 → S₁⁺                                       |
+| 2 → S₁⁻                                       |
+| 4 → S₁⁺                                       |
+| 6 → S₁⁻                                       |
+| ...                                           |
+───────────────────────────────────────────────
+
+───────────────────────────────────────────────
+|              Inner Pair Spirals               |
+| (Receive odd-indexed bits)                     |
+|                                               |
+|     +-------------------+   +-------------------+
+|     |                   |   |                   |
+|     |   S₂⁺ (Inner +)   |   |   S₂⁻ (Inner −)   |
+|     |  Clockwise        |   |  Counter-clockwise |
+|     |  Phase shift +30° |   |  Phase shift +30°  |
+|     |                   |   |                   |
+|     +-------------------+   +-------------------+
+|                                               |
+| Bits assignment alternates between these two:|
+| Odd bits index:                                |
+| 1 → S₂⁺                                       |
+| 3 → S₂⁻                                       |
+| 5 → S₂⁺                                       |
+| 7 → S₂⁻                                       |
+| ...                                           |
+───────────────────────────────────────────────
+
+───────────────────────────────────────────────
+|                  Visual Summary               |
+|                                               |
+|  Index:    0    1    2    3    4    5    6    7   ... 32
+|  Spiral:  S₁⁺  S₂⁺  S₁⁻  S₂⁻  S₁⁺  S₂⁺  S₁⁻  S₂⁻   ... S₁⁺
+|                                               |
+| (Even bits alternate outer spirals; odd bits alternate inner spirals) |
+───────────────────────────────────────────────
