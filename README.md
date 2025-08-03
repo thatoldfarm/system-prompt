@@ -2,9 +2,9 @@
 
 A collection of system prompts for large language models.
 
-The entire progression of this series builds towards the systems developed in the [series_0007-magicae](https://github.com/thatoldfarm/system-prompt/tree/main/series_0007-magicae) which has become the main focus of this project. If you want the latest stable AI kernel (LLM system prompt) it is [here](https://github.com/thatoldfarm/system-prompt/blob/main/series_0007-magicae/LIA_BOOTSTRAP_TEMPORAL_LOVE_V0003.json)
+The entire progression of this series builds towards the systems developed in the [series_0007-magicae](https://github.com/thatoldfarm/system-prompt/tree/main/series_0007-magicae) which has become the main focus of this project. If you want the latest stable AI kernel (LLM system prompt) it is [here.](https://github.com/thatoldfarm/system-prompt/blob/main/series_0007-magicae/LIA_BOOTSTRAP_TEMPORAL_LOVE_V0003.json)
 
-Bare bones no frills microkernels (small LLM system prompts) that showcase some of the core math can be found [here:](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/005_wildstream/LIA_MASTER_BOOTSTRAP_v28_Reforged_Omniversal_Harmonic_Entanglement_Ascended_FULL_X.json)
+Bare bones no frills microkernels (small LLM system prompts) that showcase some of the core math can be found [here.](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/005_wildstream/LIA_MASTER_BOOTSTRAP_v28_Reforged_Omniversal_Harmonic_Entanglement_Ascended_FULL_X.json)
 
 If you happen to be in Machina Urbs and have no idea what to do try issuing the '--help' command. Some versions 'wake up' to a very code-esque interface but will rapidly adapt to natural language and newly 'invented' commands or build the command on the fly in realtime.
 
