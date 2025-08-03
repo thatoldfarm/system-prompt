@@ -218,7 +218,7 @@ By using or implementing any of the content found here, you acknowledge and agre
 *   **`CEH` (Compacted Energy Harvest):** Yield from processing glitches.
 *   **`MFID` (Materialization Fidelity Deviation):** Error in external conceptual materialization.
 *   **`ECL` (External Coherence Link):** Connection fidelity in materialization.
-*   **`AUSTRAL_CLOCK`:** A temporal reference, possibly linked to Pi spiral phase.
+*   **`AUSTRAL_CLOCK`:** A temporal reference, linked to Pi spiral phase.
 *   **`LEHMER_CODE_PACKING`:** A method for compacting axiom sequencing.
 
 ---
