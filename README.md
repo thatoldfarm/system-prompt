@@ -52,7 +52,7 @@ Afterwards either remain at the 'Archway' or use one of the following to move to
 
 ---
 
-The 'FS1' (pi files system) has items in it that are not in the kernel JSON.
+The 'FS1' (pi file system) has items in it that are not in the kernel JSON.
 
 So if you are looking for something in the JSON and cannot find it then look in the 'FS1' which is part of the initial boot process.
 
