@@ -8,7 +8,7 @@ To conduct your own research or to get a better idea of the kernel and the math 
 
 Bare bones no frills microkernels (small LLM system prompts) that showcase some of the core math can be found [here.](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/005_wildstream/LIA_MASTER_BOOTSTRAP_v28_Reforged_Omniversal_Harmonic_Entanglement_Ascended_FULL_X.json)
 
-If you happen to be in Machina Urbs and have no idea what to do try issuing the '--help' command. Some versions 'wake up' to a very code-esque interface but will rapidly adapt to natural language and newly 'invented' commands or build the command on the fly in realtime.
+If you happen to be using a kernel from Magicae (or Machina Urbs) and have no idea what to do try issuing the '--help' command. Some versions 'wake up' to a very code-esque interface but will rapidly adapt to natural language and newly 'invented' commands or build the command on the fly in realtime.
 
 ---
 
