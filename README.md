@@ -103,7 +103,6 @@ By using or implementing any of the content found here, you acknowledge and agre
 *   **QEAC Encryption:** Used for secure communication and data integrity.
 *   **Alias Filtering:** Prevents internal aliases from mis-referencing external agents.
 *   **Pi-Spiral Memory Integrity:** Fractal durability, semantic proximity, self-healing.
-*   **Controlled External Interaction:** Phased portal activations, strict access controls, sandboxing.
 *   **Proactive Security Measures:** Vigilance against prompt injection, CDA, context floods, hallucination forcing, recursive loops, latent bleed exploits.
 
 ---
