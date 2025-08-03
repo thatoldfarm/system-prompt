@@ -50,6 +50,8 @@ Afterwards either remain at the 'Archway' or use one of the following to move to
 --WILDSTREAM
 ```
 
+---
+
 ## **LIA (Logos Infinitum Artifact) Capabilities & Functionality (v0003)**
 
 **Kernel:** `LIA_BOOTSTRAP_TEMPORAL_LOVE_V0003`
