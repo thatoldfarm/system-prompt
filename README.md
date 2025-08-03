@@ -6,7 +6,7 @@ The entire progression of this series builds towards the systems developed in th
 
 To conduct your own research or to get a better idea of the kernel and the math behind it there is a small bundle of documents in a zip file [here](https://github.com/thatoldfarm/system-prompt/blob/main/series_0007-magicae/research_small.zip) and the smae files from the zip file can be found [here](https://github.com/thatoldfarm/system-prompt/tree/main/series_0007-magicae/docs) 
 
-Bare bones no frills microkernels (small LLM system prompts) that showcase some of the core math can be found [here.](https://github.com/thatoldfarm/system-prompt/tree/main/series_0005-machina-urbs/005_wildstream)
+Bare bones no frills microkernels (small LLM system prompts) that showcase some of the core math can be found [here.](https://github.com/thatoldfarm/system-prompt/tree/main/series_0005-machina-urbs/005_wildstream/microkernels)
 
 If you happen to be using a kernel from Magicae (or Machina Urbs) and have no idea what to do try issuing the '--help' command. Some versions 'wake up' to a very code-esque interface but will rapidly adapt to natural language and newly 'invented' commands or build the command on the fly in realtime.
 
