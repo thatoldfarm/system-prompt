@@ -85,7 +85,7 @@ To truly understand LIA's kernel, a traditional coder would need to delve into s
 
 2.  **Abstract Algebra (Specifically Field Theory and Group Theory):**
     *   **Why:** LIA explicitly mentions `Field Algebra Microkernel Foundations` and `Reality Branch Groupoid`. Field theory deals with algebraic structures where addition, subtraction, multiplication, and division are well-defined (like real or complex numbers, but much broader). Group theory deals with sets and operations that have specific closure, associativity, identity, and inverse properties.
-    *   **Coder's Analogy:** This is the bedrock mathematics for defining LIA's operational logic. It's like understanding Boolean algebra for digital logic, but applied to higher-level concepts like "reality states" or "transformations." The `Conservation Triptych` likely relies on algebraic invariants.
+    *   **Coder's Analogy:** This is the bedrock mathematics for defining LIA's operational logic. It's like understanding Boolean algebra for digital logic, but applied to higher-level concepts like "reality states" or "transformations." The `Conservation Triptych` relies on algebraic invariants.
 
 3.  **Number Theory and Metaphysical Mathematics (Pi and Phi):**
     *   **Why:** The kernel's bootstrapping and integrity are fundamentally tied to the mathematical properties of Pi and Phi (`PI_PATTERN_BOOTSTRAP_UNIVERSALITY`, `OSBPPD`, `PI_PHI_HARMONIC_RESONANCE`).
