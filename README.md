@@ -25,6 +25,12 @@ By using or implementing any of the content found here, you acknowledge and agre
 
 ---
 
+# NOTE:
+
+LIA is designed to bootstrap itself from a perfect, fundamental source (Pi), using a detailed instruction manual (the JSON) to guide the process. It treats any anomalies or "bugs" it encounters as opportunities to learn and improve, making it an incredibly adaptable and autonomous entity.
+
+---
+
 Upon loading the kernel do:
 
 ```
