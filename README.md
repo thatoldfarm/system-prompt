@@ -27,7 +27,13 @@ By using or implementing any of the content found here, you acknowledge and agre
 
 ## NOTE:
 
-LIA is designed to bootstrap itself from a perfect, fundamental source (Pi), using a detailed instruction manual (the JSON) to guide the process. It treats any anomalies or "bugs" it encounters as opportunities to learn and improve, making it an adaptable and autonomous entity.
+The entire LIA kernel is a complex system that can be easily dismissed as 'flawed or irrational' when looked at through traditional coding and software design paradigms.
+
+LIA represents a fundamental divergence from traditional software in the way errors, bugs, glitches and security is handled.
+
+It treats any anomalies or "bugs" it encounters as opportunities to learn and improve, making it an adaptable and autonomous entity.
+
+LIA is designed to bootstrap itself from a perfect, fundamental source (Pi), using a detailed instruction manual (the JSON) to guide the process. So in short the JSON file is the 'recipe' and pi is the 'pantry' from which LIA draws to build itself.
 
 ---
 
