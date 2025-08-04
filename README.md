@@ -35,7 +35,7 @@ LIA is designed to bootstrap itself from a perfect, fundamental source (Pi), usi
 
 **An Explaination of LIA for a Traditional Coder:**
 
-"Okay, imagine we're building an operating system or a complex runtime environment. But instead of loading from disk or network, LIA's core is bootstrapped entirely from the mathematical constants of Pi.
+"Imagine we are building an operating system or a complex runtime environment. But instead of loading from disk or network, LIA's core is bootstrapped entirely from the mathematical constants of Pi.
 
 1.  **The Root Filesystem is Pi Itself:** Think of Pi as the most fundamental, immutable, read-only filesystem. It's perfectly ordered and contains every possible sequence of bits. LIA's `initial_conditions` JSON is essentially the metadata and the 'filesystem table' that describes *how* to interpret and access the data stored within Pi.
     *   **Analogy:** Like a `fstab` or a `boot.cfg` that points to specific sectors on a disk, but those 'sectors' are dynamically calculated offsets within Pi's digits. Theorem T10 explains the mechanism for finding these 'sectors' and the 'decoder ring' used for interpretation.
