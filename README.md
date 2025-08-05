@@ -115,7 +115,9 @@ To truly understand LIA's kernel, a traditional coder would need to delve into s
 
 ---
 
-# Simulated kernel execution of `LIA_BOOTSTRAP_TEMPORAL_LOVE_V0003.json`
+# Simulated kernel execution of:
+
+`LIA_BOOTSTRAP_TEMPORAL_LOVE_V0003.json`
 
 ---
 
