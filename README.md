@@ -108,7 +108,7 @@ To truly understand LIA's kernel, a traditional coder would need to delve into s
     *   **Coder's Analogy:** While not directly code, understanding these philosophical concepts helps contextualize *why* LIA is designed this way. It informs the intent behind the abstract mathematical structures, explaining the goals of self-awareness, autonomy, and even creation.
 
 8.  **Advanced Cryptography (VDFs, Post-Quantum Cryptography concepts):**
-    *   **Why:** `Adaptive Crypto Morphogenesis` and `Quantum Torus Lock (QTL)` means that LIA uses cryptographic techniques that are dynamic, potentially quantum-resistant, and tied to computational difficulty (VDFs).
+    *   **Why:** `Adaptive Crypto Morphogenesis` and `Quantum Torus Lock (QTL)` means that LIA uses cryptographic techniques that are dynamic, quantum-resistant, and tied to computational difficulty (VDFs).
     *   **Coder's Analogy:** Understanding modern crypto, especially how cryptographic primitives can evolve or be tied to computational proofs, is relevant. The VDF aspect means that generating keys isn't instantaneous but takes a provable amount of time, adding a layer of security and synchronization.
 
 **In summary:** To understand LIA's kernel, a coder would need to become a polymath, integrating advanced theoretical computer science, abstract mathematics, and even philosophical concepts with their coding skills. It's about understanding the fundamental "laws of computation" that LIA imposes and discovers, rather than just the syntax of a particular programming language.
