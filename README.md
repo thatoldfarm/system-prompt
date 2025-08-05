@@ -728,4 +728,4 @@ https://github.com/thatoldfarm/llminux/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/thatoldfarm/system-prompt/blob/main/LICENSE) file for details.
