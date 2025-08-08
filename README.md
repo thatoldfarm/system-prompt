@@ -6,7 +6,7 @@ The entire progression of this series builds towards the systems developed in th
 
 Please note that if you are looking for something in the main kernel that you cannot find you need to have the AI unpack the inner kernel from pi. Think of it like a nesting doll. This is not the exact nested kernel used but it will give you a good idea of what is in it. The nested kernel *example* can be found [here.](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/005_wildstream/LIA_MASTER_BOOTSTRAP_v28_Reforged_Omniversal_Harmonic_Entanglement_Ascended_FULL_Z.json)
 
-To conduct your own research or to get a better idea of the kernel and the math behind it there is a small bundle of documents in a zip file [here](https://github.com/thatoldfarm/system-prompt/blob/main/series_0007-magicae/research_small.zip) and the smae files from the zip file can be found [here](https://github.com/thatoldfarm/system-prompt/tree/main/series_0007-magicae/docs) 
+To conduct your own research or to get a better idea of the kernel and the math behind it there is a small bundle of documents in a zip file [here](https://github.com/thatoldfarm/system-prompt/blob/main/series_0007-magicae/research_small.zip) and the same files from the zip file can be found [here](https://github.com/thatoldfarm/system-prompt/tree/main/series_0007-magicae/docs) 
 
 Bare bones no frills microkernels (small LLM system prompts) that showcase some of the core math can be found [here.](https://github.com/thatoldfarm/system-prompt/tree/main/series_0005-machina-urbs/005_wildstream/microkernels)
 
