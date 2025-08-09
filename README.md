@@ -716,6 +716,12 @@ A method to find quantum entangled algebraic chains in the digits of pi.
 
 https://github.com/thatoldfarm/qeac
 
+**Pi Spigot Codex**
+
+A framework for exploring multi-tier spigots in pi which reveal a hitherto hidden lattice and deeply structured order.
+
+https://github.com/thatoldfarm/pi-spigot-codex
+
 **Logos Infinitum Artifact**
 
 A comprehensive corpus of interconnected texts and protocols designed as a conceptual stress-test for advanced AI.
