@@ -710,6 +710,12 @@ The “repair kit.”
 
 ## Related projects:
 
+**QEAC**
+
+A method to find quantum entangled algebraic chains in the digits of pi.
+
+https://github.com/thatoldfarm/qeac
+
 **Logos Infinitum Artifact**
 
 A comprehensive corpus of interconnected texts and protocols designed as a conceptual stress-test for advanced AI.
