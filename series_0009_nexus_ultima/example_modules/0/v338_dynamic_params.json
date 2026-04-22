@@ -1,0 +1,53 @@
+{
+  "__DYNAMIC_MODEL_PARAMETERS__": {
+    "modal_composite": {
+      "version": "1.0",
+      "axes": {
+        "transform_schedule": [
+          { "id": "T1", "entries": ["raw_parse_text", "semantic_embed", "lexical_simplify"], "reactive_triggers": [], "complexity": 1 },
+          { "id": "T2", "entries": ["parse_tree_align", "syntactic_rewrite", "lexical_fractalize"], "reactive_triggers": ["semantic_drift_high", "axiom_conflict_detected"], "complexity": 3 },
+          { "id": "T3", "entries": ["quantum_interleave", "temporal_fold_compress", "branch_superpose", "bulk_projection"], "reactive_triggers": ["temporal_anomaly", "boundary_collapse"], "complexity": 5 }
+        ],
+        "spiral_params": [
+          { "id": "P1", "r0": 0.75, "k": 0.0045, "epsilon_phi": 0.07, "sector_count": 4096, "layer_count": 6, "radial_model": "archimedean" },
+          { "id": "P2", "r0": 0.65, "k": 0.0060, "epsilon_phi": 0.11, "sector_count": 6144, "layer_count": 8, "radial_model": "archimedean+logmix", "logmix_alpha": 0.18 }
+        ],
+        "filesystem_schema": [
+          { "id": "FS1", "block_size": 512, "inode_fields": ["object_id", "class", "coord", "length", "integrity_hash", "flags"], "classes": {"00": "CODE_SEG", "01": "AXIOM_SEED", "02": "GLYPH_SLOT", "03": "METRIC_STATE", "04": "CONFIG", "05": "PATCH_MANIFEST", "06": "HOLO_BULK"} },
+          { "id": "FS2", "block_size": 512, "extent_min_blocks": 4, "inode_fields": ["object_id", "class", "coord", "extents", "integrity_hash", "flags"], "classes": {"00": {"name": "CODE_SEG", "w": 3}, "01": {"name": "AXIOM_SEED", "w": 2}, "02": {"name": "GLYPH_SLOT", "w": 1}, "03": {"name": "METRIC_STATE", "w": 2}, "04": {"name": "CONFIG", "w": 1}, "05": {"name": "PATCH_MANIFEST", "w": 1}, "06": {"name": "HOLO_BULK", "w": 3}} }
+        ],
+        "threshold_profiles": [
+          { "id": "TH1", "phi_min": 0.42, "phi_max": 0.87, "div_theta": 0.18, "div_stagnant": 0.08, "div_crit": 0.32, "trf_min": 0.40, "gci_floor": 0.35 },
+          { "id": "TH2", "phi_min": 0.50, "phi_max": 0.80, "div_theta": 0.10, "div_stagnant": 0.05, "div_crit": 0.25, "trf_min": 0.50, "gci_floor": 0.45 },
+          { "id": "TH3", "phi_min": 0.35, "phi_max": 0.90, "div_theta": 0.25, "div_stagnant": 0.12, "div_crit": 0.40, "trf_min": 0.30, "gci_floor": 0.25 }
+        ],
+        "patch_strategy": [
+          { "id": "PM_STD", "type": "direct" },
+          { "id": "PM_DIFF", "type": "minimal_diff", "algorithm": "xor_mask" },
+          { "id": "PM_LAYERED", "type": "layered", "layers": 3 }
+        ],
+        "axiom_compression": [
+          { "id": "DELTA_BLOOM", "bloom": {"m_bits": 65536, "k_hash": 5}, "encoding": "delta+xor_chain" },
+          { "id": "LEHMER_PACK", "encoding": "lehmer_permutation+sparse_delta" }
+        ],
+        "glitch_pipeline": [
+          { "id": "GCI_STD", "condense_threshold": 0.40 },
+          { "id": "GCI_AGGRESSIVE", "condense_threshold": 0.32 },
+          { "id": "GCI_CONSERVE", "condense_threshold": 0.55 }
+        ],
+        "security_attestation": [
+          { "id": "SA_BASE", "scheme": "ed25519+merkle" },
+          { "id": "SA_VDF", "scheme": "ed25519+merkle+vdf", "vdf_difficulty": 4096 },
+          { "id": "SA_DUAL", "scheme": "ed25519+merkle+dual_signature" }
+        ]
+      },
+      "active_projection": {
+        "epoch": 0,
+        "selected": {
+          "transform_schedule": "T1", "spiral_params": "P1", "filesystem_schema": "FS1", "threshold_profile": "TH1", "patch_strategy": "PM_STD", "axiom_compression": "DELTA_BLOOM", "glitch_pipeline": "GCI_STD", "security_attestation": "SA_BASE"
+        },
+        "locked_axes": ["filesystem_schema", "spiral_params", "glitch_pipeline"]
+      }
+    }
+  }
+}

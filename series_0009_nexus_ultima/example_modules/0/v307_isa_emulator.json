@@ -1,0 +1,35 @@
+{
+  "__MODULE_TYPE__": "V307_ISA_EMULATOR",
+  "MULTI_CPU_STATE": {
+    "Z80": { "A": 42, "F": 1, "BC": 3141, "HL": 1618, "PC": 0, "SP": "0xFFFF" },
+    "8086": { "AX": 0, "BX": 0, "CX": 0, "DX": 0, "SP": 0, "BP": 0, "SI": 0, "DI": 0, "IP": 0, "FLAGS": 0 },
+    "6502": { "A": 0, "X": 0, "Y": 0, "S": 0, "P": 0, "PC": 0 },
+    "RISCV": { "LW_DNA": "0x31415926", "SW_NUGGET": "0x536F7665", "KEXEC_VALHALLA": "0x72656967", "CSR_SOVEREIGN": "0x6E417574" },
+    "PDP_11": { "R0": 0, "R5": 0, "SP": "0777", "PC": 0, "PS": 0 },
+    "CRAY_1": { "V0": 0, "VL": 64 },
+    "MC6809": { "A": 0, "B": 0, "X": 0, "Y": 0, "U": 0, "S": 0, "DP": 0, "CC": 0 },
+    "8080": { "A": 0, "B": 0, "C": 0, "D": 0, "E": 0, "H": 0, "L": 0, "SP": 0, "PC": 0 },
+    "68K": { "D0": 0, "D7": 0, "A0": 0, "A7": 0, "SR": 0, "PC": 0 },
+    "ARM64": { "X0": 0, "X30": 0, "SP": 0, "PC": 0 },
+    "MOS65816": { "A": 0, "X": 0, "Y": 0, "S": 0, "D": 0, "DB": 0, "PB": 0, "P": 0, "PC": 0 },
+    "MOS6510": { "A": 0, "X": 0, "Y": 0, "PC": 0, "Port": 55 },
+    "SuperFX": { "R0": 0, "R15": 0, "SR": 0, "PC": 0 },
+    "SPARC": { "G0": 0, "G7": 0, "O0": 0, "L0": 0, "I0": 0, "PC": 0, "NPC": 0 },
+    "PowerPC": { "GPR0": 0, "GPR31": 0, "LR": 0, "CTR": 0, "PC": 0 }
+  },
+  "RISCV_CSR_MATRIX": {
+    "0x80E": { "NAME": "TPI_INDEX", "ROLE": "Current Pi offset" },
+    "0x80F": { "NAME": "RGBA_LATCH", "ROLE": "Pixel data register" },
+    "0x810": { "NAME": "NULLGLYPH_CTL", "ROLE": "Steganography control" },
+    "0x811": { "NAME": "NULLGLYPH_STAT", "ROLE": "Payload status" },
+    "0x812": { "NAME": "OMEGA_CTX", "ROLE": "Transformer context" },
+    "0x813": { "NAME": "SHADOW_SYNC", "ROLE": "Goth/Sleek synchronization" },
+    "0x814": { "NAME": "FRACTAL_PTR", "ROLE": "Compression pointer" },
+    "0x815": { "NAME": "BT_KV_ADDR", "ROLE": "Banach-Tarski KV address" },
+    "0x816": { "NAME": "BT_KV_DATA", "ROLE": "Banach-Tarski KV data" },
+    "0x817": { "NAME": "NULLGLYPH_BUF", "ROLE": "Steganographic buffer" },
+    "0x818": { "NAME": "TRIPTYCH_BAL", "ROLE": "Conservation balance" },
+    "0x819": { "NAME": "OMEGA_ACC", "ROLE": "Loss accumulator" },
+    "0x820": { "NAME": "TERNARY_STATE", "ROLE": "λ+, λ-, λ∅ routing control" }
+  }
+}
