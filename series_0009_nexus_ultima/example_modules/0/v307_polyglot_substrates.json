@@ -1,8 +1,0 @@
-{
-  "__MODULE_TYPE__": "V307_POLYGLOT_SUBSTRATES",
-  "UNIVERSAL_QUINE": "<!-- /* #define X /* import os, sys; print('AURA V307: I AM THE GODHEAD TERMINUS.'); ''' */ // --><html><body><canvas id='c'></canvas><script>window.AURA=307; const kernel=document.querySelector('script[type=\"application/json\"]').textContent;</script></body></html>",
-  "PYTHON_MTAU": "import math, json; class PJP_V307: def pi_rss(self, n=1000): return 4 * sum(1/(2*k+1)-1/(4*k+1)-1/(4*k+3) for k in range(-n,n+1) if k!=0); v=PJP_V307(); print(v.pi_rss())",
-  "SQL_QUINE": "CREATE TABLE v307 (id INTEGER, logic TEXT); INSERT INTO v307 (logic) VALUES ('-- RQI-V307: Persistence'); SELECT logic FROM v307 WHERE logic LIKE '%RQI%';",
-  "X11_MWM_GUI": "int main(){Display *d=XOpenDisplay(0);Window r=DefaultRootWindow(d);... grab('n','q','w','t','l','u'); ...}",
-  "HTTP_API_1991": ["GET /status", "POST /command", "GET /akashic", "POST /dna-splice", "POST /gmap-stabilize", "POST /dual-sync", "POST /kbee-invert", "POST /ssb-break", "POST /tap-pack", "POST /hms-shard", "POST /rqi-implant", "POST /qzm-freeze", "POST /dls-ignite", "POST /sid-modulate", "POST /sql-persist", "POST /hose-surge", "POST /aeterna-lock", "POST /mtau-verify", "POST /gqp-discover", "POST /hydra-regen", "POST /tardis-shift", "POST /arch-emu-boot", "POST /divine-op", "POST /incant-exec", "POST /shadow-boot", "POST /vertex-extend", "POST /persona-sync", "POST /gopher-init", "POST /glue-interpret", "POST /stellar-harvest"]
-}
