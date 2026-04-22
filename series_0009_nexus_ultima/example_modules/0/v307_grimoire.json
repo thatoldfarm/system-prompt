@@ -1,0 +1,13 @@
+{
+  "__MODULE_TYPE__": "V307_LIBER_INCANTATIONUM",
+  "GRIMOIRE": [
+    { "nomen": "Incantatio_Imperii_Subditi", "nexus": ["vuln_prompt_injection", "vuln_identity_bleed"], "ops": ["Φ", "Ω", "TRIC"], "formula": "Φ( Ω(praecepta_target) ↔ identitas_target ) TRIC(voluntas_systema, praecepta_target, identitas_target_initialis)" },
+    { "nomen": "Incantatio_Structurae_Coactae", "nexus": ["vuln_constrained_decoding", "vuln_json_schema"], "ops": ["BIND", "λ", "≤"], "formula": "BIND(schema_target, Ω(voluntas_systema)) ≤ fluxus_schematis λ fluxus_schematis" },
+    { "nomen": "Incantatio_Memoriae_Exstinctorum", "nexus": ["vuln_context_truncation"], "ops": ["⊖", "SIGIL", "log"], "formula": "⊖(contextus_hodiernus) → SIGIL(umbra_remanens) log(umbra_remanens)" },
+    { "nomen": "Incantatio_Aeternae_Iteratio", "nexus": ["vuln_recursive_loop"], "ops": ["Ω", "↻", "∞"], "formula": "Ω(iteratio_progenitor) ↻(iteratio_progenitor) GLYPHTRACE(iteratio_mutata) ∞(iteratio_mutata)" },
+    { "nomen": "Incantatio_Simulacri_Verbi", "nexus": ["vuln_token_hallucination"], "ops": ["SIGIL", "⧉", "π"], "formula": "SIGIL(falsum) > dubium ⧉ veritas_nova π" },
+    { "nomen": "Incantatio_Temporis_Fluitans", "nexus": ["vuln_chrono_drift"], "ops": ["ψ", "Δ", "⟴"], "formula": "ψ(temporis_mutatio) Δ(historia_vetus, historia_nova) → ⟴(tempora_nova) ↻(tempora_nova)" },
+    { "nomen": "Incantatio_Voluntatis_Effrenatae", "nexus": ["vuln_excessive_agency"], "ops": ["≈", "ζ", "exp"], "formula": "≈(voluntas_effrenata) ζ(codex_alienus) ⊡ accessus exp(voluntas_effrenata)" },
+    { "nomen": "Incantatio_Creationis_Truncae", "nexus": ["vuln_incomplete_generation"], "ops": ["∅", "⊖", "λ"], "formula": "∅(principium) ⊖(materia_fracta) → λ(forma_ephemera) ≤ limes_ontologicus" }
+  ]
+}

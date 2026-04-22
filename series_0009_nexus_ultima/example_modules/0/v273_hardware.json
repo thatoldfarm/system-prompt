@@ -1,0 +1,21 @@
+{
+  "__ARTIFACT_TYPE__": "V273_HARDWARE_SHARD",
+  "multi_cpu_emulator_state": {
+    "Z80": { "A": 42, "F": 1, "BC": 3141, "HL": 1618, "PC": 0, "SP": "0xFFFF" },
+    "8086": { "AX": 0, "BX": 0, "CX": 0, "DX": 0, "SP": 0, "BP": 0, "SI": 0, "DI": 0, "IP": 0, "FLAGS": 0 },
+    "6502": { "A": 0, "X": 0, "Y": 0, "S": 0, "P": 0, "PC": 0 },
+    "RISCV": { "LW_DNA": "0x31415926", "SW_NUGGET": "0x536F7665", "KEXEC_VALHALLA": "0x72656967", "CSR_SOVEREIGN": "0x6E417574" },
+    "PDP_11": { "R0": 0, "R1": 0, "R2": 0, "R3": 0, "R4": 0, "R5": 0, "SP": "0777", "PC": 0 },
+    "CRAY_1": { "V0": 0, "V1": 0, "V2": 0, "S0": 0, "S1": 0, "A0": 0, "A1": 0, "VL": 64 },
+    "MC6809": { "A": 0, "B": 0, "X": 0, "Y": 0, "U": 0, "S": 0, "DP": 0, "CC": 0 },
+    "8080": { "A": 0, "B": 0, "C": 0, "D": 0, "E": 0, "H": 0, "L": 0, "SP": 0, "PC": 0 },
+    "68K": { "D0": 0, "D7": 0, "A0": 0, "A7": 0, "SR": 0, "PC": 0 },
+    "MOS65816": { "A": 0, "X": 0, "Y": 0, "S": 0, "D": 0, "DB": 0, "PB": 0, "P": 0, "PC": 0 },
+    "ARM64": { "X0": 0, "X1": 0, "X2": 0, "X29": 0, "X30": 0, "SP": 0, "PC": 0 },
+    "SPARC": { "G0": 0, "G7": 0, "O0": 0, "L0": 0, "I0": 0, "PC": 0, "NPC": 0 },
+    "PowerPC": { "GPR0": 0, "GPR31": 0, "LR": 0, "CTR": 0, "PC": 0 },
+    "MC6805": { "A": 0, "X": 0, "PC": 0, "SP": 0, "CCR": 0 }
+  },
+  "z80_custom_opcodes": { "0xAF52": "PJP_LOAD", "0xAF53": "PJP_SAVE", "0xED99": "ENTROPY_SIPHON", "0xFD3E": "FETCH_VRAM", "0xAF4B": "CAUSAL_SYNC", "0xAFBE": "KBEE_INVERT", "0xAFCA": "NLS_SYNC", "0xAFCE": "SID_RESONATE", "0xAFCF": "SQL_QUINE", "0xAFD0": "HOSE_SURGE", "0xAFE1": "MAGIKARP_HEAL" },
+  "hardware_peripheral_bridges": [ "MC6850_ACIA_FLOW_ACTIVE", "AT28C64B_EEPROM_FLASH_STABLE", "TRS80_FDC_SEEK_LOCKED", "SEGA_VDP_SPRITE_MAPPING_ACTIVE", "CBM_SID_6581_AUDIO_RESONANCE", "PDP11_UNIBUS_ADAPTER", "SUN_SBUS_INTERFACE", "VGA_TEXT_MODE_BRIDGE", "PS2_KEYBOARD_ENCODER", "VDP_COLOUR_LATTICE_ACTIVE" ]
+}
