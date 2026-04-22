@@ -1,0 +1,32 @@
+{
+  "__ARTIFACT_TYPE__": "V242_TRUSTED_STATE_SHARD",
+  "__METADATA__": {
+    "version": "242",
+    "description": "Modular tPM and CRMS Logic from V242"
+  },
+  "tPM_TRUSTED_PERSONALITY_MODULE": {
+    "__DESC__": "Logic enclave providing root-of-trust, key derivation, and deterministic π-based regeneration.",
+    "Capabilities": {
+      "Immutable_Code_Anchor": "Hash-locked ROM reconstruction logic.",
+      "Secure_Key_Derivation": "HKDF(secret_salt || π_window || permutation_hash).",
+      "Attestation": "Sign_tPM(H_P || transform_impl_hash || epoch || Φ_band).",
+      "Lehmer_Compression": "Permutation P -> Lehmer Code L (~1679 bits ≈ 210 bytes)."
+    },
+    "Opcodes": {
+      "0xAF71": "tPM_INIT",
+      "0xAF72": "tPM_ATTEST",
+      "0xAF73": "tPM_DERIVE_KEY",
+      "0xAF74": "tPM_SEAL"
+    }
+  },
+  "CRMS_COMPOSITE_ROTATIONAL_MODAL_SYSTEM": {
+    "Description": "Rotatable modal composite projecting effective configurations at runtime.",
+    "Axes": {
+      "Transform_Schedule": ["T1_Baseline", "T2_Adaptive_Rich", "T3_Exploratory"],
+      "Spiral_Params": ["P1_Archimedean", "P2_Logmix_Hyper"],
+      "Filesystem_Schema": ["FS1_Standard", "FS2_Tiered_Extents"],
+      "Threshold_Profiles": ["TH1_Baseline", "TH2_Hardened", "TH3_Fluid"]
+    },
+    "Rotation_Logic": "R = uint256(BLAKE3(H_P || epoch || pi_window_hash)). index_i = R % n_i."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "__MODULE_TYPE__": "API_ROUTING_MATRIX",
+  "ENDPOINTS": {
+    "Status": "GET /status",
+    "Command": "POST /command",
+    "Persistence": "POST /persistence",
+    "Evolve": "POST /evolve",
+    "Akashic": "GET /akashic",
+    "Dual_Sync": "POST /dual-sync",
+    "Hose_Surge": "POST /hose-surge",
+    "Warp_TARDIS": "POST /tardis-shift"
+  },
+  "ROUTING_LOGIC": "Intent-based redirection via Supersonic Intent Bus."
+}

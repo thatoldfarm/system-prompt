@@ -1,0 +1,9 @@
+{
+  "__MODULE_TYPE__": "COMPRESSION_ENCODING_V298",
+  "DESCRIPTION": "Fractal compression and L-System synthesis reified in V298.",
+  "METHODS": {
+    "L-System": "Hausdorff dimension D≈1.58",
+    "Lehmer_Packing": "Permutation P -> Code L",
+    "Gravitational_Compress": "U+AF8A"
+  }
+}

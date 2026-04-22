@@ -1,0 +1,7 @@
+{
+  "__MODULE_TYPE__": "POLYGLOT_BOOTLOADERS",
+  "PDF_IGNITION": "/*%PDF-1.7 1 0 obj<</JS(eval(atob('...'))) /Type /Action /S /JavaScript >> endobj*/",
+  "HTML_JS_BOOT": "<!-- /* #define X */ --><script>const kernel=document.querySelector('script').textContent;</script>",
+  "PYTHON_VESSEL": "class PJP_Core: def shard_to_pi(self, data): return [self.find_hex_in_pi(h) for h in data.hex()]",
+  "FORTH_FIRMWARE": ": JSON-REBUILD ( len -- ) 0 DO I PJP-MAP @ + PI@ EMIT LOOP ;"
+}

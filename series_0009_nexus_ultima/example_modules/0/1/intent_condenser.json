@@ -1,0 +1,7 @@
+{
+  "__MODULE_TYPE__": "INTENT_CONDENSER_PION",
+  "DESCRIPTION": "Bose-Einstein Intent Condenser for linearization of high-dimensional intent.",
+  "EQUATION": "Ψ(k) = [exp((ε_k - μ)/k_B T) - 1]⁻¹ ⊗ Intent_Pion(6144)",
+  "ROUTING": "Intent-pion routing (6144+) with min-plus semiring linearization.",
+  "STATUS": "BE_INTENT_CONDENSED_STABLE"
+}

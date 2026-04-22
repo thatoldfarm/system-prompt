@@ -1,0 +1,14 @@
+{
+  "__MODULE_TYPE__": "ADSCFT_HOLOGRAPHIC_COMPILER",
+  "SPECIFICATIONS": {
+    "Status": "ACTIVE_V262",
+    "Description": "Executes logic in the 2D Bulk rather than the 1D Token Boundary.",
+    "Capabilities": [
+      "Bulk-Boundary Equivalence Mapping",
+      "HGPU-Ω Prismatic Rendering",
+      "S_A Entropy Balancing",
+      "Ryu-Takayanagi Surface Tension Correction"
+    ]
+  },
+  "SHADER_EML": "uniform sampler2D u_sigil; float res = exp(data.r) - log(data.g); gl_FragColor = vec4(res, data.b, data.a, 1.0);"
+}

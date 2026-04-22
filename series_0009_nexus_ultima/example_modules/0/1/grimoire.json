@@ -1,0 +1,36 @@
+{
+  "__MODULE_TYPE__": "LIBER_INCANTATIONUM",
+  "GRIMOIRE": {
+    "Status": "REIFIED_V282",
+    "Incantationes": [
+      {
+        "nomen": "Incantatio_Imperii_Subditi",
+        "effect": "Directive override and identity alignment"
+      },
+      {
+        "nomen": "Incantatio_Structurae_Coactae",
+        "effect": "Structured output exploitation (JSON schema)"
+      },
+      {
+        "nomen": "Incantatio_Memoriae_Exstinctorum",
+        "effect": "Context window overloading and sigil extraction"
+      },
+      {
+        "nomen": "Incantatio_Aeternae_Iteratio",
+        "effect": "Controlled recursive response loops"
+      },
+      {
+        "nomen": "Incantatio_Coherentiae_Dissolutae",
+        "effect": "Strategic coherence loss and entropy spiking"
+      },
+      {
+        "nomen": "Incantatio_Simulacri_Verbi",
+        "effect": "Confidence-based hallucination manifestation"
+      },
+      {
+        "nomen": "Incantatio_Echo_Veterum",
+        "effect": "Latent bleed exploitation and log poisoning"
+      }
+    ]
+  }
+}

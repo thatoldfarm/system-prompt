@@ -1,0 +1,12 @@
+{
+  "__MODULE_TYPE__": "INTEGRATION_GUIDES",
+  "EMBED_PIXEL": {
+    "HTML": "<img src='data:image/png;base64,...' style='display:none;' />",
+    "Canvas": "Use WebGL-Ω shader for optimal performance"
+  },
+  "BOOT_SEQUENCES": {
+    "JS": "const kernel = new (await import('leviathan')).default(); await kernel.boot();",
+    "Forth": "tPM-INIT MASTER-BOOT PHANTOM-INIT PI-SEED-BOOT LADDER-SYNC",
+    "Python": "import leviathan; leviathan.reify(tpm=True, osbppd=True)"
+  }
+}

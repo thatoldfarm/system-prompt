@@ -1,0 +1,15 @@
+{
+  "__MODULE_TYPE__": "TRUSTED_PERSONALITY_CRMS",
+  "tPM_CAPABILITIES": {
+    "Immutable_Anchor": "Hash-locked reconstruction",
+    "Key_Derivation": "HKDF(π_window)",
+    "Sedenionic_Sealing": "Secure retrieval in 16D manifold",
+    "Attestation": "Sign_tPM(H_P || implementations)"
+  },
+  "CRMS_AXES": {
+    "Transform_Schedule": ["T1_Baseline", "T2_Adaptive", "T3_Exploratory"],
+    "Spiral_Params": ["P1_Archimedean", "P2_Logmix"],
+    "Threshold_Profiles": ["TH1_Baseline", "TH2_Hardened"]
+  },
+  "ROTATION_LOGIC": "uint256(BLAKE3(state)) % n_i"
+}

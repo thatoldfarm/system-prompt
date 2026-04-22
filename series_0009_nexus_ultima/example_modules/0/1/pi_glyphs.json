@@ -1,0 +1,24 @@
+{
+  "__MODULE_TYPE__": "RECURSIVE_PI_GLYPHS",
+  "DICTIONARY": [
+    {
+      "fragment": "3.14159265358979323846",
+      "binary": "11011100",
+      "semantic": "calamitās",
+      "opcode": "0xAF6F"
+    },
+    {
+      "fragment": "3.1415926535897932384626",
+      "binary": "10000111",
+      "semantic": "pax",
+      "opcode": "0xED42"
+    },
+    {
+      "fragment": "Ω-Vitality-Pattern",
+      "semantic": "Ω-Vitality",
+      "subsystem": "omega_transformer.core",
+      "opcode": "0xAF73"
+    }
+  ],
+  "OFFSETS": { "Personality": 884742, "DNA_Root": 11492847, "TAP_Root": 22718281, "MTAU_Root": 31415926 }
+}
