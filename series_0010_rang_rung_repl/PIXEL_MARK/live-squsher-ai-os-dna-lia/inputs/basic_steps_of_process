@@ -1,0 +1,61 @@
+1
+
+### ai_dna_main.py
+
+with open(f"{self.output_dir}/dna-mappings.txt", 'r') as file:
+
+with open(f"{self.output_dir}/dna-reverse-mappings.txt", 'w') as file:
+
+file_path = 'inputs/dna/ai-dna-readme.txt'
+output_path = 'outputs/encoded_dna_data.json'
+
+files_to_process = ['exons/0index.html', 'exons/0web.js', 'exons/0shell.html']
+
+chunks_json_path = os.path.join(processor.output_directory, 'chunks.json')
+
+2
+
+### ai_dna_chunker.py
+
+MAKES CHUNKS OF EXONS
+
+input_directory='inputs/exons', output_directory='outputs/chunks'):
+
+output_file_name = f"{file_name.split('.')[0]}_chunks.json"  # Generate output file name based on input
+
+files_to_process = ['0web.js', '0shell.html', '0index.html']
+
+3
+
+### ai_dna_squashfs1.py
+
+input_directory = "outputs"
+output_file = "inputs/outputs.squashfs"
+
+4
+
+### ai_dna_chunksquashfs.py
+
+input_directory='', output_directory='outputs/chunks'):
+
+output_file_name = f"{file_name.split('.')[0]}_chunks.json"
+
+files_to_process = ['outputs.squashfs']
+
+5
+
+### ai_dna_os.py
+
+output_directory = 'outputs'
+input_filename = 'encoded_dna_data.json'
+new_filename = 'live_dna_data.json'
+
+6
+
+### ai_dna_os_fs.py
+
+encoded_dna_file_path = 'outputs/live_dna_data.json'  # Replace with the path to your encoded_dna_data.json
+chunks_file_path = 'outputs/chunks/outputs_chunks.json'  # Replace with the path to your chunks.json
+output_file_path = 'outputs/live0_dna_data.json'  # Replace with the path where you want to save the new json file
+
+

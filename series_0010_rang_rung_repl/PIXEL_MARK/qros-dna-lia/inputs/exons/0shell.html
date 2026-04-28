@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript Shell</title>
+	<style>
+body {
+	margin: 1rem;
+	padding: 0;
+	background: #212230;
+}
+
+.terminal {
+	margin: 0;
+	padding: 0;
+	font-family: Menlo, Courier New;
+	font-size: 14px;
+	text-rendering: optimizeLegibility;
+	color: white;
+	font-smoothing: antialiased;
+	cursor: text;
+	counter-reset: input;
+	background: #212230;
+}
+
+.terminal .terminal--output {
+	white-space: pre;
+}
+
+.terminal .terminal--input {
+	counter-increment: input;
+}
+.terminal .terminal--input:before {
+	content: "[" counter(input) "] $ ";
+}
+
+.terminal .terminal--input input {
+	background: transparent;
+	color: inherit;
+	width: 80%;
+	border: none;
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+	font-family: Menlo, Courier New;
+	font-size: 14px;
+}
+
+.terminal .terminal--input input:focus {
+    outline:none;
+}
+
+.terminal .terminal--output.is-console:before {
+	margin-right: 10px;
+	content: ">";
+}
+
+.terminal .terminal--output.is-not-defined {
+	color: rgba(255, 255, 255, 0.5);
+}
+	</style>
+	<script>
+
+		var shellCommands =
+		{
+			help: function(cmd, args) {
+				var response = "Commands: \n\r"
+
+				for(command in shellCommands) {
+					response += "  " + command + "\n\r"
+				}
+
+				return response.substring(0, response.length - 2);;
+			},
+
+			clear: function(cmd, args) {
+				while (_out.childNodes[0])
+					_out.removeChild(_out.childNodes[0]);
+
+				return 'Terminal cleared!';
+			},
+
+			random: function(cmd, args) {
+				return Math.random();
+			}
+		};
+
+		var
+		_win,
+		_in,
+		_out;
+
+		function refocus()
+		{
+			_in.blur();
+			_in.focus();
+		}
+
+		function init()
+		{
+			_in = document.getElementById("terminal-input");
+			_out = document.getElementById("terminal-output");
+
+			_win = window;
+
+			initTarget();
+
+			refocus();
+		}
+
+		function initTarget()
+		{
+			_win.Shell = window;
+			_win.print = shellCommands.print;
+		}
+
+
+		function keepFocusInTextbox(e)
+		{
+			var g = e.srcElement ? e.srcElement : e.target;
+
+			while (!g.tagName)
+				g = g.parentNode;
+			var t = g.tagName.toUpperCase();
+			if (t=="A" || t=="INPUT")
+				return;
+
+			if (window.getSelection) {
+				if (String(window.getSelection()))
+					return;
+			}
+
+			refocus();
+		}
+
+		function terminalInputKeydown(e) {
+			if (e.keyCode == 13) {
+				try {
+					execute();
+				}
+				catch(er) {
+					alert(er);
+				};
+				setTimeout(function() {
+					_in.value = "";
+				}, 0);
+			}
+		};
+
+
+		function println(s, type)
+		{
+			var type = type || 'terminal--output';
+			if((s=String(s)))
+			{
+			var paragraph = document.createElement("p");
+			paragraph.appendChild(document.createTextNode(s));
+			paragraph.className = type;
+			_out.appendChild(paragraph);
+			return paragraph;
+			}
+		}
+
+		function printError(er)
+		{
+			println(er, "terminal--output is-not-defined");
+		}
+
+		function execute(s)
+		{
+			var key = _in.value.substr(0,_in.value.indexOf(' ')) || _in.value;
+
+			var args = _in.value.substr(_in.value.indexOf(' ')+1).split(" ");
+
+			println(key, 'terminal--input');
+
+			if(shellCommands[key.toLowerCase()]) {
+				println(shellCommands[key.toLowerCase()](key.toLowerCase(), args), 'terminal--output');
+			}
+			else {
+				printError('Command not found: ' + key);
+			}
+		}
+	</script>
+</head>
+<body onload="init()">
+	<article class="terminal">
+		<section id="terminal-output">
+			<p class=" terminal--header ">Type HELP to get a list of commands</p>
+		</section>
+
+		<section class="terminal--input">
+			<input type="text" id="terminal-input" wrap="off" onkeydown="terminalInputKeydown(event)"></input>
+		</section>
+	</article>
+</body>
+</html>
+<script>
+
+        function loadUrl() {
+            var urlInput = document.getElementById('url-input');
+            var url = urlInput.value.trim();
+
+            // Check that the URL is not empty
+            if (url !== '') {
+                // Change the current window location
+                window.location.href = url;
+            }
+        }
+    
+</script>
+<script>
+
+function pasteContent(inputId) {
+    var el = document.getElementById(inputId);
+    navigator.clipboard.readText()
+        .then(text => {
+            el.value = text;
+        })
+        .catch(err => {
+            console.error('Failed to read clipboard contents: ', err);
+        });
+}
+
+
+</script>
+<script>
+
+         let urlHistory = [];
+
+         function openNewWebView(inputId) {
+             const urlInput = document.getElementById(inputId);
+             const url = urlInput.value.trim();
+
+             if (url !== '') {
+                 if (inputId === 'url-input' || inputId === 'url-input1') {
+
+                     window.location.href = url;
+                 } else {
+
+                     window.open(url);
+                 }
+
+                 addToUrlHistory(url);
+             }
+         }
+
+         function addToUrlHistory(url) {
+
+             const index = urlHistory.indexOf(url);
+             if (index !== -1) {
+
+                 urlHistory.splice(index, 1);
+             }
+
+             urlHistory.unshift(url);
+
+             updateUrlHistorySelect();
+         }
+
+         function updateUrlHistorySelect() {
+             const urlHistorySelect = document.getElementById('url-history');
+
+             urlHistorySelect.innerHTML = '<option value="">History</option>';
+
+             for (let i = 0; i < urlHistory.length; i++) {
+                 const url = urlHistory[i];
+                 const option = document.createElement('option');
+                 option.value = url;
+                 option.text = url;
+                 urlHistorySelect.appendChild(option);
+             }
+         }
+
+         function loadURLFromHistory() {
+             const urlHistorySelect = document.getElementById('url-history');
+             const selectedUrl = urlHistorySelect.value;
+             if (selectedUrl !== '') {
+
+                 const urlInput = document.getElementById('url-input');
+                 urlInput.value = selectedUrl;
+             }
+         }
+      
+</script>
+<script>
+
+         function loadSSB(inputId) {
+         const ssbUrlInput = document.getElementById(inputId);
+         const ssbUrl = ssbUrlInput.value;
+         const ssbContainer = document.getElementById('ssb-container');
+         const ssbWrapper = document.createElement('div');
+         ssbWrapper.className = 'ssb-wrapper';
+         const iframe = document.createElement('iframe');
+         iframe.src = ssbUrl;
+         iframe.style.width = '99%';
+         iframe.style.height = '147%';
+         const urlCloseContainer = document.createElement('div');
+         urlCloseContainer.className = 'url-close-container';
+         const closeButton = document.createElement('button');
+         closeButton.innerHTML = `Close ${ssbUrl}`;
+         closeButton.onclick = function () {
+           ssbWrapper.remove();
+         };
+         ssbWrapper.appendChild(iframe);
+         urlCloseContainer.appendChild(closeButton);
+         ssbWrapper.appendChild(urlCloseContainer);
+         ssbContainer.appendChild(ssbWrapper);
+         ssbUrlInput.value = '';
+         ssbUrlInput.value = ssbUrl;
+         }
+
+         function toggleFullscreen() {
+         const currentWindow = window.parent;
+         if (currentWindow.document.documentElement.requestFullscreen) {
+           currentWindow.document.documentElement.requestFullscreen();
+         } else if (currentWindow.document.documentElement.mozRequestFullScreen) {
+           currentWindow.document.documentElement.mozRequestFullScreen();
+         } else if (currentWindow.document.documentElement.webkitRequestFullscreen) {
+           currentWindow.document.documentElement.webkitRequestFullscreen();
+         } else if (currentWindow.document.documentElement.msRequestFullscreen) {
+           currentWindow.document.documentElement.msRequestFullscreen();
+         }
+         }
+
+         function goBack() {
+         window.history.back();
+         }
+
+         function goForward() {
+         window.history.forward();
+         }
+
+         function stop() {
+         const currentWindow = window.parent;
+         currentWindow.stop();
+         }
+
+         function reload() {
+         const currentWindow = window.parent;
+         currentWindow.location.reload();
+         }
+
+         function inspectElement() {
+         const currentWindow = window.parent;
+         currentWindow.document.documentElement.classList.add('inspect-element');
+         }
+      
+</script>
+<script>
+
+function copyContent(inputId) {
+    var el = document.getElementById(inputId);
+    navigator.clipboard.writeText(el.value);
+}
+
+
+</script>
+<script>
+
+         function conductSearch() {
+           const searchInput = document.getElementById('search-input');
+           const query = searchInput.value.trim();
+
+           if (query !== '') {
+             const baseUrl = 'https://search.brave.com'; // Hardcoded URL
+             const searchUrl = baseUrl + '/search?q=' + encodeURIComponent(query);
+             window.location.href = searchUrl;
+           }
+         }
+      
+</script>
+<script>
+
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey) {
+        var activeEl = document.activeElement;
+        if (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA') {
+            switch (e.key) {
+                case 'z': // Ctrl+Z (Undo)
+                    document.execCommand('undo');
+                    e.preventDefault();
+                    break;
+                case 'a': // Ctrl+A (Select All)
+                    activeEl.select();
+                    e.preventDefault();
+                    break;
+                case 'c': // Ctrl+C (Copy)
+                    navigator.clipboard.writeText(activeEl.value);
+                    e.preventDefault();
+                    break;
+                case 'x': // Ctrl+X (Cut)
+                    navigator.clipboard.writeText(activeEl.value);
+                    activeEl.value = '';
+                    e.preventDefault();
+                    break;
+                case 'v': // Ctrl+V (Paste)
+                    navigator.clipboard.readText().then(text => {
+                        activeEl.value = text;
+                    });
+                    e.preventDefault();
+                    break;
+            }
+        }
+    }
+});
+
+
+</script>
