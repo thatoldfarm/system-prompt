@@ -24,7 +24,6 @@ dd if=/dev/zero of=blank.img bs=512 count=2880
 
 # Then do:
 
----
 
 ```bash
 mkfs.fat -F 12 -n "MONOLITH" blank.img
@@ -33,7 +32,6 @@ mkfs.fat -F 12 -n "MONOLITH" blank.img
 
 # Covert blank 1.44 floppy img to png to create CART_001.png
 
----
 
 ```bash
 python3 pixel_drive_manager.py encode blank.img CART_001.png
@@ -110,6 +108,11 @@ if __name__ == "__main__":
 ---
 
 # Create CART_001_JOURNEY.png
+
+
+```bash
+python3 stitch_soul.py
+```
 
 ---
 
@@ -203,6 +206,11 @@ if __name__ == "__main__":
 ---
 
 # Optional step: Test whether CART_001_JOURNEY.png was successful with the decoder.
+
+
+```bash
+python3 universal_decoder.py ./CART_001_JOURNEY.png
+```
 
 ---
 
@@ -301,17 +309,16 @@ MASTER_DNA_SEED_v86.wasm.png
 MASTER_DNA_SEED_seabios.bin.png
 MASTER_DNA_SEED_libv86.js.png
 ```
----
 
-- Run the carrier_harvester.py script
+- Run the carrier_harvester_v3.py script
 
 ```bash
-python3 carrier_harvester.py
+python3 carrier_harvester_v3.py
 ```
 
 ---
 
-# **carrier_harvester_v2.py**
+# **carrier_harvester_v3.py**
 
 ---
 
@@ -349,58 +356,69 @@ def extract_raw_binary_from_png(png_path):
     return zlib.decompress(payload, zlib.MAX_WBITS | 16)
 
 def run_packer():
-    print(f"--- CHROMIUM CORE: CARRIER HARVESTER (ADAPTIVE) ---")
+    print(f"--- CHROMIUM CORE: CARRIER HARVESTER V2.1 (SELECTIVE) ---")
     substrate = bytearray([0] * SUBSTRATE_SIZE)
     current_offset = REGISTRY_SIZE
     registry_entries = []
 
+    # Sort files to ensure deterministic offsets
     files = [f for f in sorted(os.listdir('.')) if f.startswith(INPUT_PREFIX) and f.endswith('.png')]
     
     for filename in files:
         print(f"[*] Harvesting: {filename}...")
         try:
             raw_data = extract_raw_binary_from_png(filename)
-            
-            # --- THE FIX: ADAPTIVE NULL STRIP ---
-            # If this was a 1.44MB floppy img, it's full of trailing zeros.
-            # We strip them to recover the space.
-            original_size = len(raw_data)
-            raw_data = raw_data.rstrip(b'\x00')
-            
-            # Re-align to 512-byte sectors to be safe for disk images
-            padding = (512 - (len(raw_data) % 512)) % 512
-            raw_data += b'\x00' * padding
-            
-            size = len(raw_data)
             short_name = filename.replace(INPUT_PREFIX, "").replace(".png", "")
             
-            print(f"    -> Extracted {original_size} bytes. Optimized to {size} bytes.")
+            # --- THE V2.1 FIX: SELECTIVE OPTIMIZATION ---
+            original_size = len(raw_data)
+            
+            # Only optimize Disk Images (which are full of FS padding)
+            if any(ext in short_name.lower() for ext in [".img", ".iso"]):
+                print(f"    [OPTIMIZE] Stripping nulls from Disk Image...")
+                raw_data = raw_data.rstrip(b'\x00')
+                # Re-align to 512-byte sectors for floppy compatibility
+                padding = (512 - (len(raw_data) % 512)) % 512
+                raw_data += b'\x00' * padding
+            else:
+                # SYSTEM BINARIES (.wasm, .js, .bin) MUST BE BIT-PERFECT
+                print(f"    [PASS-THROUGH] Preserving binary integrity...")
+            
+            size = len(raw_data)
+            print(f"    -> Extracted {original_size} bytes. Packed {size} bytes.")
 
             if current_offset + size > SUBSTRATE_SIZE:
-                print(f"    [!] FATAL: {short_name} still exceeds capacity! ({current_offset + size} > {SUBSTRATE_SIZE})")
+                print(f"    [!] FATAL: {short_name} exceeds Carrier capacity!")
                 continue
                 
             substrate[current_offset:current_offset + size] = raw_data
             
+            # Registry entry: Name (16s), Offset (I), Size (I)
             entry = struct.pack('16sII', short_name[:16].encode('ascii'), current_offset, size)
             registry_entries.append(entry)
-            print(f"    -> Packed at offset {current_offset}")
             current_offset += size
+            
         except Exception as e:
             print(f"    [!] Failed to harvest {filename}: {e}")
 
-    # Write Registry
+    # Write Registry Header (Count + Entries)
     substrate[0:4] = struct.pack('I', len(registry_entries))
     for i, entry in enumerate(registry_entries):
         start = 4 + (i * 24)
         substrate[start:start + 24] = entry
 
+    # Create I/O Membrane (1024 width)
+    # R=1(Boot), G=1(Carrier), B=250(WP)
     membrane = bytearray([1, 1, 250] + [0] * (1024 * 3 - 3))
+    
+    # Forge Carrier PNG (1024x961)
     full_blob = membrane + substrate
     img = Image.frombytes('RGB', (1024, 961), bytes(full_blob))
     img.save(OUTPUT_PNG)
-    print(f"\n[SUCCESS] Universal Carrier Sealed: {OUTPUT_PNG}")
-    print(f"[*] Efficiency: {current_offset}/{SUBSTRATE_SIZE} bytes used.")
+    
+    print(f"\n[SUCCESS] Carrier V2.1 Sealed: {OUTPUT_PNG}")
+    print(f"[*] Total Files: {len(registry_entries)}")
+    print(f"[*] Substrate Usage: {current_offset}/{SUBSTRATE_SIZE} bytes.")
 
 if __name__ == "__main__":
     run_packer()
