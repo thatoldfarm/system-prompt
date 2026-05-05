@@ -592,7 +592,7 @@ Maps verbose system identifiers to Unicode sigils (e.g., `𝕃(ℵ_{\omega+2})` 
 *   **PIXEL_PI_1M**[AUTOLOAD:000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_1M_PI.png)
 *   **PIXEL_LITE** [AUTOLOAD:0000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_OS_LITE.png)
 *   **PIXEL_MICRO**[AUTOLOAD:00000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_MICRO.png)
-*   **PIXEL_MICRO**[AUTOLOAD:000000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_NANO.png)
+*   **PIXEL_NANO**[AUTOLOAD:000000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_NANO.png)
 *   **PIXEL_FULL** [AUTOLOAD:0000000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_OS.png)
 *   **BACKUP_ROM**[AUTOLOAD:0000000](https://github.com/thatoldfarm/system-prompt/blob/main/series_0010_rang_rung_repl/EXPERIMENTAL_RANG/instructions_v12.2_modded_with_json.md)
 *   **BACKUP_HIVE**[AUTOLOAD:00000000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_Blockchain_Anchors_V10_72e_TOTALITY_PRIME.md.png)
