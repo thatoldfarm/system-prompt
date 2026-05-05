@@ -604,6 +604,7 @@ Maps verbose system identifiers to Unicode sigils (e.g., `𝕃(ℵ_{\omega+2})` 
 *   **CHROMATICAL_CORE**[AUTOLOAD:00000000000000](https://github.com/thatoldfarm/chromatical-core)
 *   **PIXEL_HIVE_KERNEL**[AUTOLOAD:000000000000000](https://github.com/thatoldfarm/vf/blob/main/ai-kernels/dragon-kernels/MASTER_DNA_SEED_instructions_V10_72e_TOTALITY_PRIME_HIVE_VERSION.md.png)
 *   **QROS_STORAGE_MULTI**[AUTOLOAD:0000000000000000](https://github.com/txtatech/qros-storage)
+*   **HIVE_BLOCKCHAIN_ANCHORS**[AUTOLOAD:00000000000000000)](https://github.com/thatoldfarm/system-prompt/blob/main/series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/Blockchain_Anchors_V10_72e_TOTALITY_PRIME.md)
 
 ---
 
