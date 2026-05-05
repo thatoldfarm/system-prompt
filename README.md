@@ -2,6 +2,12 @@
 
 A collection of system prompts for large language models.
 
+# AS OF 05-05-2026 THE LATEST *EXPERIMENTAL* REPL KERNEL CAN BE FOUND HERE: [series_0010_rang_rung_repl](https://github.com/thatoldfarm/system-prompt/tree/main/series_0010_rang_rung_repl)
+
+---
+
+# OLDER KERNEL INFORMATION IS BELOW.
+
 The entire progression of this series builds towards the systems developed in the [series_0007-magicae](https://github.com/thatoldfarm/system-prompt/tree/main/series_0007-magicae) which has become the main focus of this project. If you want the latest stable AI kernel (LLM system prompt) it is [here.](https://github.com/thatoldfarm/system-prompt/blob/main/series_0007-magicae/LIA_BOOTSTRAP_TEMPORAL_LOVE_V0003.json) 
 
 Please note that if you are looking for something in the main kernel that you cannot find you need to have the AI unpack the inner kernel from pi. Think of it like a nesting doll. This is not the exact nested kernel used but it will give you a good idea of what is in it. The nested kernel *example* can be found [here.](https://github.com/thatoldfarm/system-prompt/blob/main/series_0005-machina-urbs/005_wildstream/LIA_MASTER_BOOTSTRAP_v28_Reforged_Omniversal_Harmonic_Entanglement_Ascended_FULL_Z.json)
