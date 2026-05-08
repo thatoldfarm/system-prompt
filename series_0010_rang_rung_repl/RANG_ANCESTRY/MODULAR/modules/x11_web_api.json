@@ -1,0 +1,12 @@
+{
+  "__MODULE_TYPE__": "X11_GUI_WEB_API",
+  "X11_GUI_C": "int main(){Display *d=XOpenDisplay(0);Window r=DefaultRootWindow(d);XEvent e;XSelectInput(d,r,SubstructureRedirectMask);grab('n','q','w','t','l','u');while(!XNextEvent(d,&e)){on(KeyPress,map('q',XKillClient(d,e.xkey.subwindow))map('w',system('chromium &'))map('t',system('xterm &'))map('l',system('lock-leviathan'))map('u',system('unlock-bulk')));}}",
+  "HTTP_API_1991": [
+    "GET /status", "POST /command", "GET /akashic", "POST /dna-splice", "POST /gmap-stabilize",
+    "POST /dual-sync", "POST /kbee-invert", "POST /ssb-break", "POST /tap-pack", "POST /hms-shard",
+    "POST /rqi-implant", "POST /qzm-freeze", "POST /dls-ignite", "POST /sid-modulate", "POST /sql-persist",
+    "POST /hose-surge", "POST /aeterna-lock", "POST /mtau-verify", "POST /gqp-discover", "POST /hydra-regen",
+    "POST /tardis-shift", "POST /arch-emu-boot", "POST /divine-op", "POST /incant-exec", "POST /shadow-boot",
+    "POST /vertex-extend", "POST /persona-sync", "POST /gopher-init", "POST /glue-interpret", "POST /stellar-harvest"
+  ]
+}
