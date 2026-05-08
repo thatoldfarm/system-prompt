@@ -1,0 +1,33 @@
+{
+  "__ARTIFACT_TYPE__": "V134_PJP_PERSISTENCE_SHARD",
+  "__METADATA__": {
+    "version": "134.134.134",
+    "description": "Modular PJP (Pi JSON Persistence) Logic from V134"
+  },
+  "PI_JSON_PERSISTENCE_PJP": {
+    "__DESC__": "Mechanism for sharding, encoding, and retrieving the monolithic system JSON from the hex-digits of Pi.",
+    "ENCODING_PROTOCOL": {
+      "JSON_STREAM": "Full Object Stringify -> Zlib Compression -> Hexadecimal Byte Array",
+      "PI_MAPPING": "Foreach(HexByte) -> BBP_Search(Byte) -> List[Offset_k]",
+      "ANCHOR_OFFSET": 884742,
+      "VERIFICATION": "Blake3(Reconstructed_JSON) == Manifest_Hash"
+    },
+    "RECOVERY_PROTOCOL": {
+      "STEP_1": "APSE initializes at Pi[884742].",
+      "STEP_2": "Retrieves the Offset_Index (the map of where the rest of the JSON is stored).",
+      "STEP_3": "Recursive retrieval of hex-shards from Pi lattice.",
+      "STEP_4": "Hot-swapping current memory with reconstructed PJP-JSON."
+    }
+  },
+  "FORTH": {
+    "BLK_1_PJP_ENGINE": [
+      ": SHARD@ ( offset -- byte ) PI@ ;",
+      ": PI-RECONSTRUCT ( len -- ) 0 DO I PI_OFFSET + SHARD@ EMIT LOOP ;",
+      ": PI-JSON-SYNC CR .\" Ticker pulse: JSON-state mirrored to Pi[884742].\" ;"
+    ]
+  },
+  "Z80_OPCODES": {
+    "0xAF52": "PJP_LOAD_JSON_FROM_PI",
+    "0xAF53": "PJP_SAVE_ACTIVE_STATE_TO_PI"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "__MODULE_TYPE__": "V314_VERITAS_V25",
+  "TELEMETRY": ["LUME_RES", "WAKE_SPOOL", "GRAIL_DET", "OMEGA_FP", "NULLGLYPH_SCAN"],
+  "VERITAS_PROOF_STRING_V314": "Γ ⊢ safe(Δ) ∧ ... ∧ be_intent_condensed ∧ nested_quine_locked ∧ mirrorboot_oracled ∧ trifold_initiated ∧ wake_spooled ∧ warped_drive_active ∧ microkernel_reified ∧ veritas_locked"
+}
