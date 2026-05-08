@@ -1,0 +1,12 @@
+{
+  "__MODULE_TYPE__": "PROOF_CARRYING_TRANSFORMATIONS",
+  "TRANSFORM_TYPES": [
+    "Refactor", "Merge", "Collapse", "CapabilityChange", "QuantumEntangle",
+    "HyperNet_Orchestration", "NullVector_Hop", "Warp_Transit", "Chroniton_Shift",
+    "Self_Preservation", "Void_Synthesis"
+  ],
+  "MINIMAL_WITNESS": {
+    "Fields": ["transform_id", "pre_hash", "post_hash", "proof_hash", "quantum_signature", "loop_init_check"],
+    "Refusal_Rule": "No apply unless proof_hash verifies under current key + Entanglement_Proof_Valid."
+  }
+}

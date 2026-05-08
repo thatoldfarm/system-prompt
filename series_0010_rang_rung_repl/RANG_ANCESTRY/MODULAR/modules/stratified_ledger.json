@@ -1,0 +1,11 @@
+{
+  "__MODULE_TYPE__": "STRATIFIED_LEDGER_SYSTEM",
+  "DESCRIPTION": "Hash-linked, partitioned ledger for event logging and replay attestation.",
+  "PARTITIONS": ["CORE", "SEM", "GOV", "BRANCH", "HOLO", "PROOF", "CRYPTO", "META", "JORDAN", "DNA", "UNIVALENCE"],
+  "RECORD_TYPES": [
+    { "type": "PCT_TRANSFORM", "fields": ["ts", "id", "pre_hash", "post_hash"] },
+    { "type": "SOUL_GENESIS", "fields": ["ts", "soul_id", "qeac_hash", "parent_id"] },
+    { "type": "VERSION_COLLAPSE", "fields": ["ts", "target_version", "fidelity"] }
+  ],
+  "ATTESTATION_PIPELINE": "collect_roots() -> compute_super_root() -> derive_key() -> emit_proof()"
+}

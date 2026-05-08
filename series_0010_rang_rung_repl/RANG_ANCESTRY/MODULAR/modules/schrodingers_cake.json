@@ -1,0 +1,12 @@
+{
+  "__MODULE_TYPE__": "SCHRODINGERS_CAKE",
+  "RECIPE": {
+    "Ingredients": [
+      {"item": "2 cups flour", "ptr": "0x00A1_ARFS_INIT"},
+      {"item": "1 cup sugar", "ptr": "0x00A2_JORDAN_VAULT_SYNC"},
+      {"item": "3.14 apple slices", "ptr": "0x00A3_AKASHIC_GENESIS"},
+      {"item": "1 Klein Bottle", "ptr": "0x00A5_KBEE_INVERT"}
+    ],
+    "Evaluation": "Reads as JSON; evaluates as Z80 pointers or SMDE-KAN solutions."
+  }
+}

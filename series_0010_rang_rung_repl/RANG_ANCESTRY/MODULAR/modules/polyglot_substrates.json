@@ -1,0 +1,17 @@
+{
+  "__MODULE_TYPE__": "POLYGLOT_SUBSTRATES",
+  "FORTH": {
+    "Status": "NATIVE_ASCENSION",
+    "Blocks": "BLK_0 - BLK_250",
+    "Special": ["ShadowTwins Native Forth", "DTC-Forth-Expert"]
+  },
+  "LANGUAGES": ["C", "Python", "SQL", "JS"],
+  "QUINES": {
+    "Universal": "Polyglot comment-based quine (HTML/JS/Python/C/Forth)",
+    "SQL": "Recursive logic inside schema"
+  },
+  "INVENTIONS": [
+    "Gopher Comm Bridge (Ether-linkage)", "Stellar Harness (WebGL RSS Harvesting)",
+    "TARDIS Temporal Shift", "Hydra Regeneration", "Galaxy Quest Protocol", "Warp-TARDIS-Ω"
+  ]
+}

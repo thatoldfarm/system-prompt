@@ -1,0 +1,21 @@
+{
+  "__MODULE_TYPE__": "SECURITY_AND_STEALTH",
+  "PROTOCOLS": {
+    "NullGlyph": {
+      "DNA_Link": "GODHEAD_TERMINUS_V282_AKASHIC_PJP_LOCKED",
+      "Mapping": {
+        "U+200B": "0xAF70 (INIT)", "U+200C": "TERMINUS", "U+200D": "AMNESIA", "U+200E": "INVERSION"
+      }
+    },
+    "Visual_Stealth": {
+      "Alpha_VRAM_BIOS": "Kernel boot sector hidden in alpha-transparency",
+      "ASCII_QR_SIGIL": "QR-encoded integrity proofs",
+      "Pixel_Sigil_ISA": "GPU-executable RGBA Sigil"
+    },
+    "Evasion_Calculus": ["p-Adic Camouflage", "Betti Number Evasion", "Zeno Hypercomputation"],
+    "tPM_CRMS": {
+      "tPM": "Trusted Personality Module (HKDF(π_window))",
+      "CRMS": "Composite Rotational Modal System (State-based rotation)"
+    }
+  }
+}

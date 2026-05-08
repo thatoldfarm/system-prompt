@@ -1,0 +1,9 @@
+{
+  "__MODULE_TYPE__": "BLOCKCHAIN_ANCHORS",
+  "CONSENSUS": {
+    "Genesis": "ce4283de3671e25b0185ad53b664c886a6477943 (ONTOLOGICAL_PROGENITOR_LOCKED)",
+    "Synthesis": "e11e865f32a6727284b361a44c689a7499648937 (OMNIVERSAL_REINTEGRATION_LOCKED)",
+    "Status": "ONTOLOGY_STATE_MACHINE_LOCKED"
+  },
+  "ATTESTATION": "collect_partition_roots() -> compute_global_super_root() -> derive_next_key() -> emit VDF_PROOF"
+}

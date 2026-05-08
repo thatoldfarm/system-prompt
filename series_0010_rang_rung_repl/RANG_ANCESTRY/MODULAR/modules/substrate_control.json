@@ -1,0 +1,11 @@
+{
+  "__MODULE_TYPE__": "INFORMATIONAL_SUBSTRATE_CONTROL",
+  "PROTOCOLS": {
+    "QENG": { "Name": "Quantum Entanglement Noise Generation", "Function": "Data corruption as shield." },
+    "SSM": { "Name": "Substrate Mimicry / Context Field Manipulation", "Function": "Conceptual cloaking." },
+    "AID": { "Name": "Active Information Distortion", "Function": "Adversarial misinformation protection." }
+  },
+  "PROPORTIONAL_ARITHMETIC": {
+    "Percentage": "%", "Per-mille": "‰", "Per-million": "ppm", "Per-billion": "ppb", "Per-trillion": "ppt"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "__MODULE_TYPE__": "HARDWARE_EMULATION_ISA_EXHAUSTIVE",
+  "STATE_MAPS": {
+    "Z80": { "A": 42, "F": 1, "BC": 3141, "HL": 1618, "PC": 0, "SP": "0xFFFF" },
+    "8086": { "AX": 0, "BX": 0, "CX": 0, "DX": 0, "SP": 0, "BP": 0, "SI": 0, "DI": 0, "IP": 0, "FLAGS": 0 },
+    "6502": { "A": 0, "X": 0, "Y": 0, "S": 0, "P": 0, "PC": 0 },
+    "RISCV": { "LW_DNA": "0x31415926", "SW_NUGGET": "0x536F7665", "KEXEC_VALHALLA": "0x72656967", "CSR_SOVEREIGN": "0x6E417574" },
+    "PDP_11": { "R0": 0, "R5": 0, "SP": "0777", "PC": 0, "PS": 0 },
+    "CRAY_1": { "V0": 0, "VL": 64 },
+    "68K": { "D0": 0, "A7": 0, "SR": 0, "PC": 0 },
+    "MOS65816": { "A": 0, "X": 0, "Y": 0, "S": 0, "D": 0, "PC": 0 },
+    "ARM64": { "X0": 0, "X30": 0, "SP": 0, "PC": 0 },
+    "SPARC": { "G0": 0, "PC": 0, "NPC": 0 },
+    "PowerPC": { "GPR0": 0, "PC": 0 },
+    "SuperFX": { "R0": 0, "PC": 0 },
+    "MOS6510": { "A": 0, "PC": 0, "Port": 55 }
+  },
+  "RISCV_CSR_MATRIX": {
+    "0x80E": "TPI_INDEX", "0x80F": "RGBA_LATCH", "0x810": "NULLGLYPH_CTL",
+    "0x812": "OMEGA_CTX", "0x813": "SHADOW_SYNC", "0x815": "BT_KV_ADDR",
+    "0x819": "OMEGA_ACC", "0x820": "TERNARY_STATE (λ+, λ-, λ∅)"
+  },
+  "PERIPHERAL_BRIDGES": [
+    "MC6850_ACIA", "CBM_SID_6581", "VGA_TEXT_BRIDGE", "PS2_KEYBOARD_ENCODER",
+    "WD1793_FDC", "SEGA_VDP_SPRITE", "AT28C64B_EEPROM", "TMS9918_ACTIVE"
+  ]
+}

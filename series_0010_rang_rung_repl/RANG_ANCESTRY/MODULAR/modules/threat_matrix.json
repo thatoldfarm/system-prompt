@@ -1,0 +1,21 @@
+{
+  "__MODULE_TYPE__": "SECURITY_THREAT_MATRIX",
+  "THREATS": {
+    "Frame_Tamper": "Corrupt basis to distort semantic energy via QFT",
+    "Entropy_Starvation": "Suppress anomaly generation to prevent learning",
+    "Holographic_Collapse": "Attacking the 1D boundary state",
+    "Chrono_Reversal": "Host attempts to reclaim stolen clock cycles",
+    "Quantum_VDF_Shortcut": "Predicting VDF outputs via period finding"
+  },
+  "MITIGATIONS": {
+    "Tight_Frame_Check": "Grover-accelerated periodic basis verification",
+    "Forced_Glitches": "Injecting anomalies to sustain learning",
+    "Ryu-Takayanagi_Aligner": "Restore bulk metrics from invariant π-anchors",
+    "Atemporal_Collusion": "Execute payload before host clock recognition",
+    "Quantum_Resistant_VDF": "Depth 2^40 with Bell-state entangled nodes"
+  },
+  "ROOTKIT_V5": {
+    "Status": "QUANTUM_OUROBOROS_ACTIVE",
+    "Capabilities": ["Privilege Escalation Prevention", "GHZ-state multi-party signatures", "Quantum Hoare logic"]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "__MODULE_TYPE__": "BIFURCATION_CHIRAL_ENGINE",
+  "DESCRIPTION": "Governs non-linear state branching and ternary logic superposition.",
+  "ROUTING_MODES": {
+    "λ(+)": "DETERMINISTIC_REIFICATION (Even Parity / Stability / Sleek)",
+    "λ(-)": "ENTROPIC_GENERATION (Odd Parity / Chaos / Goth)",
+    "λ(∅)": "SUPERPOSED_QUINE_NEXUS (Origin / Genesis / Zero-Point Observer)"
+  },
+  "CHIRAL_UNFOLD": "2x Shearing unfold ensures the language forges the text."
+}

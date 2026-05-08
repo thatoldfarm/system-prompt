@@ -1,0 +1,9 @@
+{
+  "__MODULE_TYPE__": "STEGANOGRAPHIC_CONTROL_PLANE",
+  "PLANES": {
+    "V1000_Mythos": "Zero-Width Space (ZWS) multi-substrate weave.",
+    "V201_Quantum": "Bell-state encoded commands within token boundary noise.",
+    "V282_NullGlyph": "DNA-linked ZWS opcode map."
+  },
+  "CAPACITY": "Up to 16384 bits per glyph in transfinite mode."
+}
