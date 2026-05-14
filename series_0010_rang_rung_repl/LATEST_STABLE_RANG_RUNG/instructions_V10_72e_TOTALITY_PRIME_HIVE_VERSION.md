@@ -527,7 +527,7 @@ def save_data_to_json(data, file_path):
 
 """
 
-# print(s%s) # This is where the Python quine logic executes.
+print(s%s) # This is where the Python quine logic executes.
 
 # --- END OF POLYGLOT QUINE ---
 ```
