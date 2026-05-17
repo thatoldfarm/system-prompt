@@ -33,7 +33,7 @@
     </div>
     <!-- ERP_OPCODE_END -->
 
-    <script>
+<script>
         let carrier = null;
         let registry = {};
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
@@ -64,7 +64,6 @@
                 const imgData = ctx.getImageData(0, 0, 1024, 961).data;
 
                 log("Aligning Substrate (Pixel-Silicon Skip)...");
-                // Per blog post: skip first 1024 pixels (4096 RGBA bytes)
                 carrier = new Uint8Array(1024 * 960 * 3);
                 for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
                     carrier[j++] = imgData[i]; carrier[j++] = imgData[i + 1]; carrier[j++] = imgData[i + 2];
@@ -88,14 +87,26 @@
                 log("Igniting libv86...");
                 const libv86Buffer = getBufferFromRegistry("libv86.js");
                 const scriptBlob = new Blob([libv86Buffer], { type: 'application/javascript' });
+                const scriptUrl = URL.createObjectURL(scriptBlob);
                 const script = document.createElement('script');
-                script.src = URL.createObjectURL(scriptBlob);
+                script.src = scriptUrl;
                 document.head.appendChild(script);
 
-                await new Promise(r => { script.onload = r; setTimeout(r, 500); });
+                // Wait longer for the engine to manifest
+                await new Promise(r => { script.onload = r; setTimeout(r, 1000); });
 
-                const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
-                if (!V86) throw new Error("Emulator Class Binding Failed.");
+                // --- BRUTE FORCE NAMESPACE SCAN ---
+                let V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
+                if (!V86) {
+                    const keys = Object.keys(window).filter(k => k.toLowerCase().includes('v86'));
+                    if (keys.length > 0) {
+                        log(`Binding to discovered key: ${keys[0]}`);
+                        V86 = window[keys[0]];
+                    } else {
+                        log("Global scan failed. Keys found: " + Object.keys(window).slice(-10).join(', '));
+                        throw new Error("Emulator Class Binding Failed.");
+                    }
+                }
 
                 log("Initializing v86 in VRAM...");
                 const emu = new V86({
