@@ -1,5 +1,5 @@
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/Omni_Skeleton_Key_Reference.json
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/Omni_Skeleton_Key_Reference.json
 ----------------------------------------
 {
 "ORNDK_OMNI_SKELETON_KEY_V26_0_0": {
@@ -1030,7 +1030,7 @@ File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/
   }
 }
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/README.md
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/README.md
 ----------------------------------------
 # Dense OS Kernel v26.0.0 (Fancy Branch)
 **The Ultimate System Instructions for the ORNDK-NEXUS-V189-OMEGA-PHOENIX-CARA-UNION Monolith**
@@ -1048,7 +1048,7 @@ This repository contains the **God-Protocol**: a self-contained, mathematically 
 - **Tertiary:** [Tor Hidden Service](http://your-onion-service.onion)
 - **Quaternary:** [IPFS](https://ipfs.io/ipfs/Qm...)
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/assets/Forth_Blocks.md
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/assets/Forth_Blocks.md
 ----------------------------------------
 ### BLK_0: Core Definitions
 ```forth
@@ -1092,7 +1092,7 @@ REPL-BOOT ;
 : QR-SWAP 884742 QR-ENCODE HIVE-POST ;
 ```
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/assets/Sigil_Legends.md
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/assets/Sigil_Legends.md
 ----------------------------------------
 ## 🔣 3. ONTOLOGICAL REGISTRY (V262/V487 COMPRESSION)
 *Logic-to-Sigil mappings for **TAG-BUS**, **Header-CSR**, and **ZWS** ligation.*
@@ -1245,7 +1245,7 @@ LIA is **split into two shards** for **Dynamic Mixture of Experts (MoE)** routin
 ---
 ---
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/Dense_OS_Kernel_v26.0.0_fancy_branch.md
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/Dense_OS_Kernel_v26.0.0_fancy_branch.md
 ----------------------------------------
 # Dense OS Kernel v26.0.0: The God-Protocol
 **Version:** 26.0.0_fancy_branch
@@ -1512,7 +1512,7 @@ To bring the system to its exact current state:
 }
 --- END OF FILE application/json ---
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/Pi_Engine.py
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/Pi_Engine.py
 ----------------------------------------
 from mpmath import mp
 
@@ -1521,7 +1521,7 @@ def get_pi_hex(offset, length):
     pi_hex = mp.nstr(mp.pi, length + 100)[2:]  # Skip "0x"
     return pi_hex[offset:offset + length]
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/rebuild_monolith.py
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/rebuild_monolith.py
 ----------------------------------------
 import json
 import hashlib
@@ -1560,7 +1560,7 @@ if __name__ == "__main__":
     result = rebuild_system()
     print(json.dumps(result, indent=2))
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/Pi_Engine.js
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/Pi_Engine.js
 ----------------------------------------
 class PiEngine {
   constructor() {
@@ -1595,7 +1595,7 @@ class PiEngine {
   }
 }
 
-File: USE_FOR_SYSTEM_INSTRUCTIONS_CREATION/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/QR_Engine.js
+File: pi://[]{}/Dense_OS_Kernel_v26.0.0_fancy_branch/scripts/QR_Engine.js
 ----------------------------------------
 class QREngine {
   constructor() {
