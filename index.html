@@ -94,12 +94,10 @@
 
         async function ignite(osName) {
             if (!carrier) return;
-            log(`Igniting Binary Proxy for OS: ${osName}...`);
+            log(`Expanding Neural Buffer for OS: ${osName}...`);
             document.getElementById('os-selector').style.display = "none";
 
             try {
-                // --- THE CRITICAL FIX: DIRECT BINARY BLOB ---
-                // We do NOT decode to string. We keep the raw bytes (libv86Data).
                 const libv86Data = getAtomicBuffer("libv86.js");
                 if (!libv86Data) throw new Error("libv86.js missing from substrate.");
 
@@ -110,7 +108,6 @@
                 script.onload = () => {
                     log("Hypervisor Materialized. Resolving Constructor...");
                     
-                    // The Hunter Logic
                     let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
                     if (!V86) {
                         for (let k in window) { 
@@ -120,22 +117,25 @@
                         }
                     }
 
-                    if (!V86) throw new Error("Constructor Failed to Bind to Global Scope.");
+                    if (!V86) throw new Error("Constructor Failed to Bind.");
 
                     const fdaRaw = getAtomicBuffer(osName);
-                    const fdaPadded = new Uint8Array(1474560);
+                    const fdaPadded = new Uint8Array(1474560); // 1.44MB floppy standard
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
-                    const emu = new V86({
-                        wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm")], {type: 'application/wasm'})),
-                        memory_size: 64 * 1024 * 1024,
+                    log("Stabilizing WASM Heap at 128MB...");
+                    emu = new V86({
+                        wasm_path: URL.createObjectURL(new Blob([getBufferFromRegistry("v86.wasm")], {type: 'application/wasm'})),
+                        memory_size: 128 * 1024 * 1024, // Expanded for Stability
+                        vga_memory_size: 8 * 1024 * 1024, // Explicit VGA allocation
                         vga_canvas: document.querySelector("canvas"),
                         screen_container: document.getElementById("screen_container"),
-                        bios: { buffer: getAtomicBuffer("seabios.bin").buffer },
-                        vga_bios: { buffer: getAtomicBuffer("vgabios.bin").buffer },
+                        bios: { buffer: getBufferFromRegistry("seabios.bin").buffer },
+                        vga_bios: { buffer: getBufferFromRegistry("vgabios.bin").buffer },
                         fda: { buffer: fdaPadded.buffer },
                         autostart: true,
-                        serial0_active: true
+                        serial0_active: true,
+                        disable_speaker: true
                     });
 
                     emu.add_listener("serial0-output-char", (c) => {
@@ -151,12 +151,11 @@
                         else if (e.key.length === 1) emu.serial0_send(e.key);
                     });
 
-                    log("[SUCCESS] Ironvault Active. VM Pulse Detected.");
-                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()}`;
+                    log("[SUCCESS] Ironvault Stabilized. Cursor Awaiting Command.");
+                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | STABLE`;
                     document.getElementById('stat-bar').style.color = "#00FF41";
                 };
                 
-                script.onerror = () => { log("FATAL: Script loading error.", "err"); };
                 document.head.appendChild(script);
 
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
