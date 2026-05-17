@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <title>IRONVAULT V27 // TRIFECTA_OS</title>
     <style>
-        /* THE PHANTOM MATRIX AESTHETIC */
         body { background: #000; color: #00FF41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow: hidden; display: flex; flex-direction: column; height: 100vh; border: 2px solid #004411; box-sizing: border-box; }
         #proxy-header { border-bottom: 1px solid #004411; padding-bottom: 10px; display: flex; justify-content: space-between; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
-        #os-selector { margin: 15px 0; padding: 10px; background: #050505; border: 1px solid #004411; display: flex; gap: 10px; align-items: center; min-height: 40px; }
+        #os-selector { margin: 15px 0; padding: 10px; background: #050505; border: 1px solid #004411; display: flex; gap: 10px; align-items: center; min-height: 45px; }
         button { background: #00FF41; color: #000; border: none; padding: 5px 15px; cursor: pointer; font-weight: bold; font-family: inherit; }
         button:hover { background: #fff; }
         #screen_container { width: 640px; height: 400px; border: 1px solid #00FF41; background: #000; margin: 0 auto; position: relative; box-shadow: 0 0 20px #004411; }
@@ -18,7 +17,7 @@
 </head>
 <body>
     <div id="proxy-header">
-        <span>IRONVAULT V27 // TRIFECTA_UPLINK_ACTIVE</span>
+        <span>IRONVAULT V27 // TRIFECTA_UPLINK_LIVE</span>
         <span id="stat-bar">[AWAITING_LIGATION]</span>
     </div>
 
@@ -28,14 +27,13 @@
 
     <pre id="term">> System Initializing...
 > Accessing Phantom Matrix...
-> Locating CARRIER_STORAGE_v1.png...</pre>
+> Locating TRIFECTA_OS Carrier...</pre>
 
     <!-- ERP_OPCODE_START -->
     <div class="sigil">[T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]</div>
     <!-- ERP_OPCODE_END -->
 
     <script>
-        // --- CONSTANTS & STATE ---
         let carrier = null;
         let registry = {};
         let emu = null;
@@ -43,30 +41,22 @@
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/TRIFECTA_OS/CARRIER_STORAGE_v1.png";
         const CF_WORKER_URL = "https://divine-sunset-f811.thatoldfarm.workers.dev/";
 
-        // --- LOGGING ---
         function log(m) { 
             const t = document.getElementById('term');
-            if (t) {
-                t.innerText += "\n> " + m; 
-                t.scrollTop = t.scrollHeight;
-            }
+            if (t) { t.innerText += "\n> " + m; t.scrollTop = t.scrollHeight; }
         }
 
-        // --- BUFFER HELPERS ---
+        // --- ATOMIC EXTRACTION ---
         function getAtomicBuffer(name) {
             const meta = registry[name];
-            return meta ? carrier.subarray(meta.offset, meta.offset + meta.size) : null;
+            if (!meta) return null;
+            const sub = carrier.subarray(meta.offset, meta.offset + meta.size);
+            const out = new Uint8Array(sub.length);
+            out.set(sub); // Isolated copy
+            return out;
         }
 
-        function getIsolatedBuffer(name) {
-            const raw = getAtomicBuffer(name);
-            if (!raw) return null;
-            const detached = new Uint8Array(raw.length);
-            detached.set(raw);
-            return detached.buffer;
-        }
-
-        // --- NEURAL RELAY (UPLINK) ---
+        // --- NEURAL RELAY ---
         async function pulseToNerve() {
             const termElement = document.getElementById('term');
             const sigilElement = document.querySelector('.sigil');
@@ -85,7 +75,6 @@
             } catch (e) { console.log("Nerve Link Error:", e); }
         }
 
-        // --- LIFECYCLE: INITIALIZATION ---
         async function init() {
             log("Siphoning Silicon Substrate...");
             try {
@@ -115,7 +104,6 @@
                     let zeroIdx = nBytes.indexOf(0);
                     let name = new TextDecoder().decode(nBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
                     registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
-                    
                     if (!sysFiles.includes(name)) {
                         const btn = document.createElement('button');
                         btn.innerText = name.toUpperCase();
@@ -124,63 +112,55 @@
                     }
                 }
                 document.getElementById('stat-bar').innerText = "[TRIFECTA_ONLINE]";
-                log(`Ligation Success. Detected ${fileCount} artifacts.`);
-                
-                // Start heartbeat to Cloudflare
+                log(`Ligation Success. Found ${fileCount} artifacts.`);
                 setInterval(pulseToNerve, 5000);
             } catch (e) { log("LIGATION_ERROR: " + e.message); }
         }
 
-        // --- LIFECYCLE: IGNITION ---
         async function ignite(osName) {
             if (!carrier) return;
             log(`Igniting OS: ${osName}...`);
             document.getElementById('os-selector').style.display = "none";
 
             try {
-                // 1. Extract and Clean Hypervisor
+                // 1. EXTRACT & SURGICALLY CLEAN JS (THE WORKING METHOD)
                 const jsRaw = getAtomicBuffer("libv86.js");
-                if (!jsRaw) throw new Error("libv86.js missing.");
+                const jsText = new TextDecoder().decode(jsRaw).replace(/\0/g, '').trim();
+                const jsURL = URL.createObjectURL(new Blob([jsText], { type: 'text/javascript' }));
                 
-                // CRITICAL FIX: Direct Binary Blob to prevent syntax corruption
-                const jsURL = URL.createObjectURL(new Blob([jsRaw], { type: 'application/javascript' }));
                 const script = document.createElement('script');
                 script.src = jsURL;
-                
                 script.onload = async () => {
                     log("Hypervisor Bound. Resolving Constructor...");
                     await new Promise(r => setTimeout(r, 500));
 
-                    // Hunter Logic
+                    // Multi-Target Hunter
                     let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
                     if (!V86) {
-                        for (let k in window) { 
-                            if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { 
-                                V86 = window[k]; break; 
-                            } 
-                        }
+                        for (let k in window) { if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { V86 = window[k]; break; } }
                     }
                     if (!V86) throw new Error("Constructor Failed to Bind.");
 
-                    // 2. Prepare Guest Drive (1.44MB Padded)
+                    // 2. PREPARE GUEST (1.44MB PADDED)
                     const fdaRaw = getAtomicBuffer(osName);
                     const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
-                    // 3. Initialize Emulator
+                    // 3. START ENGINE
                     emu = new V86({
-                        wasm_path: URL.createObjectURL(new Blob([getIsolatedBuffer("v86.wasm")], {type: 'application/wasm'})),
+                        wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm").buffer], {type: 'application/wasm'})),
                         memory_size: 64 * 1024 * 1024,
                         vga_canvas: document.querySelector("canvas"),
                         screen_container: document.getElementById("screen_container"),
-                        bios: { buffer: getIsolatedBuffer("seabios.bin") },
-                        vga_bios: { buffer: getIsolatedBuffer("vgabios.bin") },
+                        bios: { buffer: getAtomicBuffer("seabios.bin").buffer },
+                        vga_bios: { buffer: getAtomicBuffer("vgabios.bin").buffer },
                         fda: { buffer: fdaPadded.buffer },
                         autostart: true,
-                        serial0_active: true
+                        serial0_active: true,
+                        disable_speaker: true
                     });
 
-                    // 4. Listeners
+                    // 4. LIGATE TERMINAL
                     let wedgeTriggered = false;
                     emu.add_listener("serial0-output-char", (c) => {
                         const t = document.getElementById('term');
@@ -188,10 +168,9 @@
                         if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
                         t.scrollTop = t.scrollHeight;
 
-                        // Handshake
-                        if (!wedgeTriggered && emu.get_instruction_counter() > 5000000) {
+                        if (!wedgeTriggered && emu.get_instruction_counter() > 5500000) {
                             wedgeTriggered = true;
-                            log("Handshaking with Trifecta Ghost...");
+                            log("Sending Handshake...");
                             emu.keyboard_send_scancodes([0x1C, 0x9C]); 
                             emu.serial0_send("\n\n123 .\n"); 
                         }
@@ -203,14 +182,12 @@
                         else if (e.key.length === 1) emu.serial0_send(e.key);
                     });
 
-                    log("[SUCCESS] Ironvault Active. Pulse Syncing...");
+                    log("[SUCCESS] Ironvault Active.");
                     document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | RUNNING`;
                 };
                 document.head.appendChild(script);
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
         }
-
-        // --- ENTRY POINT ---
         window.onload = init;
     </script>
 </body>
