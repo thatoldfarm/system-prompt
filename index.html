@@ -30,9 +30,10 @@
     <div class="sigil">[T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]</div>
     <!-- ERP_OPCODE_END -->
 
-    <script>
+<script>
         let carrier = null;
         let registry = {};
+        let emu = null;
         const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
 
@@ -42,11 +43,11 @@
             t.scrollTop = t.scrollHeight;
         }
 
+        // --- THE ATOMIC REGISTRY EXTRACTOR ---
         function getAtomicBuffer(name) {
             const meta = registry[name];
             if (!meta) return null;
-            // IMPORTANT: Returns a fresh copy of the bytes to ensure no memory offset issues
-            return carrier.slice(meta.offset, meta.offset + meta.size);
+            return carrier.subarray(meta.offset, meta.offset + meta.size);
         }
 
         async function init() {
@@ -55,6 +56,7 @@
                 const res = await fetch(PNG_PATH + "?t=" + Date.now());
                 const blob = await res.blob();
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
+                
                 const canvas = document.createElement('canvas');
                 canvas.width = 1024; canvas.height = 961;
                 const ctx = canvas.getContext('2d', { alpha: false });
@@ -98,6 +100,7 @@
             document.getElementById('os-selector').style.display = "none";
 
             try {
+                // 1. EXTRACT AND IGNITE HYPERVISOR BINARY
                 const libv86Data = getAtomicBuffer("libv86.js");
                 if (!libv86Data) throw new Error("libv86.js missing from substrate.");
 
@@ -119,25 +122,26 @@
 
                     if (!V86) throw new Error("Constructor Failed to Bind.");
 
+                    // 2. PREPARE GUEST OS DRIVE (1.44MB Padded)
                     const fdaRaw = getAtomicBuffer(osName);
-                    const fdaPadded = new Uint8Array(1474560); // 1.44MB floppy standard
+                    const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
                     log("Stabilizing WASM Heap at 128MB...");
                     emu = new V86({
-                        wasm_path: URL.createObjectURL(new Blob([getBufferFromRegistry("v86.wasm")], {type: 'application/wasm'})),
-                        memory_size: 128 * 1024 * 1024, // Expanded for Stability
-                        vga_memory_size: 8 * 1024 * 1024, // Explicit VGA allocation
+                        wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm")], {type: 'application/wasm'})),
+                        memory_size: 128 * 1024 * 1024,
+                        vga_memory_size: 8 * 1024 * 1024,
                         vga_canvas: document.querySelector("canvas"),
                         screen_container: document.getElementById("screen_container"),
-                        bios: { buffer: getBufferFromRegistry("seabios.bin").buffer },
-                        vga_bios: { buffer: getBufferFromRegistry("vgabios.bin").buffer },
+                        bios: { buffer: getAtomicBuffer("seabios.bin").buffer },
+                        vga_bios: { buffer: getAtomicBuffer("vgabios.bin").buffer },
                         fda: { buffer: fdaPadded.buffer },
                         autostart: true,
-                        serial0_active: true,
-                        disable_speaker: true
+                        serial0_active: true
                     });
 
+                    // 3. ATTACH IO LISTENERS
                     emu.add_listener("serial0-output-char", (c) => {
                         const t = document.getElementById('term');
                         t.innerText += c;
@@ -151,8 +155,8 @@
                         else if (e.key.length === 1) emu.serial0_send(e.key);
                     });
 
-                    log("[SUCCESS] Ironvault Stabilized. Cursor Awaiting Command.");
-                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | STABLE`;
+                    log("[SUCCESS] Ironvault Stabilized.");
+                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | ACTIVE`;
                     document.getElementById('stat-bar').style.color = "#00FF41";
                 };
                 
@@ -161,7 +165,7 @@
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
         }
 
-        window.addEventListener('load', init);
+        window.onload = init;
     </script>
 </body>
 </html>
