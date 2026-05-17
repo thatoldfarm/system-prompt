@@ -95,16 +95,16 @@
                 // Wait longer for the engine to manifest
                 await new Promise(r => { script.onload = r; setTimeout(r, 1000); });
 
-                // --- BRUTE FORCE NAMESPACE SCAN ---
-                let V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
+                // --- UPGRADED HUNTER BINDING (Legacy Aware) ---
+                let V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86 || window.N;
+                
                 if (!V86) {
-                    const keys = Object.keys(window).filter(k => k.toLowerCase().includes('v86'));
+                    const keys = Object.keys(window).filter(k => k.toLowerCase().includes('v86') || k === 'N');
                     if (keys.length > 0) {
                         log(`Binding to discovered key: ${keys[0]}`);
                         V86 = window[keys[0]];
                     } else {
-                        log("Global scan failed. Keys found: " + Object.keys(window).slice(-10).join(', '));
-                        throw new Error("Emulator Class Binding Failed.");
+                        throw new Error("Emulator Class Binding Failed. (Tried V86Starter, v86, and window.N)");
                     }
                 }
 
