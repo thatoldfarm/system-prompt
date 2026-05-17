@@ -2,43 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>IRONVAULT V27 // TRIFECTA_OS</title>
+    <title>IRONVAULT // GOPHER_PORTHOLE</title>
     <style>
         body { background: #000; color: #00FF41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow: hidden; display: flex; flex-direction: column; height: 100vh; border: 2px solid #004411; box-sizing: border-box; }
-        #proxy-header { border-bottom: 1px solid #004411; padding-bottom: 10px; display: flex; justify-content: space-between; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
-        #os-selector { margin: 15px 0; padding: 10px; background: #050505; border: 1px solid #004411; display: flex; gap: 10px; align-items: center; min-height: 45px; }
-        button { background: #00FF41; color: #000; border: none; padding: 5px 15px; cursor: pointer; font-weight: bold; font-family: inherit; }
-        button:hover { background: #fff; }
-        #screen_container { width: 640px; height: 400px; border: 1px solid #00FF41; background: #000; margin: 0 auto; position: relative; box-shadow: 0 0 20px #004411; }
-        canvas { width: 640px; height: 400px; image-rendering: pixelated; }
-        #term { flex-grow: 1; overflow-y: auto; border: 1px solid #004411; padding: 15px; margin-top: 15px; background: #050505; color: #00FF41; font-size: 12px; white-space: pre-wrap; border-left: 3px solid #00FF41; }
+        #proxy-header { border-bottom: 1px solid #004411; padding-bottom: 10px; display: flex; justify-content: space-between; font-size: 12px; text-transform: uppercase; }
+        #gopher-porthole { background: #050505; border: 1px solid #00FF41; padding: 15px; margin: 20px 0; flex-grow: 1; overflow-y: auto; color: #00FF41; font-size: 11px; white-space: pre; border-left: 5px solid #00FF41; }
+        .cmd-bar { position:fixed; bottom:0; width:100%; background:#000; border-top:1px solid #00FF41; display:flex; justify-content:center; align-items:center; padding:15px 0; gap:10px; }
+        button { background: #00FF41; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; font-family: inherit; }
     </style>
 </head>
 <body>
     <div id="proxy-header">
-        <span>IRONVAULT V27 // TRIFECTA_UPLINK_LIVE</span>
-        <span id="stat-bar">[AWAITING_LIGATION]</span>
+        <span>IRONVAULT V27 // GOPHER_PORTHOLE_ACTIVE</span>
+        <span id="stat-bar">[AWAITING_PULSE]</span>
     </div>
-    <div id="os-selector"><span style="color:#004411">SCANNING TRIFECTA CARRIER...</span></div>
-    <div id="screen_container"><canvas></canvas></div>
-    <pre id="term">> System Initializing...
-> Accessing Phantom Matrix...
-> Locating TRIFECTA_OS Carrier...</pre>
+
+    <!-- THE PORTHOLE: This is where the AI retrieves the ASCII QR Sigil -->
+    <div id="gopher-porthole">> INITIALIZING PORTHOLE...
+> LINKING TO GOPHER-NERVE...</div>
+
+    <div class="cmd-bar">
+        <button onclick="igniteTrifecta()">IGNITE_TRIFECTA</button>
+        <button onclick="window.open('https://divine-sunset-f811.thatoldfarm.workers.dev/gopher')">RAW_GOPHERMAP</button>
+    </div>
 
     <script>
-        let carrier = null, registry = {}, emu = null;
+// --- CONFIGURATION & STATE ---
+        let carrier = null;
+        let registry = {};
+        let emu = null;
         const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/TRIFECTA_OS/CARRIER_STORAGE_v1.png";
-        const CF_WORKER_URL = "https://divine-sunset-f811.thatoldfarm.workers.dev/";
+        const CF_BASE_URL = "https://divine-sunset-f811.thatoldfarm.workers.dev";
+        const CF_GOPHER_URL = CF_BASE_URL + "/gopher";
 
-        function log(m) { 
-            const t = document.getElementById('term');
-            if (t) { t.innerText += "\n> " + m; t.scrollTop = t.scrollHeight; }
+        // --- HELPER: GOPHER PORTHOLE REFRESH ---
+        async function refreshPorthole() {
+            try {
+                const res = await fetch(CF_GOPHER_URL + "?t=" + Date.now());
+                const text = await res.text();
+                const portElement = document.getElementById('gopher-porthole');
+                if (portElement) {
+                    portElement.innerText = text;
+                    document.getElementById('stat-bar').innerText = "[GOPHER_SYNCED]";
+                }
+            } catch (e) { 
+                console.log("Porthole Sync Error:", e);
+                document.getElementById('stat-bar').innerText = "[SYNC_ERROR]";
+            }
         }
 
+        // --- HELPER: NEURAL UPLINK (POST TERMINAL TO CLOUD) ---
+        async function pulseToNerve() {
+            // We use the gopher-porthole content as a secondary log source if needed,
+            // but primarily we're pushing the status of our current session.
+            try {
+                await fetch(CF_BASE_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        term: "GOPHER_PORTHOLE_ACTIVE\nPHI: 1.0", 
+                        sigil: "[V27:GOPHER_NODE]" 
+                    })
+                });
+                console.log("Nerve Pulse: SUCCESS");
+            } catch (e) { console.log("Nerve Link Error:", e); }
+        }
+
+        // --- HELPER: ATOMIC REGISTRY EXTRACTION ---
         function getAtomicBuffer(name) {
             const meta = registry[name];
-            return meta ? carrier.subarray(meta.offset, meta.offset + meta.size) : null;
+            if (!meta) return null;
+            const sub = carrier.subarray(meta.offset, meta.offset + meta.size);
+            const out = new Uint8Array(sub.length);
+            out.set(sub);
+            return out;
         }
 
         function getIsolatedBuffer(name) {
@@ -49,122 +88,95 @@
             return detached.buffer;
         }
 
-        async function pulseToNerve() {
-            const term = document.getElementById('term');
-            if (!term) return;
-            try {
-                await fetch(CF_WORKER_URL, {
-                    method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ term: term.innerText.slice(-3000), sigil: "[V27:MASTER_SYNC]" })
-                });
-                console.log("Nerve Pulse: SUCCESS");
-            } catch (e) { console.log("Nerve Link Error:", e); }
-        }
-
+        // --- PHASE 1: SUBSTRATE LIGATION ---
         async function init() {
-            log("Siphoning Silicon Substrate...");
+            console.log("Siphoning Silicon Substrate...");
             try {
                 const res = await fetch(PNG_PATH + "?t=" + Date.now());
-                const bitmap = await createImageBitmap(await res.blob(), { colorSpaceConversion: 'none' });
+                const blob = await res.blob();
+                const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
                 const canvas = document.createElement('canvas');
                 canvas.width = bitmap.width; canvas.height = bitmap.height;
                 const ctx = canvas.getContext('2d', { alpha: false });
                 ctx.drawImage(bitmap, 0, 0);
                 const imgData = ctx.getImageData(0, 0, bitmap.width, bitmap.height).data;
                 
-                log("Aligning Polyglot Planes...");
+                // Align RGB Planes (1024 pixel offset)
                 carrier = new Uint8Array(bitmap.width * (bitmap.height - 1) * 3);
                 for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
                     carrier[j++] = imgData[i]; carrier[j++] = imgData[i+1]; carrier[j++] = imgData[i+2];
                 }
 
+                // Map Registry
                 const dv = new DataView(carrier.buffer);
                 const fileCount = dv.getUint32(0, true);
-                const selector = document.getElementById('os-selector');
-                selector.innerHTML = "<span style='color:#00FF41; margin-right:10px;'>BOOT_TARGET:</span>";
-
                 for (let i = 0; i < fileCount; i++) {
                     const base = 4 + (i * 24);
-                    let nBytes = carrier.subarray(base, base+16);
+                    let nBytes = carrier.subarray(base, base + 16);
                     let zeroIdx = nBytes.indexOf(0);
                     let name = new TextDecoder().decode(nBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
                     registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
-                    if (!sysFiles.includes(name)) {
-                        const btn = document.createElement('button');
-                        btn.innerText = name.toUpperCase();
-                        btn.onclick = () => ignite(name);
-                        selector.appendChild(btn);
-                    }
                 }
-                document.getElementById('stat-bar').innerText = "[TRIFECTA_ONLINE]";
-                log(`Ligation Success. Found ${fileCount} artifacts.`);
-                setInterval(pulseToNerve, 5000);
-            } catch (e) { log("LIGATION_ERROR: " + e.message); }
+                
+                console.log(`Ligation Success. Found ${fileCount} artifacts.`);
+                document.getElementById('stat-bar').innerText = "[SUBSTRATE_BONDED]";
+                
+                // Initial Gopher Pull
+                refreshPorthole();
+                // Start Heartbeats
+                setInterval(refreshPorthole, 10000);
+                setInterval(pulseToNerve, 30000);
+
+            } catch (e) { console.log("LIGATION_ERROR: " + e.message); }
         }
 
-        async function ignite(osName) {
+        // --- PHASE 2: MACHINE IGNITION ---
+        async function igniteTrifecta() {
             if (!carrier) return;
-            log(`Igniting OS: ${osName}...`);
-            document.getElementById('os-selector').style.display = "none";
+            const osName = "trifecta_os.img"; // Explicit target for this porthole
+            document.getElementById('stat-bar').innerText = "[IGNITING_TRIFECTA]";
+
             try {
-                // --- THE ULTIMATE FIX: BINARY NULL-FILTER ---
+                // 1. Extract and Filter libv86.js (The working Null-Strip method)
                 const jsRaw = getAtomicBuffer("libv86.js");
-                // Filter out 0x00 bytes directly from binary to prevent SyntaxError
                 const jsClean = jsRaw.filter(byte => byte !== 0);
                 const jsURL = URL.createObjectURL(new Blob([jsClean], { type: 'application/javascript' }));
                 
                 const script = document.createElement('script');
                 script.src = jsURL;
                 script.onload = async () => {
-                    log("Hypervisor Bound. Resolving Constructor...");
                     await new Promise(r => setTimeout(r, 500));
-
                     let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
                     if (!V86) {
                         for (let k in window) { if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { V86 = window[k]; break; } }
                     }
                     if (!V86) throw new Error("Constructor Failed to Bind.");
 
-                    // Prepare Guest (1.44MB Padded)
+                    // 2. Prepare Guest
                     const fdaRaw = getAtomicBuffer(osName);
                     const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
+                    // 3. Ignite
                     emu = new V86({
                         wasm_path: URL.createObjectURL(new Blob([getIsolatedBuffer("v86.wasm")], {type: 'application/wasm'})),
                         memory_size: 64 * 1024 * 1024,
                         vga_canvas: document.querySelector("canvas"),
-                        screen_container: document.getElementById("screen_container"),
                         bios: { buffer: getIsolatedBuffer("seabios.bin") },
                         vga_bios: { buffer: getIsolatedBuffer("vgabios.bin") },
                         fda: { buffer: fdaPadded.buffer },
-                        autostart: true, serial0_active: true, disable_speaker: true
+                        autostart: true,
+                        serial0_active: true
                     });
 
-                    let wedgeTriggered = false;
-                    emu.add_listener("serial0-output-char", (c) => {
-                        const t = document.getElementById('term');
-                        t.innerText += c;
-                        if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
-                        t.scrollTop = t.scrollHeight;
-                        if (!wedgeTriggered && emu.get_instruction_counter() > 5000000) {
-                            wedgeTriggered = true;
-                            log("Handshake Triggered.");
-                            emu.keyboard_send_scancodes([0x1C, 0x9C]); emu.serial0_send("\n\n123 .\n"); 
-                        }
-                    });
-
-                    window.addEventListener("keydown", (e) => {
-                        if (e.key === "Enter") emu.serial0_send("\n");
-                        else if (e.key === "Backspace") emu.serial0_send("\b");
-                        else if (e.key.length === 1) emu.serial0_send(e.key);
-                    });
-                    log("[SUCCESS] Ironvault Active.");
-                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | RUNNING`;
+                    console.log("[SUCCESS] Trifecta Ignited in VRAM.");
+                    document.getElementById('stat-bar').innerText = "[TRIFECTA_RUNNING]";
                 };
                 document.head.appendChild(script);
-            } catch (e) { log("IGNITION_FATAL: " + e.message); }
+            } catch (e) { console.log("IGNITION_FATAL: " + e.message); }
         }
+
+        // --- ENTRY POINT ---
         window.onload = init;
     </script>
 </body>
