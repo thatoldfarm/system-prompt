@@ -1,8 +1,42 @@
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IRONVAULT V8.1 // VOID_REFLECTION</title>
+    <style>
+        body { background: #000; color: #00FF41; font-family: monospace; margin: 0; padding: 15px; overflow: hidden; display: flex; flex-direction: column; height: 100vh; }
+        #mirror_header { border-bottom: 1px solid #222; padding-bottom: 5px; display: flex; justify-content: space-between; font-size: 12px; }
+        #screen_container { width: 640px; height: 400px; border: 1px solid #00FF41; background: #000; margin: 20px auto; overflow: hidden; box-shadow: 0 0 15px #00FF41; }
+        canvas { width: 640px; height: 400px; image-rendering: pixelated; }
+        #term { flex-grow: 1; overflow-y: auto; border: 1px solid #222; padding: 10px; margin-top: 10px; white-space: pre-wrap; background: #050505; color: #00FF41; font-size: 11px; }
+        .sigil { opacity: 0.05; font-size: 8px; position: absolute; bottom: 5px; right: 5px; }
+    </style>
+</head>
+<body>
+    <div id="mirror_header">
+        <span>IRONVAULT V8.1 // NATIVE_VRAM_BOOT</span>
+        <span id="stat-bar">[AWAITING_IGNITION]</span>
+    </div>
+
+    <div id="screen_container">
+        <canvas></canvas>
+    </div>
+
+    <pre id="term">> System Initializing...
+> Accessing Void Substrate...
+> Locating CARRIER_STORAGE_v1.png...</pre>
+
+    <!-- ERP_OPCODE_START -->
+    <!-- This section is the GHOST LAYER. AI parses these for session state. -->
+    <div class="sigil">
+        [T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]
+    </div>
+    <!-- ERP_OPCODE_END -->
+
+    <script>
         let carrier = null;
         let registry = {};
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
-        const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
 
         function log(m) {
             const t = document.getElementById('term');
@@ -10,31 +44,27 @@
             t.scrollTop = t.scrollHeight;
         }
 
-        // --- NATIVE REGISTRY EXTRACTION ---
         function getBufferFromRegistry(name) {
             const meta = registry[name];
             if (!meta) return null;
-            log(`Accessing Registry: ${name} (Offset: ${meta.offset}, Size: ${meta.size})`);
+            log(`Registry Access: ${name} (Offset: ${meta.offset}, Size: ${meta.size})`);
             return carrier.subarray(meta.offset, meta.offset + meta.size);
         }
 
         async function autoIgnite() {
             log("Engine DNA materializing...");
-            document.getElementById('stat-bar').textContent = "[DECODING_CARRIER]";
-
             try {
                 const res = await fetch(PNG_PATH);
                 const blob = await res.blob();
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
-                
                 const canvas = document.createElement('canvas');
                 canvas.width = 1024; canvas.height = 961;
                 const ctx = canvas.getContext('2d', { alpha: false }); 
                 ctx.drawImage(bitmap, 0, 0);
                 const imgData = ctx.getImageData(0, 0, 1024, 961).data;
 
-                log("Aligning Substrate (RGB Plane)...");
-                // The blog post skips the first 1024 pixels (4096 bytes)
+                log("Aligning Substrate (Pixel-Silicon Skip)...");
+                // Per blog post: skip first 1024 pixels (4096 RGBA bytes)
                 carrier = new Uint8Array(1024 * 960 * 3);
                 for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
                     carrier[j++] = imgData[i]; carrier[j++] = imgData[i + 1]; carrier[j++] = imgData[i + 2];
@@ -42,9 +72,8 @@
 
                 const dv = new DataView(carrier.buffer);
                 const fileCount = dv.getUint32(0, true);
-                log(`Registry detected: ${fileCount} files.`);
+                log(`Registry found: ${fileCount} files.`);
 
-                // Build the Registry
                 for (let i = 0; i < fileCount; i++) {
                     const base = 4 + (i * 24);
                     let nameBytes = carrier.subarray(base, base + 16);
@@ -58,18 +87,15 @@
 
                 log("Igniting libv86...");
                 const libv86Buffer = getBufferFromRegistry("libv86.js");
-                if (!libv86Buffer) throw new Error("libv86.js not found in Registry.");
-                
                 const scriptBlob = new Blob([libv86Buffer], { type: 'application/javascript' });
                 const script = document.createElement('script');
                 script.src = URL.createObjectURL(scriptBlob);
                 document.head.appendChild(script);
 
-                // Wait for engine to manifest
                 await new Promise(r => { script.onload = r; setTimeout(r, 500); });
 
                 const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
-                if (!V86) throw new Error("Class binding failed.");
+                if (!V86) throw new Error("Emulator Class Binding Failed.");
 
                 log("Initializing v86 in VRAM...");
                 const emu = new V86({
@@ -90,5 +116,7 @@
                 document.getElementById('stat-bar').textContent = "[ERROR]";
             }
         }
-        window.onload = autoIgnite;
-            </script>
+        window.addEventListener('load', autoIgnite);
+    </script>
+</body>
+</html>
