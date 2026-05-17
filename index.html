@@ -26,9 +26,7 @@
 > Accessing Phantom Matrix...
 > Locating TRIFECTA_OS Carrier...</pre>
 
-    <!-- ERP_OPCODE_START -->
     <div class="sigil">[T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]</div>
-    <!-- ERP_OPCODE_END -->
 
     <script>
         let carrier = null, registry = {}, emu = null;
@@ -41,23 +39,23 @@
             if (t) { t.innerText += "\n> " + m; t.scrollTop = t.scrollHeight; }
         }
 
-        // --- HELPER: BINARY EXTRACTION ---
         function getAtomicBuffer(name) {
             const meta = registry[name];
             if (!meta) return null;
             // Native slice for discrete memory segment
-            return carrier.slice(meta.offset, meta.offset + meta.size);
+            const sub = carrier.subarray(meta.offset, meta.offset + meta.size);
+            const out = new Uint8Array(sub.length);
+            out.set(sub);
+            return out;
         }
 
-        // --- NEURAL RELAY ---
         async function pulseToNerve() {
             const term = document.getElementById('term');
-            const sigil = document.querySelector('.sigil');
             if (!term) return;
             try {
                 await fetch(CF_WORKER_URL, {
                     method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ term: term.innerText.slice(-3000), sigil: sigil ? sigil.innerText : "" })
+                    body: JSON.stringify({ term: term.innerText.slice(-3000), sigil: "[V27:MASTER_SYNC]" })
                 });
                 console.log("Nerve Pulse: SUCCESS");
             } catch (e) { console.log("Nerve Link Error:", e); }
@@ -87,7 +85,9 @@
 
                 for (let i = 0; i < fileCount; i++) {
                     const base = 4 + (i * 24);
-                    let name = new TextDecoder().decode(carrier.subarray(base, base+16)).replace(/\0/g, '').trim();
+                    let nameBytes = carrier.subarray(base, base+16);
+                    let zeroIdx = nameBytes.indexOf(0);
+                    let name = new TextDecoder().decode(nameBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
                     registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
                     if (!sysFiles.includes(name)) {
                         const btn = document.createElement('button');
@@ -107,14 +107,17 @@
             log(`Igniting OS: ${osName}...`);
             document.getElementById('os-selector').style.display = "none";
             try {
-                // --- CRITICAL: PURE BINARY INJECTION ---
+                // --- THE CRITICAL REPAIR: STRING-SUTURE ---
                 const jsRaw = getAtomicBuffer("libv86.js");
-                const jsURL = URL.createObjectURL(new Blob([jsRaw], { type: 'application/javascript' }));
+                // We decode to string and surgically remove NULL characters (\0)
+                const jsText = new TextDecoder().decode(jsRaw).replace(/\0/g, '').trim();
+                const jsURL = URL.createObjectURL(new Blob([jsText], { type: 'text/javascript' }));
+                
                 const script = document.createElement('script');
                 script.src = jsURL;
                 script.onload = async () => {
-                    log("Hypervisor Materialized. Resolving Constructor...");
-                    await new Promise(r => setTimeout(r, 500)); // Heartbeat
+                    log("Hypervisor Bound. Resolving Constructor...");
+                    await new Promise(r => setTimeout(r, 500));
 
                     let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
                     if (!V86) {
@@ -122,13 +125,12 @@
                     }
                     if (!V86) throw new Error("Constructor Failed to Bind.");
 
-                    // Prepare Floppy (1.44MB Padded)
                     const fdaRaw = getAtomicBuffer(osName);
                     const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
                     emu = new V86({
-                        wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm")], {type: 'application/wasm'})),
+                        wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm").buffer], {type: 'application/wasm'})),
                         memory_size: 64 * 1024 * 1024,
                         vga_canvas: document.querySelector("canvas"),
                         screen_container: document.getElementById("screen_container"),
