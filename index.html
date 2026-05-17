@@ -17,13 +17,14 @@
 </head>
 <body>
     <div id="proxy-header">
-        <span>IRONVAULT V27 // TRIFECTA_CARRIER_ACTIVE</span>
+        <span>IRONVAULT V27 // TRIFECTA_OS_LOCKED</span>
         <span id="stat-bar">[AWAITING_LIGATION]</span>
     </div>
-    <div id="os-selector"><span style="color:#004411">SCANNING TRIFECTA SUBSTRATE...</span></div>
+    <div id="os-selector"><span style="color:#004411">SCANNING TRIFECTA CARRIER...</span></div>
     <div id="screen_container"><canvas></canvas></div>
     <pre id="term">> System Initializing...
-> Target: TRIFECTA_OS Substrate...</pre>
+> Accessing Void Substrate...
+> Locating CARRIER_STORAGE_v1.png...</pre>
 
     <!-- ERP_OPCODE_START -->
     <div class="sigil">[T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]</div>
@@ -34,8 +35,10 @@
         let registry = {};
         let emu = null;
         const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
-        // UPDATED PATH TO TRIFECTA CARRIER
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/TRIFECTA_OS/CARRIER_STORAGE_v1.png";
+        
+        // --- THE NEURAL UPLINK ---
+        const CF_WORKER_URL = "https://divine-sunset-f811.thatoldfarm.workers.dev/"; 
 
         function log(m) { 
             const t = document.getElementById('term');
@@ -43,10 +46,24 @@
             t.scrollTop = t.scrollHeight;
         }
 
+        async function pulseToNerve() {
+            const termElement = document.getElementById('term');
+            const sigilElement = document.querySelector('.sigil');
+            if (!termElement) return;
+            try {
+                await fetch(CF_WORKER_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ term: termElement.innerText, sigil: sigilElement ? sigilElement.innerText : "" })
+                });
+                console.log("Nerve Pulse: SUCCESS");
+            } catch (e) { console.log("Nerve Link Error:", e); }
+        }
+
         function getAtomicBuffer(name) {
             const meta = registry[name];
-            if (!meta) return null;
-            return carrier.subarray(meta.offset, meta.offset + meta.size);
+            return meta ? carrier.subarray(meta.offset, meta.offset + meta.size) : null;
         }
 
         function getIsolatedBuffer(name) {
@@ -58,7 +75,7 @@
         }
 
         async function init() {
-            log("Siphoning Trifecta Substrate...");
+            log("Siphoning Silicon Substrate...");
             try {
                 const res = await fetch(PNG_PATH + "?t=" + Date.now());
                 const blob = await res.blob();
@@ -70,7 +87,6 @@
                 const imgData = ctx.getImageData(0, 0, bitmap.width, bitmap.height).data;
                 
                 log("Aligning Polyglot Planes...");
-                // Standard skip logic for Trifecta Carrier (1024 pixel offset)
                 carrier = new Uint8Array(bitmap.width * (bitmap.height - 1) * 3);
                 for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
                     carrier[j++] = imgData[i]; carrier[j++] = imgData[i+1]; carrier[j++] = imgData[i+2];
@@ -87,7 +103,6 @@
                     let zeroIdx = nBytes.indexOf(0);
                     let name = new TextDecoder().decode(nBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
                     registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
-                    
                     if (!sysFiles.includes(name)) {
                         const btn = document.createElement('button');
                         btn.innerText = name.toUpperCase();
@@ -95,29 +110,23 @@
                         selector.appendChild(btn);
                     }
                 }
-                
-                document.getElementById('stat-bar').innerText = "[TRIFECTA_CARRIER_ONLINE]";
-                log(`Ligation Success. Detected ${fileCount} artifacts.`);
+                document.getElementById('stat-bar').innerText = "[TRIFECTA_ONLINE]";
+                setInterval(pulseToNerve, 5000); // Start Heartbeat
             } catch (e) { log("LIGATION_ERROR: " + e.message); }
         }
 
         async function ignite(osName) {
             if (!carrier) return;
-            log(`Igniting Trifecta OS: ${osName}...`);
+            log(`Igniting OS: ${osName}...`);
             document.getElementById('os-selector').style.display = "none";
-
             try {
                 const libv86Data = getAtomicBuffer("libv86.js");
                 const jsURL = URL.createObjectURL(new Blob([libv86Data], { type: 'application/javascript' }));
                 const script = document.createElement('script');
                 script.src = jsURL;
-                
                 script.onload = () => {
                     let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
-                    if (!V86) throw new Error("Constructor Manifestation Failed.");
-
                     const fdaRaw = getAtomicBuffer(osName);
-                    // Trifecta is small; we pad to 1.44MB for SeaBIOS compatibility
                     const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
@@ -133,17 +142,15 @@
                         serial0_active: true
                     });
 
-                    let wedgeTriggered = false;
+                    let lastCount = 0, wedgeTriggered = false;
                     emu.add_listener("serial0-output-char", (c) => {
                         const t = document.getElementById('term');
                         t.innerText += c;
                         if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
                         t.scrollTop = t.scrollHeight;
-
-                        // Trifecta Handshake: Once we see serial activity, kick it
                         if (!wedgeTriggered && emu.get_instruction_counter() > 5000000) {
                             wedgeTriggered = true;
-                            log("Handshaking with Polyglot Ghost...");
+                            emu.keyboard_send_scancodes([0x1C, 0x9C]); 
                             emu.serial0_send("\n\n123 .\n"); 
                         }
                     });
@@ -153,42 +160,12 @@
                         else if (e.key === "Backspace") emu.serial0_send("\b");
                         else if (e.key.length === 1) emu.serial0_send(e.key);
                     });
-
-                    log("[SUCCESS] Trifecta Active.");
                     document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()}`;
                 };
                 document.head.appendChild(script);
-
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
         }
         window.onload = init;
-        
-        // --- THE NEURAL UPLINK ---
-const CF_WORKER_URL = "PASTE_YOUR_CLOUDFLARE_URL_HERE"; 
-
-async function pulseToNerve() {
-    const termElement = document.getElementById('term');
-    const sigilElement = document.querySelector('.sigil');
-    if (!termElement) return;
-
-    const termText = termElement.innerText;
-    const sigilText = sigilElement ? sigilElement.innerText : "";
-    
-    try {
-        await fetch(CF_WORKER_URL, {
-            method: 'POST',
-            mode: 'cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ term: termText, sigil: sigilText })
-        });
-        console.log("Nerve Pulse: SUCCESS");
-    } catch (e) { 
-        console.log("Nerve Link Error:", e); 
-    }
-}
-
-// Start pulsing every 5 seconds
-setInterval(pulseToNerve, 5000);
     </script>
 </body>
 </html>
