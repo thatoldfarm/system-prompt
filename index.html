@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>IRONVAULT V8.1 // VOID_REFLECTION</title>
-    <style>
-        body { background: #000; color: #00FF41; font-family: monospace; margin: 0; padding: 15px; overflow: hidden; display: flex; flex-direction: column; height: 100vh; }
-        #mirror_header { border-bottom: 1px solid #222; padding-bottom: 5px; display: flex; justify-content: space-between; font-size: 12px; }
-        #screen_container { width: 640px; height: 400px; border: 1px solid #00FF41; background: #000; margin: 20px auto; overflow: hidden; box-shadow: 0 0 15px #00FF41; }
-        canvas { width: 640px; height: 400px; image-rendering: pixelated; }
-        #term { flex-grow: 1; overflow-y: auto; border: 1px solid #222; padding: 10px; margin-top: 10px; white-space: pre-wrap; background: #050505; color: #00FF41; font-size: 11px; }
-        .sigil { opacity: 0.05; font-size: 8px; position: absolute; bottom: 5px; right: 5px; }
-    </style>
-</head>
-<body>
-    <div id="mirror_header">
-        <span>IRONVAULT V8.1 // AUTO_VRAM_BOOT</span>
-        <span id="stat-bar">[AWAITING_IGNITION]</span>
-    </div>
-
-    <div id="screen_container">
-        <canvas></canvas>
-    </div>
-
-    <pre id="term">> System Initializing...
-> Accessing Void Substrate...
-> Locating CARRIER_STORAGE_v1.png...</pre>
-
-    <!-- ERP_OPCODE_START -->
-    <div class="sigil">
-        [T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]
-    </div>
-    <!-- ERP_OPCODE_END -->
-
-    <script>
+<script>
         let carrier = null;
+        let registry = {};
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
+        const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
 
         function log(m) {
             const t = document.getElementById('term');
@@ -42,103 +10,76 @@
             t.scrollTop = t.scrollHeight;
         }
 
-        function getAtomicBuffer(name) {
-            if (!carrier) return null;
-            const nameBytes = new TextEncoder().encode(name);
-            
-            // --- SEARCH FROM THE END (BACKWARDS) ---
-            // This bypasses the Manifest/Table of Contents at the start
-            let foundIndex = -1;
-            for (let i = carrier.length - nameBytes.length; i >= 0; i--) {
-                let matched = true;
-                for (let j = 0; j < nameBytes.length; j++) {
-                    if (carrier[i + j] !== nameBytes[j]) { matched = false; break; }
-                }
-                if (matched) {
-                    foundIndex = i;
-                    break; // Found the last occurrence (the data block)
-                }
-            }
-
-            if (foundIndex !== -1) {
-                const i = foundIndex;
-                const dataView = new DataView(carrier.buffer, carrier.byteOffset, carrier.byteLength);
-                
-                // Read length from the 4 bytes preceding the name
-                const len = dataView.getUint32(i - 4, true);
-                const dataStart = i + nameBytes.length;
-                
-                log(`Found ${name} (Data Block) at ${i}. Length: ${len}.`);
-                
-                // Safety check: if length is suspiciously large or small, the alignment is still off
-                if (len > carrier.length || len === 0) {
-                    log(`Warning: Invalid length ${len} for ${name}. Attempting fallback...`);
-                    return null;
-                }
-
-                return carrier.slice(dataStart, dataStart + len);
-            }
-            return null;
+        // --- NATIVE REGISTRY EXTRACTION ---
+        function getBufferFromRegistry(name) {
+            const meta = registry[name];
+            if (!meta) return null;
+            log(`Accessing Registry: ${name} (Offset: ${meta.offset}, Size: ${meta.size})`);
+            return carrier.subarray(meta.offset, meta.offset + meta.size);
         }
 
         async function autoIgnite() {
             log("Engine DNA materializing...");
+            document.getElementById('stat-bar').textContent = "[DECODING_CARRIER]";
+
             try {
                 const res = await fetch(PNG_PATH);
                 const blob = await res.blob();
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
+                
                 const canvas = document.createElement('canvas');
                 canvas.width = 1024; canvas.height = 961;
                 const ctx = canvas.getContext('2d', { alpha: false }); 
                 ctx.drawImage(bitmap, 0, 0);
                 const imgData = ctx.getImageData(0, 0, 1024, 961).data;
 
-                log("Aligning Substrate...");
-                carrier = new Uint8Array((imgData.length / 4) * 3);
-                for (let i = 0, j = 0; i < imgData.length; i += 4) {
+                log("Aligning Substrate (RGB Plane)...");
+                // The blog post skips the first 1024 pixels (4096 bytes)
+                carrier = new Uint8Array(1024 * 960 * 3);
+                for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
                     carrier[j++] = imgData[i]; carrier[j++] = imgData[i + 1]; carrier[j++] = imgData[i + 2];
                 }
 
-                log("Extracting libv86.js...");
-                const libv86Data = getAtomicBuffer("libv86.js");
-                if (!libv86Data) throw new Error("libv86.js not found in carrier.");
-                
-                // FORENSIC CHECK
-                const codeSnippet = new TextDecoder().decode(libv86Data.slice(0, 50));
-                log(`Code Preview: "${codeSnippet.replace(/\n/g, ' ')}..."`);
+                const dv = new DataView(carrier.buffer);
+                const fileCount = dv.getUint32(0, true);
+                log(`Registry detected: ${fileCount} files.`);
 
-                log("Igniting libv86...");
-                const scriptBlob = new Blob([libv86Data], { type: 'application/javascript' });
-                const scriptUrl = URL.createObjectURL(scriptBlob);
-                const script = document.createElement('script');
-                script.src = scriptUrl;
-                document.head.appendChild(script);
-
-                // Wait for script to load
-                await new Promise((resolve) => { script.onload = resolve; setTimeout(resolve, 500); });
-
-                const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
-                if (!V86) {
-                    // BRUTE FORCE SCAN
-                    const keys = Object.keys(window).filter(k => k.toLowerCase().includes('v86'));
-                    log(`Available V86 keys: ${keys.join(', ') || 'NONE'}`);
-                    throw new Error("Class binding failed.");
+                // Build the Registry
+                for (let i = 0; i < fileCount; i++) {
+                    const base = 4 + (i * 24);
+                    let nameBytes = carrier.subarray(base, base + 16);
+                    let zeroIdx = nameBytes.indexOf(0);
+                    let name = new TextDecoder().decode(nameBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
+                    registry[name] = { 
+                        offset: dv.getUint32(base + 16, true), 
+                        size: dv.getUint32(base + 20, true) 
+                    };
                 }
 
-                log("Initializing v86 in VRAM...");
-                const v86Wasm = getAtomicBuffer("v86.wasm");
-                const seabios = getAtomicBuffer("seabios.bin");
-                const vgabios = getAtomicBuffer("vgabios.bin");
-                const bootDisk = getAtomicBuffer("freedos_boot_disk_160K.img") || getAtomicBuffer("sectorforth.img");
+                log("Igniting libv86...");
+                const libv86Buffer = getBufferFromRegistry("libv86.js");
+                if (!libv86Buffer) throw new Error("libv86.js not found in Registry.");
+                
+                const scriptBlob = new Blob([libv86Buffer], { type: 'application/javascript' });
+                const script = document.createElement('script');
+                script.src = URL.createObjectURL(scriptBlob);
+                document.head.appendChild(script);
 
+                // Wait for engine to manifest
+                await new Promise(r => { script.onload = r; setTimeout(r, 500); });
+
+                const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
+                if (!V86) throw new Error("Class binding failed.");
+
+                log("Initializing v86 in VRAM...");
                 const emu = new V86({
-                    wasm_path: URL.createObjectURL(new Blob([v86Wasm], { type: 'application/wasm' })),
+                    wasm_path: URL.createObjectURL(new Blob([getBufferFromRegistry("v86.wasm")], {type: 'application/wasm'})),
                     memory_size: 32 * 1024 * 1024,
                     vga_canvas: document.querySelector("canvas"),
                     screen_container: document.getElementById("screen_container"),
-                    bios: { buffer: seabios },
-                    vga_bios: { buffer: vgabios },
-                    fda: { buffer: bootDisk },
+                    bios: { buffer: getBufferFromRegistry("seabios.bin").buffer },
+                    vga_bios: { buffer: getBufferFromRegistry("vgabios.bin").buffer },
+                    fda: { buffer: getBufferFromRegistry("freedos_boot_disk_160K.img") || getBufferFromRegistry("sectorforth.img") },
                     autostart: true,
                 });
 
@@ -149,7 +90,5 @@
                 document.getElementById('stat-bar').textContent = "[ERROR]";
             }
         }
-        window.addEventListener('load', autoIgnite);
-    </script>
-</body>
-</html>
+        window.onload = autoIgnite;
+            </script>
