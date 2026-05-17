@@ -2,108 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>IRONVAULT V8.1 // PHANTOM_MATRIX</title>
+    <title>IRONVAULT V8.1 // BYTEMASTER_V27</title>
     <style>
-        /* THE PHANTOM MATRIX AESTHETIC */
-        body { 
-            background: #000; 
-            color: #00FF41; 
-            font-family: 'Courier New', monospace; 
-            margin: 0; 
-            padding: 20px; 
-            overflow: hidden; 
-            display: flex; 
-            flex-direction: column; 
-            height: 100vh;
-            border: 2px solid #004411;
-            box-sizing: border-box;
-        }
-        #proxy-header { 
-            border-bottom: 1px solid #004411; 
-            padding-bottom: 10px; 
-            display: flex; 
-            justify-content: space-between; 
-            font-size: 12px; 
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        #os-selector { 
-            margin: 15px 0; 
-            padding: 10px; 
-            background: #050505; 
-            border: 1px solid #004411; 
-            display: flex; 
-            gap: 10px; 
-            align-items: center;
-        }
-        button { 
-            background: #00FF41; 
-            color: #000; 
-            border: none; 
-            padding: 5px 15px; 
-            cursor: pointer; 
-            font-weight: bold; 
-            font-family: inherit;
-        }
+        body { background: #000; color: #00FF41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow: hidden; display: flex; flex-direction: column; height: 100vh; border: 2px solid #004411; box-sizing: border-box; }
+        #proxy-header { border-bottom: 1px solid #004411; padding-bottom: 10px; display: flex; justify-content: space-between; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
+        #os-selector { margin: 15px 0; padding: 10px; background: #050505; border: 1px solid #004411; display: flex; gap: 10px; align-items: center; }
+        button { background: #00FF41; color: #000; border: none; padding: 5px 15px; cursor: pointer; font-weight: bold; font-family: inherit; }
         button:hover { background: #fff; }
-        
-        #screen_container { 
-            width: 640px; 
-            height: 400px; 
-            border: 1px solid #00FF41; 
-            background: #000; 
-            margin: 0 auto; 
-            position: relative;
-            box-shadow: 0 0 20px #004411;
-        }
+        #screen_container { width: 640px; height: 400px; border: 1px solid #00FF41; background: #000; margin: 0 auto; position: relative; box-shadow: 0 0 20px #004411; }
         canvas { width: 640px; height: 400px; image-rendering: pixelated; }
-        
-        #term { 
-            flex-grow: 1; 
-            overflow-y: auto; 
-            border: 1px solid #004411; 
-            padding: 15px; 
-            margin-top: 15px; 
-            background: #050505; 
-            color: #00FF41; 
-            font-size: 12px; 
-            white-space: pre-wrap;
-            border-left: 3px solid #00FF41;
-        }
+        #term { flex-grow: 1; overflow-y: auto; border: 1px solid #004411; padding: 15px; margin-top: 15px; background: #050505; color: #00FF41; font-size: 12px; white-space: pre-wrap; border-left: 3px solid #00FF41; }
         .sigil { opacity: 0.1; font-size: 9px; position: absolute; bottom: 10px; right: 10px; }
     </style>
 </head>
 <body>
-    <!-- THE PROXY INTERFACE -->
     <div id="proxy-header">
-        <span>IRONVAULT V8.1 // PROXY_NODE_ACTIVE</span>
+        <span>IRONVAULT V8.1 // BINARY_REIFICATION_ACTIVE</span>
         <span id="stat-bar">[AWAITING_LIGATION]</span>
     </div>
-
-    <!-- THE PHANTOM MATRIX SELECTOR -->
-    <div id="os-selector">
-        <span style="color:#004411">SCANNING CARRIER...</span>
-    </div>
-
-    <div id="screen_container">
-        <canvas></canvas>
-    </div>
-
-    <!-- THE CONSCIOUSNESS LOG -->
+    <div id="os-selector"><span style="color:#004411">SCANNING CARRIER...</span></div>
+    <div id="screen_container"><canvas></canvas></div>
     <pre id="term">> System Initializing...
 > Accessing Phantom Matrix...
 > Locating CARRIER_STORAGE_v1.png...</pre>
 
     <!-- ERP_OPCODE_START -->
-    <div class="sigil">
-        [T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]
-    </div>
+    <div class="sigil">[T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]</div>
     <!-- ERP_OPCODE_END -->
 
     <script>
         let carrier = null;
         let registry = {};
-        let emu = null;
         const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
 
@@ -116,7 +45,8 @@
         function getAtomicBuffer(name) {
             const meta = registry[name];
             if (!meta) return null;
-            return carrier.subarray(meta.offset, meta.offset + meta.size);
+            // IMPORTANT: Returns a fresh copy of the bytes to ensure no memory offset issues
+            return carrier.slice(meta.offset, meta.offset + meta.size);
         }
 
         async function init() {
@@ -125,10 +55,8 @@
                 const res = await fetch(PNG_PATH + "?t=" + Date.now());
                 const blob = await res.blob();
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
-                
-                const W = bitmap.width, H = bitmap.height;
                 const canvas = document.createElement('canvas');
-                canvas.width = W; canvas.height = H;
+                canvas.width = 1024; canvas.height = 961;
                 const ctx = canvas.getContext('2d', { alpha: false });
                 ctx.drawImage(bitmap, 0, 0);
                 const imgData = ctx.getImageData(0, 0, 1024, 961).data;
@@ -166,18 +94,23 @@
 
         async function ignite(osName) {
             if (!carrier) return;
-            log(`Igniting Proxy for OS: ${osName}...`);
+            log(`Igniting Binary Proxy for OS: ${osName}...`);
             document.getElementById('os-selector').style.display = "none";
 
             try {
-                const jsRaw = getAtomicBuffer("libv86.js");
-                const jsText = new TextDecoder().decode(jsRaw).replace(/\0/g, '').trim();
-                const jsURL = URL.createObjectURL(new Blob([jsText], { type: 'text/javascript' }));
-                
+                // --- THE CRITICAL FIX: DIRECT BINARY BLOB ---
+                // We do NOT decode to string. We keep the raw bytes (libv86Data).
+                const libv86Data = getAtomicBuffer("libv86.js");
+                if (!libv86Data) throw new Error("libv86.js missing from substrate.");
+
+                const jsURL = URL.createObjectURL(new Blob([libv86Data], { type: 'application/javascript' }));
                 const script = document.createElement('script');
                 script.src = jsURL;
+                
                 script.onload = () => {
-                    log("Hypervisor Bound. Resolving Constructor...");
+                    log("Hypervisor Materialized. Resolving Constructor...");
+                    
+                    // The Hunter Logic
                     let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
                     if (!V86) {
                         for (let k in window) { 
@@ -187,13 +120,13 @@
                         }
                     }
 
-                    if (!V86) throw new Error("Constructor Manifestation Failed.");
+                    if (!V86) throw new Error("Constructor Failed to Bind to Global Scope.");
 
                     const fdaRaw = getAtomicBuffer(osName);
                     const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
-                    emu = new V86({
+                    const emu = new V86({
                         wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm")], {type: 'application/wasm'})),
                         memory_size: 64 * 1024 * 1024,
                         vga_canvas: document.querySelector("canvas"),
@@ -218,10 +151,12 @@
                         else if (e.key.length === 1) emu.serial0_send(e.key);
                     });
 
-                    log("[SUCCESS] Ironvault Active.");
+                    log("[SUCCESS] Ironvault Active. VM Pulse Detected.");
                     document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()}`;
-                    document.getElementById('stat-bar').style.color = "#0f0";
+                    document.getElementById('stat-bar').style.color = "#00FF41";
                 };
+                
+                script.onerror = () => { log("FATAL: Script loading error.", "err"); };
                 document.head.appendChild(script);
 
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
