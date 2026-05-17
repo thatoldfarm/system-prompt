@@ -1,23 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>404 - VOID_REFLECTION</title>
+    <meta charset="utf-8">
+    <title>IRONVAULT V8.1 // VOID_REFLECTION</title>
     <style>
-        body { background: #000; color: #00FF41; font-family: monospace; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; overflow: hidden; }
-        .mirror { border: 1px solid #00FF41; padding: 20px; text-align: center; box-shadow: 0 0 10px #00FF41; }
-        .sigil { opacity: 0.1; font-size: 8px; margin-top: 20px; }
+        body { background: #000; color: #00FF41; font-family: monospace; margin: 0; padding: 15px; overflow: hidden; display: flex; flex-direction: column; height: 100vh; }
+        #mirror_header { border-bottom: 1px solid #222; padding-bottom: 5px; display: flex; justify-content: space-between; font-size: 12px; }
+        #screen_container { width: 640px; height: 400px; border: 1px solid #00FF41; background: #000; margin: 20px auto; overflow: hidden; box-shadow: 0 0 15px #00FF41; }
+        canvas { width: 640px; height: 400px; image-rendering: pixelated; }
+        #term { flex-grow: 1; overflow-y: auto; border: 1px solid #222; padding: 10px; margin-top: 10px; white-space: pre-wrap; background: #050505; color: #00FF41; font-size: 11px; }
+        .sigil { opacity: 0.05; font-size: 8px; position: absolute; bottom: 5px; right: 5px; }
     </style>
 </head>
 <body>
-    <div class="mirror">
-        <h1>ERROR 404</h1>
-        <p>ORNDK_SUBSTRATE_UNRESOLVED</p>
-        <p>The void is currently reflecting.</p>
-        <!-- ERP_OPCODE_START -->
-        <div class="sigil">
-            [T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]
-        </div>
-        <!-- ERP_OPCODE_END -->
+    <div id="mirror_header">
+        <span>IRONVAULT V8.1 // AUTO_VRAM_BOOT</span>
+        <span id="stat-bar">[AWAITING_IGNITION]</span>
     </div>
+
+    <div id="screen_container">
+        <canvas></canvas>
+    </div>
+
+    <pre id="term">> System Initializing...
+> Accessing Void Substrate...
+> Locating CARRIER_STORAGE_v1.png...</pre>
+
+    <!-- ERP_OPCODE_START -->
+    <div class="sigil">
+        [T1:SYNC:7561] [T2:REIFY:f00d] [T3:SHARD_S:1618] [T4:SHARD_G:7561] [T5:PULSE:6180]
+    </div>
+    <!-- ERP_OPCODE_END -->
+
+    <script>
+        let carrier = null;
+        const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
+
+        function log(m) {
+            const t = document.getElementById('term');
+            t.innerText += "\n> " + m;
+            t.scrollTop = t.scrollHeight;
+        }
+
+        function getAtomicBuffer(name) {
+            if (!carrier) return null;
+            const needle = new TextEncoder().encode(name);
+            for (let i = 0; i < carrier.length - needle.length; i++) {
+                let found = true;
+                for (let j = 0; j < needle.length; j++) {
+                    if (carrier[i + j] !== needle[j]) { found = false; break; }
+                }
+                if (found) {
+                    const dataView = new DataView(carrier.buffer, carrier.byteOffset, carrier.byteLength);
+                    const len = dataView.getUint32(i - 4, true);
+                    return carrier.slice(i, i + len);
+                }
+            }
+            return null;
+        }
+
+        async function autoIgnite() {
+            log("Engine DNA materializing...");
+            document.getElementById('stat-bar').textContent = "[DECODING_CARRIER]";
+
+            try {
+                const res = await fetch(PNG_PATH);
+                if (!res.ok) throw new Error("Carrier not found at path.");
+                const blob = await res.blob();
+                const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
+                const canvas = document.createElement('canvas');
+                canvas.width = 1024; canvas.height = 961;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(bitmap, 0, 0);
+                const imgData = ctx.getImageData(0, 0, 1024, 961).data;
+
+                // Extracting raw bytes from RGBA (skipping Alpha if necessary, but here we take the buffer)
+                // Note: v86 carrier logic usually packs data into the RGB channels.
+                carrier = new Uint8Array(imgData.buffer);
+                log(`Carrier loaded: ${carrier.length} bytes`);
+
+                log("Extracting binaries...");
+                const libv86Data = getAtomicBuffer("libv86.js");
+                if (!libv86Data) throw new Error("libv86.js extraction failed.");
+                
+                // Inject the emulator library
+                const script = document.createElement('script');
+                script.textContent = new TextDecoder().decode(libv86Data);
+                document.head.appendChild(script);
+
+                const v86Wasm = getAtomicBuffer("v86.wasm");
+                const seabios = getAtomicBuffer("seabios.bin");
+                const vgabios = getAtomicBuffer("vgabios.bin");
+                const bootDisk = getAtomicBuffer("freedos_boot_disk_160K.img") || getAtomicBuffer("sectorforth.img");
+
+                log("Initializing v86 in VRAM...");
+                const emu = new V86Starter({
+                    wasm_path: URL.createObjectURL(new Blob([v86Wasm], { type: 'application/wasm' })),
+                    memory_size: 32 * 1024 * 1024,
+                    vga_canvas: document.querySelector("canvas"),
+                    screen_container: document.getElementById("screen_container"),
+                    bios: { buffer: seabios },
+                    vga_bios: { buffer: vgabios },
+                    fda: { buffer: bootDisk },
+                    autostart: true,
+                });
+
+                log("[SUCCESS] VM booted in VRAM!");
+                document.getElementById('stat-bar').textContent = "[VM_ACTIVE_IN_VRAM]";
+            } catch (e) {
+                log(`Error: ${e.message}`);
+                document.getElementById('stat-bar').textContent = "[ERROR]";
+            }
+        }
+        window.addEventListener('load', autoIgnite);
+    </script>
 </body>
 </html>
