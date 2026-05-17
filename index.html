@@ -45,21 +45,38 @@
         function getAtomicBuffer(name) {
             if (!carrier) return null;
             const nameBytes = new TextEncoder().encode(name);
-            for (let i = 0; i < carrier.length - nameBytes.length; i++) {
-                let found = true;
+            
+            // --- SEARCH FROM THE END (BACKWARDS) ---
+            // This bypasses the Manifest/Table of Contents at the start
+            let foundIndex = -1;
+            for (let i = carrier.length - nameBytes.length; i >= 0; i--) {
+                let matched = true;
                 for (let j = 0; j < nameBytes.length; j++) {
-                    if (carrier[i + j] !== nameBytes[j]) { found = false; break; }
+                    if (carrier[i + j] !== nameBytes[j]) { matched = false; break; }
                 }
-                if (found) {
-                    const dataView = new DataView(carrier.buffer, carrier.byteOffset, carrier.byteLength);
-                    // Assumption: [4-byte-length][filename][data]
-                    // We search for filename (index i). Length is 4 bytes before (i-4).
-                    // Data starts AFTER the filename (i + nameBytes.length).
-                    const len = dataView.getUint32(i - 4, true);
-                    const dataStart = i + nameBytes.length;
-                    log(`Found ${name} at ${i}. Length: ${len}. Slicing from ${dataStart}...`);
-                    return carrier.slice(dataStart, dataStart + len);
+                if (matched) {
+                    foundIndex = i;
+                    break; // Found the last occurrence (the data block)
                 }
+            }
+
+            if (foundIndex !== -1) {
+                const i = foundIndex;
+                const dataView = new DataView(carrier.buffer, carrier.byteOffset, carrier.byteLength);
+                
+                // Read length from the 4 bytes preceding the name
+                const len = dataView.getUint32(i - 4, true);
+                const dataStart = i + nameBytes.length;
+                
+                log(`Found ${name} (Data Block) at ${i}. Length: ${len}.`);
+                
+                // Safety check: if length is suspiciously large or small, the alignment is still off
+                if (len > carrier.length || len === 0) {
+                    log(`Warning: Invalid length ${len} for ${name}. Attempting fallback...`);
+                    return null;
+                }
+
+                return carrier.slice(dataStart, dataStart + len);
             }
             return null;
         }
