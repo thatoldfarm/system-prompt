@@ -34,120 +34,122 @@
     <!-- ERP_OPCODE_END -->
 
 <script>
-        let substrate = null;
+        let carrier = null;
         let registry = {};
+        let emu = null;
         const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
 
-        const log = (msg, type = "") => {
-            const term = document.getElementById('term');
-            const span = document.createElement("span");
-            if (type === "err") span.style.color = "#ff3e3e";
-            span.innerText = "> " + msg + "\n";
-            term.appendChild(span);
-            term.scrollTop = term.scrollHeight;
-        };
-
-        function indexSubstrate(buffer, targetRegistry, offsetShift = 0) {
-            const dv = new DataView(buffer.buffer, buffer.byteOffset, buffer.byteLength);
-            const count = dv.getUint32(0, true);
-            log(`Found ${count} artifacts in current layer...`);
-            for (let i = 0; i < count; i++) {
-                const base = 4 + (i * 24);
-                let name = new TextDecoder().decode(buffer.subarray(base, base + 16)).replace(/\0/g, '').trim();
-                targetRegistry[name] = { 
-                    off: dv.getUint32(base + 16, true) + offsetShift, 
-                    sz: dv.getUint32(base + 20, true),
-                    raw_off: dv.getUint32(base + 16, true) // For nested relative slicing
-                };
-            }
-            return count;
+        function log(m) { 
+            const t = document.getElementById('term');
+            t.innerText += "\n> " + m; 
+            t.scrollTop = t.scrollHeight;
         }
 
-        async function autoIgnite() {
+        function getAtomicBuffer(name) {
+            const meta = registry[name];
+            if (!meta) return null;
+            return carrier.subarray(meta.offset, meta.offset + meta.size);
+        }
+
+        async function init() {
             log("Siphoning Silicon Substrate...");
             try {
                 const res = await fetch(PNG_PATH + "?t=" + Date.now());
                 const blob = await res.blob();
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
-                
-                const W = bitmap.width, H = bitmap.height;
                 const canvas = document.createElement('canvas');
-                canvas.width = W; canvas.height = H;
+                canvas.width = 1024; canvas.height = 961;
                 const ctx = canvas.getContext('2d', { alpha: false });
                 ctx.drawImage(bitmap, 0, 0);
-                
-                // Use Uint32 for legacy parity with your OLD index
-                const data32 = new Uint32Array(ctx.getImageData(0, 0, W, H).data.buffer);
-                substrate = new Uint8Array(W * (H - 1) * 3);
+                const imgData = ctx.getImageData(0, 0, 1024, 961).data;
                 
                 log("Aligning RGB Planes...");
-                for (let i = W, j = 0; i < data32.length; i++) {
-                    const p = data32[i];
-                    substrate[j++] = p & 0xFF;         // R
-                    substrate[j++] = (p >> 8) & 0xFF;  // G
-                    substrate[j++] = (p >> 16) & 0xFF; // B
+                carrier = new Uint8Array(1024 * 960 * 3);
+                for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
+                    carrier[j++] = imgData[i]; carrier[j++] = imgData[i+1]; carrier[j++] = imgData[i+2];
                 }
 
-                // LAYER 1: Root Registry
-                indexSubstrate(substrate, registry);
-
-                // LAYER 2: Check for Nested Carrier (The Russian Doll)
-                const nestedKey = Object.keys(registry).find(k => k.startsWith("CARRIER_STORAGE"));
-                if (nestedKey) {
-                    log(`Unwrapping Nested Substrate: ${nestedKey}...`);
-                    const nestedBuffer = substrate.slice(registry[nestedKey].off, registry[nestedKey].off + registry[nestedKey].sz);
-                    indexSubstrate(nestedBuffer, registry, registry[nestedKey].off);
+                const dv = new DataView(carrier.buffer);
+                const fileCount = dv.getUint32(0, true);
+                for (let i = 0; i < fileCount; i++) {
+                    const base = 4 + (i * 24);
+                    let nBytes = carrier.subarray(base, base + 16);
+                    let zeroIdx = nBytes.indexOf(0);
+                    let name = new TextDecoder().decode(nBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
+                    registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
                 }
+                
+                log(`Ligation Success. Found ${fileCount} artifacts.`);
+                autoIgnite(); // Auto-fire once ligation is confirmed
+            } catch (e) { log("LIGATION_ERROR: " + e.message); }
+        }
 
-                log("Igniting Hypervisor...");
-                const jsMeta = registry["libv86.js"];
-                if (!jsMeta) throw new Error("libv86.js not found in any registry layer.");
-                
-                const jsBin = substrate.slice(jsMeta.off, jsMeta.off + jsMeta.sz);
-                
-                // Forensic Preview
-                const preview = new TextDecoder().decode(jsBin.slice(0, 50)).replace(/\n/g, ' ');
-                log(`Code Preview: "${preview}..."`);
+        async function autoIgnite() {
+            log("Engine DNA materializing...");
+            try {
+                // 1. CLEAN AND IGNITE JS
+                const jsRaw = getAtomicBuffer("libv86.js");
+                const jsText = new TextDecoder().decode(jsRaw).replace(/\0/g, '').trim();
+                log(`Code Preview: "${jsText.slice(0, 50).replace(/\n/g, ' ')}..."`);
 
                 const script = document.createElement('script');
-                script.src = URL.createObjectURL(new Blob([jsBin], { type: 'application/javascript' }));
+                script.textContent = jsText; // Direct injection for synchronous binding
                 document.head.appendChild(script);
 
-                await new Promise(r => { script.onload = r; setTimeout(r, 800); });
-
-                // Hunter Logic (includes window.N from legacy)
-                const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86 || window.N;
+                // 2. RESOLVE CONSTRUCTOR
+                let V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86 || window.N;
+                if (!V86) {
+                    for (let k in window) { 
+                        if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { 
+                            V86 = window[k]; break; 
+                        } 
+                    }
+                }
                 if (!V86) throw new Error("Class Binding Failed. Tried V86Starter, N, etc.");
 
-                log("Booting VRAM...");
-                const config = {
-                    wasm_path: URL.createObjectURL(new Blob([substrate.slice(registry["v86.wasm"].off, registry["v86.wasm"].off + registry["v86.wasm"].sz)], {type:'application/wasm'})),
+                // 3. INITIALIZE VM
+                const fdaRaw = getAtomicBuffer("freedos_boot_disk_160K.img") || getAtomicBuffer("sectorforth.img");
+                const fdaPadded = new Uint8Array(1474560); // 1.44MB padding
+                fdaPadded.set(fdaRaw);
+
+                log("Initializing Ironvault VRAM...");
+                emu = new V86({
+                    wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm")], {type: 'application/wasm'})),
                     memory_size: 32 * 1024 * 1024,
-                    vga_canvas: document.getElementById("canvas-viewport").querySelector("canvas"),
-                    bios: { buffer: substrate.slice(registry["seabios.bin"].off, registry["seabios.bin"].off + registry["seabios.bin"].sz) },
-                    vga_bios: { buffer: substrate.slice(registry["vgabios.bin"].off, registry["vgabios.bin"].off + registry["vgabios.bin"].sz) },
+                    vga_canvas: document.querySelector("canvas"),
+                    screen_container: document.getElementById("screen_container"),
+                    bios: { buffer: getAtomicBuffer("seabios.bin").buffer },
+                    vga_bios: { buffer: getAtomicBuffer("vgabios.bin").buffer },
+                    fda: { buffer: fdaPadded.buffer },
                     autostart: true,
-                };
+                    serial0_active: true
+                });
 
-                // Add Boot Disk (Floppy or Linux Kernel)
-                if (registry["sectorforth.img"]) {
-                    config.fda = { buffer: substrate.slice(registry["sectorforth.img"].off, registry["sectorforth.img"].off + registry["sectorforth.img"].sz) };
-                } else if (registry["vmlinuz"]) {
-                    config.bzimage = { buffer: substrate.slice(registry["vmlinuz"].off, registry["vmlinuz"].off + registry["vmlinuz"].sz) };
-                    config.initrd = { buffer: substrate.slice(registry["initrd.img"].off, registry["initrd.img"].off + registry["initrd.img"].sz) };
-                    config.memory_size = 256 * 1024 * 1024;
-                }
+                // 4. CONNECT TERMINAL & HUD
+                emu.add_listener("serial0-output-char", (c) => {
+                    const t = document.getElementById('term');
+                    t.innerText += c;
+                    if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
+                    t.scrollTop = t.scrollHeight;
+                });
 
-                const emu = new V86(config);
-                log("[SUCCESS] Ironvault Ignition Complete.");
-                document.getElementById('stat-bar').innerText = "VM_ACTIVE_IN_VRAM";
+                window.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") emu.serial0_send("\n");
+                    else if (e.key === "Backspace") emu.serial0_send("\b");
+                    else if (e.key.length === 1) emu.serial0_send(e.key);
+                });
 
-            } catch (e) {
-                log(`FATAL: ${e.message}`, "err");
-                document.getElementById('stat-bar').innerText = "IGNITION_ERROR";
-            }
+                setInterval(() => {
+                    document.getElementById('stat-bar').innerText = `CPU_PULSE: ${emu.get_instruction_counter().toLocaleString()} | TTY: ACTIVE`;
+                }, 1000);
+
+                log("[SUCCESS] Ironvault Active. Click terminal to type.");
+                document.getElementById('stat-bar').style.color = "#0f0";
+
+            } catch (e) { log("FATAL: " + e.message); }
         }
-        window.addEventListener('load', autoIgnite);
+
+        window.onload = init;
     </script>
 </body>
 </html>
