@@ -44,16 +44,21 @@
 
         function getAtomicBuffer(name) {
             if (!carrier) return null;
-            const needle = new TextEncoder().encode(name);
-            for (let i = 0; i < carrier.length - needle.length; i++) {
+            const nameBytes = new TextEncoder().encode(name);
+            for (let i = 0; i < carrier.length - nameBytes.length; i++) {
                 let found = true;
-                for (let j = 0; j < needle.length; j++) {
-                    if (carrier[i + j] !== needle[j]) { found = false; break; }
+                for (let j = 0; j < nameBytes.length; j++) {
+                    if (carrier[i + j] !== nameBytes[j]) { found = false; break; }
                 }
                 if (found) {
                     const dataView = new DataView(carrier.buffer, carrier.byteOffset, carrier.byteLength);
+                    // Assumption: [4-byte-length][filename][data]
+                    // We search for filename (index i). Length is 4 bytes before (i-4).
+                    // Data starts AFTER the filename (i + nameBytes.length).
                     const len = dataView.getUint32(i - 4, true);
-                    return carrier.slice(i, i + len);
+                    const dataStart = i + nameBytes.length;
+                    log(`Found ${name} at ${i}. Length: ${len}. Slicing from ${dataStart}...`);
+                    return carrier.slice(dataStart, dataStart + len);
                 }
             }
             return null;
@@ -61,11 +66,8 @@
 
         async function autoIgnite() {
             log("Engine DNA materializing...");
-            document.getElementById('stat-bar').textContent = "[DECODING_CARRIER]";
-
             try {
                 const res = await fetch(PNG_PATH);
-                if (!res.ok) throw new Error("Carrier not found at path.");
                 const blob = await res.blob();
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
                 const canvas = document.createElement('canvas');
@@ -74,36 +76,45 @@
                 ctx.drawImage(bitmap, 0, 0);
                 const imgData = ctx.getImageData(0, 0, 1024, 961).data;
 
-                log("Stripping Alpha channel for data alignment...");
+                log("Aligning Substrate...");
                 carrier = new Uint8Array((imgData.length / 4) * 3);
                 for (let i = 0, j = 0; i < imgData.length; i += 4) {
-                    carrier[j++] = imgData[i];     // R
-                    carrier[j++] = imgData[i + 1]; // G
-                    carrier[j++] = imgData[i + 2]; // B
+                    carrier[j++] = imgData[i]; carrier[j++] = imgData[i + 1]; carrier[j++] = imgData[i + 2];
                 }
 
-                log("Extracting binaries...");
+                log("Extracting libv86.js...");
                 const libv86Data = getAtomicBuffer("libv86.js");
-                if (!libv86Data) throw new Error("libv86.js extraction failed.");
+                if (!libv86Data) throw new Error("libv86.js not found in carrier.");
                 
+                // FORENSIC CHECK
+                const codeSnippet = new TextDecoder().decode(libv86Data.slice(0, 50));
+                log(`Code Preview: "${codeSnippet.replace(/\n/g, ' ')}..."`);
+
                 log("Igniting libv86...");
+                const scriptBlob = new Blob([libv86Data], { type: 'application/javascript' });
+                const scriptUrl = URL.createObjectURL(scriptBlob);
                 const script = document.createElement('script');
-                script.textContent = new TextDecoder().decode(libv86Data);
+                script.src = scriptUrl;
                 document.head.appendChild(script);
 
-                // --- NEW: WAITING FOR BINDING ---
-                await new Promise(resolve => setTimeout(resolve, 100)); // 100ms heartbeat
-                const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
-                if (!V86) throw new Error("Emulator engine loaded but class binding failed.");
-                // --------------------------------
+                // Wait for script to load
+                await new Promise((resolve) => { script.onload = resolve; setTimeout(resolve, 500); });
 
+                const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
+                if (!V86) {
+                    // BRUTE FORCE SCAN
+                    const keys = Object.keys(window).filter(k => k.toLowerCase().includes('v86'));
+                    log(`Available V86 keys: ${keys.join(', ') || 'NONE'}`);
+                    throw new Error("Class binding failed.");
+                }
+
+                log("Initializing v86 in VRAM...");
                 const v86Wasm = getAtomicBuffer("v86.wasm");
                 const seabios = getAtomicBuffer("seabios.bin");
                 const vgabios = getAtomicBuffer("vgabios.bin");
                 const bootDisk = getAtomicBuffer("freedos_boot_disk_160K.img") || getAtomicBuffer("sectorforth.img");
 
-                log("Initializing v86 in VRAM...");
-                const emu = new V86({ // Use the flexible V86 variable
+                const emu = new V86({
                     wasm_path: URL.createObjectURL(new Blob([v86Wasm], { type: 'application/wasm' })),
                     memory_size: 32 * 1024 * 1024,
                     vga_canvas: document.querySelector("canvas"),
