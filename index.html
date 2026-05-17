@@ -31,145 +31,149 @@
     <!-- ERP_OPCODE_END -->
 
 <script>
-        let carrier = null;
-        let registry = {};
-        let emu = null;
-        const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
-        const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
+    let carrier = null;
+    let registry = {};
+    let emu = null;
+    const sysFiles = ["libv86.js", "v86.wasm", "seabios.bin", "vgabios.bin"];
+    const PNG_PATH = "series_0010_rang_rung_repl/LATEST_STABLE_RANG_RUNG/RGB_RELATED/CARRIER_STORAGE_v1.png";
 
-        function log(m) { 
-            const t = document.getElementById('term');
-            t.innerText += "\n> " + m; 
-            t.scrollTop = t.scrollHeight;
-        }
+    function log(m) { 
+        const t = document.getElementById('term');
+        t.innerText += "\n> " + m; 
+        t.scrollTop = t.scrollHeight;
+    }
 
-        // --- THE ATOMIC REGISTRY EXTRACTOR ---
-        function getAtomicBuffer(name) {
-            const meta = registry[name];
-            if (!meta) return null;
-            return carrier.subarray(meta.offset, meta.offset + meta.size);
-        }
+    function getAtomicBuffer(name) {
+        const meta = registry[name];
+        if (!meta) return null;
+        return carrier.subarray(meta.offset, meta.offset + meta.size);
+    }
 
-        async function init() {
-            log("Siphoning Silicon Substrate...");
-            try {
-                const res = await fetch(PNG_PATH + "?t=" + Date.now());
-                const blob = await res.blob();
-                const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
+    function getIsolatedBuffer(name) {
+        const raw = getAtomicBuffer(name);
+        if (!raw) return null;
+        const detached = new Uint8Array(raw.length);
+        detached.set(raw);
+        return detached.buffer;
+    }
+
+    async function init() {
+        log("Siphoning Silicon Substrate...");
+        try {
+            const res = await fetch(PNG_PATH + "?t=" + Date.now());
+            const blob = await res.blob();
+            const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
+            const canvas = document.createElement('canvas');
+            canvas.width = 1024; canvas.height = 961;
+            const ctx = canvas.getContext('2d', { alpha: false });
+            ctx.drawImage(bitmap, 0, 0);
+            const imgData = ctx.getImageData(0, 0, 1024, 961).data;
+            
+            carrier = new Uint8Array(1024 * 960 * 3);
+            for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
+                carrier[j++] = imgData[i]; carrier[j++] = imgData[i+1]; carrier[j++] = imgData[i+2];
+            }
+
+            const dv = new DataView(carrier.buffer);
+            const fileCount = dv.getUint32(0, true);
+            const selector = document.getElementById('os-selector');
+            selector.innerHTML = "<span style='color:#00FF41; margin-right:10px;'>BOOT_TARGET:</span>";
+
+            for (let i = 0; i < fileCount; i++) {
+                const base = 4 + (i * 24);
+                let nBytes = carrier.subarray(base, base + 16);
+                let zeroIdx = nBytes.indexOf(0);
+                let name = new TextDecoder().decode(nBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
+                registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
                 
-                const canvas = document.createElement('canvas');
-                canvas.width = 1024; canvas.height = 961;
-                const ctx = canvas.getContext('2d', { alpha: false });
-                ctx.drawImage(bitmap, 0, 0);
-                const imgData = ctx.getImageData(0, 0, 1024, 961).data;
-                
-                log("Aligning Phantom Matrix (RGB Planes)...");
-                carrier = new Uint8Array(1024 * 960 * 3);
-                for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
-                    carrier[j++] = imgData[i]; carrier[j++] = imgData[i+1]; carrier[j++] = imgData[i+2];
+                if (!sysFiles.includes(name)) {
+                    const btn = document.createElement('button');
+                    btn.innerText = name.toUpperCase();
+                    btn.onclick = () => ignite(name);
+                    selector.appendChild(btn);
+                }
+            }
+            document.getElementById('stat-bar').innerText = "[SUBSTRATE_BONDED]";
+            log(`Ligation Success. Found ${fileCount} artifacts.`);
+        } catch (e) { log("LIGATION_ERROR: " + e.message); }
+    }
+
+    async function ignite(osName) {
+        if (!carrier) return;
+        log(`Igniting Proxy for OS: ${osName}...`);
+        document.getElementById('os-selector').style.display = "none";
+
+        try {
+            const libv86Data = getAtomicBuffer("libv86.js");
+            const jsURL = URL.createObjectURL(new Blob([libv86Data], { type: 'application/javascript' }));
+            const script = document.createElement('script');
+            script.src = jsURL;
+            
+            script.onload = () => {
+                log("Hypervisor Bound. Resolving Constructor...");
+                let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
+                if (!V86) {
+                    for (let k in window) { 
+                        if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { V86 = window[k]; break; } 
+                    }
                 }
 
-                const dv = new DataView(carrier.buffer);
-                const fileCount = dv.getUint32(0, true);
-                const selector = document.getElementById('os-selector');
-                selector.innerHTML = "<span style='color:#00FF41; margin-right:10px;'>BOOT_TARGET:</span>";
+                const fdaRaw = getAtomicBuffer(osName);
+                const fdaPadded = new Uint8Array(1474560);
+                if (fdaRaw) fdaPadded.set(fdaRaw);
 
-                for (let i = 0; i < fileCount; i++) {
-                    const base = 4 + (i * 24);
-                    let nBytes = carrier.subarray(base, base + 16);
-                    let zeroIdx = nBytes.indexOf(0);
-                    let name = new TextDecoder().decode(nBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
-                    registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
+                emu = new V86({
+                    wasm_path: URL.createObjectURL(new Blob([getIsolatedBuffer("v86.wasm")], {type: 'application/wasm'})),
+                    memory_size: 128 * 1024 * 1024,
+                    vga_canvas: document.querySelector("canvas"),
+                    screen_container: document.getElementById("screen_container"),
+                    bios: { buffer: getIsolatedBuffer("seabios.bin") },
+                    vga_bios: { buffer: getIsolatedBuffer("vgabios.bin") },
+                    fda: { buffer: fdaPadded.buffer },
+                    autostart: true,
+                    serial0_active: true
+                });
+
+                let lastCount = 0;
+                let wedgeTriggered = false;
+
+                // --- THE NEURAL KICKSTART (WEDGE) ---
+                const pulseInterval = setInterval(() => {
+                    const count = emu.get_instruction_counter();
+                    if (count > lastCount) {
+                        document.getElementById('stat-bar').innerText = `CPU_PULSE: ${count.toLocaleString()} | TTY: ACTIVE`;
+                        lastCount = count;
+                    }
                     
-                    if (!sysFiles.includes(name)) {
-                        const btn = document.createElement('button');
-                        btn.innerText = name.toUpperCase();
-                        btn.onclick = () => ignite(name);
-                        selector.appendChild(btn);
+                    // Trigger "Enter" after BIOS handoff (approx 5.5M instructions)
+                    if (!wedgeTriggered && lastCount > 5500000) {
+                        wedgeTriggered = true;
+                        log("BIOS Handoff. Sending Neural Kickstart...");
+                        emu.keyboard_send_scancodes([0x1C, 0x9C]); // Send Enter
+                        emu.serial0_send("\ndir\n"); // Send dir to verify prompt
                     }
-                }
-                
-                document.getElementById('stat-bar').innerText = "[SUBSTRATE_BONDED]";
-                log(`Ligation Success. Found ${fileCount} artifacts.`);
-            } catch (e) { log("LIGATION_ERROR: " + e.message); }
-        }
+                }, 1000);
 
-// --- NEW HELPER: ISOLATE BUFFER ---
-        // This ensures the emulator only sees the file data, not the whole carrier
-        function getIsolatedBuffer(name) {
-            const raw = getAtomicBuffer(name);
-            if (!raw) return null;
-            // Create a new independent ArrayBuffer of the exact size
-            const detached = new Uint8Array(raw.length);
-            detached.set(raw);
-            return detached.buffer;
-        }
+                emu.add_listener("serial0-output-char", (c) => {
+                    const t = document.getElementById('term');
+                    t.innerText += c;
+                    if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
+                    t.scrollTop = t.scrollHeight;
+                });
 
-        async function ignite(osName) {
-            if (!carrier) return;
-            log(`Isolating Memory Segments for: ${osName}...`);
-            document.getElementById('os-selector').style.display = "none";
+                window.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") emu.serial0_send("\n");
+                    else if (e.key === "Backspace") emu.serial0_send("\b");
+                    else if (e.key.length === 1) emu.serial0_send(e.key);
+                });
 
-            try {
-                const libv86Data = getAtomicBuffer("libv86.js");
-                const jsURL = URL.createObjectURL(new Blob([libv86Data], { type: 'application/javascript' }));
-                const script = document.createElement('script');
-                script.src = jsURL;
-                
-                script.onload = () => {
-                    log("Hypervisor Materialized. Resolving Constructor...");
-                    let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
-                    if (!V86) {
-                        for (let k in window) { 
-                            if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { 
-                                V86 = window[k]; break; 
-                            } 
-                        }
-                    }
-                    if (!V86) throw new Error("Constructor Failed to Bind.");
+                log("[SUCCESS] Ironvault Active. Awaiting Pulse...");
+            };
+            document.head.appendChild(script);
 
-                    // PREPARE ISOLATED DRIVE (1.44MB)
-                    const fdaRaw = getAtomicBuffer(osName);
-                    const fdaPadded = new Uint8Array(1474560);
-                    if (fdaRaw) fdaPadded.set(fdaRaw);
-
-                    log("Mapping Detached Memory Segments...");
-                    emu = new V86({
-                        wasm_path: URL.createObjectURL(new Blob([getIsolatedBuffer("v86.wasm")], {type: 'application/wasm'})),
-                        memory_size: 128 * 1024 * 1024,
-                        vga_memory_size: 8 * 1024 * 1024,
-                        vga_canvas: document.querySelector("canvas"),
-                        screen_container: document.getElementById("screen_container"),
-                        // CRITICAL: We pass the isolated .buffer here
-                        bios: { buffer: getIsolatedBuffer("seabios.bin") },
-                        vga_bios: { buffer: getIsolatedBuffer("vgabios.bin") },
-                        fda: { buffer: fdaPadded.buffer },
-                        autostart: true,
-                        serial0_active: true
-                    });
-
-                    emu.add_listener("serial0-output-char", (c) => {
-                        const t = document.getElementById('term');
-                        t.innerText += c;
-                        if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
-                        t.scrollTop = t.scrollHeight;
-                    });
-
-                    window.addEventListener("keydown", (e) => {
-                        if (e.key === "Enter") emu.serial0_send("\n");
-                        else if (e.key === "Backspace") emu.serial0_send("\b");
-                        else if (e.key.length === 1) emu.serial0_send(e.key);
-                    });
-
-                    log("[SUCCESS] Ironvault Stabilized. Pulse Active.");
-                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | RUNNING`;
-                };
-                document.head.appendChild(script);
-
-            } catch (e) { log("IGNITION_FATAL: " + e.message); }
-        }
-
-        window.onload = init;
-    </script>
+        } catch (e) { log("IGNITION_FATAL: " + e.message); }
+    }
+    window.onload = init;
+</script>
 </body>
 </html>
