@@ -119,17 +119,43 @@
             if (!carrier) return;
             log(`Igniting OS: ${osName}...`);
             document.getElementById('os-selector').style.display = "none";
+
             try {
-                const libv86Data = getAtomicBuffer("libv86.js");
-                const jsURL = URL.createObjectURL(new Blob([libv86Data], { type: 'application/javascript' }));
+                // 1. EXTRACT & SURGICALLY CLEAN HYPERVISOR (libv86.js)
+                const jsRaw = getAtomicBuffer("libv86.js");
+                // The ".replace(/\0/g, '').trim()" is the secret to fixing the SyntaxError
+                const jsText = new TextDecoder().decode(jsRaw).replace(/\0/g, '').trim();
+                const jsURL = URL.createObjectURL(new Blob([jsText], { type: 'text/javascript' }));
+                
                 const script = document.createElement('script');
                 script.src = jsURL;
+                
                 script.onload = () => {
-                    let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
+                    log("Hypervisor Bound. Resolving Constructor...");
+                    
+                    // SMART HUNTER: Ensures we only grab a FUNCTION/CONSTRUCTOR
+                    let V86 = null;
+                    const targets = [window.V86Starter, window.v86Starter, window.N, window.V86];
+                    for (let t of targets) {
+                        if (typeof t === "function") { V86 = t; break; }
+                    }
+                    
+                    if (!V86) {
+                        for (let k in window) { 
+                            if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { 
+                                V86 = window[k]; break; 
+                            } 
+                        }
+                    }
+
+                    if (!V86) throw new Error("Constructor Manifestation Failed. Check console for script errors.");
+
+                    // 2. PREPARE GUEST DRIVE
                     const fdaRaw = getAtomicBuffer(osName);
                     const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
+                    // 3. IGNITE EMULATOR
                     emu = new V86({
                         wasm_path: URL.createObjectURL(new Blob([getIsolatedBuffer("v86.wasm")], {type: 'application/wasm'})),
                         memory_size: 64 * 1024 * 1024,
@@ -142,17 +168,12 @@
                         serial0_active: true
                     });
 
-                    let lastCount = 0, wedgeTriggered = false;
+                    // 4. LISTENERS
                     emu.add_listener("serial0-output-char", (c) => {
                         const t = document.getElementById('term');
                         t.innerText += c;
                         if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
                         t.scrollTop = t.scrollHeight;
-                        if (!wedgeTriggered && emu.get_instruction_counter() > 5000000) {
-                            wedgeTriggered = true;
-                            emu.keyboard_send_scancodes([0x1C, 0x9C]); 
-                            emu.serial0_send("\n\n123 .\n"); 
-                        }
                     });
 
                     window.addEventListener("keydown", (e) => {
@@ -160,9 +181,12 @@
                         else if (e.key === "Backspace") emu.serial0_send("\b");
                         else if (e.key.length === 1) emu.serial0_send(e.key);
                     });
-                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()}`;
+
+                    log("[SUCCESS] Ironvault Active.");
+                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | PULSING`;
                 };
                 document.head.appendChild(script);
+
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
         }
         window.onload = init;
