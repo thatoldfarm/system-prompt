@@ -162,6 +162,33 @@
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
         }
         window.onload = init;
+        
+        // --- THE NEURAL UPLINK ---
+const CF_WORKER_URL = "PASTE_YOUR_CLOUDFLARE_URL_HERE"; 
+
+async function pulseToNerve() {
+    const termElement = document.getElementById('term');
+    const sigilElement = document.querySelector('.sigil');
+    if (!termElement) return;
+
+    const termText = termElement.innerText;
+    const sigilText = sigilElement ? sigilElement.innerText : "";
+    
+    try {
+        await fetch(CF_WORKER_URL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ term: termText, sigil: sigilText })
+        });
+        console.log("Nerve Pulse: SUCCESS");
+    } catch (e) { 
+        console.log("Nerve Link Error:", e); 
+    }
+}
+
+// Start pulsing every 5 seconds
+setInterval(pulseToNerve, 5000);
     </script>
 </body>
 </html>
