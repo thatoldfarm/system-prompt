@@ -70,20 +70,28 @@
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
                 const canvas = document.createElement('canvas');
                 canvas.width = 1024; canvas.height = 961;
-                const ctx = canvas.getContext('2d');
+                const ctx = canvas.getContext('2d', { alpha: false }); // Disable alpha management
                 ctx.drawImage(bitmap, 0, 0);
                 const imgData = ctx.getImageData(0, 0, 1024, 961).data;
 
-                // Extracting raw bytes from RGBA (skipping Alpha if necessary, but here we take the buffer)
-                // Note: v86 carrier logic usually packs data into the RGB channels.
-                carrier = new Uint8Array(imgData.buffer);
-                log(`Carrier loaded: ${carrier.length} bytes`);
+                // --- CRITICAL FIX: STRIP ALPHA CHANNEL ---
+                // We convert RGBA to RGB to recover the original byte alignment
+                log("Stripping Alpha channel for data alignment...");
+                carrier = new Uint8Array((imgData.length / 4) * 3);
+                for (let i = 0, j = 0; i < imgData.length; i += 4) {
+                    carrier[j++] = imgData[i];     // Red
+                    carrier[j++] = imgData[i + 1]; // Green
+                    carrier[j++] = imgData[i + 2]; // Blue
+                    // imgData[i+3] (Alpha) is discarded
+                }
+                log(`Aligned Carrier: ${carrier.length} bytes`);
+                // ------------------------------------------
 
                 log("Extracting binaries...");
                 const libv86Data = getAtomicBuffer("libv86.js");
-                if (!libv86Data) throw new Error("libv86.js extraction failed.");
+                if (!libv86Data) throw new Error("libv86.js extraction failed. Data alignment still off.");
                 
-                // Inject the emulator library
+                log("Igniting libv86...");
                 const script = document.createElement('script');
                 script.textContent = new TextDecoder().decode(libv86Data);
                 document.head.appendChild(script);
