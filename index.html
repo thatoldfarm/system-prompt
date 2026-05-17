@@ -94,23 +94,30 @@
             } catch (e) { log("LIGATION_ERROR: " + e.message); }
         }
 
+// --- NEW HELPER: ISOLATE BUFFER ---
+        // This ensures the emulator only sees the file data, not the whole carrier
+        function getIsolatedBuffer(name) {
+            const raw = getAtomicBuffer(name);
+            if (!raw) return null;
+            // Create a new independent ArrayBuffer of the exact size
+            const detached = new Uint8Array(raw.length);
+            detached.set(raw);
+            return detached.buffer;
+        }
+
         async function ignite(osName) {
             if (!carrier) return;
-            log(`Expanding Neural Buffer for OS: ${osName}...`);
+            log(`Isolating Memory Segments for: ${osName}...`);
             document.getElementById('os-selector').style.display = "none";
 
             try {
-                // 1. EXTRACT AND IGNITE HYPERVISOR BINARY
                 const libv86Data = getAtomicBuffer("libv86.js");
-                if (!libv86Data) throw new Error("libv86.js missing from substrate.");
-
                 const jsURL = URL.createObjectURL(new Blob([libv86Data], { type: 'application/javascript' }));
                 const script = document.createElement('script');
                 script.src = jsURL;
                 
                 script.onload = () => {
                     log("Hypervisor Materialized. Resolving Constructor...");
-                    
                     let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
                     if (!V86) {
                         for (let k in window) { 
@@ -119,29 +126,28 @@
                             } 
                         }
                     }
-
                     if (!V86) throw new Error("Constructor Failed to Bind.");
 
-                    // 2. PREPARE GUEST OS DRIVE (1.44MB Padded)
+                    // PREPARE ISOLATED DRIVE (1.44MB)
                     const fdaRaw = getAtomicBuffer(osName);
                     const fdaPadded = new Uint8Array(1474560);
                     if (fdaRaw) fdaPadded.set(fdaRaw);
 
-                    log("Stabilizing WASM Heap at 128MB...");
+                    log("Mapping Detached Memory Segments...");
                     emu = new V86({
-                        wasm_path: URL.createObjectURL(new Blob([getAtomicBuffer("v86.wasm")], {type: 'application/wasm'})),
+                        wasm_path: URL.createObjectURL(new Blob([getIsolatedBuffer("v86.wasm")], {type: 'application/wasm'})),
                         memory_size: 128 * 1024 * 1024,
                         vga_memory_size: 8 * 1024 * 1024,
                         vga_canvas: document.querySelector("canvas"),
                         screen_container: document.getElementById("screen_container"),
-                        bios: { buffer: getAtomicBuffer("seabios.bin").buffer },
-                        vga_bios: { buffer: getAtomicBuffer("vgabios.bin").buffer },
+                        // CRITICAL: We pass the isolated .buffer here
+                        bios: { buffer: getIsolatedBuffer("seabios.bin") },
+                        vga_bios: { buffer: getIsolatedBuffer("vgabios.bin") },
                         fda: { buffer: fdaPadded.buffer },
                         autostart: true,
                         serial0_active: true
                     });
 
-                    // 3. ATTACH IO LISTENERS
                     emu.add_listener("serial0-output-char", (c) => {
                         const t = document.getElementById('term');
                         t.innerText += c;
@@ -155,11 +161,9 @@
                         else if (e.key.length === 1) emu.serial0_send(e.key);
                     });
 
-                    log("[SUCCESS] Ironvault Stabilized.");
-                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | ACTIVE`;
-                    document.getElementById('stat-bar').style.color = "#00FF41";
+                    log("[SUCCESS] Ironvault Stabilized. Pulse Active.");
+                    document.getElementById('stat-bar').innerText = `OS: ${osName.toUpperCase()} | RUNNING`;
                 };
-                
                 document.head.appendChild(script);
 
             } catch (e) { log("IGNITION_FATAL: " + e.message); }
