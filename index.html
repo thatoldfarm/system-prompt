@@ -70,31 +70,32 @@
                 const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
                 const canvas = document.createElement('canvas');
                 canvas.width = 1024; canvas.height = 961;
-                const ctx = canvas.getContext('2d', { alpha: false }); // Disable alpha management
+                const ctx = canvas.getContext('2d', { alpha: false }); 
                 ctx.drawImage(bitmap, 0, 0);
                 const imgData = ctx.getImageData(0, 0, 1024, 961).data;
 
-                // --- CRITICAL FIX: STRIP ALPHA CHANNEL ---
-                // We convert RGBA to RGB to recover the original byte alignment
                 log("Stripping Alpha channel for data alignment...");
                 carrier = new Uint8Array((imgData.length / 4) * 3);
                 for (let i = 0, j = 0; i < imgData.length; i += 4) {
-                    carrier[j++] = imgData[i];     // Red
-                    carrier[j++] = imgData[i + 1]; // Green
-                    carrier[j++] = imgData[i + 2]; // Blue
-                    // imgData[i+3] (Alpha) is discarded
+                    carrier[j++] = imgData[i];     // R
+                    carrier[j++] = imgData[i + 1]; // G
+                    carrier[j++] = imgData[i + 2]; // B
                 }
-                log(`Aligned Carrier: ${carrier.length} bytes`);
-                // ------------------------------------------
 
                 log("Extracting binaries...");
                 const libv86Data = getAtomicBuffer("libv86.js");
-                if (!libv86Data) throw new Error("libv86.js extraction failed. Data alignment still off.");
+                if (!libv86Data) throw new Error("libv86.js extraction failed.");
                 
                 log("Igniting libv86...");
                 const script = document.createElement('script');
                 script.textContent = new TextDecoder().decode(libv86Data);
                 document.head.appendChild(script);
+
+                // --- NEW: WAITING FOR BINDING ---
+                await new Promise(resolve => setTimeout(resolve, 100)); // 100ms heartbeat
+                const V86 = window.V86Starter || window.v86Starter || window.V86 || window.v86;
+                if (!V86) throw new Error("Emulator engine loaded but class binding failed.");
+                // --------------------------------
 
                 const v86Wasm = getAtomicBuffer("v86.wasm");
                 const seabios = getAtomicBuffer("seabios.bin");
@@ -102,7 +103,7 @@
                 const bootDisk = getAtomicBuffer("freedos_boot_disk_160K.img") || getAtomicBuffer("sectorforth.img");
 
                 log("Initializing v86 in VRAM...");
-                const emu = new V86Starter({
+                const emu = new V86({ // Use the flexible V86 variable
                     wasm_path: URL.createObjectURL(new Blob([v86Wasm], { type: 'application/wasm' })),
                     memory_size: 32 * 1024 * 1024,
                     vga_canvas: document.querySelector("canvas"),
