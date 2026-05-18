@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>IRONVAULT // ZERO_KNOWLEDGE_NODE</title>
+    <style>
+        body { background: #000; color: #00FF41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; display: flex; flex-direction: column; height: 100vh; border: 2px solid #004411; box-sizing: border-box; overflow: hidden; }
+        #proxy-header { border-bottom: 1px solid #004411; padding-bottom: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Layout Grid */
+        .workspace { display: flex; gap: 15px; flex-grow: 1; margin-bottom: 60px; overflow: hidden; }
+        .column-left { display: flex; flex-direction: column; width: 640px; flex-shrink: 0; }
+        .column-right { display: flex; flex-direction: column; flex-grow: 1; }
+
+        /* Components */
+        #screen_container { width: 640px; height: 400px; border: 1px solid #00FF41; background: #000; position: relative; box-shadow: 0 0 15px #004411; flex-shrink: 0; }
+        canvas { width: 640px; height: 400px; image-rendering: pixelated; }
+        #term { background: #050505; border: 1px solid #004411; border-left: 3px solid #00FF41; padding: 15px; flex-grow: 1; overflow-y: auto; color: #00FF41; font-size: 12px; white-space: pre-wrap; margin-top: 15px; }
+        #gopher-porthole { background: #050505; border: 1px solid #004411; border-left: 3px solid #daa520; padding: 15px; flex-grow: 1; overflow-y: auto; color: #daa520; font-size: 11px; white-space: pre; }
+        
+        /* Command Bar */
+        .cmd-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; border-top: 1px solid #00FF41; display: flex; justify-content: center; align-items: center; padding: 10px 0; gap: 10px; z-index: 20; }
+        button { background: #00FF41; color: #000; border: none; padding: 8px 15px; cursor: pointer; font-weight: bold; font-family: inherit; text-transform: uppercase; font-size: 12px; }
+        button:hover { background: #fff; }
+        button.gold { background: #daa520; }
+    </style>
+</head>
+<body>
+    <div id="proxy-header">
+        <span>IRONVAULT V28 // SOVEREIGN_NODE_ACTIVE</span>
+        <span id="stat-bar">[AWAITING_LIGATION]</span>
+    </div>
+
+    <div class="workspace">
+        <div class="column-left">
+            <div id="screen_container"><canvas></canvas></div>
+            <pre id="term">> System Initializing...
+> Siphoning Carrier Substrate...</pre>
+        </div>
+        <div class="column-right">
+            <div id="gopher-porthole">> INITIALIZING PORTHOLE...
+> AWAITING DYNAMIC LIGATION...</div>
+        </div>
+    </div>
+
+    <div class="cmd-bar">
+        <button onclick="igniteTrifecta()">IGNITE_TRIFECTA</button>
+        <button class="gold" onclick="openRawGopher()">RAW_GOPHERMAP</button>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. DYNAMIC OPSEC CONFIGURATION
+        // ==========================================
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Dynamic Nerve Routing: Uses ?nerve= URL param, otherwise stays completely offline.
+        const CF_BASE_URL = urlParams.get('nerve') || "PLACEHOLDER";
+        const CF_GOPHER_URL = CF_BASE_URL !== "PLACEHOLDER" ? CF_BASE_URL + "/gopher" : null;
+        
+        // Carrier Routing: Looks in the same folder by default (IPFS/Local) or overrides via ?carrier=
+        const PNG_PATH = urlParams.get('carrier') || "./CARRIER_STORAGE_v1.png";
+
+        let carrier = null;
+        let registry = {};
+        let emu = null;
+
+        // ==========================================
+        // 2. HELPER FUNCTIONS
+        // ==========================================
+        function log(m) { 
+            const t = document.getElementById('term');
+            if (t) { t.innerText += "\n> " + m; t.scrollTop = t.scrollHeight; }
+        }
+
+        function getAtomicBuffer(name) {
+            const meta = registry[name];
+            if (!meta) return null;
+            const sub = carrier.subarray(meta.offset, meta.offset + meta.size);
+            const out = new Uint8Array(sub.length);
+            out.set(sub);
+            return out;
+        }
+
+        function getIsolatedBuffer(name) {
+            const raw = getAtomicBuffer(name);
+            if (!raw) return null;
+            const detached = new Uint8Array(raw.length);
+            detached.set(raw);
+            return detached.buffer;
+        }
+
+        // ==========================================
+        // 3. NEURAL UPLINK (GOPHER & CLOUDFLARE)
+        // ==========================================
+        async function refreshPorthole() {
+            if (!CF_GOPHER_URL) {
+                document.getElementById('gopher-porthole').innerText = "i[OFFLINE MODE] No ?nerve= parameter provided.\r\ni[STATUS] Sovereign Airgap Active.\r\n.";
+                return;
+            }
+            try {
+                const res = await fetch(CF_GOPHER_URL + "?t=" + Date.now());
+                const text = await res.text();
+                document.getElementById('gopher-porthole').innerText = text;
+            } catch (e) { 
+                document.getElementById('gopher-porthole').innerText = "LINK_ERROR: Cloudflare Nerve unreachable."; 
+            }
+        }
+
+        async function pulseToNerve() {
+            if (CF_BASE_URL === "PLACEHOLDER") return;
+            const termElement = document.getElementById('term');
+            if (!termElement) return;
+            try {
+                await fetch(CF_BASE_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        term: termElement.innerText.slice(-3000), 
+                        sigil: "[V28:GHOST_PULSE]" 
+                    })
+                });
+            } catch (e) { console.log("Nerve Pulse Error"); }
+        }
+
+        function openRawGopher() {
+            if (CF_GOPHER_URL) window.open(CF_GOPHER_URL);
+            else alert("Cannot open Gophermap. No '?nerve=' parameter was provided in the URL.");
+        }
+
+        // ==========================================
+        // 4. SUBSTRATE LIGATION
+        // ==========================================
+        async function init() {
+            try {
+                const res = await fetch(PNG_PATH + "?t=" + Date.now());
+                if (!res.ok) throw new Error("Carrier PNG not found at path: " + PNG_PATH);
+                const blob = await res.blob();
+                const bitmap = await createImageBitmap(blob, { colorSpaceConversion: 'none' });
+                const canvas = document.createElement('canvas');
+                canvas.width = bitmap.width; canvas.height = bitmap.height;
+                const ctx = canvas.getContext('2d', { alpha: false });
+                ctx.drawImage(bitmap, 0, 0);
+                const imgData = ctx.getImageData(0, 0, bitmap.width, bitmap.height).data;
+                
+                log("Aligning Binary Planes...");
+                carrier = new Uint8Array(bitmap.width * (bitmap.height - 1) * 3);
+                for (let i = 1024 * 4, j = 0; i < imgData.length; i += 4) {
+                    carrier[j++] = imgData[i]; carrier[j++] = imgData[i+1]; carrier[j++] = imgData[i+2];
+                }
+
+                const dv = new DataView(carrier.buffer);
+                const fileCount = dv.getUint32(0, true);
+                for (let i = 0; i < fileCount; i++) {
+                    const base = 4 + (i * 24);
+                    let nBytes = carrier.subarray(base, base + 16);
+                    let zeroIdx = nBytes.indexOf(0);
+                    let name = new TextDecoder().decode(nBytes.subarray(0, zeroIdx !== -1 ? zeroIdx : 16)).trim();
+                    registry[name] = { offset: dv.getUint32(base + 16, true), size: dv.getUint32(base + 20, true) };
+                }
+                
+                log(`Ligation Success. Found ${fileCount} embedded artifacts.`);
+                document.getElementById('stat-bar').innerText = "[SUBSTRATE_BONDED]";
+                
+                refreshPorthole();
+                setInterval(refreshPorthole, 10000);
+                setInterval(pulseToNerve, 5000);
+
+            } catch (e) { 
+                log("LIGATION_ERROR: " + e.message); 
+                document.getElementById('stat-bar').innerText = "[BOND_FAILED]";
+            }
+        }
+
+        // ==========================================
+        // 5. MACHINE IGNITION (V86)
+        // ==========================================
+        async function igniteTrifecta() {
+            if (!carrier) { alert("Carrier not loaded!"); return; }
+            const osName = "trifecta_os.img"; 
+            document.getElementById('stat-bar').innerText = "[IGNITING_TRIFECTA]";
+            log("Extracting hypervisor...");
+
+            try {
+                const jsRaw = getAtomicBuffer("libv86.js");
+                if (!jsRaw) throw new Error("libv86.js not found in registry.");
+                
+                // Strip Null Bytes
+                const jsClean = jsRaw.filter(byte => byte !== 0);
+                const jsURL = URL.createObjectURL(new Blob([jsClean], { type: 'application/javascript' }));
+                
+                const script = document.createElement('script');
+                script.src = jsURL;
+                script.onload = async () => {
+                    log("Resolving Constructor...");
+                    await new Promise(r => setTimeout(r, 500));
+                    
+                    let V86 = window.V86Starter || window.v86Starter || window.N || window.V86;
+                    if (!V86) {
+                        for (let k in window) { if (k.toLowerCase().includes("v86") && typeof window[k] === "function") { V86 = window[k]; break; } }
+                    }
+                    if (!V86) throw new Error("Constructor Failed to Bind.");
+
+                    // Floppy Padding
+                    const fdaRaw = getAtomicBuffer(osName);
+                    const fdaPadded = new Uint8Array(1474560);
+                    if (fdaRaw) fdaPadded.set(fdaRaw);
+
+                    log("Mapping Isolated Memory...");
+                    emu = new V86({
+                        wasm_path: URL.createObjectURL(new Blob([getIsolatedBuffer("v86.wasm")], {type: 'application/wasm'})),
+                        memory_size: 64 * 1024 * 1024,
+                        vga_canvas: document.querySelector("canvas"),
+                        screen_container: document.getElementById("screen_container"),
+                        bios: { buffer: getIsolatedBuffer("seabios.bin") },
+                        vga_bios: { buffer: getIsolatedBuffer("vgabios.bin") },
+                        fda: { buffer: fdaPadded.buffer },
+                        autostart: true,
+                        serial0_active: true
+                    });
+
+                    // Connect Output to Terminal
+                    let wedgeTriggered = false;
+                    emu.add_listener("serial0-output-char", (c) => {
+                        const t = document.getElementById('term');
+                        t.innerText += c;
+                        if (t.innerText.length > 5000) t.innerText = t.innerText.slice(-2000);
+                        t.scrollTop = t.scrollHeight;
+                        
+                        // Handshake
+                        if (!wedgeTriggered && emu.get_instruction_counter() > 5000000) {
+                            wedgeTriggered = true;
+                            emu.keyboard_send_scancodes([0x1C, 0x9C]); // Enter
+                            emu.serial0_send("\n\n123 .\n"); 
+                        }
+                    });
+
+                    // Connect Keyboard Input
+                    window.addEventListener("keydown", (e) => {
+                        if (e.key === "Enter") emu.serial0_send("\n");
+                        else if (e.key === "Backspace") emu.serial0_send("\b");
+                        else if (e.key.length === 1) emu.serial0_send(e.key);
+                    });
+
+                    log("[SUCCESS] Trifecta Ignited in VRAM. Click canvas to interact.");
+                    document.getElementById('stat-bar').innerText = "[TRIFECTA_RUNNING]";
+                };
+                document.head.appendChild(script);
+            } catch (e) { log("IGNITION_FATAL: " + e.message); }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
