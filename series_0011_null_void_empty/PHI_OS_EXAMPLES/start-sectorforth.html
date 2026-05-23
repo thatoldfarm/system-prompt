@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sovereign SectorForth - Native Boot</title>
+    <!-- Load only the essential BlobHandler from VFS -->
+    <script src="/vfs/blobHandler-sectorforth.js" type="module"></script>
+    <script>
+    "use strict";
+
+    // DOM-SLEEVE: Prevent "Cannot set properties of null" crashes
+    (function() {
+        const originalGetElementById = document.getElementById;
+        document.getElementById = function(id) {
+            const el = originalGetElementById.call(document, id);
+            if (el === null) {
+                return {
+                    style: {}, addEventListener: () => {}, onclick: null,
+                    textContent: '', value: '', appendChild: () => {},
+                    remove: () => {}, setAttribute: () => {},
+                    getAttribute: () => '', innerHTML: ''
+                };
+            }
+            return el;
+        };
+    })();
+
+    window.startEmulator = function(blobs) {
+        if (typeof V86Starter === "undefined") {
+            console.error("V86Starter not found. libv86.js failed to load.");
+            return;
+        }
+
+        console.log("Igniting V86 Emulator with Native-Spliced Blobs...");
+        var emulator = new V86Starter({
+            memory_size: 512 * 1024 * 1024, // REDUCED TO 512MB
+            vga_memory_size: 2 * 1024 * 1024,
+            screen_container: document.getElementById("screen_container"),
+            bios: { url: blobs["seabios.bin"] },
+            vga_bios: { url: blobs["vgabios.bin"] },
+            fda: { url: blobs["sectorforth.img"] },
+            autostart: true,
+        });
+    };
+    </script>
+</head>
+<body>
+    <h1>SOVEREIGN SECTORFORTH // NATIVE-VFS BOOT</h1>
+    <div id="status">Status: Awaiting DNA Splicing...</div>
+    <div id="screen_container">
+        <div></div>
+        <canvas></canvas>
+    </div>
+
+    <script>
+        var blobs = {};
+
+        async function fetchAndProcess(filename) {
+            try {
+                console.log(`Splicing: /vfs/${filename}...`);
+                const res = await fetch(`/vfs/${filename}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                
+                const arrayBuffer = await res.arrayBuffer();
+                
+                const blob = new Blob([arrayBuffer], { 
+                    type: filename.endsWith('.js') ? 'application/javascript' : 'application/octet-stream' 
+                });
+                
+                console.log(`Spliced ${filename}: ${blob.size} bytes`);
+                return blob;
+            } catch (e) {
+                console.error(`Splicing failure [${filename}]: ${e.message}`);
+                return null;
+            }
+        }
+
+        async function bootSequence() {
+            const status = document.getElementById('status');
+            
+            // 1. Load libv86.js (The Engine)
+            status.textContent = "Status: Splicing libv86.js...";
+            const libv86Blob = await fetchAndProcess('libv86.js');
+            if (!libv86Blob) {
+                status.textContent = "FATAL: libv86.js missing from VFS";
+                return;
+            }
+            
+            const script = document.createElement('script');
+            script.src = URL.createObjectURL(libv86Blob);
+            document.head.appendChild(script);
+
+            await new Promise(resolve => {
+                script.onload = resolve;
+                script.onerror = () => {
+                    status.textContent = "FATAL: libv86.js execution failed";
+                };
+            });
+
+            // 2. Load the OS Images
+            status.textContent = "Status: Splicing BIOS and Disk Image...";
+            const filesToLoad = ['seabios.bin', 'vgabios.bin', 'sectorforth.img'];
+            
+            for (const file of filesToLoad) {
+                const blob = await fetchAndProcess(file);
+                if (blob) {
+                    blobs[file] = URL.createObjectURL(blob);
+                } else {
+                    status.textContent = `FATAL: Missing ${file}`;
+                    return;
+                }
+            }
+
+            status.textContent = "Status: DNA Spliced. Igniting SectorForth...";
+            window.startEmulator(blobs);
+        }
+
+        // AUTOMATIC IGNITION: No user gesture required.
+        window.onload = bootSequence;
+    </script>
+</body>
+</html>
