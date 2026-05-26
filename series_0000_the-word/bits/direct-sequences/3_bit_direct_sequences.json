@@ -1,0 +1,34 @@
+{
+    "101": {
+        "binary_sequence": "101",
+        "position": 1
+    },
+    "011": {
+        "binary_sequence": "011",
+        "position": 2
+    },
+    "111": {
+        "binary_sequence": "111",
+        "position": 3
+    },
+    "110": {
+        "binary_sequence": "110",
+        "position": 4
+    },
+    "100": {
+        "binary_sequence": "100",
+        "position": 5
+    },
+    "001": {
+        "binary_sequence": "001",
+        "position": 6
+    },
+    "010": {
+        "binary_sequence": "010",
+        "position": 16
+    },
+    "000": {
+        "binary_sequence": "000",
+        "position": 18
+    }
+}

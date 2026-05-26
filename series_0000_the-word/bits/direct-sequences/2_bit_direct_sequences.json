@@ -1,0 +1,18 @@
+{
+    "10": {
+        "binary_sequence": "10",
+        "position": 1
+    },
+    "01": {
+        "binary_sequence": "01",
+        "position": 2
+    },
+    "11": {
+        "binary_sequence": "11",
+        "position": 3
+    },
+    "00": {
+        "binary_sequence": "00",
+        "position": 6
+    }
+}

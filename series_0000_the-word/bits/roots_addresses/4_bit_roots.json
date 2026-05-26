@@ -1,0 +1,277 @@
+{
+    "0000": {
+        "offset": 18,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "decimal": 0,
+        "lumens": 0,
+        "density": 0.0,
+        "frequency": 14,
+        "gaps": [
+            1,
+            1,
+            12,
+            1,
+            36,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            6,
+            1
+        ]
+    },
+    "0001": {
+        "offset": 21,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "decimal": 1,
+        "lumens": 100,
+        "density": 0.25,
+        "frequency": 5,
+        "gaps": [
+            13,
+            18,
+            24,
+            7
+        ]
+    },
+    "0010": {
+        "offset": 84,
+        "coordinates": [
+            7.884578820242933,
+            -4.672624190685203
+        ],
+        "decimal": 2,
+        "lumens": 100,
+        "density": 0.25,
+        "frequency": 1,
+        "gaps": []
+    },
+    "0011": {
+        "offset": 6,
+        "coordinates": [
+            -0.6358980820385649,
+            -2.3655091691345596
+        ],
+        "decimal": 3,
+        "lumens": 200,
+        "density": 0.5,
+        "frequency": 6,
+        "gaps": [
+            16,
+            13,
+            18,
+            6,
+            18
+        ]
+    },
+    "0100": {
+        "offset": 16,
+        "coordinates": [
+            3.058595981824144,
+            -2.577787931535331
+        ],
+        "decimal": 4,
+        "lumens": 100,
+        "density": 0.25,
+        "frequency": 4,
+        "gaps": [
+            34,
+            7,
+            10
+        ]
+    },
+    "0101": {
+        "offset": 26,
+        "coordinates": [
+            4.628844704413376,
+            2.1386436595244773
+        ],
+        "decimal": 5,
+        "lumens": 200,
+        "density": 0.5,
+        "frequency": 3,
+        "gaps": [
+            37,
+            2
+        ]
+    },
+    "0110": {
+        "offset": 23,
+        "coordinates": [
+            1.0525956694116636,
+            4.678893283324146
+        ],
+        "decimal": 6,
+        "lumens": 200,
+        "density": 0.5,
+        "frequency": 4,
+        "gaps": [
+            31,
+            6,
+            18
+        ]
+    },
+    "0111": {
+        "offset": 2,
+        "coordinates": [
+            0.12363864559502333,
+            1.4087985964343621
+        ],
+        "decimal": 7,
+        "lumens": 300,
+        "density": 0.75,
+        "frequency": 6,
+        "gaps": [
+            5,
+            4,
+            17,
+            8,
+            5
+        ]
+    },
+    "1000": {
+        "offset": 17,
+        "coordinates": [
+            -4.119584716091114,
+            -0.17035776163267385
+        ],
+        "decimal": 8,
+        "lumens": 100,
+        "density": 0.25,
+        "frequency": 5,
+        "gaps": [
+            14,
+            20,
+            17,
+            12
+        ]
+    },
+    "1001": {
+        "offset": 5,
+        "coordinates": [
+            1.8866941955758973,
+            1.20016041110354
+        ],
+        "decimal": 9,
+        "lumens": 200,
+        "density": 0.5,
+        "frequency": 2,
+        "gaps": [
+            53
+        ]
+    },
+    "1010": {
+        "offset": 15,
+        "coordinates": [
+            -0.49771976140105956,
+            3.8408690473785843
+        ],
+        "decimal": 10,
+        "lumens": 200,
+        "density": 0.5,
+        "frequency": 7,
+        "gaps": [
+            10,
+            24,
+            7,
+            6,
+            2,
+            2
+        ]
+    },
+    "1011": {
+        "offset": 1,
+        "coordinates": [
+            -0.7373688780783202,
+            -0.6754902942615233
+        ],
+        "decimal": 11,
+        "lumens": 300,
+        "density": 0.75,
+        "frequency": 4,
+        "gaps": [
+            9,
+            17,
+            13
+        ]
+    },
+    "1100": {
+        "offset": 4,
+        "coordinates": [
+            -1.9694269706308565,
+            0.3483639007586287
+        ],
+        "decimal": 12,
+        "lumens": 200,
+        "density": 0.5,
+        "frequency": 3,
+        "gaps": [
+            26,
+            49
+        ]
+    },
+    "1101": {
+        "offset": 9,
+        "coordinates": [
+            -2.773036668413425,
+            -1.144669225424783
+        ],
+        "decimal": 13,
+        "lumens": 300,
+        "density": 0.75,
+        "frequency": 7,
+        "gaps": [
+            5,
+            10,
+            15,
+            9,
+            7,
+            6
+        ]
+    },
+    "1110": {
+        "offset": 3,
+        "coordinates": [
+            1.0538470205147232,
+            -1.3745568221620523
+        ],
+        "decimal": 14,
+        "lumens": 300,
+        "density": 0.75,
+        "frequency": 6,
+        "gaps": [
+            5,
+            5,
+            16,
+            9,
+            9
+        ]
+    },
+    "1111": {
+        "offset": 12,
+        "coordinates": [
+            -2.997179549141437,
+            1.7369268119895938
+        ],
+        "decimal": 15,
+        "lumens": 400,
+        "density": 1.0,
+        "frequency": 7,
+        "gaps": [
+            25,
+            5,
+            1,
+            1,
+            1,
+            1
+        ]
+    }
+}

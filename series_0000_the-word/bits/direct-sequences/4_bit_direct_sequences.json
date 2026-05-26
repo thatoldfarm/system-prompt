@@ -1,0 +1,66 @@
+{
+    "1011": {
+        "binary_sequence": "1011",
+        "position": 1
+    },
+    "0111": {
+        "binary_sequence": "0111",
+        "position": 2
+    },
+    "1110": {
+        "binary_sequence": "1110",
+        "position": 3
+    },
+    "1100": {
+        "binary_sequence": "1100",
+        "position": 4
+    },
+    "1001": {
+        "binary_sequence": "1001",
+        "position": 5
+    },
+    "0011": {
+        "binary_sequence": "0011",
+        "position": 6
+    },
+    "1101": {
+        "binary_sequence": "1101",
+        "position": 9
+    },
+    "1111": {
+        "binary_sequence": "1111",
+        "position": 12
+    },
+    "1010": {
+        "binary_sequence": "1010",
+        "position": 15
+    },
+    "0100": {
+        "binary_sequence": "0100",
+        "position": 16
+    },
+    "1000": {
+        "binary_sequence": "1000",
+        "position": 17
+    },
+    "0000": {
+        "binary_sequence": "0000",
+        "position": 18
+    },
+    "0001": {
+        "binary_sequence": "0001",
+        "position": 21
+    },
+    "0110": {
+        "binary_sequence": "0110",
+        "position": 23
+    },
+    "0101": {
+        "binary_sequence": "0101",
+        "position": 26
+    },
+    "0010": {
+        "binary_sequence": "0010",
+        "position": 84
+    }
+}

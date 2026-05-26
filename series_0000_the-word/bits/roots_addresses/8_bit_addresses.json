@@ -1,0 +1,2562 @@
+{
+    "00000000": {
+        "prefix_offset": 18,
+        "suffix_offset": 18,
+        "coordinates": [
+            0.02926966298089392,
+            5.999928606811
+        ],
+        "lumens": 0,
+        "density": 0.0
+    },
+    "00000001": {
+        "prefix_offset": 18,
+        "suffix_offset": 21,
+        "coordinates": [
+            4.974512119299779,
+            3.7754773439844165
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "00000010": {
+        "prefix_offset": 18,
+        "suffix_offset": 84,
+        "coordinates": [
+            9.790569187186396,
+            2.4788616320634604
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "00000011": {
+        "prefix_offset": 18,
+        "suffix_offset": 6,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00000100": {
+        "prefix_offset": 18,
+        "suffix_offset": 16,
+        "coordinates": [
+            5.811043126965291,
+            0.4814330447211318
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "00000101": {
+        "prefix_offset": 18,
+        "suffix_offset": 26,
+        "coordinates": [
+            2.3058291171075203,
+            6.219578127389281
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00000110": {
+        "prefix_offset": 18,
+        "suffix_offset": 23,
+        "coordinates": [
+            -3.410339787841141,
+            5.419371045745773
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00000111": {
+        "prefix_offset": 18,
+        "suffix_offset": 2,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00001000": {
+        "prefix_offset": 18,
+        "suffix_offset": 17,
+        "coordinates": [
+            -4.0174875926698554,
+            -4.342786368536193
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "00001001": {
+        "prefix_offset": 18,
+        "suffix_offset": 5,
+        "coordinates": [
+            1.0525956694116636,
+            4.678893283324146
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00001010": {
+        "prefix_offset": 18,
+        "suffix_offset": 15,
+        "coordinates": [
+            -4.5417843582633965,
+            3.517413089620545
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00001011": {
+        "prefix_offset": 18,
+        "suffix_offset": 1,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00001100": {
+        "prefix_offset": 18,
+        "suffix_offset": 4,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00001101": {
+        "prefix_offset": 18,
+        "suffix_offset": 9,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00001110": {
+        "prefix_offset": 18,
+        "suffix_offset": 3,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00001111": {
+        "prefix_offset": 18,
+        "suffix_offset": 12,
+        "coordinates": [
+            -5.296312842870247,
+            -1.3960910681068328
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00010000": {
+        "prefix_offset": 21,
+        "suffix_offset": 18,
+        "coordinates": [
+            4.974512119299779,
+            3.7754773439844165
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "00010001": {
+        "prefix_offset": 21,
+        "suffix_offset": 21,
+        "coordinates": [
+            6.250267164954185,
+            -1.7129391018642697
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00010010": {
+        "prefix_offset": 21,
+        "suffix_offset": 84,
+        "coordinates": [
+            8.039876931987667,
+            -6.352981891875071
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00010011": {
+        "prefix_offset": 21,
+        "suffix_offset": 6,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00010100": {
+        "prefix_offset": 21,
+        "suffix_offset": 16,
+        "coordinates": [
+            4.086917918094334,
+            -4.505230508060545
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00010101": {
+        "prefix_offset": 21,
+        "suffix_offset": 26,
+        "coordinates": [
+            6.5513509901593325,
+            2.0198515301225295
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00010110": {
+        "prefix_offset": 21,
+        "suffix_offset": 23,
+        "coordinates": [
+            2.3058291171075203,
+            6.219578127389281
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00010111": {
+        "prefix_offset": 21,
+        "suffix_offset": 2,
+        "coordinates": [
+            1.0525956694116636,
+            4.678893283324146
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00011000": {
+        "prefix_offset": 21,
+        "suffix_offset": 17,
+        "coordinates": [
+            -6.138108603063218,
+            0.5688785256988629
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00011001": {
+        "prefix_offset": 21,
+        "suffix_offset": 5,
+        "coordinates": [
+            4.628844704413376,
+            2.1386436595244773
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00011010": {
+        "prefix_offset": 21,
+        "suffix_offset": 15,
+        "coordinates": [
+            0.02926966298089392,
+            5.999928606811
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00011011": {
+        "prefix_offset": 21,
+        "suffix_offset": 1,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00011100": {
+        "prefix_offset": 21,
+        "suffix_offset": 4,
+        "coordinates": [
+            -4.763463885983433,
+            1.519674901724579
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00011101": {
+        "prefix_offset": 21,
+        "suffix_offset": 9,
+        "coordinates": [
+            -5.296312842870247,
+            -1.3960910681068328
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00011110": {
+        "prefix_offset": 21,
+        "suffix_offset": 3,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00011111": {
+        "prefix_offset": 21,
+        "suffix_offset": 12,
+        "coordinates": [
+            -4.5417843582633965,
+            3.517413089620545
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "00100000": {
+        "prefix_offset": 84,
+        "suffix_offset": 18,
+        "coordinates": [
+            9.790569187186396,
+            2.4788616320634604
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "00100001": {
+        "prefix_offset": 84,
+        "suffix_offset": 21,
+        "coordinates": [
+            8.039876931987667,
+            -6.352981891875071
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00100010": {
+        "prefix_offset": 84,
+        "suffix_offset": 84,
+        "coordinates": [
+            6.223542681649901,
+            -11.369587349138136
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00100011": {
+        "prefix_offset": 84,
+        "suffix_offset": 6,
+        "coordinates": [
+            -6.789514554197625,
+            -6.62589557104084
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00100100": {
+        "prefix_offset": 84,
+        "suffix_offset": 16,
+        "coordinates": [
+            3.2925552282502264,
+            -9.442408594681872
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00100101": {
+        "prefix_offset": 84,
+        "suffix_offset": 26,
+        "coordinates": [
+            10.433392498929612,
+            -1.0697293878730876
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00100110": {
+        "prefix_offset": 84,
+        "suffix_offset": 23,
+        "coordinates": [
+            7.09819989153353,
+            7.524331086537422
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00100111": {
+        "prefix_offset": 84,
+        "suffix_offset": 2,
+        "coordinates": [
+            5.407293293162655,
+            7.534001542455256
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00101000": {
+        "prefix_offset": 84,
+        "suffix_offset": 17,
+        "coordinates": [
+            -8.85000400132427,
+            4.762082441174702
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00101001": {
+        "prefix_offset": 84,
+        "suffix_offset": 5,
+        "coordinates": [
+            9.429279370710901,
+            0.29780958528195917
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00101010": {
+        "prefix_offset": 84,
+        "suffix_offset": 15,
+        "coordinates": [
+            3.930625838664927,
+            9.140578784542019
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00101011": {
+        "prefix_offset": 84,
+        "suffix_offset": 1,
+        "coordinates": [
+            -9.023391138907286,
+            -1.8916691979015388
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00101100": {
+        "prefix_offset": 84,
+        "suffix_offset": 4,
+        "coordinates": [
+            -7.113719950202108,
+            6.115144190458352
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00101101": {
+        "prefix_offset": 84,
+        "suffix_offset": 9,
+        "coordinates": [
+            -9.544526094990891,
+            1.3791379996352555
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00101110": {
+        "prefix_offset": 84,
+        "suffix_offset": 3,
+        "coordinates": [
+            1.1083634450001594,
+            -9.26129205207283
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00101111": {
+        "prefix_offset": 84,
+        "suffix_offset": 12,
+        "coordinates": [
+            -4.788184831491702,
+            8.548291409367884
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "00110000": {
+        "prefix_offset": 6,
+        "suffix_offset": 18,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "00110001": {
+        "prefix_offset": 6,
+        "suffix_offset": 21,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00110010": {
+        "prefix_offset": 6,
+        "suffix_offset": 84,
+        "coordinates": [
+            -6.789514554197625,
+            -6.62589557104084
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00110011": {
+        "prefix_offset": 6,
+        "suffix_offset": 6,
+        "coordinates": [
+            -2.997179549141437,
+            1.7369268119895938
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00110100": {
+        "prefix_offset": 6,
+        "suffix_offset": 16,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00110101": {
+        "prefix_offset": 6,
+        "suffix_offset": 26,
+        "coordinates": [
+            0.9581363211911585,
+            -5.575121056086072
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00110110": {
+        "prefix_offset": 6,
+        "suffix_offset": 23,
+        "coordinates": [
+            4.766891005950964,
+            -2.5053443151359054
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00110111": {
+        "prefix_offset": 6,
+        "suffix_offset": 2,
+        "coordinates": [
+            2.656801833374884,
+            -0.9702597684001207
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "00111000": {
+        "prefix_offset": 6,
+        "suffix_offset": 17,
+        "coordinates": [
+            1.0525956694116636,
+            4.678893283324146
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "00111001": {
+        "prefix_offset": 6,
+        "suffix_offset": 5,
+        "coordinates": [
+            0.9926122841712108,
+            -3.1646043754808297
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00111010": {
+        "prefix_offset": 6,
+        "suffix_offset": 15,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00111011": {
+        "prefix_offset": 6,
+        "suffix_offset": 1,
+        "coordinates": [
+            -1.219445364914264,
+            2.3479678451778505
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "00111100": {
+        "prefix_offset": 6,
+        "suffix_offset": 4,
+        "coordinates": [
+            1.3403187214918526,
+            2.8641832561514717
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "00111101": {
+        "prefix_offset": 6,
+        "suffix_offset": 9,
+        "coordinates": [
+            -0.49771976140105956,
+            3.8408690473785843
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "00111110": {
+        "prefix_offset": 6,
+        "suffix_offset": 3,
+        "coordinates": [
+            -2.773036668413425,
+            -1.144669225424783
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "00111111": {
+        "prefix_offset": 6,
+        "suffix_offset": 12,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "01000000": {
+        "prefix_offset": 16,
+        "suffix_offset": 18,
+        "coordinates": [
+            5.811043126965291,
+            0.4814330447211318
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "01000001": {
+        "prefix_offset": 16,
+        "suffix_offset": 21,
+        "coordinates": [
+            4.086917918094334,
+            -4.505230508060545
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "01000010": {
+        "prefix_offset": 16,
+        "suffix_offset": 84,
+        "coordinates": [
+            3.2925552282502264,
+            -9.442408594681872
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "01000011": {
+        "prefix_offset": 16,
+        "suffix_offset": 6,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01000100": {
+        "prefix_offset": 16,
+        "suffix_offset": 16,
+        "coordinates": [
+            0.9581363211911585,
+            -5.575121056086072
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "01000101": {
+        "prefix_offset": 16,
+        "suffix_offset": 26,
+        "coordinates": [
+            6.250267164954185,
+            -1.7129391018642697
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01000110": {
+        "prefix_offset": 16,
+        "suffix_offset": 23,
+        "coordinates": [
+            4.974512119299779,
+            3.7754773439844165
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01000111": {
+        "prefix_offset": 16,
+        "suffix_offset": 2,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01001000": {
+        "prefix_offset": 16,
+        "suffix_offset": 17,
+        "coordinates": [
+            -4.5417843582633965,
+            3.517413089620545
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "01001001": {
+        "prefix_offset": 16,
+        "suffix_offset": 5,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01001010": {
+        "prefix_offset": 16,
+        "suffix_offset": 15,
+        "coordinates": [
+            3.011257085703298,
+            4.6831966394549
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01001011": {
+        "prefix_offset": 16,
+        "suffix_offset": 1,
+        "coordinates": [
+            -4.119584716091114,
+            -0.17035776163267385
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01001100": {
+        "prefix_offset": 16,
+        "suffix_offset": 4,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01001101": {
+        "prefix_offset": 16,
+        "suffix_offset": 9,
+        "coordinates": [
+            -4.763463885983433,
+            1.519674901724579
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01001110": {
+        "prefix_offset": 16,
+        "suffix_offset": 3,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01001111": {
+        "prefix_offset": 16,
+        "suffix_offset": 12,
+        "coordinates": [
+            -1.790921124306372,
+            4.979216959172717
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01010000": {
+        "prefix_offset": 26,
+        "suffix_offset": 18,
+        "coordinates": [
+            2.3058291171075203,
+            6.219578127389281
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "01010001": {
+        "prefix_offset": 26,
+        "suffix_offset": 21,
+        "coordinates": [
+            6.5513509901593325,
+            2.0198515301225295
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01010010": {
+        "prefix_offset": 26,
+        "suffix_offset": 84,
+        "coordinates": [
+            10.433392498929612,
+            -1.0697293878730876
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01010011": {
+        "prefix_offset": 26,
+        "suffix_offset": 6,
+        "coordinates": [
+            0.9581363211911585,
+            -5.575121056086072
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01010100": {
+        "prefix_offset": 26,
+        "suffix_offset": 16,
+        "coordinates": [
+            6.250267164954185,
+            -1.7129391018642697
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01010101": {
+        "prefix_offset": 26,
+        "suffix_offset": 26,
+        "coordinates": [
+            4.674016622598942,
+            5.491226512507819
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01010110": {
+        "prefix_offset": 26,
+        "suffix_offset": 23,
+        "coordinates": [
+            -1.4696666530082714,
+            6.8439812922768475
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01010111": {
+        "prefix_offset": 26,
+        "suffix_offset": 2,
+        "coordinates": [
+            -1.790921124306372,
+            4.979216959172717
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01011000": {
+        "prefix_offset": 26,
+        "suffix_offset": 17,
+        "coordinates": [
+            -5.8340632301605,
+            -2.993944927096895
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01011001": {
+        "prefix_offset": 26,
+        "suffix_offset": 5,
+        "coordinates": [
+            3.011257085703298,
+            4.6831966394549
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01011010": {
+        "prefix_offset": 26,
+        "suffix_offset": 15,
+        "coordinates": [
+            -3.410339787841141,
+            5.419371045745773
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01011011": {
+        "prefix_offset": 26,
+        "suffix_offset": 1,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01011100": {
+        "prefix_offset": 26,
+        "suffix_offset": 4,
+        "coordinates": [
+            -5.296312842870247,
+            -1.3960910681068328
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01011101": {
+        "prefix_offset": 26,
+        "suffix_offset": 9,
+        "coordinates": [
+            -4.0174875926698554,
+            -4.342786368536193
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01011110": {
+        "prefix_offset": 26,
+        "suffix_offset": 3,
+        "coordinates": [
+            4.766891005950964,
+            -2.5053443151359054
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01011111": {
+        "prefix_offset": 26,
+        "suffix_offset": 12,
+        "coordinates": [
+            -6.138108603063218,
+            0.5688785256988629
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "01100000": {
+        "prefix_offset": 23,
+        "suffix_offset": 18,
+        "coordinates": [
+            -3.410339787841141,
+            5.419371045745773
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "01100001": {
+        "prefix_offset": 23,
+        "suffix_offset": 21,
+        "coordinates": [
+            2.3058291171075203,
+            6.219578127389281
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01100010": {
+        "prefix_offset": 23,
+        "suffix_offset": 84,
+        "coordinates": [
+            7.09819989153353,
+            7.524331086537422
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01100011": {
+        "prefix_offset": 23,
+        "suffix_offset": 6,
+        "coordinates": [
+            4.766891005950964,
+            -2.5053443151359054
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01100100": {
+        "prefix_offset": 23,
+        "suffix_offset": 16,
+        "coordinates": [
+            4.974512119299779,
+            3.7754773439844165
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01100101": {
+        "prefix_offset": 23,
+        "suffix_offset": 26,
+        "coordinates": [
+            -1.4696666530082714,
+            6.8439812922768475
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01100110": {
+        "prefix_offset": 23,
+        "suffix_offset": 23,
+        "coordinates": [
+            -6.128892214086702,
+            2.904596396766237
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01100111": {
+        "prefix_offset": 23,
+        "suffix_offset": 2,
+        "coordinates": [
+            -4.763463885983433,
+            1.519674901724579
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01101000": {
+        "prefix_offset": 23,
+        "suffix_offset": 17,
+        "coordinates": [
+            -1.131991572873247,
+            -6.222426783735101
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01101001": {
+        "prefix_offset": 23,
+        "suffix_offset": 5,
+        "coordinates": [
+            -1.790921124306372,
+            4.979216959172717
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01101010": {
+        "prefix_offset": 23,
+        "suffix_offset": 15,
+        "coordinates": [
+            -6.138108603063218,
+            0.5688785256988629
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01101011": {
+        "prefix_offset": 23,
+        "suffix_offset": 1,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01101100": {
+        "prefix_offset": 23,
+        "suffix_offset": 4,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01101101": {
+        "prefix_offset": 23,
+        "suffix_offset": 9,
+        "coordinates": [
+            0.9581363211911585,
+            -5.575121056086072
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01101110": {
+        "prefix_offset": 23,
+        "suffix_offset": 3,
+        "coordinates": [
+            4.628844704413376,
+            2.1386436595244773
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01101111": {
+        "prefix_offset": 23,
+        "suffix_offset": 12,
+        "coordinates": [
+            -4.0174875926698554,
+            -4.342786368536193
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "01110000": {
+        "prefix_offset": 2,
+        "suffix_offset": 18,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "01110001": {
+        "prefix_offset": 2,
+        "suffix_offset": 21,
+        "coordinates": [
+            1.0525956694116636,
+            4.678893283324146
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01110010": {
+        "prefix_offset": 2,
+        "suffix_offset": 84,
+        "coordinates": [
+            5.407293293162655,
+            7.534001542455256
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01110011": {
+        "prefix_offset": 2,
+        "suffix_offset": 6,
+        "coordinates": [
+            2.656801833374884,
+            -0.9702597684001207
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01110100": {
+        "prefix_offset": 2,
+        "suffix_offset": 16,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01110101": {
+        "prefix_offset": 2,
+        "suffix_offset": 26,
+        "coordinates": [
+            -1.790921124306372,
+            4.979216959172717
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01110110": {
+        "prefix_offset": 2,
+        "suffix_offset": 23,
+        "coordinates": [
+            -4.763463885983433,
+            1.519674901724579
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01110111": {
+        "prefix_offset": 2,
+        "suffix_offset": 2,
+        "coordinates": [
+            -1.9694269706308565,
+            0.3483639007586287
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "01111000": {
+        "prefix_offset": 2,
+        "suffix_offset": 17,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "01111001": {
+        "prefix_offset": 2,
+        "suffix_offset": 5,
+        "coordinates": [
+            -1.219445364914264,
+            2.3479678451778505
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01111010": {
+        "prefix_offset": 2,
+        "suffix_offset": 15,
+        "coordinates": [
+            -4.119584716091114,
+            -0.17035776163267385
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01111011": {
+        "prefix_offset": 2,
+        "suffix_offset": 1,
+        "coordinates": [
+            1.0538470205147232,
+            -1.3745568221620523
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "01111100": {
+        "prefix_offset": 2,
+        "suffix_offset": 4,
+        "coordinates": [
+            -0.6358980820385649,
+            -2.3655091691345596
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "01111101": {
+        "prefix_offset": 2,
+        "suffix_offset": 9,
+        "coordinates": [
+            0.9926122841712108,
+            -3.1646043754808297
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "01111110": {
+        "prefix_offset": 2,
+        "suffix_offset": 3,
+        "coordinates": [
+            1.8866941955758973,
+            1.20016041110354
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "01111111": {
+        "prefix_offset": 2,
+        "suffix_offset": 12,
+        "coordinates": [
+            -2.151937276891818,
+            -3.060909334874757
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "10000000": {
+        "prefix_offset": 17,
+        "suffix_offset": 18,
+        "coordinates": [
+            -4.0174875926698554,
+            -4.342786368536193
+        ],
+        "lumens": 100,
+        "density": 0.125
+    },
+    "10000001": {
+        "prefix_offset": 17,
+        "suffix_offset": 21,
+        "coordinates": [
+            -6.138108603063218,
+            0.5688785256988629
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "10000010": {
+        "prefix_offset": 17,
+        "suffix_offset": 84,
+        "coordinates": [
+            -8.85000400132427,
+            4.762082441174702
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "10000011": {
+        "prefix_offset": 17,
+        "suffix_offset": 6,
+        "coordinates": [
+            1.0525956694116636,
+            4.678893283324146
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10000100": {
+        "prefix_offset": 17,
+        "suffix_offset": 16,
+        "coordinates": [
+            -4.5417843582633965,
+            3.517413089620545
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "10000101": {
+        "prefix_offset": 17,
+        "suffix_offset": 26,
+        "coordinates": [
+            -5.8340632301605,
+            -2.993944927096895
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10000110": {
+        "prefix_offset": 17,
+        "suffix_offset": 23,
+        "coordinates": [
+            -1.131991572873247,
+            -6.222426783735101
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10000111": {
+        "prefix_offset": 17,
+        "suffix_offset": 2,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10001000": {
+        "prefix_offset": 17,
+        "suffix_offset": 17,
+        "coordinates": [
+            5.811043126965291,
+            0.4814330447211318
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "10001001": {
+        "prefix_offset": 17,
+        "suffix_offset": 5,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10001010": {
+        "prefix_offset": 17,
+        "suffix_offset": 15,
+        "coordinates": [
+            0.9581363211911585,
+            -5.575121056086072
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10001011": {
+        "prefix_offset": 17,
+        "suffix_offset": 1,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10001100": {
+        "prefix_offset": 17,
+        "suffix_offset": 4,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10001101": {
+        "prefix_offset": 17,
+        "suffix_offset": 9,
+        "coordinates": [
+            4.628844704413376,
+            2.1386436595244773
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10001110": {
+        "prefix_offset": 17,
+        "suffix_offset": 3,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10001111": {
+        "prefix_offset": 17,
+        "suffix_offset": 12,
+        "coordinates": [
+            4.766891005950964,
+            -2.5053443151359054
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10010000": {
+        "prefix_offset": 5,
+        "suffix_offset": 18,
+        "coordinates": [
+            1.0525956694116636,
+            4.678893283324146
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "10010001": {
+        "prefix_offset": 5,
+        "suffix_offset": 21,
+        "coordinates": [
+            4.628844704413376,
+            2.1386436595244773
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10010010": {
+        "prefix_offset": 5,
+        "suffix_offset": 84,
+        "coordinates": [
+            9.429279370710901,
+            0.29780958528195917
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10010011": {
+        "prefix_offset": 5,
+        "suffix_offset": 6,
+        "coordinates": [
+            0.9926122841712108,
+            -3.1646043754808297
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10010100": {
+        "prefix_offset": 5,
+        "suffix_offset": 16,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10010101": {
+        "prefix_offset": 5,
+        "suffix_offset": 26,
+        "coordinates": [
+            3.011257085703298,
+            4.6831966394549
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10010110": {
+        "prefix_offset": 5,
+        "suffix_offset": 23,
+        "coordinates": [
+            -1.790921124306372,
+            4.979216959172717
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10010111": {
+        "prefix_offset": 5,
+        "suffix_offset": 2,
+        "coordinates": [
+            -1.219445364914264,
+            2.3479678451778505
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10011000": {
+        "prefix_offset": 5,
+        "suffix_offset": 17,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10011001": {
+        "prefix_offset": 5,
+        "suffix_offset": 5,
+        "coordinates": [
+            1.3403187214918526,
+            2.8641832561514717
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10011010": {
+        "prefix_offset": 5,
+        "suffix_offset": 15,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10011011": {
+        "prefix_offset": 5,
+        "suffix_offset": 1,
+        "coordinates": [
+            -0.6358980820385649,
+            -2.3655091691345596
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10011100": {
+        "prefix_offset": 5,
+        "suffix_offset": 4,
+        "coordinates": [
+            -2.773036668413425,
+            -1.144669225424783
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10011101": {
+        "prefix_offset": 5,
+        "suffix_offset": 9,
+        "coordinates": [
+            -2.151937276891818,
+            -3.060909334874757
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10011110": {
+        "prefix_offset": 5,
+        "suffix_offset": 3,
+        "coordinates": [
+            2.656801833374884,
+            -0.9702597684001207
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10011111": {
+        "prefix_offset": 5,
+        "suffix_offset": 12,
+        "coordinates": [
+            -4.119584716091114,
+            -0.17035776163267385
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "10100000": {
+        "prefix_offset": 15,
+        "suffix_offset": 18,
+        "coordinates": [
+            -4.5417843582633965,
+            3.517413089620545
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "10100001": {
+        "prefix_offset": 15,
+        "suffix_offset": 21,
+        "coordinates": [
+            0.02926966298089392,
+            5.999928606811
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10100010": {
+        "prefix_offset": 15,
+        "suffix_offset": 84,
+        "coordinates": [
+            3.930625838664927,
+            9.140578784542019
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10100011": {
+        "prefix_offset": 15,
+        "suffix_offset": 6,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10100100": {
+        "prefix_offset": 15,
+        "suffix_offset": 16,
+        "coordinates": [
+            3.011257085703298,
+            4.6831966394549
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10100101": {
+        "prefix_offset": 15,
+        "suffix_offset": 26,
+        "coordinates": [
+            -3.410339787841141,
+            5.419371045745773
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10100110": {
+        "prefix_offset": 15,
+        "suffix_offset": 23,
+        "coordinates": [
+            -6.138108603063218,
+            0.5688785256988629
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10100111": {
+        "prefix_offset": 15,
+        "suffix_offset": 2,
+        "coordinates": [
+            -4.119584716091114,
+            -0.17035776163267385
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10101000": {
+        "prefix_offset": 15,
+        "suffix_offset": 17,
+        "coordinates": [
+            0.9581363211911585,
+            -5.575121056086072
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10101001": {
+        "prefix_offset": 15,
+        "suffix_offset": 5,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10101010": {
+        "prefix_offset": 15,
+        "suffix_offset": 15,
+        "coordinates": [
+            -5.296312842870247,
+            -1.3960910681068328
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10101011": {
+        "prefix_offset": 15,
+        "suffix_offset": 1,
+        "coordinates": [
+            3.058595981824144,
+            -2.577787931535331
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10101100": {
+        "prefix_offset": 15,
+        "suffix_offset": 4,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10101101": {
+        "prefix_offset": 15,
+        "suffix_offset": 9,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10101110": {
+        "prefix_offset": 15,
+        "suffix_offset": 3,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10101111": {
+        "prefix_offset": 15,
+        "suffix_offset": 12,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "10110000": {
+        "prefix_offset": 1,
+        "suffix_offset": 18,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "10110001": {
+        "prefix_offset": 1,
+        "suffix_offset": 21,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10110010": {
+        "prefix_offset": 1,
+        "suffix_offset": 84,
+        "coordinates": [
+            -9.023391138907286,
+            -1.8916691979015388
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10110011": {
+        "prefix_offset": 1,
+        "suffix_offset": 6,
+        "coordinates": [
+            -1.219445364914264,
+            2.3479678451778505
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10110100": {
+        "prefix_offset": 1,
+        "suffix_offset": 16,
+        "coordinates": [
+            -4.119584716091114,
+            -0.17035776163267385
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10110101": {
+        "prefix_offset": 1,
+        "suffix_offset": 26,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10110110": {
+        "prefix_offset": 1,
+        "suffix_offset": 23,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10110111": {
+        "prefix_offset": 1,
+        "suffix_offset": 2,
+        "coordinates": [
+            1.0538470205147232,
+            -1.3745568221620523
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "10111000": {
+        "prefix_offset": 1,
+        "suffix_offset": 17,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "10111001": {
+        "prefix_offset": 1,
+        "suffix_offset": 5,
+        "coordinates": [
+            -0.6358980820385649,
+            -2.3655091691345596
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10111010": {
+        "prefix_offset": 1,
+        "suffix_offset": 15,
+        "coordinates": [
+            3.058595981824144,
+            -2.577787931535331
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10111011": {
+        "prefix_offset": 1,
+        "suffix_offset": 1,
+        "coordinates": [
+            0.12363864559502333,
+            1.4087985964343621
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "10111100": {
+        "prefix_offset": 1,
+        "suffix_offset": 4,
+        "coordinates": [
+            1.8866941955758973,
+            1.20016041110354
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "10111101": {
+        "prefix_offset": 1,
+        "suffix_offset": 9,
+        "coordinates": [
+            1.3403187214918526,
+            2.8641832561514717
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "10111110": {
+        "prefix_offset": 1,
+        "suffix_offset": 3,
+        "coordinates": [
+            -1.9694269706308565,
+            0.3483639007586287
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "10111111": {
+        "prefix_offset": 1,
+        "suffix_offset": 12,
+        "coordinates": [
+            3.5214545813198566,
+            0.7741819112465704
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "11000000": {
+        "prefix_offset": 4,
+        "suffix_offset": 18,
+        "coordinates": [
+            -3.8501668802872757,
+            -2.678845832432122
+        ],
+        "lumens": 200,
+        "density": 0.25
+    },
+    "11000001": {
+        "prefix_offset": 4,
+        "suffix_offset": 21,
+        "coordinates": [
+            -4.763463885983433,
+            1.519674901724579
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "11000010": {
+        "prefix_offset": 4,
+        "suffix_offset": 84,
+        "coordinates": [
+            -7.113719950202108,
+            6.115144190458352
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "11000011": {
+        "prefix_offset": 4,
+        "suffix_offset": 6,
+        "coordinates": [
+            1.3403187214918526,
+            2.8641832561514717
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11000100": {
+        "prefix_offset": 4,
+        "suffix_offset": 16,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "11000101": {
+        "prefix_offset": 4,
+        "suffix_offset": 26,
+        "coordinates": [
+            -5.296312842870247,
+            -1.3960910681068328
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11000110": {
+        "prefix_offset": 4,
+        "suffix_offset": 23,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11000111": {
+        "prefix_offset": 4,
+        "suffix_offset": 2,
+        "coordinates": [
+            -0.6358980820385649,
+            -2.3655091691345596
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11001000": {
+        "prefix_offset": 4,
+        "suffix_offset": 17,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "11001001": {
+        "prefix_offset": 4,
+        "suffix_offset": 5,
+        "coordinates": [
+            -2.773036668413425,
+            -1.144669225424783
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11001010": {
+        "prefix_offset": 4,
+        "suffix_offset": 15,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11001011": {
+        "prefix_offset": 4,
+        "suffix_offset": 1,
+        "coordinates": [
+            1.8866941955758973,
+            1.20016041110354
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11001100": {
+        "prefix_offset": 4,
+        "suffix_offset": 4,
+        "coordinates": [
+            2.656801833374884,
+            -0.9702597684001207
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11001101": {
+        "prefix_offset": 4,
+        "suffix_offset": 9,
+        "coordinates": [
+            3.5214545813198566,
+            0.7741819112465704
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11001110": {
+        "prefix_offset": 4,
+        "suffix_offset": 3,
+        "coordinates": [
+            -1.219445364914264,
+            2.3479678451778505
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11001111": {
+        "prefix_offset": 4,
+        "suffix_offset": 12,
+        "coordinates": [
+            3.058595981824144,
+            -2.577787931535331
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11010000": {
+        "prefix_offset": 9,
+        "suffix_offset": 18,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "11010001": {
+        "prefix_offset": 9,
+        "suffix_offset": 21,
+        "coordinates": [
+            -5.296312842870247,
+            -1.3960910681068328
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11010010": {
+        "prefix_offset": 9,
+        "suffix_offset": 84,
+        "coordinates": [
+            -9.544526094990891,
+            1.3791379996352555
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11010011": {
+        "prefix_offset": 9,
+        "suffix_offset": 6,
+        "coordinates": [
+            -0.49771976140105956,
+            3.8408690473785843
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11010100": {
+        "prefix_offset": 9,
+        "suffix_offset": 16,
+        "coordinates": [
+            -4.763463885983433,
+            1.519674901724579
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11010101": {
+        "prefix_offset": 9,
+        "suffix_offset": 26,
+        "coordinates": [
+            -4.0174875926698554,
+            -4.342786368536193
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11010110": {
+        "prefix_offset": 9,
+        "suffix_offset": 23,
+        "coordinates": [
+            0.9581363211911585,
+            -5.575121056086072
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11010111": {
+        "prefix_offset": 9,
+        "suffix_offset": 2,
+        "coordinates": [
+            0.9926122841712108,
+            -3.1646043754808297
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11011000": {
+        "prefix_offset": 9,
+        "suffix_offset": 17,
+        "coordinates": [
+            4.628844704413376,
+            2.1386436595244773
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11011001": {
+        "prefix_offset": 9,
+        "suffix_offset": 5,
+        "coordinates": [
+            -2.151937276891818,
+            -3.060909334874757
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11011010": {
+        "prefix_offset": 9,
+        "suffix_offset": 15,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11011011": {
+        "prefix_offset": 9,
+        "suffix_offset": 1,
+        "coordinates": [
+            1.3403187214918526,
+            2.8641832561514717
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11011100": {
+        "prefix_offset": 9,
+        "suffix_offset": 4,
+        "coordinates": [
+            3.5214545813198566,
+            0.7741819112465704
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11011101": {
+        "prefix_offset": 9,
+        "suffix_offset": 9,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11011110": {
+        "prefix_offset": 9,
+        "suffix_offset": 3,
+        "coordinates": [
+            -2.997179549141437,
+            1.7369268119895938
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11011111": {
+        "prefix_offset": 9,
+        "suffix_offset": 12,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "11100000": {
+        "prefix_offset": 3,
+        "suffix_offset": 18,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 300,
+        "density": 0.375
+    },
+    "11100001": {
+        "prefix_offset": 3,
+        "suffix_offset": 21,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11100010": {
+        "prefix_offset": 3,
+        "suffix_offset": 84,
+        "coordinates": [
+            1.1083634450001594,
+            -9.26129205207283
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11100011": {
+        "prefix_offset": 3,
+        "suffix_offset": 6,
+        "coordinates": [
+            -2.773036668413425,
+            -1.144669225424783
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11100100": {
+        "prefix_offset": 3,
+        "suffix_offset": 16,
+        "coordinates": [
+            -0.20134384491011695,
+            -4.35424627876247
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11100101": {
+        "prefix_offset": 3,
+        "suffix_offset": 26,
+        "coordinates": [
+            4.766891005950964,
+            -2.5053443151359054
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11100110": {
+        "prefix_offset": 3,
+        "suffix_offset": 23,
+        "coordinates": [
+            4.628844704413376,
+            2.1386436595244773
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11100111": {
+        "prefix_offset": 3,
+        "suffix_offset": 2,
+        "coordinates": [
+            1.8866941955758973,
+            1.20016041110354
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11101000": {
+        "prefix_offset": 3,
+        "suffix_offset": 17,
+        "coordinates": [
+            -2.865338403889152,
+            3.4336330367699412
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11101001": {
+        "prefix_offset": 3,
+        "suffix_offset": 5,
+        "coordinates": [
+            2.656801833374884,
+            -0.9702597684001207
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11101010": {
+        "prefix_offset": 3,
+        "suffix_offset": 15,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11101011": {
+        "prefix_offset": 3,
+        "suffix_offset": 1,
+        "coordinates": [
+            -1.9694269706308565,
+            0.3483639007586287
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11101100": {
+        "prefix_offset": 3,
+        "suffix_offset": 4,
+        "coordinates": [
+            -1.219445364914264,
+            2.3479678451778505
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11101101": {
+        "prefix_offset": 3,
+        "suffix_offset": 9,
+        "coordinates": [
+            -2.997179549141437,
+            1.7369268119895938
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11101110": {
+        "prefix_offset": 3,
+        "suffix_offset": 3,
+        "coordinates": [
+            -0.6358980820385649,
+            -2.3655091691345596
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11101111": {
+        "prefix_offset": 3,
+        "suffix_offset": 12,
+        "coordinates": [
+            -0.49771976140105956,
+            3.8408690473785843
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "11110000": {
+        "prefix_offset": 12,
+        "suffix_offset": 18,
+        "coordinates": [
+            -5.296312842870247,
+            -1.3960910681068328
+        ],
+        "lumens": 400,
+        "density": 0.5
+    },
+    "11110001": {
+        "prefix_offset": 12,
+        "suffix_offset": 21,
+        "coordinates": [
+            -4.5417843582633965,
+            3.517413089620545
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11110010": {
+        "prefix_offset": 12,
+        "suffix_offset": 84,
+        "coordinates": [
+            -4.788184831491702,
+            8.548291409367884
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11110011": {
+        "prefix_offset": 12,
+        "suffix_offset": 6,
+        "coordinates": [
+            3.007308513350657,
+            2.9926736383255457
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11110100": {
+        "prefix_offset": 12,
+        "suffix_offset": 16,
+        "coordinates": [
+            -1.790921124306372,
+            4.979216959172717
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11110101": {
+        "prefix_offset": 12,
+        "suffix_offset": 26,
+        "coordinates": [
+            -6.138108603063218,
+            0.5688785256988629
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11110110": {
+        "prefix_offset": 12,
+        "suffix_offset": 23,
+        "coordinates": [
+            -4.0174875926698554,
+            -4.342786368536193
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11110111": {
+        "prefix_offset": 12,
+        "suffix_offset": 2,
+        "coordinates": [
+            -2.151937276891818,
+            -3.060909334874757
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "11111000": {
+        "prefix_offset": 12,
+        "suffix_offset": 17,
+        "coordinates": [
+            4.766891005950964,
+            -2.5053443151359054
+        ],
+        "lumens": 500,
+        "density": 0.625
+    },
+    "11111001": {
+        "prefix_offset": 12,
+        "suffix_offset": 5,
+        "coordinates": [
+            -4.119584716091114,
+            -0.17035776163267385
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11111010": {
+        "prefix_offset": 12,
+        "suffix_offset": 15,
+        "coordinates": [
+            -2.006032227609469,
+            -4.7933114547035425
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11111011": {
+        "prefix_offset": 12,
+        "suffix_offset": 1,
+        "coordinates": [
+            3.5214545813198566,
+            0.7741819112465704
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "11111100": {
+        "prefix_offset": 12,
+        "suffix_offset": 4,
+        "coordinates": [
+            3.058595981824144,
+            -2.577787931535331
+        ],
+        "lumens": 600,
+        "density": 0.75
+    },
+    "11111101": {
+        "prefix_offset": 12,
+        "suffix_offset": 9,
+        "coordinates": [
+            4.541650602805133,
+            -0.61107266510602
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "11111110": {
+        "prefix_offset": 12,
+        "suffix_offset": 3,
+        "coordinates": [
+            -0.49771976140105956,
+            3.8408690473785843
+        ],
+        "lumens": 700,
+        "density": 0.875
+    },
+    "11111111": {
+        "prefix_offset": 12,
+        "suffix_offset": 12,
+        "coordinates": [
+            2.435678907070827,
+            -4.250584461182986
+        ],
+        "lumens": 800,
+        "density": 1.0
+    }
+}

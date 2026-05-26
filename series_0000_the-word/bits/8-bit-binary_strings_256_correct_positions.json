@@ -1,0 +1,2313 @@
+{
+  "bit_depth_8": {
+    "bit_depth": 8,
+    "theoretical_total_sequences": 256,
+    "unique_sequences_found": 256,
+    "details": [
+      {
+        "binary_sequence": "11011100",
+        "decimal_value": 220,
+        "decimal_offset_in_pi": 1,
+        "spiral_coordinates": [
+          -0.74,
+          -0.68
+        ]
+      },
+      {
+        "binary_sequence": "10111001",
+        "decimal_value": 185,
+        "decimal_offset_in_pi": 2,
+        "spiral_coordinates": [
+          0.12,
+          1.41
+        ]
+      },
+      {
+        "binary_sequence": "01110011",
+        "decimal_value": 115,
+        "decimal_offset_in_pi": 3,
+        "spiral_coordinates": [
+          1.05,
+          -1.37
+        ]
+      },
+      {
+        "binary_sequence": "11100111",
+        "decimal_value": 231,
+        "decimal_offset_in_pi": 4,
+        "spiral_coordinates": [
+          -1.97,
+          0.35
+        ]
+      },
+      {
+        "binary_sequence": "11001110",
+        "decimal_value": 206,
+        "decimal_offset_in_pi": 5,
+        "spiral_coordinates": [
+          1.89,
+          1.2
+        ]
+      },
+      {
+        "binary_sequence": "10011101",
+        "decimal_value": 157,
+        "decimal_offset_in_pi": 6,
+        "spiral_coordinates": [
+          -0.64,
+          -2.37
+        ]
+      },
+      {
+        "binary_sequence": "00111011",
+        "decimal_value": 59,
+        "decimal_offset_in_pi": 7,
+        "spiral_coordinates": [
+          -1.22,
+          2.35
+        ]
+      },
+      {
+        "binary_sequence": "01110111",
+        "decimal_value": 119,
+        "decimal_offset_in_pi": 8,
+        "spiral_coordinates": [
+          2.66,
+          -0.97
+        ]
+      },
+      {
+        "binary_sequence": "11101111",
+        "decimal_value": 239,
+        "decimal_offset_in_pi": 9,
+        "spiral_coordinates": [
+          -2.77,
+          -1.14
+        ]
+      },
+      {
+        "binary_sequence": "11011110",
+        "decimal_value": 222,
+        "decimal_offset_in_pi": 10,
+        "spiral_coordinates": [
+          1.34,
+          2.86
+        ]
+      },
+      {
+        "binary_sequence": "10111101",
+        "decimal_value": 189,
+        "decimal_offset_in_pi": 11,
+        "spiral_coordinates": [
+          0.99,
+          -3.16
+        ]
+      },
+      {
+        "binary_sequence": "01111010",
+        "decimal_value": 122,
+        "decimal_offset_in_pi": 12,
+        "spiral_coordinates": [
+          -3,
+          1.74
+        ]
+      },
+      {
+        "binary_sequence": "11110100",
+        "decimal_value": 244,
+        "decimal_offset_in_pi": 13,
+        "spiral_coordinates": [
+          3.52,
+          0.77
+        ]
+      },
+      {
+        "binary_sequence": "11101000",
+        "decimal_value": 232,
+        "decimal_offset_in_pi": 14,
+        "spiral_coordinates": [
+          -2.15,
+          -3.06
+        ]
+      },
+      {
+        "binary_sequence": "11010000",
+        "decimal_value": 208,
+        "decimal_offset_in_pi": 15,
+        "spiral_coordinates": [
+          -0.5,
+          3.84
+        ]
+      },
+      {
+        "binary_sequence": "10100000",
+        "decimal_value": 160,
+        "decimal_offset_in_pi": 16,
+        "spiral_coordinates": [
+          3.06,
+          -2.58
+        ]
+      },
+      {
+        "binary_sequence": "01000000",
+        "decimal_value": 64,
+        "decimal_offset_in_pi": 17,
+        "spiral_coordinates": [
+          -4.12,
+          -0.17
+        ]
+      },
+      {
+        "binary_sequence": "10000001",
+        "decimal_value": 129,
+        "decimal_offset_in_pi": 18,
+        "spiral_coordinates": [
+          3.01,
+          2.99
+        ]
+      },
+      {
+        "binary_sequence": "00000011",
+        "decimal_value": 3,
+        "decimal_offset_in_pi": 19,
+        "spiral_coordinates": [
+          -0.2,
+          -4.35
+        ]
+      },
+      {
+        "binary_sequence": "00000110",
+        "decimal_value": 6,
+        "decimal_offset_in_pi": 20,
+        "spiral_coordinates": [
+          -2.87,
+          3.43
+        ]
+      },
+      {
+        "binary_sequence": "00001101",
+        "decimal_value": 13,
+        "decimal_offset_in_pi": 21,
+        "spiral_coordinates": [
+          4.54,
+          -0.61
+        ]
+      },
+      {
+        "binary_sequence": "00011010",
+        "decimal_value": 26,
+        "decimal_offset_in_pi": 22,
+        "spiral_coordinates": [
+          -3.85,
+          -2.68
+        ]
+      },
+      {
+        "binary_sequence": "00110101",
+        "decimal_value": 53,
+        "decimal_offset_in_pi": 23,
+        "spiral_coordinates": [
+          1.05,
+          4.68
+        ]
+      },
+      {
+        "binary_sequence": "01101011",
+        "decimal_value": 107,
+        "decimal_offset_in_pi": 24,
+        "spiral_coordinates": [
+          2.44,
+          -4.25
+        ]
+      },
+      {
+        "binary_sequence": "11010111",
+        "decimal_value": 215,
+        "decimal_offset_in_pi": 25,
+        "spiral_coordinates": [
+          -4.76,
+          1.52
+        ]
+      },
+      {
+        "binary_sequence": "10101110",
+        "decimal_value": 174,
+        "decimal_offset_in_pi": 26,
+        "spiral_coordinates": [
+          4.63,
+          2.14
+        ]
+      },
+      {
+        "binary_sequence": "01011100",
+        "decimal_value": 92,
+        "decimal_offset_in_pi": 27,
+        "spiral_coordinates": [
+          -2.01,
+          -4.79
+        ]
+      },
+      {
+        "binary_sequence": "10111000",
+        "decimal_value": 184,
+        "decimal_offset_in_pi": 28,
+        "spiral_coordinates": [
+          -1.79,
+          4.98
+        ]
+      },
+      {
+        "binary_sequence": "01110000",
+        "decimal_value": 112,
+        "decimal_offset_in_pi": 29,
+        "spiral_coordinates": [
+          4.77,
+          -2.51
+        ]
+      },
+      {
+        "binary_sequence": "11100000",
+        "decimal_value": 224,
+        "decimal_offset_in_pi": 30,
+        "spiral_coordinates": [
+          -5.3,
+          -1.4
+        ]
+      },
+      {
+        "binary_sequence": "11000001",
+        "decimal_value": 193,
+        "decimal_offset_in_pi": 31,
+        "spiral_coordinates": [
+          3.01,
+          4.68
+        ]
+      },
+      {
+        "binary_sequence": "10000011",
+        "decimal_value": 131,
+        "decimal_offset_in_pi": 32,
+        "spiral_coordinates": [
+          0.96,
+          -5.58
+        ]
+      },
+      {
+        "binary_sequence": "00000111",
+        "decimal_value": 7,
+        "decimal_offset_in_pi": 33,
+        "spiral_coordinates": [
+          -4.54,
+          3.52
+        ]
+      },
+      {
+        "binary_sequence": "00001111",
+        "decimal_value": 15,
+        "decimal_offset_in_pi": 34,
+        "spiral_coordinates": [
+          5.81,
+          0.48
+        ]
+      },
+      {
+        "binary_sequence": "00011110",
+        "decimal_value": 30,
+        "decimal_offset_in_pi": 35,
+        "spiral_coordinates": [
+          -4.02,
+          -4.34
+        ]
+      },
+      {
+        "binary_sequence": "00111101",
+        "decimal_value": 61,
+        "decimal_offset_in_pi": 36,
+        "spiral_coordinates": [
+          0.03,
+          6
+        ]
+      },
+      {
+        "binary_sequence": "01111011",
+        "decimal_value": 123,
+        "decimal_offset_in_pi": 37,
+        "spiral_coordinates": [
+          4.09,
+          -4.51
+        ]
+      },
+      {
+        "binary_sequence": "11110111",
+        "decimal_value": 247,
+        "decimal_offset_in_pi": 38,
+        "spiral_coordinates": [
+          -6.14,
+          0.57
+        ]
+      },
+      {
+        "binary_sequence": "11011111",
+        "decimal_value": 223,
+        "decimal_offset_in_pi": 40,
+        "spiral_coordinates": [
+          -1.13,
+          -6.22
+        ]
+      },
+      {
+        "binary_sequence": "10111111",
+        "decimal_value": 191,
+        "decimal_offset_in_pi": 41,
+        "spiral_coordinates": [
+          -3.41,
+          5.42
+        ]
+      },
+      {
+        "binary_sequence": "01111111",
+        "decimal_value": 127,
+        "decimal_offset_in_pi": 42,
+        "spiral_coordinates": [
+          6.25,
+          -1.71
+        ]
+      },
+      {
+        "binary_sequence": "11111111",
+        "decimal_value": 255,
+        "decimal_offset_in_pi": 43,
+        "spiral_coordinates": [
+          -5.83,
+          -2.99
+        ]
+      },
+      {
+        "binary_sequence": "11111110",
+        "decimal_value": 254,
+        "decimal_offset_in_pi": 44,
+        "spiral_coordinates": [
+          2.31,
+          6.22
+        ]
+      },
+      {
+        "binary_sequence": "11111101",
+        "decimal_value": 253,
+        "decimal_offset_in_pi": 45,
+        "spiral_coordinates": [
+          2.53,
+          -6.21
+        ]
+      },
+      {
+        "binary_sequence": "11111010",
+        "decimal_value": 250,
+        "decimal_offset_in_pi": 46,
+        "spiral_coordinates": [
+          -6.13,
+          2.9
+        ]
+      },
+      {
+        "binary_sequence": "11010001",
+        "decimal_value": 209,
+        "decimal_offset_in_pi": 49,
+        "spiral_coordinates": [
+          -1.47,
+          6.84
+        ]
+      },
+      {
+        "binary_sequence": "10100011",
+        "decimal_value": 163,
+        "decimal_offset_in_pi": 50,
+        "spiral_coordinates": [
+          5.76,
+          -4.09
+        ]
+      },
+      {
+        "binary_sequence": "01000110",
+        "decimal_value": 70,
+        "decimal_offset_in_pi": 51,
+        "spiral_coordinates": [
+          -7.09,
+          -0.88
+        ]
+      },
+      {
+        "binary_sequence": "10001101",
+        "decimal_value": 141,
+        "decimal_offset_in_pi": 52,
+        "spiral_coordinates": [
+          4.67,
+          5.49
+        ]
+      },
+      {
+        "binary_sequence": "00110100",
+        "decimal_value": 52,
+        "decimal_offset_in_pi": 54,
+        "spiral_coordinates": [
+          -5.16,
+          5.23
+        ]
+      },
+      {
+        "binary_sequence": "01101001",
+        "decimal_value": 105,
+        "decimal_offset_in_pi": 55,
+        "spiral_coordinates": [
+          7.41,
+          -0.38
+        ]
+      },
+      {
+        "binary_sequence": "11010011",
+        "decimal_value": 211,
+        "decimal_offset_in_pi": 56,
+        "spiral_coordinates": [
+          -5.77,
+          -4.77
+        ]
+      },
+      {
+        "binary_sequence": "10100110",
+        "decimal_value": 166,
+        "decimal_offset_in_pi": 57,
+        "spiral_coordinates": [
+          1.04,
+          7.48
+        ]
+      },
+      {
+        "binary_sequence": "01001101",
+        "decimal_value": 77,
+        "decimal_offset_in_pi": 58,
+        "spiral_coordinates": [
+          4.32,
+          -6.27
+        ]
+      },
+      {
+        "binary_sequence": "10011010",
+        "decimal_value": 154,
+        "decimal_offset_in_pi": 59,
+        "spiral_coordinates": [
+          -7.49,
+          1.72
+        ]
+      },
+      {
+        "binary_sequence": "01101010",
+        "decimal_value": 106,
+        "decimal_offset_in_pi": 61,
+        "spiral_coordinates": [
+          -2.41,
+          -7.43
+        ]
+      },
+      {
+        "binary_sequence": "11010101",
+        "decimal_value": 213,
+        "decimal_offset_in_pi": 62,
+        "spiral_coordinates": [
+          -3.27,
+          7.16
+        ]
+      },
+      {
+        "binary_sequence": "10101010",
+        "decimal_value": 170,
+        "decimal_offset_in_pi": 63,
+        "spiral_coordinates": [
+          7.31,
+          -3.1
+        ]
+      },
+      {
+        "binary_sequence": "01010100",
+        "decimal_value": 84,
+        "decimal_offset_in_pi": 64,
+        "spiral_coordinates": [
+          -7.54,
+          -2.67
+        ]
+      },
+      {
+        "binary_sequence": "10101000",
+        "decimal_value": 168,
+        "decimal_offset_in_pi": 65,
+        "spiral_coordinates": [
+          3.79,
+          7.12
+        ]
+      },
+      {
+        "binary_sequence": "01010000",
+        "decimal_value": 80,
+        "decimal_offset_in_pi": 66,
+        "spiral_coordinates": [
+          2.03,
+          -7.87
+        ]
+      },
+      {
+        "binary_sequence": "10000000",
+        "decimal_value": 128,
+        "decimal_offset_in_pi": 69,
+        "spiral_coordinates": [
+          -5.12,
+          -6.54
+        ]
+      },
+      {
+        "binary_sequence": "00000000",
+        "decimal_value": 0,
+        "decimal_offset_in_pi": 70,
+        "spiral_coordinates": [
+          -0.65,
+          8.34
+        ]
+      },
+      {
+        "binary_sequence": "00000001",
+        "decimal_value": 1,
+        "decimal_offset_in_pi": 73,
+        "spiral_coordinates": [
+          6.36,
+          5.71
+        ]
+      },
+      {
+        "binary_sequence": "00001100",
+        "decimal_value": 12,
+        "decimal_offset_in_pi": 76,
+        "spiral_coordinates": [
+          8.57,
+          -1.6
+        ]
+      },
+      {
+        "binary_sequence": "00011000",
+        "decimal_value": 24,
+        "decimal_offset_in_pi": 77,
+        "spiral_coordinates": [
+          -7.45,
+          -4.64
+        ]
+      },
+      {
+        "binary_sequence": "00110000",
+        "decimal_value": 48,
+        "decimal_offset_in_pi": 78,
+        "spiral_coordinates": [
+          2.38,
+          8.51
+        ]
+      },
+      {
+        "binary_sequence": "01100000",
+        "decimal_value": 96,
+        "decimal_offset_in_pi": 79,
+        "spiral_coordinates": [
+          4.02,
+          -7.93
+        ]
+      },
+      {
+        "binary_sequence": "10000010",
+        "decimal_value": 130,
+        "decimal_offset_in_pi": 81,
+        "spiral_coordinates": [
+          8.35,
+          3.35
+        ]
+      },
+      {
+        "binary_sequence": "00000100",
+        "decimal_value": 4,
+        "decimal_offset_in_pi": 82,
+        "spiral_coordinates": [
+          -3.92,
+          -8.16
+        ]
+      },
+      {
+        "binary_sequence": "00001000",
+        "decimal_value": 8,
+        "decimal_offset_in_pi": 83,
+        "spiral_coordinates": [
+          -2.64,
+          8.72
+        ]
+      },
+      {
+        "binary_sequence": "00010001",
+        "decimal_value": 17,
+        "decimal_offset_in_pi": 84,
+        "spiral_coordinates": [
+          7.88,
+          -4.67
+        ]
+      },
+      {
+        "binary_sequence": "00100011",
+        "decimal_value": 35,
+        "decimal_offset_in_pi": 85,
+        "spiral_coordinates": [
+          -9.02,
+          -1.89
+        ]
+      },
+      {
+        "binary_sequence": "10001100",
+        "decimal_value": 140,
+        "decimal_offset_in_pi": 87,
+        "spiral_coordinates": [
+          1.11,
+          -9.26
+        ]
+      },
+      {
+        "binary_sequence": "00011001",
+        "decimal_value": 25,
+        "decimal_offset_in_pi": 88,
+        "spiral_coordinates": [
+          -7.11,
+          6.12
+        ]
+      },
+      {
+        "binary_sequence": "00110011",
+        "decimal_value": 51,
+        "decimal_offset_in_pi": 89,
+        "spiral_coordinates": [
+          9.43,
+          0.3
+        ]
+      },
+      {
+        "binary_sequence": "01100111",
+        "decimal_value": 103,
+        "decimal_offset_in_pi": 90,
+        "spiral_coordinates": [
+          -6.79,
+          -6.63
+        ]
+      },
+      {
+        "binary_sequence": "10011100",
+        "decimal_value": 156,
+        "decimal_offset_in_pi": 92,
+        "spiral_coordinates": [
+          6.07,
+          -7.42
+        ]
+      },
+      {
+        "binary_sequence": "00111001",
+        "decimal_value": 57,
+        "decimal_offset_in_pi": 93,
+        "spiral_coordinates": [
+          -9.54,
+          1.38
+        ]
+      },
+      {
+        "binary_sequence": "11100110",
+        "decimal_value": 230,
+        "decimal_offset_in_pi": 95,
+        "spiral_coordinates": [
+          -2.23,
+          -9.49
+        ]
+      },
+      {
+        "binary_sequence": "11001100",
+        "decimal_value": 204,
+        "decimal_offset_in_pi": 96,
+        "spiral_coordinates": [
+          -4.79,
+          8.55
+        ]
+      },
+      {
+        "binary_sequence": "10011001",
+        "decimal_value": 153,
+        "decimal_offset_in_pi": 97,
+        "spiral_coordinates": [
+          9.35,
+          -3.08
+        ]
+      },
+      {
+        "binary_sequence": "00110010",
+        "decimal_value": 50,
+        "decimal_offset_in_pi": 98,
+        "spiral_coordinates": [
+          -9.03,
+          -4.06
+        ]
+      },
+      {
+        "binary_sequence": "01100100",
+        "decimal_value": 100,
+        "decimal_offset_in_pi": 99,
+        "spiral_coordinates": [
+          3.93,
+          9.14
+        ]
+      },
+      {
+        "binary_sequence": "11001000",
+        "decimal_value": 200,
+        "decimal_offset_in_pi": 100,
+        "spiral_coordinates": [
+          3.29,
+          -9.44
+        ]
+      },
+      {
+        "binary_sequence": "10010000",
+        "decimal_value": 144,
+        "decimal_offset_in_pi": 101,
+        "spiral_coordinates": [
+          -8.85,
+          4.76
+        ]
+      },
+      {
+        "binary_sequence": "00100000",
+        "decimal_value": 32,
+        "decimal_offset_in_pi": 102,
+        "spiral_coordinates": [
+          9.79,
+          2.48
+        ]
+      },
+      {
+        "binary_sequence": "01000001",
+        "decimal_value": 65,
+        "decimal_offset_in_pi": 103,
+        "spiral_coordinates": [
+          -5.57,
+          -8.48
+        ]
+      },
+      {
+        "binary_sequence": "00001110",
+        "decimal_value": 14,
+        "decimal_offset_in_pi": 106,
+        "spiral_coordinates": [
+          -10.27,
+          -0.75
+        ]
+      },
+      {
+        "binary_sequence": "00011100",
+        "decimal_value": 28,
+        "decimal_offset_in_pi": 107,
+        "spiral_coordinates": [
+          7.1,
+          7.52
+        ]
+      },
+      {
+        "binary_sequence": "00111000",
+        "decimal_value": 56,
+        "decimal_offset_in_pi": 108,
+        "spiral_coordinates": [
+          -0.15,
+          -10.39
+        ]
+      },
+      {
+        "binary_sequence": "01110001",
+        "decimal_value": 113,
+        "decimal_offset_in_pi": 109,
+        "spiral_coordinates": [
+          -6.94,
+          7.8
+        ]
+      },
+      {
+        "binary_sequence": "11100010",
+        "decimal_value": 226,
+        "decimal_offset_in_pi": 110,
+        "spiral_coordinates": [
+          10.43,
+          -1.07
+        ]
+      },
+      {
+        "binary_sequence": "11000100",
+        "decimal_value": 196,
+        "decimal_offset_in_pi": 111,
+        "spiral_coordinates": [
+          -8.45,
+          -6.29
+        ]
+      },
+      {
+        "binary_sequence": "10001000",
+        "decimal_value": 136,
+        "decimal_offset_in_pi": 112,
+        "spiral_coordinates": [
+          2,
+          10.39
+        ]
+      },
+      {
+        "binary_sequence": "00010000",
+        "decimal_value": 16,
+        "decimal_offset_in_pi": 113,
+        "spiral_coordinates": [
+          5.57,
+          -9.05
+        ]
+      },
+      {
+        "binary_sequence": "00100001",
+        "decimal_value": 33,
+        "decimal_offset_in_pi": 114,
+        "spiral_coordinates": [
+          -10.27,
+          2.92
+        ]
+      },
+      {
+        "binary_sequence": "01000010",
+        "decimal_value": 66,
+        "decimal_offset_in_pi": 115,
+        "spiral_coordinates": [
+          9.59,
+          4.8
+        ]
+      },
+      {
+        "binary_sequence": "10000101",
+        "decimal_value": 133,
+        "decimal_offset_in_pi": 116,
+        "spiral_coordinates": [
+          -3.84,
+          -10.06
+        ]
+      },
+      {
+        "binary_sequence": "00001011",
+        "decimal_value": 11,
+        "decimal_offset_in_pi": 117,
+        "spiral_coordinates": [
+          -3.98,
+          10.06
+        ]
+      },
+      {
+        "binary_sequence": "00010110",
+        "decimal_value": 22,
+        "decimal_offset_in_pi": 118,
+        "spiral_coordinates": [
+          9.77,
+          -4.75
+        ]
+      },
+      {
+        "binary_sequence": "00101100",
+        "decimal_value": 44,
+        "decimal_offset_in_pi": 119,
+        "spiral_coordinates": [
+          -10.46,
+          -3.11
+        ]
+      },
+      {
+        "binary_sequence": "01011000",
+        "decimal_value": 88,
+        "decimal_offset_in_pi": 120,
+        "spiral_coordinates": [
+          5.63,
+          9.4
+        ]
+      },
+      {
+        "binary_sequence": "10110000",
+        "decimal_value": 176,
+        "decimal_offset_in_pi": 121,
+        "spiral_coordinates": [
+          2.2,
+          -10.78
+        ]
+      },
+      {
+        "binary_sequence": "00011101",
+        "decimal_value": 29,
+        "decimal_offset_in_pi": 127,
+        "spiral_coordinates": [
+          -11.25,
+          0.69
+        ]
+      },
+      {
+        "binary_sequence": "00111010",
+        "decimal_value": 58,
+        "decimal_offset_in_pi": 128,
+        "spiral_coordinates": [
+          8.79,
+          7.12
+        ]
+      },
+      {
+        "binary_sequence": "01110100",
+        "decimal_value": 116,
+        "decimal_offset_in_pi": 129,
+        "spiral_coordinates": [
+          -1.68,
+          -11.23
+        ]
+      },
+      {
+        "binary_sequence": "01000111",
+        "decimal_value": 71,
+        "decimal_offset_in_pi": 133,
+        "spiral_coordinates": [
+          3.67,
+          10.93
+        ]
+      },
+      {
+        "binary_sequence": "10001110",
+        "decimal_value": 142,
+        "decimal_offset_in_pi": 134,
+        "spiral_coordinates": [
+          4.7,
+          -10.58
+        ]
+      },
+      {
+        "binary_sequence": "10111100",
+        "decimal_value": 188,
+        "decimal_offset_in_pi": 140,
+        "spiral_coordinates": [
+          -11.69,
+          -1.83
+        ]
+      },
+      {
+        "binary_sequence": "01111000",
+        "decimal_value": 120,
+        "decimal_offset_in_pi": 141,
+        "spiral_coordinates": [
+          7.41,
+          9.28
+        ]
+      },
+      {
+        "binary_sequence": "11110001",
+        "decimal_value": 241,
+        "decimal_offset_in_pi": 142,
+        "spiral_coordinates": [
+          0.81,
+          -11.89
+        ]
+      },
+      {
+        "binary_sequence": "01000011",
+        "decimal_value": 67,
+        "decimal_offset_in_pi": 148,
+        "spiral_coordinates": [
+          -11.94,
+          2.35
+        ]
+      },
+      {
+        "binary_sequence": "10000111",
+        "decimal_value": 135,
+        "decimal_offset_in_pi": 149,
+        "spiral_coordinates": [
+          10.43,
+          6.35
+        ]
+      },
+      {
+        "binary_sequence": "10100001",
+        "decimal_value": 161,
+        "decimal_offset_in_pi": 157,
+        "spiral_coordinates": [
+          12.29,
+          2.45
+        ]
+      },
+      {
+        "binary_sequence": "10000100",
+        "decimal_value": 132,
+        "decimal_offset_in_pi": 159,
+        "spiral_coordinates": [
+          -1.38,
+          12.53
+        ]
+      },
+      {
+        "binary_sequence": "00001001",
+        "decimal_value": 9,
+        "decimal_offset_in_pi": 160,
+        "spiral_coordinates": [
+          9.51,
+          -8.34
+        ]
+      },
+      {
+        "binary_sequence": "00010010",
+        "decimal_value": 18,
+        "decimal_offset_in_pi": 161,
+        "spiral_coordinates": [
+          -12.69,
+          -0.28
+        ]
+      },
+      {
+        "binary_sequence": "00100101",
+        "decimal_value": 37,
+        "decimal_offset_in_pi": 162,
+        "spiral_coordinates": [
+          9.2,
+          8.8
+        ]
+      },
+      {
+        "binary_sequence": "01001011",
+        "decimal_value": 75,
+        "decimal_offset_in_pi": 163,
+        "spiral_coordinates": [
+          -0.84,
+          -12.74
+        ]
+      },
+      {
+        "binary_sequence": "10010111",
+        "decimal_value": 151,
+        "decimal_offset_in_pi": 164,
+        "spiral_coordinates": [
+          -8.01,
+          9.99
+        ]
+      },
+      {
+        "binary_sequence": "00101110",
+        "decimal_value": 46,
+        "decimal_offset_in_pi": 165,
+        "spiral_coordinates": [
+          12.69,
+          -1.96
+        ]
+      },
+      {
+        "binary_sequence": "01011101",
+        "decimal_value": 93,
+        "decimal_offset_in_pi": 166,
+        "spiral_coordinates": [
+          -10.72,
+          -7.15
+        ]
+      },
+      {
+        "binary_sequence": "10111010",
+        "decimal_value": 186,
+        "decimal_offset_in_pi": 167,
+        "spiral_coordinates": [
+          3.08,
+          12.55
+        ]
+      },
+      {
+        "binary_sequence": "01110101",
+        "decimal_value": 117,
+        "decimal_offset_in_pi": 168,
+        "spiral_coordinates": [
+          6.22,
+          -11.37
+        ]
+      },
+      {
+        "binary_sequence": "11101011",
+        "decimal_value": 235,
+        "decimal_offset_in_pi": 169,
+        "spiral_coordinates": [
+          -12.31,
+          4.19
+        ]
+      },
+      {
+        "binary_sequence": "11010110",
+        "decimal_value": 214,
+        "decimal_offset_in_pi": 170,
+        "spiral_coordinates": [
+          11.94,
+          5.24
+        ]
+      },
+      {
+        "binary_sequence": "10101101",
+        "decimal_value": 173,
+        "decimal_offset_in_pi": 171,
+        "spiral_coordinates": [
+          -5.28,
+          -11.96
+        ]
+      },
+      {
+        "binary_sequence": "01011011",
+        "decimal_value": 91,
+        "decimal_offset_in_pi": 172,
+        "spiral_coordinates": [
+          -4.2,
+          12.43
+        ]
+      },
+      {
+        "binary_sequence": "10110111",
+        "decimal_value": 183,
+        "decimal_offset_in_pi": 173,
+        "spiral_coordinates": [
+          11.52,
+          -6.35
+        ]
+      },
+      {
+        "binary_sequence": "01101111",
+        "decimal_value": 111,
+        "decimal_offset_in_pi": 174,
+        "spiral_coordinates": [
+          -12.82,
+          -3.11
+        ]
+      },
+      {
+        "binary_sequence": "11110000",
+        "decimal_value": 240,
+        "decimal_offset_in_pi": 178,
+        "spiral_coordinates": [
+          13.32,
+          0.84
+        ]
+      },
+      {
+        "binary_sequence": "11000000",
+        "decimal_value": 192,
+        "decimal_offset_in_pi": 180,
+        "spiral_coordinates": [
+          0.33,
+          13.41
+        ]
+      },
+      {
+        "binary_sequence": "00000010",
+        "decimal_value": 2,
+        "decimal_offset_in_pi": 182,
+        "spiral_coordinates": [
+          -13.41,
+          1.51
+        ]
+      },
+      {
+        "binary_sequence": "00010011",
+        "decimal_value": 19,
+        "decimal_offset_in_pi": 185,
+        "spiral_coordinates": [
+          -7.02,
+          11.65
+        ]
+      },
+      {
+        "binary_sequence": "00100110",
+        "decimal_value": 38,
+        "decimal_offset_in_pi": 186,
+        "spiral_coordinates": [
+          13.08,
+          -3.86
+        ]
+      },
+      {
+        "binary_sequence": "10011011",
+        "decimal_value": 155,
+        "decimal_offset_in_pi": 188,
+        "spiral_coordinates": [
+          5.02,
+          12.76
+        ]
+      },
+      {
+        "binary_sequence": "00110110",
+        "decimal_value": 54,
+        "decimal_offset_in_pi": 189,
+        "spiral_coordinates": [
+          4.93,
+          -12.83
+        ]
+      },
+      {
+        "binary_sequence": "01101101",
+        "decimal_value": 109,
+        "decimal_offset_in_pi": 190,
+        "spiral_coordinates": [
+          -12.34,
+          6.15
+        ]
+      },
+      {
+        "binary_sequence": "11011010",
+        "decimal_value": 218,
+        "decimal_offset_in_pi": 191,
+        "spiral_coordinates": [
+          13.28,
+          3.81
+        ]
+      },
+      {
+        "binary_sequence": "10110101",
+        "decimal_value": 181,
+        "decimal_offset_in_pi": 192,
+        "spiral_coordinates": [
+          -7.24,
+          -11.82
+        ]
+      },
+      {
+        "binary_sequence": "10101100",
+        "decimal_value": 172,
+        "decimal_offset_in_pi": 195,
+        "spiral_coordinates": [
+          -13.89,
+          -1.46
+        ]
+      },
+      {
+        "binary_sequence": "00000101",
+        "decimal_value": 5,
+        "decimal_offset_in_pi": 202,
+        "spiral_coordinates": [
+          7.83,
+          -11.86
+        ]
+      },
+      {
+        "binary_sequence": "00010111",
+        "decimal_value": 23,
+        "decimal_offset_in_pi": 204,
+        "spiral_coordinates": [
+          12.56,
+          6.8
+        ]
+      },
+      {
+        "binary_sequence": "11001111",
+        "decimal_value": 207,
+        "decimal_offset_in_pi": 210,
+        "spiral_coordinates": [
+          3.35,
+          -14.1
+        ]
+      },
+      {
+        "binary_sequence": "10011110",
+        "decimal_value": 158,
+        "decimal_offset_in_pi": 211,
+        "spiral_coordinates": [
+          -12.02,
+          8.15
+        ]
+      },
+      {
+        "binary_sequence": "00111100",
+        "decimal_value": 60,
+        "decimal_offset_in_pi": 212,
+        "spiral_coordinates": [
+          14.41,
+          2.12
+        ]
+      },
+      {
+        "binary_sequence": "01100001",
+        "decimal_value": 97,
+        "decimal_offset_in_pi": 224,
+        "spiral_coordinates": [
+          -13.9,
+          5.54
+        ]
+      },
+      {
+        "binary_sequence": "11000011",
+        "decimal_value": 195,
+        "decimal_offset_in_pi": 225,
+        "spiral_coordinates": [
+          14.03,
+          5.32
+        ]
+      },
+      {
+        "binary_sequence": "01110010",
+        "decimal_value": 114,
+        "decimal_offset_in_pi": 230,
+        "spiral_coordinates": [
+          9.08,
+          12.15
+        ]
+      },
+      {
+        "binary_sequence": "11100101",
+        "decimal_value": 229,
+        "decimal_offset_in_pi": 231,
+        "spiral_coordinates": [
+          1.51,
+          -15.12
+        ]
+      },
+      {
+        "binary_sequence": "11001011",
+        "decimal_value": 203,
+        "decimal_offset_in_pi": 232,
+        "spiral_coordinates": [
+          -11.35,
+          10.15
+        ]
+      },
+      {
+        "binary_sequence": "10010110",
+        "decimal_value": 150,
+        "decimal_offset_in_pi": 233,
+        "spiral_coordinates": [
+          15.26,
+          0.18
+        ]
+      },
+      {
+        "binary_sequence": "00101101",
+        "decimal_value": 45,
+        "decimal_offset_in_pi": 234,
+        "spiral_coordinates": [
+          -11.15,
+          -10.47
+        ]
+      },
+      {
+        "binary_sequence": "01011010",
+        "decimal_value": 90,
+        "decimal_offset_in_pi": 235,
+        "spiral_coordinates": [
+          1.16,
+          15.29
+        ]
+      },
+      {
+        "binary_sequence": "01011001",
+        "decimal_value": 89,
+        "decimal_offset_in_pi": 240,
+        "spiral_coordinates": [
+          -7.31,
+          13.66
+        ]
+      },
+      {
+        "binary_sequence": "10110011",
+        "decimal_value": 179,
+        "decimal_offset_in_pi": 241,
+        "spiral_coordinates": [
+          14.65,
+          -5.15
+        ]
+      },
+      {
+        "binary_sequence": "01100110",
+        "decimal_value": 102,
+        "decimal_offset_in_pi": 242,
+        "spiral_coordinates": [
+          -14.31,
+          -6.11
+        ]
+      },
+      {
+        "binary_sequence": "11001101",
+        "decimal_value": 205,
+        "decimal_offset_in_pi": 243,
+        "spiral_coordinates": [
+          6.44,
+          14.2
+        ]
+      },
+      {
+        "binary_sequence": "10110100",
+        "decimal_value": 180,
+        "decimal_offset_in_pi": 248,
+        "spiral_coordinates": [
+          -2.21,
+          15.59
+        ]
+      },
+      {
+        "binary_sequence": "01101000",
+        "decimal_value": 104,
+        "decimal_offset_in_pi": 249,
+        "spiral_coordinates": [
+          12.19,
+          -10.02
+        ]
+      },
+      {
+        "binary_sequence": "10100010",
+        "decimal_value": 162,
+        "decimal_offset_in_pi": 251,
+        "spiral_coordinates": [
+          11.09,
+          11.31
+        ]
+      },
+      {
+        "binary_sequence": "01000100",
+        "decimal_value": 68,
+        "decimal_offset_in_pi": 252,
+        "spiral_coordinates": [
+          -0.54,
+          -15.87
+        ]
+      },
+      {
+        "binary_sequence": "10001001",
+        "decimal_value": 137,
+        "decimal_offset_in_pi": 253,
+        "spiral_coordinates": [
+          -10.34,
+          12.09
+        ]
+      },
+      {
+        "binary_sequence": "01001010",
+        "decimal_value": 74,
+        "decimal_offset_in_pi": 256,
+        "spiral_coordinates": [
+          3.32,
+          15.65
+        ]
+      },
+      {
+        "binary_sequence": "10010100",
+        "decimal_value": 148,
+        "decimal_offset_in_pi": 257,
+        "spiral_coordinates": [
+          8.14,
+          -13.81
+        ]
+      },
+      {
+        "binary_sequence": "00101000",
+        "decimal_value": 40,
+        "decimal_offset_in_pi": 258,
+        "spiral_coordinates": [
+          -15.36,
+          4.7
+        ]
+      },
+      {
+        "binary_sequence": "01010001",
+        "decimal_value": 81,
+        "decimal_offset_in_pi": 259,
+        "spiral_coordinates": [
+          14.53,
+          6.93
+        ]
+      },
+      {
+        "binary_sequence": "00100010",
+        "decimal_value": 34,
+        "decimal_offset_in_pi": 264,
+        "spiral_coordinates": [
+          8.62,
+          13.77
+        ]
+      },
+      {
+        "binary_sequence": "00011111",
+        "decimal_value": 31,
+        "decimal_offset_in_pi": 279,
+        "spiral_coordinates": [
+          -15.18,
+          6.97
+        ]
+      },
+      {
+        "binary_sequence": "00111110",
+        "decimal_value": 62,
+        "decimal_offset_in_pi": 280,
+        "spiral_coordinates": [
+          15.93,
+          5.12
+        ]
+      },
+      {
+        "binary_sequence": "01111100",
+        "decimal_value": 124,
+        "decimal_offset_in_pi": 281,
+        "spiral_coordinates": [
+          -8.3,
+          -14.56
+        ]
+      },
+      {
+        "binary_sequence": "11111001",
+        "decimal_value": 249,
+        "decimal_offset_in_pi": 282,
+        "spiral_coordinates": [
+          -3.72,
+          16.37
+        ]
+      },
+      {
+        "binary_sequence": "11110010",
+        "decimal_value": 242,
+        "decimal_offset_in_pi": 283,
+        "spiral_coordinates": [
+          13.83,
+          -9.58
+        ]
+      },
+      {
+        "binary_sequence": "11100100",
+        "decimal_value": 228,
+        "decimal_offset_in_pi": 284,
+        "spiral_coordinates": [
+          -16.7,
+          -2.29
+        ]
+      },
+      {
+        "binary_sequence": "11001010",
+        "decimal_value": 202,
+        "decimal_offset_in_pi": 301,
+        "spiral_coordinates": [
+          17.08,
+          3.06
+        ]
+      },
+      {
+        "binary_sequence": "01111001",
+        "decimal_value": 121,
+        "decimal_offset_in_pi": 313,
+        "spiral_coordinates": [
+          -16.63,
+          6.03
+        ]
+      },
+      {
+        "binary_sequence": "11110011",
+        "decimal_value": 243,
+        "decimal_offset_in_pi": 314,
+        "spiral_coordinates": [
+          16.36,
+          6.8
+        ]
+      },
+      {
+        "binary_sequence": "10011000",
+        "decimal_value": 152,
+        "decimal_offset_in_pi": 317,
+        "spiral_coordinates": [
+          15.43,
+          -8.89
+        ]
+      },
+      {
+        "binary_sequence": "00110001",
+        "decimal_value": 49,
+        "decimal_offset_in_pi": 318,
+        "spiral_coordinates": [
+          -17.41,
+          -3.87
+        ]
+      },
+      {
+        "binary_sequence": "01100011",
+        "decimal_value": 99,
+        "decimal_offset_in_pi": 319,
+        "spiral_coordinates": [
+          10.24,
+          14.63
+        ]
+      },
+      {
+        "binary_sequence": "11000110",
+        "decimal_value": 198,
+        "decimal_offset_in_pi": 320,
+        "spiral_coordinates": [
+          2.34,
+          -17.73
+        ]
+      },
+      {
+        "binary_sequence": "11001001",
+        "decimal_value": 201,
+        "decimal_offset_in_pi": 325,
+        "spiral_coordinates": [
+          11.58,
+          -13.81
+        ]
+      },
+      {
+        "binary_sequence": "10010010",
+        "decimal_value": 146,
+        "decimal_offset_in_pi": 326,
+        "spiral_coordinates": [
+          -17.9,
+          2.37
+        ]
+      },
+      {
+        "binary_sequence": "00100100",
+        "decimal_value": 36,
+        "decimal_offset_in_pi": 327,
+        "spiral_coordinates": [
+          14.82,
+          10.36
+        ]
+      },
+      {
+        "binary_sequence": "01001000",
+        "decimal_value": 72,
+        "decimal_offset_in_pi": 328,
+        "spiral_coordinates": [
+          -3.93,
+          -17.68
+        ]
+      },
+      {
+        "binary_sequence": "00001010",
+        "decimal_value": 10,
+        "decimal_offset_in_pi": 333,
+        "spiral_coordinates": [
+          6.22,
+          -17.16
+        ]
+      },
+      {
+        "binary_sequence": "00010100",
+        "decimal_value": 20,
+        "decimal_offset_in_pi": 334,
+        "spiral_coordinates": [
+          -16.2,
+          8.47
+        ]
+      },
+      {
+        "binary_sequence": "00101001",
+        "decimal_value": 41,
+        "decimal_offset_in_pi": 335,
+        "spiral_coordinates": [
+          17.69,
+          4.71
+        ]
+      },
+      {
+        "binary_sequence": "01010011",
+        "decimal_value": 83,
+        "decimal_offset_in_pi": 336,
+        "spiral_coordinates": [
+          -9.88,
+          -15.44
+        ]
+      },
+      {
+        "binary_sequence": "10100111",
+        "decimal_value": 167,
+        "decimal_offset_in_pi": 337,
+        "spiral_coordinates": [
+          -3.15,
+          18.09
+        ]
+      },
+      {
+        "binary_sequence": "01001111",
+        "decimal_value": 79,
+        "decimal_offset_in_pi": 338,
+        "spiral_coordinates": [
+          14.56,
+          -11.22
+        ]
+      },
+      {
+        "binary_sequence": "10011111",
+        "decimal_value": 159,
+        "decimal_offset_in_pi": 339,
+        "spiral_coordinates": [
+          -18.35,
+          -1.56
+        ]
+      },
+      {
+        "binary_sequence": "00111111",
+        "decimal_value": 63,
+        "decimal_offset_in_pi": 340,
+        "spiral_coordinates": [
+          12.49,
+          13.56
+        ]
+      },
+      {
+        "binary_sequence": "01111110",
+        "decimal_value": 126,
+        "decimal_offset_in_pi": 341,
+        "spiral_coordinates": [
+          -0.05,
+          -18.47
+        ]
+      },
+      {
+        "binary_sequence": "11111100",
+        "decimal_value": 252,
+        "decimal_offset_in_pi": 342,
+        "spiral_coordinates": [
+          -12.46,
+          13.67
+        ]
+      },
+      {
+        "binary_sequence": "10010101",
+        "decimal_value": 149,
+        "decimal_offset_in_pi": 347,
+        "spiral_coordinates": [
+          -17.98,
+          4.88
+        ]
+      },
+      {
+        "binary_sequence": "00101010",
+        "decimal_value": 42,
+        "decimal_offset_in_pi": 348,
+        "spiral_coordinates": [
+          16.58,
+          8.56
+        ]
+      },
+      {
+        "binary_sequence": "01010101",
+        "decimal_value": 85,
+        "decimal_offset_in_pi": 349,
+        "spiral_coordinates": [
+          -6.45,
+          -17.53
+        ]
+      },
+      {
+        "binary_sequence": "10101011",
+        "decimal_value": 171,
+        "decimal_offset_in_pi": 350,
+        "spiral_coordinates": [
+          -7.09,
+          17.31
+        ]
+      },
+      {
+        "binary_sequence": "01010110",
+        "decimal_value": 86,
+        "decimal_offset_in_pi": 351,
+        "spiral_coordinates": [
+          16.95,
+          -7.98
+        ]
+      },
+      {
+        "binary_sequence": "10001111",
+        "decimal_value": 143,
+        "decimal_offset_in_pi": 359,
+        "spiral_coordinates": [
+          13.33,
+          -13.46
+        ]
+      },
+      {
+        "binary_sequence": "11110110",
+        "decimal_value": 246,
+        "decimal_offset_in_pi": 363,
+        "spiral_coordinates": [
+          -10.84,
+          15.67
+        ]
+      },
+      {
+        "binary_sequence": "11101101",
+        "decimal_value": 237,
+        "decimal_offset_in_pi": 364,
+        "spiral_coordinates": [
+          18.6,
+          -4.24
+        ]
+      },
+      {
+        "binary_sequence": "10110010",
+        "decimal_value": 178,
+        "decimal_offset_in_pi": 380,
+        "spiral_coordinates": [
+          11.75,
+          -15.56
+        ]
+      },
+      {
+        "binary_sequence": "10010011",
+        "decimal_value": 147,
+        "decimal_offset_in_pi": 383,
+        "spiral_coordinates": [
+          -5.22,
+          -18.86
+        ]
+      },
+      {
+        "binary_sequence": "00100111",
+        "decimal_value": 39,
+        "decimal_offset_in_pi": 384,
+        "spiral_coordinates": [
+          -8.9,
+          17.46
+        ]
+      },
+      {
+        "binary_sequence": "10110110",
+        "decimal_value": 182,
+        "decimal_offset_in_pi": 400,
+        "spiral_coordinates": [
+          4.53,
+          19.48
+        ]
+      },
+      {
+        "binary_sequence": "01010111",
+        "decimal_value": 87,
+        "decimal_offset_in_pi": 407,
+        "spiral_coordinates": [
+          -19.55,
+          -5
+        ]
+      },
+      {
+        "binary_sequence": "10101111",
+        "decimal_value": 175,
+        "decimal_offset_in_pi": 408,
+        "spiral_coordinates": [
+          11.05,
+          16.91
+        ]
+      },
+      {
+        "binary_sequence": "01011111",
+        "decimal_value": 95,
+        "decimal_offset_in_pi": 409,
+        "spiral_coordinates": [
+          3.28,
+          -19.96
+        ]
+      },
+      {
+        "binary_sequence": "11110101",
+        "decimal_value": 245,
+        "decimal_offset_in_pi": 418,
+        "spiral_coordinates": [
+          -10.76,
+          17.38
+        ]
+      },
+      {
+        "binary_sequence": "11101010",
+        "decimal_value": 234,
+        "decimal_offset_in_pi": 419,
+        "spiral_coordinates": [
+          19.7,
+          -5.56
+        ]
+      },
+      {
+        "binary_sequence": "11010100",
+        "decimal_value": 212,
+        "decimal_offset_in_pi": 420,
+        "spiral_coordinates": [
+          -18.3,
+          -9.22
+        ]
+      },
+      {
+        "binary_sequence": "10101001",
+        "decimal_value": 169,
+        "decimal_offset_in_pi": 421,
+        "spiral_coordinates": [
+          7.28,
+          19.19
+        ]
+      },
+      {
+        "binary_sequence": "11101110",
+        "decimal_value": 238,
+        "decimal_offset_in_pi": 429,
+        "spiral_coordinates": [
+          13.54,
+          15.67
+        ]
+      },
+      {
+        "binary_sequence": "11111011",
+        "decimal_value": 251,
+        "decimal_offset_in_pi": 439,
+        "spiral_coordinates": [
+          -8.55,
+          19.13
+        ]
+      },
+      {
+        "binary_sequence": "11011101",
+        "decimal_value": 221,
+        "decimal_offset_in_pi": 442,
+        "spiral_coordinates": [
+          10.01,
+          18.49
+        ]
+      },
+      {
+        "binary_sequence": "10111011",
+        "decimal_value": 187,
+        "decimal_offset_in_pi": 493,
+        "spiral_coordinates": [
+          -8.08,
+          -20.68
+        ]
+      },
+      {
+        "binary_sequence": "01110110",
+        "decimal_value": 118,
+        "decimal_offset_in_pi": 494,
+        "spiral_coordinates": [
+          -8.02,
+          20.73
+        ]
+      },
+      {
+        "binary_sequence": "01101110",
+        "decimal_value": 110,
+        "decimal_offset_in_pi": 503,
+        "spiral_coordinates": [
+          15.47,
+          -16.24
+        ]
+      },
+      {
+        "binary_sequence": "11101001",
+        "decimal_value": 233,
+        "decimal_offset_in_pi": 526,
+        "spiral_coordinates": [
+          19.68,
+          11.78
+        ]
+      },
+      {
+        "binary_sequence": "01001110",
+        "decimal_value": 78,
+        "decimal_offset_in_pi": 529,
+        "spiral_coordinates": [
+          21.38,
+          -8.47
+        ]
+      },
+      {
+        "binary_sequence": "11100011",
+        "decimal_value": 227,
+        "decimal_offset_in_pi": 533,
+        "spiral_coordinates": [
+          -19.66,
+          12.11
+        ]
+      },
+      {
+        "binary_sequence": "11000111",
+        "decimal_value": 199,
+        "decimal_offset_in_pi": 534,
+        "spiral_coordinates": [
+          22.7,
+          4.35
+        ]
+      },
+      {
+        "binary_sequence": "01111101",
+        "decimal_value": 125,
+        "decimal_offset_in_pi": 538,
+        "spiral_coordinates": [
+          -23.19,
+          -0.33
+        ]
+      },
+      {
+        "binary_sequence": "11000101",
+        "decimal_value": 197,
+        "decimal_offset_in_pi": 549,
+        "spiral_coordinates": [
+          -7.33,
+          22.25
+        ]
+      },
+      {
+        "binary_sequence": "10001011",
+        "decimal_value": 139,
+        "decimal_offset_in_pi": 550,
+        "spiral_coordinates": [
+          20.46,
+          -11.47
+        ]
+      },
+      {
+        "binary_sequence": "00110111",
+        "decimal_value": 55,
+        "decimal_offset_in_pi": 558,
+        "spiral_coordinates": [
+          15.39,
+          -17.92
+        ]
+      },
+      {
+        "binary_sequence": "10010001",
+        "decimal_value": 145,
+        "decimal_offset_in_pi": 585,
+        "spiral_coordinates": [
+          -23.01,
+          -7.46
+        ]
+      },
+      {
+        "binary_sequence": "01001001",
+        "decimal_value": 73,
+        "decimal_offset_in_pi": 591,
+        "spiral_coordinates": [
+          -1.23,
+          24.28
+        ]
+      },
+      {
+        "binary_sequence": "11100001",
+        "decimal_value": 225,
+        "decimal_offset_in_pi": 598,
+        "spiral_coordinates": [
+          -21.1,
+          -12.36
+        ]
+      },
+      {
+        "binary_sequence": "11000010",
+        "decimal_value": 194,
+        "decimal_offset_in_pi": 599,
+        "spiral_coordinates": [
+          7.22,
+          23.39
+        ]
+      },
+      {
+        "binary_sequence": "01001100",
+        "decimal_value": 76,
+        "decimal_offset_in_pi": 612,
+        "spiral_coordinates": [
+          2.05,
+          24.65
+        ]
+      },
+      {
+        "binary_sequence": "10000110",
+        "decimal_value": 134,
+        "decimal_offset_in_pi": 617,
+        "spiral_coordinates": [
+          -11.55,
+          21.99
+        ]
+      },
+      {
+        "binary_sequence": "00011011",
+        "decimal_value": 27,
+        "decimal_offset_in_pi": 619,
+        "spiral_coordinates": [
+          -22.95,
+          -9.6
+        ]
+      },
+      {
+        "binary_sequence": "10111110",
+        "decimal_value": 190,
+        "decimal_offset_in_pi": 623,
+        "spiral_coordinates": [
+          24.35,
+          5.47
+        ]
+      },
+      {
+        "binary_sequence": "01010010",
+        "decimal_value": 82,
+        "decimal_offset_in_pi": 668,
+        "spiral_coordinates": [
+          14.76,
+          -21.22
+        ]
+      },
+      {
+        "binary_sequence": "10100101",
+        "decimal_value": 165,
+        "decimal_offset_in_pi": 669,
+        "spiral_coordinates": [
+          -25.23,
+          5.68
+        ]
+      },
+      {
+        "binary_sequence": "01100101",
+        "decimal_value": 101,
+        "decimal_offset_in_pi": 689,
+        "spiral_coordinates": [
+          11.98,
+          -23.36
+        ]
+      },
+      {
+        "binary_sequence": "10110001",
+        "decimal_value": 177,
+        "decimal_offset_in_pi": 698,
+        "spiral_coordinates": [
+          -20.11,
+          17.13
+        ]
+      },
+      {
+        "binary_sequence": "11101100",
+        "decimal_value": 236,
+        "decimal_offset_in_pi": 731,
+        "spiral_coordinates": [
+          5.54,
+          -26.46
+        ]
+      },
+      {
+        "binary_sequence": "11011001",
+        "decimal_value": 217,
+        "decimal_offset_in_pi": 732,
+        "spiral_coordinates": [
+          -21.98,
+          15.78
+        ]
+      },
+      {
+        "binary_sequence": "11011011",
+        "decimal_value": 219,
+        "decimal_offset_in_pi": 767,
+        "spiral_coordinates": [
+          27.13,
+          5.54
+        ]
+      },
+      {
+        "binary_sequence": "01101100",
+        "decimal_value": 108,
+        "decimal_offset_in_pi": 769,
+        "spiral_coordinates": [
+          -3.15,
+          27.55
+        ]
+      },
+      {
+        "binary_sequence": "11011000",
+        "decimal_value": 216,
+        "decimal_offset_in_pi": 770,
+        "spiral_coordinates": [
+          20.95,
+          -18.2
+        ]
+      },
+      {
+        "binary_sequence": "00101111",
+        "decimal_value": 47,
+        "decimal_offset_in_pi": 870,
+        "spiral_coordinates": [
+          -10.93,
+          -27.4
+        ]
+      },
+      {
+        "binary_sequence": "01011110",
+        "decimal_value": 94,
+        "decimal_offset_in_pi": 871,
+        "spiral_coordinates": [
+          -10.45,
+          27.6
+        ]
+      },
+      {
+        "binary_sequence": "10001010",
+        "decimal_value": 138,
+        "decimal_offset_in_pi": 877,
+        "spiral_coordinates": [
+          29.47,
+          2.94
+        ]
+      },
+      {
+        "binary_sequence": "11111000",
+        "decimal_value": 248,
+        "decimal_offset_in_pi": 922,
+        "spiral_coordinates": [
+          14.18,
+          -26.85
+        ]
+      },
+      {
+        "binary_sequence": "01100010",
+        "decimal_value": 98,
+        "decimal_offset_in_pi": 1038,
+        "spiral_coordinates": [
+          -31.98,
+          -3.89
+        ]
+      },
+      {
+        "binary_sequence": "00010101",
+        "decimal_value": 21,
+        "decimal_offset_in_pi": 1041,
+        "spiral_coordinates": [
+          -22.58,
+          23.05
+        ]
+      },
+      {
+        "binary_sequence": "00101011",
+        "decimal_value": 43,
+        "decimal_offset_in_pi": 1042,
+        "spiral_coordinates": [
+          32.23,
+          -1.74
+        ]
+      },
+      {
+        "binary_sequence": "11010010",
+        "decimal_value": 210,
+        "decimal_offset_in_pi": 2398,
+        "spiral_coordinates": [
+          46.98,
+          13.81
+        ]
+      },
+      {
+        "binary_sequence": "01000101",
+        "decimal_value": 69,
+        "decimal_offset_in_pi": 2484,
+        "spiral_coordinates": [
+          16.46,
+          47.04
+        ]
+      },
+      {
+        "binary_sequence": "10100100",
+        "decimal_value": 164,
+        "decimal_offset_in_pi": 2627,
+        "spiral_coordinates": [
+          -45.63,
+          -23.35
+        ]
+      }
+    ]
+  }
+}

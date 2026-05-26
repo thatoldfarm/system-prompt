@@ -1,0 +1,1026 @@
+{
+    "10111001": {
+        "binary_sequence": "10111001",
+        "position": 1
+    },
+    "01110011": {
+        "binary_sequence": "01110011",
+        "position": 2
+    },
+    "11100111": {
+        "binary_sequence": "11100111",
+        "position": 3
+    },
+    "11001110": {
+        "binary_sequence": "11001110",
+        "position": 4
+    },
+    "10011101": {
+        "binary_sequence": "10011101",
+        "position": 5
+    },
+    "00111011": {
+        "binary_sequence": "00111011",
+        "position": 6
+    },
+    "01110111": {
+        "binary_sequence": "01110111",
+        "position": 7
+    },
+    "11101111": {
+        "binary_sequence": "11101111",
+        "position": 8
+    },
+    "11011110": {
+        "binary_sequence": "11011110",
+        "position": 9
+    },
+    "10111101": {
+        "binary_sequence": "10111101",
+        "position": 10
+    },
+    "01111010": {
+        "binary_sequence": "01111010",
+        "position": 11
+    },
+    "11110100": {
+        "binary_sequence": "11110100",
+        "position": 12
+    },
+    "11101000": {
+        "binary_sequence": "11101000",
+        "position": 13
+    },
+    "11010000": {
+        "binary_sequence": "11010000",
+        "position": 14
+    },
+    "10100000": {
+        "binary_sequence": "10100000",
+        "position": 15
+    },
+    "01000000": {
+        "binary_sequence": "01000000",
+        "position": 16
+    },
+    "10000001": {
+        "binary_sequence": "10000001",
+        "position": 17
+    },
+    "00000011": {
+        "binary_sequence": "00000011",
+        "position": 18
+    },
+    "00000110": {
+        "binary_sequence": "00000110",
+        "position": 19
+    },
+    "00001101": {
+        "binary_sequence": "00001101",
+        "position": 20
+    },
+    "00011010": {
+        "binary_sequence": "00011010",
+        "position": 21
+    },
+    "00110101": {
+        "binary_sequence": "00110101",
+        "position": 22
+    },
+    "01101011": {
+        "binary_sequence": "01101011",
+        "position": 23
+    },
+    "11010111": {
+        "binary_sequence": "11010111",
+        "position": 24
+    },
+    "10101110": {
+        "binary_sequence": "10101110",
+        "position": 25
+    },
+    "01011100": {
+        "binary_sequence": "01011100",
+        "position": 26
+    },
+    "10111000": {
+        "binary_sequence": "10111000",
+        "position": 27
+    },
+    "01110000": {
+        "binary_sequence": "01110000",
+        "position": 28
+    },
+    "11100000": {
+        "binary_sequence": "11100000",
+        "position": 29
+    },
+    "11000001": {
+        "binary_sequence": "11000001",
+        "position": 30
+    },
+    "10000011": {
+        "binary_sequence": "10000011",
+        "position": 31
+    },
+    "00000111": {
+        "binary_sequence": "00000111",
+        "position": 32
+    },
+    "00001111": {
+        "binary_sequence": "00001111",
+        "position": 33
+    },
+    "00011110": {
+        "binary_sequence": "00011110",
+        "position": 34
+    },
+    "00111101": {
+        "binary_sequence": "00111101",
+        "position": 35
+    },
+    "01111011": {
+        "binary_sequence": "01111011",
+        "position": 36
+    },
+    "11110111": {
+        "binary_sequence": "11110111",
+        "position": 37
+    },
+    "11011111": {
+        "binary_sequence": "11011111",
+        "position": 39
+    },
+    "10111111": {
+        "binary_sequence": "10111111",
+        "position": 40
+    },
+    "01111111": {
+        "binary_sequence": "01111111",
+        "position": 41
+    },
+    "11111111": {
+        "binary_sequence": "11111111",
+        "position": 42
+    },
+    "11111110": {
+        "binary_sequence": "11111110",
+        "position": 43
+    },
+    "11111101": {
+        "binary_sequence": "11111101",
+        "position": 44
+    },
+    "11111010": {
+        "binary_sequence": "11111010",
+        "position": 45
+    },
+    "11010001": {
+        "binary_sequence": "11010001",
+        "position": 48
+    },
+    "10100011": {
+        "binary_sequence": "10100011",
+        "position": 49
+    },
+    "01000110": {
+        "binary_sequence": "01000110",
+        "position": 50
+    },
+    "10001101": {
+        "binary_sequence": "10001101",
+        "position": 51
+    },
+    "00110100": {
+        "binary_sequence": "00110100",
+        "position": 53
+    },
+    "01101001": {
+        "binary_sequence": "01101001",
+        "position": 54
+    },
+    "11010011": {
+        "binary_sequence": "11010011",
+        "position": 55
+    },
+    "10100110": {
+        "binary_sequence": "10100110",
+        "position": 56
+    },
+    "01001101": {
+        "binary_sequence": "01001101",
+        "position": 57
+    },
+    "10011010": {
+        "binary_sequence": "10011010",
+        "position": 58
+    },
+    "01101010": {
+        "binary_sequence": "01101010",
+        "position": 60
+    },
+    "11010101": {
+        "binary_sequence": "11010101",
+        "position": 61
+    },
+    "10101010": {
+        "binary_sequence": "10101010",
+        "position": 62
+    },
+    "01010100": {
+        "binary_sequence": "01010100",
+        "position": 63
+    },
+    "10101000": {
+        "binary_sequence": "10101000",
+        "position": 64
+    },
+    "01010000": {
+        "binary_sequence": "01010000",
+        "position": 65
+    },
+    "10000000": {
+        "binary_sequence": "10000000",
+        "position": 68
+    },
+    "00000000": {
+        "binary_sequence": "00000000",
+        "position": 69
+    },
+    "00000001": {
+        "binary_sequence": "00000001",
+        "position": 72
+    },
+    "00001100": {
+        "binary_sequence": "00001100",
+        "position": 75
+    },
+    "00011000": {
+        "binary_sequence": "00011000",
+        "position": 76
+    },
+    "00110000": {
+        "binary_sequence": "00110000",
+        "position": 77
+    },
+    "01100000": {
+        "binary_sequence": "01100000",
+        "position": 78
+    },
+    "10000010": {
+        "binary_sequence": "10000010",
+        "position": 80
+    },
+    "00000100": {
+        "binary_sequence": "00000100",
+        "position": 81
+    },
+    "00001000": {
+        "binary_sequence": "00001000",
+        "position": 82
+    },
+    "00010001": {
+        "binary_sequence": "00010001",
+        "position": 83
+    },
+    "00100011": {
+        "binary_sequence": "00100011",
+        "position": 84
+    },
+    "10001100": {
+        "binary_sequence": "10001100",
+        "position": 86
+    },
+    "00011001": {
+        "binary_sequence": "00011001",
+        "position": 87
+    },
+    "00110011": {
+        "binary_sequence": "00110011",
+        "position": 88
+    },
+    "01100111": {
+        "binary_sequence": "01100111",
+        "position": 89
+    },
+    "10011100": {
+        "binary_sequence": "10011100",
+        "position": 91
+    },
+    "00111001": {
+        "binary_sequence": "00111001",
+        "position": 92
+    },
+    "11100110": {
+        "binary_sequence": "11100110",
+        "position": 94
+    },
+    "11001100": {
+        "binary_sequence": "11001100",
+        "position": 95
+    },
+    "10011001": {
+        "binary_sequence": "10011001",
+        "position": 96
+    },
+    "00110010": {
+        "binary_sequence": "00110010",
+        "position": 97
+    },
+    "01100100": {
+        "binary_sequence": "01100100",
+        "position": 98
+    },
+    "11001000": {
+        "binary_sequence": "11001000",
+        "position": 99
+    },
+    "10010000": {
+        "binary_sequence": "10010000",
+        "position": 100
+    },
+    "00100000": {
+        "binary_sequence": "00100000",
+        "position": 101
+    },
+    "01000001": {
+        "binary_sequence": "01000001",
+        "position": 102
+    },
+    "00001110": {
+        "binary_sequence": "00001110",
+        "position": 105
+    },
+    "00011100": {
+        "binary_sequence": "00011100",
+        "position": 106
+    },
+    "00111000": {
+        "binary_sequence": "00111000",
+        "position": 107
+    },
+    "01110001": {
+        "binary_sequence": "01110001",
+        "position": 108
+    },
+    "11100010": {
+        "binary_sequence": "11100010",
+        "position": 109
+    },
+    "11000100": {
+        "binary_sequence": "11000100",
+        "position": 110
+    },
+    "10001000": {
+        "binary_sequence": "10001000",
+        "position": 111
+    },
+    "00010000": {
+        "binary_sequence": "00010000",
+        "position": 112
+    },
+    "00100001": {
+        "binary_sequence": "00100001",
+        "position": 113
+    },
+    "01000010": {
+        "binary_sequence": "01000010",
+        "position": 114
+    },
+    "10000101": {
+        "binary_sequence": "10000101",
+        "position": 115
+    },
+    "00001011": {
+        "binary_sequence": "00001011",
+        "position": 116
+    },
+    "00010110": {
+        "binary_sequence": "00010110",
+        "position": 117
+    },
+    "00101100": {
+        "binary_sequence": "00101100",
+        "position": 118
+    },
+    "01011000": {
+        "binary_sequence": "01011000",
+        "position": 119
+    },
+    "10110000": {
+        "binary_sequence": "10110000",
+        "position": 120
+    },
+    "00011101": {
+        "binary_sequence": "00011101",
+        "position": 126
+    },
+    "00111010": {
+        "binary_sequence": "00111010",
+        "position": 127
+    },
+    "01110100": {
+        "binary_sequence": "01110100",
+        "position": 128
+    },
+    "01000111": {
+        "binary_sequence": "01000111",
+        "position": 132
+    },
+    "10001110": {
+        "binary_sequence": "10001110",
+        "position": 133
+    },
+    "10111100": {
+        "binary_sequence": "10111100",
+        "position": 139
+    },
+    "01111000": {
+        "binary_sequence": "01111000",
+        "position": 140
+    },
+    "11110001": {
+        "binary_sequence": "11110001",
+        "position": 141
+    },
+    "01000011": {
+        "binary_sequence": "01000011",
+        "position": 147
+    },
+    "10000111": {
+        "binary_sequence": "10000111",
+        "position": 148
+    },
+    "10100001": {
+        "binary_sequence": "10100001",
+        "position": 156
+    },
+    "10000100": {
+        "binary_sequence": "10000100",
+        "position": 158
+    },
+    "00001001": {
+        "binary_sequence": "00001001",
+        "position": 159
+    },
+    "00010010": {
+        "binary_sequence": "00010010",
+        "position": 160
+    },
+    "00100101": {
+        "binary_sequence": "00100101",
+        "position": 161
+    },
+    "01001011": {
+        "binary_sequence": "01001011",
+        "position": 162
+    },
+    "10010111": {
+        "binary_sequence": "10010111",
+        "position": 163
+    },
+    "00101110": {
+        "binary_sequence": "00101110",
+        "position": 164
+    },
+    "01011101": {
+        "binary_sequence": "01011101",
+        "position": 165
+    },
+    "10111010": {
+        "binary_sequence": "10111010",
+        "position": 166
+    },
+    "01110101": {
+        "binary_sequence": "01110101",
+        "position": 167
+    },
+    "11101011": {
+        "binary_sequence": "11101011",
+        "position": 168
+    },
+    "11010110": {
+        "binary_sequence": "11010110",
+        "position": 169
+    },
+    "10101101": {
+        "binary_sequence": "10101101",
+        "position": 170
+    },
+    "01011011": {
+        "binary_sequence": "01011011",
+        "position": 171
+    },
+    "10110111": {
+        "binary_sequence": "10110111",
+        "position": 172
+    },
+    "01101111": {
+        "binary_sequence": "01101111",
+        "position": 173
+    },
+    "11110000": {
+        "binary_sequence": "11110000",
+        "position": 177
+    },
+    "11000000": {
+        "binary_sequence": "11000000",
+        "position": 179
+    },
+    "00000010": {
+        "binary_sequence": "00000010",
+        "position": 181
+    },
+    "00010011": {
+        "binary_sequence": "00010011",
+        "position": 184
+    },
+    "00100110": {
+        "binary_sequence": "00100110",
+        "position": 185
+    },
+    "10011011": {
+        "binary_sequence": "10011011",
+        "position": 187
+    },
+    "00110110": {
+        "binary_sequence": "00110110",
+        "position": 188
+    },
+    "01101101": {
+        "binary_sequence": "01101101",
+        "position": 189
+    },
+    "11011010": {
+        "binary_sequence": "11011010",
+        "position": 190
+    },
+    "10110101": {
+        "binary_sequence": "10110101",
+        "position": 191
+    },
+    "10101100": {
+        "binary_sequence": "10101100",
+        "position": 194
+    },
+    "00000101": {
+        "binary_sequence": "00000101",
+        "position": 201
+    },
+    "00010111": {
+        "binary_sequence": "00010111",
+        "position": 203
+    },
+    "11001111": {
+        "binary_sequence": "11001111",
+        "position": 209
+    },
+    "10011110": {
+        "binary_sequence": "10011110",
+        "position": 210
+    },
+    "00111100": {
+        "binary_sequence": "00111100",
+        "position": 211
+    },
+    "01100001": {
+        "binary_sequence": "01100001",
+        "position": 223
+    },
+    "11000011": {
+        "binary_sequence": "11000011",
+        "position": 224
+    },
+    "01110010": {
+        "binary_sequence": "01110010",
+        "position": 229
+    },
+    "11100101": {
+        "binary_sequence": "11100101",
+        "position": 230
+    },
+    "11001011": {
+        "binary_sequence": "11001011",
+        "position": 231
+    },
+    "10010110": {
+        "binary_sequence": "10010110",
+        "position": 232
+    },
+    "00101101": {
+        "binary_sequence": "00101101",
+        "position": 233
+    },
+    "01011010": {
+        "binary_sequence": "01011010",
+        "position": 234
+    },
+    "01011001": {
+        "binary_sequence": "01011001",
+        "position": 239
+    },
+    "10110011": {
+        "binary_sequence": "10110011",
+        "position": 240
+    },
+    "01100110": {
+        "binary_sequence": "01100110",
+        "position": 241
+    },
+    "11001101": {
+        "binary_sequence": "11001101",
+        "position": 242
+    },
+    "10110100": {
+        "binary_sequence": "10110100",
+        "position": 247
+    },
+    "01101000": {
+        "binary_sequence": "01101000",
+        "position": 248
+    },
+    "10100010": {
+        "binary_sequence": "10100010",
+        "position": 250
+    },
+    "01000100": {
+        "binary_sequence": "01000100",
+        "position": 251
+    },
+    "10001001": {
+        "binary_sequence": "10001001",
+        "position": 252
+    },
+    "01001010": {
+        "binary_sequence": "01001010",
+        "position": 255
+    },
+    "10010100": {
+        "binary_sequence": "10010100",
+        "position": 256
+    },
+    "00101000": {
+        "binary_sequence": "00101000",
+        "position": 257
+    },
+    "01010001": {
+        "binary_sequence": "01010001",
+        "position": 258
+    },
+    "00100010": {
+        "binary_sequence": "00100010",
+        "position": 263
+    },
+    "00011111": {
+        "binary_sequence": "00011111",
+        "position": 278
+    },
+    "00111110": {
+        "binary_sequence": "00111110",
+        "position": 279
+    },
+    "01111100": {
+        "binary_sequence": "01111100",
+        "position": 280
+    },
+    "11111001": {
+        "binary_sequence": "11111001",
+        "position": 281
+    },
+    "11110010": {
+        "binary_sequence": "11110010",
+        "position": 282
+    },
+    "11100100": {
+        "binary_sequence": "11100100",
+        "position": 283
+    },
+    "11001010": {
+        "binary_sequence": "11001010",
+        "position": 300
+    },
+    "01111001": {
+        "binary_sequence": "01111001",
+        "position": 312
+    },
+    "11110011": {
+        "binary_sequence": "11110011",
+        "position": 313
+    },
+    "10011000": {
+        "binary_sequence": "10011000",
+        "position": 316
+    },
+    "00110001": {
+        "binary_sequence": "00110001",
+        "position": 317
+    },
+    "01100011": {
+        "binary_sequence": "01100011",
+        "position": 318
+    },
+    "11000110": {
+        "binary_sequence": "11000110",
+        "position": 319
+    },
+    "11001001": {
+        "binary_sequence": "11001001",
+        "position": 324
+    },
+    "10010010": {
+        "binary_sequence": "10010010",
+        "position": 325
+    },
+    "00100100": {
+        "binary_sequence": "00100100",
+        "position": 326
+    },
+    "01001000": {
+        "binary_sequence": "01001000",
+        "position": 327
+    },
+    "00001010": {
+        "binary_sequence": "00001010",
+        "position": 332
+    },
+    "00010100": {
+        "binary_sequence": "00010100",
+        "position": 333
+    },
+    "00101001": {
+        "binary_sequence": "00101001",
+        "position": 334
+    },
+    "01010011": {
+        "binary_sequence": "01010011",
+        "position": 335
+    },
+    "10100111": {
+        "binary_sequence": "10100111",
+        "position": 336
+    },
+    "01001111": {
+        "binary_sequence": "01001111",
+        "position": 337
+    },
+    "10011111": {
+        "binary_sequence": "10011111",
+        "position": 338
+    },
+    "00111111": {
+        "binary_sequence": "00111111",
+        "position": 339
+    },
+    "01111110": {
+        "binary_sequence": "01111110",
+        "position": 340
+    },
+    "11111100": {
+        "binary_sequence": "11111100",
+        "position": 341
+    },
+    "10010101": {
+        "binary_sequence": "10010101",
+        "position": 346
+    },
+    "00101010": {
+        "binary_sequence": "00101010",
+        "position": 347
+    },
+    "01010101": {
+        "binary_sequence": "01010101",
+        "position": 348
+    },
+    "10101011": {
+        "binary_sequence": "10101011",
+        "position": 349
+    },
+    "01010110": {
+        "binary_sequence": "01010110",
+        "position": 350
+    },
+    "10001111": {
+        "binary_sequence": "10001111",
+        "position": 358
+    },
+    "11110110": {
+        "binary_sequence": "11110110",
+        "position": 362
+    },
+    "11101101": {
+        "binary_sequence": "11101101",
+        "position": 363
+    },
+    "10110010": {
+        "binary_sequence": "10110010",
+        "position": 379
+    },
+    "10010011": {
+        "binary_sequence": "10010011",
+        "position": 382
+    },
+    "00100111": {
+        "binary_sequence": "00100111",
+        "position": 383
+    },
+    "10110110": {
+        "binary_sequence": "10110110",
+        "position": 399
+    },
+    "01010111": {
+        "binary_sequence": "01010111",
+        "position": 406
+    },
+    "10101111": {
+        "binary_sequence": "10101111",
+        "position": 407
+    },
+    "01011111": {
+        "binary_sequence": "01011111",
+        "position": 408
+    },
+    "11110101": {
+        "binary_sequence": "11110101",
+        "position": 417
+    },
+    "11101010": {
+        "binary_sequence": "11101010",
+        "position": 418
+    },
+    "11010100": {
+        "binary_sequence": "11010100",
+        "position": 419
+    },
+    "10101001": {
+        "binary_sequence": "10101001",
+        "position": 420
+    },
+    "11101110": {
+        "binary_sequence": "11101110",
+        "position": 428
+    },
+    "11011100": {
+        "binary_sequence": "11011100",
+        "position": 429
+    },
+    "11111011": {
+        "binary_sequence": "11111011",
+        "position": 438
+    },
+    "11011101": {
+        "binary_sequence": "11011101",
+        "position": 441
+    },
+    "10111011": {
+        "binary_sequence": "10111011",
+        "position": 492
+    },
+    "01110110": {
+        "binary_sequence": "01110110",
+        "position": 493
+    },
+    "01101110": {
+        "binary_sequence": "01101110",
+        "position": 502
+    },
+    "11101001": {
+        "binary_sequence": "11101001",
+        "position": 525
+    },
+    "01001110": {
+        "binary_sequence": "01001110",
+        "position": 528
+    },
+    "11100011": {
+        "binary_sequence": "11100011",
+        "position": 532
+    },
+    "11000111": {
+        "binary_sequence": "11000111",
+        "position": 533
+    },
+    "01111101": {
+        "binary_sequence": "01111101",
+        "position": 537
+    },
+    "11000101": {
+        "binary_sequence": "11000101",
+        "position": 548
+    },
+    "10001011": {
+        "binary_sequence": "10001011",
+        "position": 549
+    },
+    "00110111": {
+        "binary_sequence": "00110111",
+        "position": 557
+    },
+    "10010001": {
+        "binary_sequence": "10010001",
+        "position": 584
+    },
+    "01001001": {
+        "binary_sequence": "01001001",
+        "position": 590
+    },
+    "11100001": {
+        "binary_sequence": "11100001",
+        "position": 597
+    },
+    "11000010": {
+        "binary_sequence": "11000010",
+        "position": 598
+    },
+    "01001100": {
+        "binary_sequence": "01001100",
+        "position": 611
+    },
+    "10000110": {
+        "binary_sequence": "10000110",
+        "position": 616
+    },
+    "00011011": {
+        "binary_sequence": "00011011",
+        "position": 618
+    },
+    "10111110": {
+        "binary_sequence": "10111110",
+        "position": 622
+    },
+    "01010010": {
+        "binary_sequence": "01010010",
+        "position": 667
+    },
+    "10100101": {
+        "binary_sequence": "10100101",
+        "position": 668
+    },
+    "01100101": {
+        "binary_sequence": "01100101",
+        "position": 688
+    },
+    "10110001": {
+        "binary_sequence": "10110001",
+        "position": 697
+    },
+    "11101100": {
+        "binary_sequence": "11101100",
+        "position": 730
+    },
+    "11011001": {
+        "binary_sequence": "11011001",
+        "position": 731
+    },
+    "11011011": {
+        "binary_sequence": "11011011",
+        "position": 766
+    },
+    "01101100": {
+        "binary_sequence": "01101100",
+        "position": 768
+    },
+    "11011000": {
+        "binary_sequence": "11011000",
+        "position": 769
+    },
+    "00101111": {
+        "binary_sequence": "00101111",
+        "position": 869
+    },
+    "01011110": {
+        "binary_sequence": "01011110",
+        "position": 870
+    },
+    "10001010": {
+        "binary_sequence": "10001010",
+        "position": 876
+    },
+    "11111000": {
+        "binary_sequence": "11111000",
+        "position": 921
+    },
+    "01100010": {
+        "binary_sequence": "01100010",
+        "position": 1037
+    },
+    "00010101": {
+        "binary_sequence": "00010101",
+        "position": 1040
+    },
+    "00101011": {
+        "binary_sequence": "00101011",
+        "position": 1041
+    },
+    "11010010": {
+        "binary_sequence": "11010010",
+        "position": 1237
+    },
+    "01000101": {
+        "binary_sequence": "01000101",
+        "position": 1323
+    },
+    "10100100": {
+        "binary_sequence": "10100100",
+        "position": 1466
+    }
+}
