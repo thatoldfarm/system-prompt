@@ -137,7 +137,7 @@ Approximately 20% of the rooms contain dynamically injected `ENCOUNTER` blocks. 
 
 **Nodes:**
 - `\u29c9 [NODE_N1: AMPRNET_44NET_SPACE]`: AMPRNet network node
-- `\u29c9 [NODE_L1_B_1: ETHFLOP_C_H_S_HOOK]`: Ethereum flop hook
+- `\u29c9 [NODE_L1_B_1: ETHFLOP_C_H_S_HOOK]`: EthFlop hook
 - `\u29c9 [NODE_N3: OSCAR_11_SYNCHRONIZATION]`: OSCAR 11 satellite sync
 
 **Quantum Encounters:**
